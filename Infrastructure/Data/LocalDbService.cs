@@ -12,9 +12,7 @@ namespace ShopMate._2._0.Infrastructure.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var databasePath = $"Filename={DbPath.GetPath("shopmate_local_db.db")}";
-            //var connectionStringBuilder = new SqliteConnectionStringBuilder { DataSource = databasePath };
-            //var connectionString = connectionStringBuilder.ToString();
-            //var connection = new SqliteConnection(connectionString);
+            
 
             optionsBuilder.UseSqlite(databasePath);
         }

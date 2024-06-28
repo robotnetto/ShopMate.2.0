@@ -17,10 +17,14 @@ namespace ShopMate._2._0.Applications.Services
         {
 
             if (shopCart is null)
+            {
                 throw new ArgumentNullException(nameof(shopCart), "The shopCart parameter cannot be null!");
+            }
 
             if (string.IsNullOrWhiteSpace(shopCart.Title))
+            {
                 throw new ArgumentException("Title cannot be empty or whitespace!", nameof(shopCart.Title));
+            }
 
             shopCart.Id = Guid.NewGuid();
             await shopCartRepository.CreateAsync(shopCart);
@@ -29,7 +33,9 @@ namespace ShopMate._2._0.Applications.Services
         public async Task UpdateCart(ShopCart shopCart)
         {
             if (string.IsNullOrWhiteSpace(shopCart.Title))
+            {
                 throw new ArgumentException("Title cannot be empty or whitespace!", nameof(shopCart.Title));
+            }
 
             await shopCartRepository.UpdateAsync(shopCart);
 
