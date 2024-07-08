@@ -50,5 +50,11 @@ namespace ShopMate._2._0.Applications.Services
             var result = await recipeRepository.GetAllAsync();
             return result ?? Enumerable.Empty<Recipe>();
         }
+
+        public async Task DeleteRecipe(Recipe recipe)
+        {
+            await recipeRepository.DeleteAsync(recipe);
+
+        }
     }
 }

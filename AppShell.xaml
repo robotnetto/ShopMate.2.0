@@ -5,17 +5,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:ShopMate._2._0.Presentation.Views"
     Shell.FlyoutBehavior="Disabled"
-    Title="ShopMate._2._0">
+    Title="ShopMate._2._0"
+    BackgroundColor="#599cff"
+    TitleColor="White"
+    Shell.TabBarTitleColor="#2e80ec" 
+    Shell.TabBarUnselectedColor="#373736"
+   
+    Shell.TabBarForegroundColor="#2e80ec"
+   
+    Shell.TabBarBackgroundColor="#fafcff"
+    >
 
-    <FlyoutItem>
+    <TabBar>
+        <ShellContent Title="Recipe"
+                      Icon="recipe_book.png"
+                      ContentTemplate="{DataTemplate views:RecipePage}" />
         <ShellContent Title="Cart"
-               Icon="cart_icon.png"
-               ContentTemplate="{DataTemplate views:RecipePage}" />
-        <ShellContent Title="Cart"
-                      Icon="cart_icon.png"
+                      Icon="shopping_cart.png"
                       ContentTemplate="{DataTemplate views:CartPage}" />
         <ShellContent Title="Location"
-                      Icon="location_icon.png"
+                      Icon="location.png"
                       ContentTemplate="{DataTemplate views:LocationPage}" />
-    </FlyoutItem>
+    </TabBar>
 </Shell>
