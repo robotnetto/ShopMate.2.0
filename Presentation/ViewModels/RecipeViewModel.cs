@@ -11,7 +11,19 @@ namespace ShopMate._2._0.Presentation.ViewModels
 {
     public partial class RecipeViewModel : ObservableObject
     {
-        public ObservableCollection<RecipeDetailsViewModel> Recipes = new();
+        public ObservableCollection<RecipeDetailsViewModel> _recipes = new();
+        public ObservableCollection<RecipeDetailsViewModel> Recipes
+        {
+            get => _recipes;
+            set
+            {
+                if (_recipes != value)
+                {
+                    _recipes = value;
+                    OnPropertyChanged(nameof(Recipes));
+                }
+            }
+        }
 
         [ObservableProperty]
         private RecipeDetailsViewModel _selectedRecipe = new RecipeDetailsViewModel(new Recipe());
