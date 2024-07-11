@@ -57,9 +57,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\AppIcon\Icons\add_plus_white.png" />
 	  <None Remove="Resources\AppIcon\Icons\location.png" />
+	  <None Remove="Resources\AppIcon\Icons\menu_three_dots.png" />
+	  <None Remove="Resources\AppIcon\Icons\plus_circle.png" />
+	  <None Remove="Resources\AppIcon\Icons\plus_circle_white.png" />
 	  <None Remove="Resources\AppIcon\Icons\recipe_book.png" />
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\AppIcon\Icons\add_plus_white.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\menu_three_dots.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\plus_circle.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\plus_circle_white.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +92,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Presentation\Views\BottomSheet.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\CartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

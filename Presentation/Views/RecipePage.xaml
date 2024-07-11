@@ -4,21 +4,33 @@
              x:Class="ShopMate._2._0.Presentation.Views.RecipePage"
              Title="RecipePage"
               Background="#303030"
+             
              >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+                  IconImageSource="add_plus_white.png" 
+                  
+                  Command="{Binding AddRecipeCommand}" />
+    </ContentPage.ToolbarItems>
     <CollectionView ItemsSource="{Binding Recipes}" >
         
         <CollectionView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate >
                 <VerticalStackLayout>
-                    <Frame Margin="10">
+                    <Frame Margin="8" Background="#434343" BorderColor="#434343">
+                        
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width=".2*" />
                                 <ColumnDefinition Width=".8*" />
+                                <ColumnDefinition Width=".1*" />
+
                             </Grid.ColumnDefinitions>
                          <Image Grid.Column="0" Source="{Binding ImageStream}" Aspect="AspectFill" />
-                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
-                            <Label Text="{Binding Description}" FontSize="Small"/>
+                          <Label Grid.Column="1" TextColor="White" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+                            <!--<Button Grid.Column="2" ImageSource="menu_three_dots.png" Command="{Binding OptionsCommand}, Source={x:Reference RecipePage}}" CommandParameter="{Binding SelectedRecipe}" />-->
+                            <ImageButton Grid.Column="2" HeightRequest="24" WidthRequest="24"  Source="menu_three_dots.png" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}"  CommandParameter="{Binding .}" />
                         </Grid>
                     </Frame>
                 </VerticalStackLayout>

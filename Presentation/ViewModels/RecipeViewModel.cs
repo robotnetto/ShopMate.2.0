@@ -4,6 +4,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using ShopMate._2._0.Presentation.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -26,17 +27,18 @@ namespace ShopMate._2._0.Presentation.ViewModels
         }
 
         [ObservableProperty]
-        private RecipeDetailsViewModel _selectedRecipe = new RecipeDetailsViewModel(new Recipe());
+        private RecipeDetailsViewModel _selectedRecipe;
 
         public event Action<string>? ErrorOccurred;
 
-        [ObservableProperty]
-        private string _newRecipeTitle = string.Empty;
+        //[ObservableProperty]
+        //private string _newRecipeTitle = string.Empty;
         private readonly RecipeService _recipeService;
 
         public ICommand AddRecipeCommand { get; }
         public ICommand RemoveRecipeCommand { get; }
         public ICommand UpdateRecipeCommand { get; }
+        public ICommand OptionsCommand { get; }
 
         public RecipeViewModel(RecipeService recipeService)
         {
@@ -44,8 +46,17 @@ namespace ShopMate._2._0.Presentation.ViewModels
             AddRecipeCommand = new AsyncRelayCommand(AddRecipe);
             RemoveRecipeCommand = new AsyncRelayCommand(RemoveRecipe);
             UpdateRecipeCommand = new AsyncRelayCommand(UpdateRecipe);
+            OptionsCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(Options);
             _ = InitializedDataAsync();
         }
+
+        private async Task Options(RecipeDetailsViewModel recipeDetailsView)
+        {
+            SelectedRecipe = recipeDetailsView;
+           
+            await Shell.Current.GoToAsync(nameof(BottomSheet));
+        } 
+       
 
         public RecipeViewModel() : this(new RecipeService( new RecipeRepository(new LocalDbService())))
         {
@@ -61,16 +72,26 @@ namespace ShopMate._2._0.Presentation.ViewModels
             }
 
         }
+
+        //private async Task OnAddRecipeCommand()
+        //{
+        //    string result = await Shell.Current.DisplayPromptAsync("New recipe", "Title name", "OK" ,"Cancel");
+        //    //await Shell.Current.GoToAsync(nameof(AddRecipePage));
+        //}
         private async Task AddRecipe()
         {
             try
             {
-                Recipe newRecipe = new() { Title = NewRecipeTitle, Favorite = false };
+                string titleName = await Shell.Current.DisplayPromptAsync("New recipe", "Title name");
+                if (string.IsNullOrEmpty(titleName))
+                {
+                    return;
+                }
+
+                Recipe newRecipe = new() { Title = titleName, Favorite = false };
                 await _recipeService.AddNewRecipe(newRecipe);
                 var recipeVm = new RecipeDetailsViewModel(newRecipe);
                 Recipes.Add(recipeVm);
-                NewRecipeTitle = string.Empty;
-
             }
             catch (Exception e)
             {
