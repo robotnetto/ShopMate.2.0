@@ -1,6 +1,6 @@
 using ShopMate._2._0.Presentation.ViewModels;
 
-namespace ShopMate._2._0.Presentation.Views;
+namespace ShopMate._2._0.Presentation.Views.RecipeView;
 
 public partial class RecipePage : ContentPage
 {

@@ -7,7 +7,7 @@ namespace ShopMate._2._0
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(BottomSheet), typeof(BottomSheet));
+            //Routing.RegisterRoute(nameof(CustomBottomSheet), typeof(CustomBottomSheet));
 
         }
 

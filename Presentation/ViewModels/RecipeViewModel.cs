@@ -4,7 +4,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
-using ShopMate._2._0.Presentation.Views;
+using ShopMate._2._0.Presentation.Views.RecipeView;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -31,8 +31,8 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         public event Action<string>? ErrorOccurred;
 
-        //[ObservableProperty]
-        //private string _newRecipeTitle = string.Empty;
+        [ObservableProperty]
+        private string _newRecipeTitle = string.Empty;
         private readonly RecipeService _recipeService;
 
         public ICommand AddRecipeCommand { get; }
@@ -52,13 +52,21 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         private async Task Options(RecipeDetailsViewModel recipeDetailsView)
         {
-            SelectedRecipe = recipeDetailsView;
-           
-            await Shell.Current.GoToAsync(nameof(BottomSheet));
-        } 
-       
+            try
+            {
+                SelectedRecipe = recipeDetailsView;
+                var bottomSheet = new CustomBottomSheet(this);
+                await bottomSheet.ShowAsync();
+                //await Shell.Current.GoToAsync(nameof(bottomSheet));
+            }
+            catch (Exception ex)
+            {
+                OnErrorOccurred($"Navigation to CustomBottomSheet failed: {ex.Message}");
+            }
+        }
 
-        public RecipeViewModel() : this(new RecipeService( new RecipeRepository(new LocalDbService())))
+
+        public RecipeViewModel() : this(new RecipeService(new RecipeRepository(new LocalDbService())))
         {
         }
 
@@ -83,6 +91,9 @@ namespace ShopMate._2._0.Presentation.ViewModels
             try
             {
                 string titleName = await Shell.Current.DisplayPromptAsync("New recipe", "Title name");
+
+
+
                 if (string.IsNullOrEmpty(titleName))
                 {
                     return;

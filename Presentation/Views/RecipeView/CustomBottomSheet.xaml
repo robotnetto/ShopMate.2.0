@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopMate._2._0.Presentation.Views.RecipeView.CustomBottomSheet"
+             xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   BackgroundColor="#434343" CornerRadius="10" IsCancelable="True" >
+
+    <the49:BottomSheet.Detents>
+        <the49:HeightDetent Height="100"/>
+        
+    </the49:BottomSheet.Detents>
+        
+    <VerticalStackLayout Padding="20">
+        <Label 
+        Text="Add New Title"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+        <Entry 
+        Text="{Binding NewRecipeTitle}"
+        Placeholder="Enter title"
+        VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand" />
+        <Button 
+        Text="Save"
+        Command="{Binding AddRecipeCommand}"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</the49:BottomSheet>

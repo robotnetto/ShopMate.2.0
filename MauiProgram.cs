@@ -3,6 +3,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using The49.Maui.BottomSheet;
 
 namespace ShopMate._2._0
 {
@@ -13,6 +14,7 @@ namespace ShopMate._2._0
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseBottomSheet()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
