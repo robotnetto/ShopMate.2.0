@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipePage"
-             Title="RecipePage"
-              Background="#303030"
-             
-             >
+             Title="Recipe"
+              Background="#FAFAF9" >
 
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-                  IconImageSource="add_plus_white.png" 
+                  Text="Add"
+                
+                  IconImageSource="add_dark.png" 
                   
                   Command="{Binding AddRecipeCommand}" />
     </ContentPage.ToolbarItems>
@@ -18,19 +18,21 @@
         <CollectionView.ItemTemplate>
             <DataTemplate >
                 <VerticalStackLayout>
-                    <Frame Margin="8" Background="#434343" BorderColor="#434343">
-                        
+                    <Frame Margin="25,10,25,0" Background="White" BorderColor="White" HasShadow="True"  >
+                        <Frame.Shadow>
+                            <Shadow Brush="DarkGray" Opacity="0.3" Offset="10,10" Radius="20" />
+                        </Frame.Shadow>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width=".2*" />
-                                <ColumnDefinition Width=".8*" />
-                                <ColumnDefinition Width=".1*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width=".02*" />
 
                             </Grid.ColumnDefinitions>
                          <Image Grid.Column="0" Source="{Binding ImageStream}" Aspect="AspectFill" />
-                          <Label Grid.Column="1" TextColor="White" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+                          <Label Grid.Column="1" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
                             <!--<Button Grid.Column="2" ImageSource="menu_three_dots.png" Command="{Binding OptionsCommand}, Source={x:Reference RecipePage}}" CommandParameter="{Binding SelectedRecipe}" />-->
-                            <ImageButton Grid.Column="2" HeightRequest="24" WidthRequest="24"  Source="menu_three_dots.png" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}"  CommandParameter="{Binding .}" />
+                            <ImageButton Grid.Column="2" HeightRequest="24" WidthRequest="24"  Source="menu_dark.png" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}"  CommandParameter="{Binding .}" />
                         </Grid>
                     </Frame>
                 </VerticalStackLayout>

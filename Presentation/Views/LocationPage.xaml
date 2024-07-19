@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.LocationPage"
              Title="LocationPage"
-              Background="#303030">
+              Background="#2C2C2E">
     <VerticalStackLayout>
         <Label 
             Text="Location Page"
