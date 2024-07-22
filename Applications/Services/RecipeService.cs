@@ -32,7 +32,7 @@ namespace ShopMate._2._0.Applications.Services
 
         public async Task UpdateRecipe(Recipe recipe)
         {
-            if (!string.IsNullOrWhiteSpace(recipe.Title))
+            if (string.IsNullOrWhiteSpace(recipe.Title))
             {
                 throw new ArgumentException("Title canot empty or whitespace!", nameof(recipe.Title));
             }

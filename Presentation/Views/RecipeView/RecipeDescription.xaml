@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipeDescription"
+             Title="{Binding SelectedRecipe.Title}"
+             Background="#FAFAF9">
+
+    <StackLayout Padding="20">
+       
+        <Editor Text="{Binding SelectedRecipe.Description}"
+                Placeholder="Your recipe here..." 
+                AutoSize="TextChanges" 
+                HeightRequest="200" 
+                BackgroundColor="White"
+                TextColor="Black" 
+              />
+
+        <Button 
+     Text="SAVE"
+     Command="{Binding SaveRecipeCommand}"
+     BackgroundColor="#2e80ec"
+     TextColor="White"
+     CornerRadius="13"
+     FontAttributes="Bold"
+     VerticalOptions="EndAndExpand"
+     HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+ 
+</ContentPage>

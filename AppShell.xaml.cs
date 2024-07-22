@@ -1,4 +1,5 @@
 ﻿using ShopMate._2._0.Presentation.Views;
+using ShopMate._2._0.Presentation.Views.RecipeView;
 
 namespace ShopMate._2._0
 {
@@ -7,11 +8,9 @@ namespace ShopMate._2._0
         public AppShell()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(CustomBottomSheet), typeof(CustomBottomSheet));
+            Routing.RegisterRoute(nameof(RecipeDescription), typeof(RecipeDescription));
 
         }
-
-
 
     }
 }

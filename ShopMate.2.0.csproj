@@ -58,30 +58,38 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\Icons\add_dark.png" />
+	  <None Remove="Resources\AppIcon\Icons\add_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_plus_white.png" />
-	  <None Remove="Resources\AppIcon\Icons\close_circle.png" />
+	  <None Remove="Resources\AppIcon\Icons\Close_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\delete.png" />
 	  <None Remove="Resources\AppIcon\Icons\delete_white.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit.png" />
+	  <None Remove="Resources\AppIcon\Icons\edit_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\location.png" />
 	  <None Remove="Resources\AppIcon\Icons\menu_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\menu_three_dots.png" />
+	  <None Remove="Resources\AppIcon\Icons\options.png" />
+	  <None Remove="Resources\AppIcon\Icons\options_v2.png" />
 	  <None Remove="Resources\AppIcon\Icons\plus_circle.png" />
 	  <None Remove="Resources\AppIcon\Icons\plus_circle_white.png" />
 	  <None Remove="Resources\AppIcon\Icons\recipe_book.png" />
 	  <None Remove="Resources\AppIcon\Icons\share.png" />
+	  <None Remove="Resources\AppIcon\Icons\share_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\AppIcon\Icons\add_dark.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\add_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\add_plus_white.png" />
-	  <MauiImage Include="Resources\AppIcon\Icons\close_circle.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\close_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\delete.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\delete_white.png" />
-	  <MauiImage Include="Resources\AppIcon\Icons\edit.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\edit_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\menu_dark.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\menu_three_dots.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\options.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\options_v2.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\plus_circle.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\plus_circle_white.png" />
 	</ItemGroup>
@@ -89,7 +97,7 @@
 	<ItemGroup>
 	  <MauiImage Include="Resources\AppIcon\Icons\location.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\recipe_book.png" />
-	  <MauiImage Include="Resources\AppIcon\Icons\share.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\share_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\shopping_cart.png" />
 	</ItemGroup>
 
@@ -108,8 +116,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Presentation\Views\RecipeView\AddBottomSheet.xaml.cs">
-	    <DependentUpon>AddBottomSheet.xaml</DependentUpon>
+	  <Compile Update="Presentation\Views\RecipeView\AddAndUpdateBottomSheet.xaml.cs">
+	    <DependentUpon>AddAndUpdateBottomSheet.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -117,13 +125,16 @@
 	  <MauiXaml Update="Presentation\Views\CartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\RecipeView\AddBottomSheet.xaml">
+	  <MauiXaml Update="Presentation\Views\RecipeView\AddAndUpdateBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\LocationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\OptionsBottomSheet.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Presentation\Views\RecipeView\RecipeDescription.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\RecipePage.xaml">

@@ -10,7 +10,7 @@ namespace ShopMate._2._0
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)
             : base(handle, ownership)
         {
-            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry ), (handler, view) =>
             {
                 if (view is Entry)
                 {
@@ -18,7 +18,18 @@ namespace ShopMate._2._0
                     handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 
                     // Change placeholder text color
-                    handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.WhiteSmoke));
+                    handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.Gray));
+                }
+            });
+            Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping(nameof(Editor), (handler, view) =>
+            {
+                if (view is Editor)
+                {
+                    // Remove underline
+                    handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+
+                    // Change placeholder text color
+                    handler.PlatformView.SetHintTextColor(ColorStateList.ValueOf(Android.Graphics.Color.Gray));
                 }
             });
         }

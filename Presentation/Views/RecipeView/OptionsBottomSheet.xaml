@@ -3,7 +3,7 @@
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                    x:Class="ShopMate._2._0.Presentation.Views.RecipeView.OptionsBottomSheet"
                    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
-                   BackgroundColor="#2C2C2E"
+                   BackgroundColor="White"
                    CornerRadius="10"
                    IsCancelable="True"
                    HasBackdrop="True"
@@ -26,11 +26,11 @@
               Text="Manage Item"
               FontSize="20"
               FontAttributes="Bold"
-              TextColor="White"
+              TextColor="Black"
               VerticalOptions="Center"
               Grid.Column="0" />
             <ImageButton 
-              Source="close_circle.png"
+              Source="close_filled.png"
               BackgroundColor="Transparent"
               WidthRequest="24"
               HeightRequest="24"
@@ -38,13 +38,13 @@
               Grid.Column="1" />
         </Grid>
         <HorizontalStackLayout Spacing="3" VerticalOptions="Start">
-            <Image Source="edit.png" HeightRequest="25" WidthRequest="25"/>
-            <Button Text="Edit Title" BackgroundColor="Transparent" FontSize="14" TextColor="White" FontAttributes="Bold"/>
+            <Image Source="edit_filled.png" HeightRequest="25" WidthRequest="25"/>
+            <Button Text="Edit Title" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding UpdateRecipeCommand}"/>
         </HorizontalStackLayout>
         
         <HorizontalStackLayout Spacing="3">
-            <Image Source="share.png" HeightRequest="25" WidthRequest="25"/>
-            <Button Text="Share"  BackgroundColor="Transparent" FontSize="14" TextColor="White" FontAttributes="Bold"/>
+            <Image Source="share_filled.png" HeightRequest="25" WidthRequest="25"/>
+            <Button Text="Share"  BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold"/>
         </HorizontalStackLayout>
         
         <HorizontalStackLayout Spacing="3">

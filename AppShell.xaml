@@ -8,20 +8,20 @@
     xmlns:location="clr-namespace:ShopMate._2._0.Presentation.Views"
     
     Title="ShopMate._2._0"
-    BackgroundColor="White"
+    BackgroundColor="#FAFAF9"
     TitleColor="Black"
     
-    Shell.TabBarTitleColor="#9ac2f6" 
-    Shell.TabBarUnselectedColor="#dadada"
+    Shell.TabBarTitleColor="#04c9fb" 
+    Shell.TabBarUnselectedColor="#8a8a8a"
    
-    Shell.TabBarForegroundColor="#9ac2f6"
+    Shell.TabBarForegroundColor="#04c9fb"
    
     Shell.TabBarBackgroundColor="White" 
     >
  
     <TabBar >
      
-        <ShellContent Title="Recipe"
+        <ShellContent Title="Recipes"
                      
                       Icon="recipe_book.png"
                       ContentTemplate="{DataTemplate recipe:RecipePage}" />

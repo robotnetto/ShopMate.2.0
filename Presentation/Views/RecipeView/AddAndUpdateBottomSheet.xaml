@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.AddBottomSheet"
+                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.AddAndUpdateBottomSheet"
                    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
-                   BackgroundColor="#2C2C2E"
+                   BackgroundColor="White"
                    CornerRadius="10"
                    IsCancelable="True"
                    HasBackdrop="True"
@@ -22,14 +22,14 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label 
-                Text="New Title"
+                Text="{Binding BottomSheetTitle}"
                 FontSize="20"
                 FontAttributes="Bold"
-                TextColor="White"
+                TextColor="Black"
                 VerticalOptions="Center"
                 Grid.Column="0" />
             <ImageButton 
-                Source="close_circle.png"
+                Source="close_filled.png"
                 BackgroundColor="Transparent"
                 WidthRequest="24"
                 HeightRequest="24"
@@ -37,16 +37,19 @@
                 Grid.Column="1" />
         </Grid>
 
-        <Frame BackgroundColor="#434343" CornerRadius="10" Padding="10" HasShadow="True">
+        <Frame x:Name="titleFrame"  BackgroundColor="White" CornerRadius="13" Padding="10" HasShadow="False">
             <Entry 
                 x:Name="titleEntry"
                 Text="{Binding NewRecipeTitle}"
-                Placeholder="New list"
-                PlaceholderColor="#7E7E7F"
-                BackgroundColor="Transparent"
-                TextColor="White"
+                
+                Placeholder="Title"
+                PlaceholderColor="Gray"
+             
+               
+                TextColor="Black"
                 VerticalOptions="Center"
                 HorizontalOptions="FillAndExpand"
+                
                 FontSize="16"
                 Margin="0"
                 
@@ -58,7 +61,7 @@
             Command="{Binding SaveRecipeCommand}"
             BackgroundColor="#2e80ec"
             TextColor="White"
-            CornerRadius="10"
+            CornerRadius="13"
             FontAttributes="Bold"
             VerticalOptions="EndAndExpand"
             HorizontalOptions="FillAndExpand" />
