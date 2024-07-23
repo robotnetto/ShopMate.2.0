@@ -6,12 +6,13 @@
              Background="#FAFAF9">
 
     <StackLayout Padding="20">
-       
-        <Editor Text="{Binding SelectedRecipe.Description}"
+
+        <Editor Text="{Binding NewRecipeDescription}"
                 Placeholder="Your recipe here..." 
                 AutoSize="TextChanges" 
                 HeightRequest="200" 
-                BackgroundColor="White"
+                Background="White"
+                BackgroundColor="Gray"
                 TextColor="Black" 
               />
 

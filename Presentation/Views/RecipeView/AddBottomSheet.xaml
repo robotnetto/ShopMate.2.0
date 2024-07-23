@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.AddBottomSheet"
+                   xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   BackgroundColor="White"
+                   CornerRadius="10"
+                   IsCancelable="True"
+                   HasBackdrop="True"
+                   HasHandle="False">
+
+    <the49:BottomSheet.Detents>
+        
+        <the49:HeightDetent Height="200"/>
+    </the49:BottomSheet.Detents>
+   
+    <VerticalStackLayout Padding="20" Spacing="10" >
+      
+        <Grid Margin="5,0,5,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label 
+                Text="{Binding BottomSheetTitle}"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="Black"
+                VerticalOptions="Center"
+                Grid.Column="0" />
+            <ImageButton 
+                Source="close_filled.png"
+                BackgroundColor="Transparent"
+                WidthRequest="24"
+                HeightRequest="24"
+                Command="{Binding CloseCommand}"
+                Grid.Column="1" />
+        </Grid>
+
+        <Frame x:Name="titleFrame"  BackgroundColor="White" CornerRadius="13" Padding="10" HasShadow="False">
+            <Entry 
+                x:Name="titleEntry"
+                Text="{Binding NewRecipeTitle}"
+                
+                Placeholder="Title"
+                PlaceholderColor="Gray"
+             
+               
+                TextColor="Black"
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand"
+                
+                FontSize="16"
+                Margin="0"
+                
+                HeightRequest="40"/>
+        </Frame>
+
+        <Button 
+            Text="SAVE"
+            Command="{Binding SaveRecipeCommand}"
+            BackgroundColor="#2e80ec"
+            TextColor="White"
+            CornerRadius="13"
+            FontAttributes="Bold"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="FillAndExpand" />
+    </VerticalStackLayout>
+</the49:BottomSheet>

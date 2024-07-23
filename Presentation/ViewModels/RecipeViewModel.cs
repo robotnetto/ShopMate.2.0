@@ -26,7 +26,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 {
                     _recipes = value;
                     OnPropertyChanged(nameof(Recipes));
-                  
+
                 }
             }
         }
@@ -40,6 +40,9 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         [ObservableProperty]
         private string _newRecipeTitle = string.Empty;
+        [ObservableProperty]
+        private string _newRecipeDescription = string.Empty;
+
         private readonly RecipeService _recipeService;
 
         private BottomSheet _currentBottomSheet;
@@ -92,27 +95,32 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         private async Task OnCloseBottomSheet()
         {
-            if (CurrentBottomSheet is AddAndUpdateBottomSheet addBottomSheet)
+            if (CurrentBottomSheet is AddBottomSheet addBottomSheet)
             {
                 await addBottomSheet.HideKeyboard();
             }
+            else if (CurrentBottomSheet is EditBottomSheet editBottomSheet)
+            {
+                await editBottomSheet.HideKeyboard();
+            }
 
-            await CurrentBottomSheet.DismissAsync(true);
+            
 
         }
 
         private async Task OnUpdateBottomSheet()
         {
-           await CurrentBottomSheet.DismissAsync(true);
-            var bottomSheet = new AddAndUpdateBottomSheet(this);
+            await CurrentBottomSheet.DismissAsync(true);
+            var bottomSheet = new EditBottomSheet(this);
             await bottomSheet.ShowAsync();
             CurrentBottomSheet = bottomSheet;
-            
+
 
         }
-        private async Task OnNavigate(RecipeDetailsViewModel recipeDetailsViewModel )
+        private async Task OnNavigate(RecipeDetailsViewModel recipeDetailsViewModel)
         {
             SelectedRecipe = recipeDetailsViewModel;
+
             await Shell.Current.Navigation.PushAsync(new RecipeDescription(this));
 
         }
@@ -136,7 +144,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
         }
 
 
-  
+
 
         //private async Task OnAddRecipeCommand()
         //{
@@ -147,7 +155,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
         {
             NewRecipeTitle = string.Empty;
             _bottomSheetTitle = BottomSheetMode.Add.ToString();
-            var bottomSheet = new AddAndUpdateBottomSheet(this);
+            var bottomSheet = new AddBottomSheet(this);
             await bottomSheet.ShowAsync();
             CurrentBottomSheet = bottomSheet;
 
@@ -157,15 +165,16 @@ namespace ShopMate._2._0.Presentation.ViewModels
         {
             try
             {
-                if (SelectedRecipe == null )
+                if ( CurrentBottomSheet is AddBottomSheet )
                 {
+
                     await OnAddNewRecipe();
                 }
-                else 
-                {
-                   await OnUpdateRecipe();
-                }
-              
+                else
+
+                    await OnUpdateRecipe();
+
+
             }
             catch (Exception e)
             {
@@ -190,18 +199,21 @@ namespace ShopMate._2._0.Presentation.ViewModels
             try
             {
                 var selectedRecipe = await _recipeService.GetRecipeId(SelectedRecipe.Id);
-                selectedRecipe.Title = NewRecipeTitle;
-                selectedRecipe.Favorite = SelectedRecipe.Favorite;
-                selectedRecipe.Description = SelectedRecipe.Description;
+                if (CurrentBottomSheet is EditBottomSheet || CurrentBottomSheet is AddBottomSheet)
+                {
+                    selectedRecipe.Title = NewRecipeTitle;
+                    selectedRecipe.Favorite = SelectedRecipe.Favorite;
+                }
+
+                selectedRecipe.Description = NewRecipeDescription;
+
 
                 await _recipeService.UpdateRecipe(selectedRecipe);
                 var updatedRecipe = await _recipeService.GetRecipeId(selectedRecipe.Id);
 
                 SelectedRecipe.Title = updatedRecipe.Title;
                 SelectedRecipe.Favorite = updatedRecipe.Favorite;
-                NewRecipeTitle = string.Empty;
-                SelectedRecipe = null!;
-              
+                SelectedRecipe.Description = updatedRecipe.Description;
                 await OnCloseBottomSheet();
             }
             catch (Exception e)
@@ -237,6 +249,6 @@ namespace ShopMate._2._0.Presentation.ViewModels
             ErrorOccurred?.Invoke(message);
         }
 
-      
+
     }
 }

@@ -7,17 +7,18 @@ using The49.Maui.BottomSheet;
 
 namespace ShopMate._2._0.Presentation.Views.RecipeView;
 
-public partial class AddAndUpdateBottomSheet : BottomSheet
+public partial class AddBottomSheet : BottomSheet
 {
-    public AddAndUpdateBottomSheet(RecipeViewModel recipeView)
+    private readonly RecipeViewModel recipeView;
+
+    public AddBottomSheet(RecipeViewModel recipeView)
     {
         InitializeComponent();
         BindingContext = recipeView;
        
         titleEntry.Focused += (s, e) => titleFrame.BorderColor = Color.FromArgb("#2e80ec");
         Dismissed += CustomBottomSheet_Dismissed;
-       
-      
+        this.recipeView = recipeView;
     }
 
     //private void CustomBottomSheet_Showing(object? sender, EventArgs e)
@@ -43,7 +44,7 @@ public partial class AddAndUpdateBottomSheet : BottomSheet
     public async Task HideKeyboard()
     {
         await titleEntry.HideKeyboardAsync(default);
-       
+        
     }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.AddAndUpdateBottomSheet"
+                     x:Class="ShopMate._2._0.Presentation.Views.RecipeView.EditBottomSheet"
                    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
                    BackgroundColor="White"
                    CornerRadius="10"
@@ -10,13 +10,13 @@
                    HasHandle="False">
 
     <the49:BottomSheet.Detents>
-        
+
         <the49:HeightDetent Height="200"/>
     </the49:BottomSheet.Detents>
-   
+
     <VerticalStackLayout Padding="20" Spacing="10" >
-      
-        <Grid Margin="0,0,5,10">
+
+        <Grid Margin="5,0,5,8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -39,7 +39,7 @@
 
         <Frame x:Name="titleFrame"  BackgroundColor="White" CornerRadius="13" Padding="10" HasShadow="False">
             <Entry 
-                x:Name="titleEntry"
+               x:Name="editEntry"
                 Text="{Binding NewRecipeTitle}"
                 
                 Placeholder="Title"

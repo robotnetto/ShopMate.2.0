@@ -116,8 +116,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Presentation\Views\RecipeView\AddAndUpdateBottomSheet.xaml.cs">
-	    <DependentUpon>AddAndUpdateBottomSheet.xaml</DependentUpon>
+	  <Compile Update="Presentation\Views\RecipeView\AddBottomSheet.xaml.cs">
+	    <DependentUpon>AddBottomSheet.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -125,10 +125,13 @@
 	  <MauiXaml Update="Presentation\Views\CartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\RecipeView\AddAndUpdateBottomSheet.xaml">
+	  <MauiXaml Update="Presentation\Views\RecipeView\AddBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\LocationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Presentation\Views\RecipeView\EditBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\OptionsBottomSheet.xaml">
