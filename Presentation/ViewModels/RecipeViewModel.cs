@@ -9,7 +9,6 @@ using ShopMate._2._0.Presentation.Views.RecipeView;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using The49.Maui.BottomSheet;
-using Xamarin.Essentials;
 
 
 namespace ShopMate._2._0.Presentation.ViewModels
@@ -30,6 +29,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 }
             }
         }
+        private readonly SemaphoreSlim semaphoreSlim = new(1, 1);
 
         [ObservableProperty]
         private RecipeDetailsViewModel _selectedRecipe;
@@ -95,17 +95,18 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         private async Task OnCloseBottomSheet()
         {
+
             if (CurrentBottomSheet is AddBottomSheet addBottomSheet)
             {
                 await addBottomSheet.HideKeyboard();
+                await addBottomSheet.DismissAsync(true);
             }
             else if (CurrentBottomSheet is EditBottomSheet editBottomSheet)
             {
                 await editBottomSheet.HideKeyboard();
+                await editBottomSheet.DismissAsync(true);
             }
-
-            
-
+           await CurrentBottomSheet.DismissAsync(true);
         }
 
         private async Task OnUpdateBottomSheet()
@@ -114,7 +115,6 @@ namespace ShopMate._2._0.Presentation.ViewModels
             var bottomSheet = new EditBottomSheet(this);
             await bottomSheet.ShowAsync();
             CurrentBottomSheet = bottomSheet;
-
 
         }
         private async Task OnNavigate(RecipeDetailsViewModel recipeDetailsViewModel)
@@ -127,13 +127,17 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         private async Task OnOptionsBottomSheet(RecipeDetailsViewModel recipeDetailsViewModel)
         {
+            if (!await semaphoreSlim.WaitAsync(0))
+            {
+                return;
+            }
             try
             {
                 SelectedRecipe = recipeDetailsViewModel;
                 var bottomSheet = new OptionsBottomSheet(this);
                 await bottomSheet.ShowAsync();
                 CurrentBottomSheet = bottomSheet;
-                _bottomSheetTitle = BottomSheetMode.Edit.ToString();
+                BottomSheetTitle = BottomSheetMode.Edit.ToString();
                 NewRecipeTitle = SelectedRecipe.Title!;
                 //await Shell.Current.GoToAsync(nameof(bottomSheet));
             }
@@ -141,9 +145,11 @@ namespace ShopMate._2._0.Presentation.ViewModels
             {
                 OnErrorOccurred($"Navigation to CustomBottomSheet failed: {ex.Message}");
             }
+            finally
+            {
+                semaphoreSlim.Release();
+            }
         }
-
-
 
 
         //private async Task OnAddRecipeCommand()
@@ -153,11 +159,27 @@ namespace ShopMate._2._0.Presentation.ViewModels
         //}
         private async Task OnAddBotomSheet()
         {
-            NewRecipeTitle = string.Empty;
-            _bottomSheetTitle = BottomSheetMode.Add.ToString();
-            var bottomSheet = new AddBottomSheet(this);
-            await bottomSheet.ShowAsync();
-            CurrentBottomSheet = bottomSheet;
+            if (!await semaphoreSlim.WaitAsync(0))
+            {
+                return;
+            }
+            try
+            {
+                NewRecipeTitle = string.Empty;
+                BottomSheetTitle = BottomSheetMode.Add.ToString();
+                var bottomSheet = new AddBottomSheet(this);
+                await bottomSheet.ShowAsync();
+                CurrentBottomSheet = bottomSheet;
+            }
+            catch (Exception ex)
+            {
+                OnErrorOccurred($"Navigation to CustomBottomSheet failed: {ex.Message}");
+
+            }
+            finally
+            {
+                semaphoreSlim.Release();
+            }
 
         }
 
@@ -172,8 +194,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 }
                 else
 
-                    await OnUpdateRecipe();
-
+                await OnUpdateRecipe();
 
             }
             catch (Exception e)

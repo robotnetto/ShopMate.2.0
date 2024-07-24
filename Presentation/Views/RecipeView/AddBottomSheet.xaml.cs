@@ -16,7 +16,7 @@ public partial class AddBottomSheet : BottomSheet
         InitializeComponent();
         BindingContext = recipeView;
        
-        titleEntry.Focused += (s, e) => titleFrame.BorderColor = Color.FromArgb("#2e80ec");
+         titleEntry.Focused += (s, e) => titleFrame.BorderColor = Color.FromArgb("#2e80ec");
         Dismissed += CustomBottomSheet_Dismissed;
         this.recipeView = recipeView;
     }
@@ -31,7 +31,7 @@ public partial class AddBottomSheet : BottomSheet
 
     private void CustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
     {
-        HideKeyboard();
+          HideKeyboard();
     }
 
     private void KeyboardLoaded()
