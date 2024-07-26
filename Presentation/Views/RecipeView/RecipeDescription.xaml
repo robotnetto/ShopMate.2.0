@@ -3,28 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipeDescription"
              Title="{Binding SelectedRecipe.Title}"
-             Background="#FAFAF9">
+             Background="#FAFAF9"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+          
+                Text="Add"
+                
+                IconImageSource="setting.png" 
+                
+                Command="{Binding AddRecipeCommand}" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout Padding="20">
 
-        <Editor Text="{Binding NewRecipeDescription}"
-                Placeholder="Your recipe here..." 
-                AutoSize="TextChanges" 
-                HeightRequest="200" 
-                Background="White"
-                BackgroundColor="Gray"
-                TextColor="Black" 
-              />
+        <Frame x:Name="titleFrame" BackgroundColor="White" CornerRadius="13" Padding="0,8,0,0" HasShadow="True">
+            <Editor Text="{Binding SelectedRecipe.Description}"
+               Placeholder="Your recipe here..." 
+               AutoSize="TextChanges" 
+               FontSize="15"
+               Margin="10,0,10,0"
+               Background="White"
+               BackgroundColor="Gray"
+               TextColor="Black"
+               VerticalOptions="StartAndExpand"
+               TextChanged="Editor_TextChanged"
+               MinimumHeightRequest="100" />
+            <!-- Adjust this value based on the desired number of lines -->
+        </Frame>
 
-        <Button 
-     Text="SAVE"
-     Command="{Binding SaveRecipeCommand}"
-     BackgroundColor="#2e80ec"
-     TextColor="White"
-     CornerRadius="13"
-     FontAttributes="Bold"
-     VerticalOptions="EndAndExpand"
-     HorizontalOptions="FillAndExpand" />
+
+     
     </StackLayout>
  
 </ContentPage>

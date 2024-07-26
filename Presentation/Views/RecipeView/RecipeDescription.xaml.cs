@@ -4,10 +4,19 @@ namespace ShopMate._2._0.Presentation.Views.RecipeView;
 
 public partial class RecipeDescription : ContentPage
 {
-	public RecipeDescription(RecipeViewModel recipeViewModel)
+    private readonly RecipeViewModel recipeViewModel;
+
+    public RecipeDescription(RecipeViewModel recipeViewModel)
 	{
 		InitializeComponent();
 		BindingContext = recipeViewModel;
-
-	}
+        this.recipeViewModel = recipeViewModel;
+    }
+    private void Editor_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (recipeViewModel != null && recipeViewModel.DebounceRecipeCommand.CanExecute(null))
+        {
+            recipeViewModel.DebounceRecipeCommand.Execute(null);
+        }
+    }
 }

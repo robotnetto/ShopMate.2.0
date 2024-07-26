@@ -4,11 +4,16 @@
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipePage"
              xmlns:model="clr-namespace:ShopMate._2._0.Domain.Entities"
              xmlns:viewmodel="clr-namespace:ShopMate._2._0.Presentation.ViewModels"
+             xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
              x:DataType="viewmodel:RecipeViewModel"
              Title="My Recipes"
               Background="#FAFAF9" 
              >
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             
@@ -18,44 +23,58 @@
                   
                   Command="{Binding AddRecipeCommand}" />
     </ContentPage.ToolbarItems>
+    <Grid>
+        <CollectionView ItemsSource="{Binding Recipes}">
 
-    <CollectionView ItemsSource="{Binding Recipes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Recipe" >
+                    <VerticalStackLayout>
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Recipe" >
-                <VerticalStackLayout>
-                  
-                    <Frame Margin="25,10,25,7" Padding="15,30,15,30" Background="White" BorderColor="White" HasShadow="True"  >
-                        <Frame.GestureRecognizers>
+                        <Frame Margin="25,10,25,7" Padding="15,30,15,30" Background="White" BorderColor="White" HasShadow="True"  >
+                            <Frame.GestureRecognizers>
 
-                            <TapGestureRecognizer 
+                                <TapGestureRecognizer 
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectedCommand}" 
                                  CommandParameter="{Binding .}" 
                                  NumberOfTapsRequired="1" />
-                            
-                        </Frame.GestureRecognizers>
-                        <!--<Frame.Shadow>
+
+                            </Frame.GestureRecognizers>
+                            <!--<Frame.Shadow>
                             <Shadow Brush="DarkGray" Opacity="0.3" Offset="15,15" Radius="15" />
                         </Frame.Shadow>-->
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width=".02*" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width=".02*" />
 
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="{Binding ImageStream}" Aspect="AspectFill" />
-                            <Label Grid.Column="1" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
-                            <!--<Button Grid.Column="2" ImageSource="menu_three_dots.png" Command="{Binding OptionsCommand}, Source={x:Reference RecipePage}}" CommandParameter="{Binding SelectedRecipe}" />-->
-                            <ImageButton Grid.Column="2" HeightRequest="24" WidthRequest="24" Margin="0,0,14,0" Source="options_v2.png"
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding ImageStream}" Aspect="AspectFill" />
+                                <Label Grid.Column="1" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+                                <!--<Button Grid.Column="2" ImageSource="menu_three_dots.png" Command="{Binding OptionsCommand}, Source={x:Reference RecipePage}}" CommandParameter="{Binding SelectedRecipe}" />-->
+                                <ImageButton Grid.Column="2" HeightRequest="30" WidthRequest="30" Margin="0,0,14,0" Source="options_v3.png"
                                          Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
                                          CommandParameter="{Binding .}" />
-                        </Grid>
-                    </Frame>
-                </VerticalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-
+                            </Grid>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <VerticalStackLayout VerticalOptions="Center">
+            <Image Source="robotai.png" 
+                  Margin="40,0,0,0"
+        HorizontalOptions="Center" 
+        VerticalOptions="Center"
+        HeightRequest="200"
+        WidthRequest="200"
+        IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Label Text="No recipes found" 
+    HorizontalOptions="Center" 
+    VerticalOptions="Center"
+    IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </VerticalStackLayout>
+       
+    </Grid>
 </ContentPage>

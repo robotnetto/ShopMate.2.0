@@ -7,11 +7,11 @@ using The49.Maui.BottomSheet;
 
 namespace ShopMate._2._0.Presentation.Views.RecipeView;
 
-public partial class AddBottomSheet : BottomSheet
+public partial class AddEditBottomSheet : BottomSheet
 {
     private readonly RecipeViewModel recipeView;
 
-    public AddBottomSheet(RecipeViewModel recipeView)
+    public AddEditBottomSheet(RecipeViewModel recipeView)
     {
         InitializeComponent();
         BindingContext = recipeView;

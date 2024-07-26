@@ -9,6 +9,8 @@ namespace ShopMate._2._0.Presentation.Enum
     public enum BottomSheetMode
     {
         Add,
-        Edit
+        Edit,
+        EditDescription,
+        Remove
     }
 }

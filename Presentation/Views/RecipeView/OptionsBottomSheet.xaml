@@ -39,17 +39,18 @@
         </Grid>
         <HorizontalStackLayout Spacing="3" VerticalOptions="Start">
             <Image Source="edit_filled.png" HeightRequest="25" WidthRequest="25"/>
-            <Button Text="Edit Title" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding UpdateRecipeCommand}"/>
+            <Button Text="Edit Title" BackgroundColor="Transparent"  Padding="14,10,200,10" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding UpdateRecipeCommand}"/>
         </HorizontalStackLayout>
         
         <HorizontalStackLayout Spacing="3">
             <Image Source="share_filled.png" HeightRequest="25" WidthRequest="25"/>
-            <Button Text="Share"  BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold"/>
+            <Button Text="Share" Padding="14,10,200,10" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold"/>
         </HorizontalStackLayout>
         
         <HorizontalStackLayout Spacing="3">
             <Image Source="delete.png" HeightRequest="25" WidthRequest="25" />
             <Button Text="Delete" 
+                     Padding="14,10,200,10"
                     BackgroundColor="Transparent" 
                     FontSize="14" TextColor="Red" 
                     FontAttributes="Bold"
