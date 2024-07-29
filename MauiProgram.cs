@@ -5,6 +5,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using The49.Maui.BottomSheet;
 
 namespace ShopMate._2._0
@@ -17,6 +18,7 @@ namespace ShopMate._2._0
             builder
                 .UseMauiApp<App>()
                 .UseBottomSheet()
+                .UseSkiaSharp()
                 .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {

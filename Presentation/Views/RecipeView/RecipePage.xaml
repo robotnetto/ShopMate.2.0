@@ -5,76 +5,75 @@
              xmlns:model="clr-namespace:ShopMate._2._0.Domain.Entities"
              xmlns:viewmodel="clr-namespace:ShopMate._2._0.Presentation.ViewModels"
              xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="viewmodel:RecipeViewModel"
              Title="My Recipes"
-              Background="#FAFAF9" 
-             >
+             Background="#FAFAF9">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <local:NullToBoolConverter x:Key="NullToBoolConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            
-                  Text="Add"
-                  
-                  IconImageSource="add_filled.png" 
-                  
-                  Command="{Binding AddRecipeCommand}" />
+        <ToolbarItem Text="Add"
+                     IconImageSource="add_filled.png"
+                     Command="{Binding AddRecipeCommand}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <CollectionView ItemsSource="{Binding Recipes}">
-
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Recipe" >
+                <DataTemplate x:DataType="model:Recipe">
                     <VerticalStackLayout>
-
-                        <Frame Margin="25,10,25,7" Padding="15,30,15,30" Background="White" BorderColor="White" HasShadow="True"  >
+                        <Frame Margin="25,15,25,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True">
                             <Frame.GestureRecognizers>
-
                                 <TapGestureRecognizer 
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectedCommand}" 
-                                 CommandParameter="{Binding .}" 
-                                 NumberOfTapsRequired="1" />
-
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectedCommand}" 
+                                    CommandParameter="{Binding .}" 
+                                    NumberOfTapsRequired="1" />
                             </Frame.GestureRecognizers>
-                            <!--<Frame.Shadow>
-                            <Shadow Brush="DarkGray" Opacity="0.3" Offset="15,15" Radius="15" />
-                        </Frame.Shadow>-->
-
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width=".02*" />
-
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="{Binding ImageStream}" Aspect="AspectFill" />
-                                <Label Grid.Column="1" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
-                                <!--<Button Grid.Column="2" ImageSource="menu_three_dots.png" Command="{Binding OptionsCommand}, Source={x:Reference RecipePage}}" CommandParameter="{Binding SelectedRecipe}" />-->
-                                <ImageButton Grid.Column="2" HeightRequest="30" WidthRequest="30" Margin="0,0,14,0" Source="options_v3.png"
-                                         Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
-                                         CommandParameter="{Binding .}" />
+
+                                <Border Grid.Column="0" HeightRequest="80" WidthRequest="80" StrokeShape="RoundRectangle 7,17,7,17" IsVisible="{Binding ImageStream, Converter={StaticResource NullToBoolConverter}}">
+                                    <Border.Shadow>
+                                        <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
+                                    </Border.Shadow>
+                                    <Image Source="{Binding ImageStream}" Aspect="AspectFill" HeightRequest="80" WidthRequest="80" />
+                                </Border>
+
+                                <Label Grid.Column="1" Padding="20,0,0,0" VerticalOptions="Center" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+
+                                <ImageButton Grid.Column="2" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Margin="0,27,19,27" Source="options_v3.png"
+                                             Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
+                                             CommandParameter="{Binding .}" />
                             </Grid>
                         </Frame>
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <VerticalStackLayout VerticalOptions="Center">
-            <Image Source="robotai.png" 
-                  Margin="40,0,0,0"
-        HorizontalOptions="Center" 
-        VerticalOptions="Center"
-        HeightRequest="200"
-        WidthRequest="200"
-        IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            <Label Text="No recipes found" 
-    HorizontalOptions="Center" 
-    VerticalOptions="Center"
-    IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <VerticalStackLayout VerticalOptions="Center" Margin="0,0,0,200">
+            <skia:SKLottieView Source="animation_cooking.json" 
+                               RepeatCount="-1"
+                               RepeatMode="Restart"
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center"
+                               HeightRequest="250"
+                               WidthRequest="250"
+                               IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Label Text="Let create your favorite recipe." 
+                   FontSize="16"
+                   TextColor="Gray"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
         </VerticalStackLayout>
-       
     </Grid>
 </ContentPage>

@@ -10,6 +10,7 @@ namespace ShopMate._2._0.Presentation.Enum
     {
         Add,
         Edit,
+        Options,
         EditDescription,
         Remove
     }

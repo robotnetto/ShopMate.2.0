@@ -6,6 +6,7 @@ using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
 using ShopMate._2._0.Presentation.Enum;
 using ShopMate._2._0.Presentation.Views.RecipeView;
+using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using The49.Maui.BottomSheet;
@@ -43,6 +44,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
         public ICommand CloseCommand { get; }
         public ICommand CardSelectedCommand { get; }
         public ICommand DebounceRecipeCommand { get; }
+        public ICommand LoadImageCommand { get; }
 
         private readonly RecipeService _recipeService;
         public RecipeViewModel(RecipeService recipeService)
@@ -58,6 +60,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
             SaveRecipeCommand = new AsyncRelayCommand(OnAddAndEditRecipe);
             CardSelectedCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(OnNavigate!);
             DebounceRecipeCommand = new DebounceCommand(SaveRecipeCommand, TimeSpan.FromSeconds(1));
+            LoadImageCommand = new AsyncRelayCommand(ImageUpload);
 
             _ = InitializeDataAsync();
 
@@ -93,7 +96,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                     await bottomSheet!.HideKeyboard();
                     await bottomSheet.DismissAsync(true);
                 }
-                else if (CurrentBottomSheetMode == BottomSheetMode.Remove)
+                else if (CurrentBottomSheetMode == BottomSheetMode.Options)
                 {
                     var bottomSheet = CurrentBottomSheet as OptionsBottomSheet;
                     await bottomSheet!.DismissAsync(true);
@@ -127,6 +130,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 var bottomSheet = new OptionsBottomSheet(this);
                 await bottomSheet.ShowAsync();
                 CurrentBottomSheet = bottomSheet;
+                CurrentBottomSheetMode = BottomSheetMode.Options;
                 BottomSheetTitle = BottomSheetMode.Edit.ToString();
                 NewRecipeTitle = SelectedRecipe.Title!;
                 //await Shell.Current.GoToAsync(nameof(bottomSheet));
@@ -174,8 +178,13 @@ namespace ShopMate._2._0.Presentation.ViewModels
         }
         private async Task OnUpdateBottomSheet()
         {
+            if (!await semaphoreSlim.WaitAsync(0))
+            {
+                return;
+            }
             await CurrentBottomSheet.DismissAsync(true);
             await ShowBottonSheet(BottomSheetMode.Edit);
+            semaphoreSlim.Release();
         }
 
         private async Task OnAddAndEditRecipe()
@@ -230,15 +239,16 @@ namespace ShopMate._2._0.Presentation.ViewModels
                     selectedRecipe.Description = SelectedRecipe.Description;
                 }
                 selectedRecipe.Favorite = SelectedRecipe.Favorite;
+                selectedRecipe.ImageStream = SelectedRecipe.ImageStream;
                
-
-
                 await _recipeService.UpdateRecipe(selectedRecipe);
+
                 var updatedRecipe = await _recipeService.GetRecipeId(selectedRecipe.Id);
 
                 SelectedRecipe.Title = updatedRecipe.Title;
                 SelectedRecipe.Favorite = updatedRecipe.Favorite;
                 SelectedRecipe.Description = updatedRecipe.Description;
+                SelectedRecipe.ImageStream = updatedRecipe.ImageStream;
                 semaphoreSlim.Release();
                 await OnCloseBottomSheet();
             }
@@ -258,6 +268,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
             }
             try
             {
+                await CurrentBottomSheet.DismissAsync(true);
                 CurrentBottomSheetMode = BottomSheetMode.Remove;
                 var selectedRecipe = await _recipeService.GetRecipeId(SelectedRecipe.Id);
                 await _recipeService.DeleteRecipe(selectedRecipe);
@@ -267,7 +278,6 @@ namespace ShopMate._2._0.Presentation.ViewModels
                     Recipes.Remove(recipeVmToRemove!);
                 }
                 semaphoreSlim.Release();
-                await CurrentBottomSheet.DismissAsync(true);
             }
             catch (Exception e)
             {
@@ -285,6 +295,65 @@ namespace ShopMate._2._0.Presentation.ViewModels
             ErrorOccurred?.Invoke(message);
         }
 
+        private async Task ImageUpload()
+        {
+            var image = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "Select a photo" });
+            if (image != null)
+            {
+                try
+                {
+                    var stream = await image.OpenReadAsync();
+                    byte[] result;
+                    using (var streamReader = new MemoryStream())
+                    {
+                        stream.CopyTo(streamReader);
+                        result = streamReader.ToArray();
+                    }
+                    // Resize the image using SkiaSharp
+                    byte[] resizedImage = ResizeImage(result, 530, 310); // Resize to 800x800
+
+                    var imagePath = Convert.ToBase64String(resizedImage);
+                    imagePath = string.Format("data:image/png;base64,{0}", imagePath);
+
+                    SelectedRecipe.ImageStream = imagePath;
+
+                   await OnUpdateRecipe();
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                }
+            }
+        }
+        private byte[] ResizeImage(byte[] imageData, int width, int height)
+        {
+            using (var inputStream = new MemoryStream(imageData))
+            {
+                using (var original = SKBitmap.Decode(inputStream))
+                {
+                    float aspectRatio = Math.Min((float)width / original.Width, (float)height / original.Height);
+
+                    int newWidth = (int)(original.Width * aspectRatio);
+                    int newHeight = (int)(original.Height * aspectRatio);
+
+                    var info = new SKImageInfo(newWidth, newHeight);
+                    using (var resized = original.Resize(info, SKFilterQuality.Medium))
+                    {
+                        if (resized == null)
+                            return imageData;
+
+                        using (var image = SKImage.FromBitmap(resized))
+                        {
+                            using (var outputStream = new MemoryStream())
+                            {
+                                image.Encode(SKEncodedImageFormat.Png, 75).SaveTo(outputStream);
+                                return outputStream.ToArray();
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
     }
 }

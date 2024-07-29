@@ -39,7 +39,7 @@
         </Grid>
         <HorizontalStackLayout Spacing="3" VerticalOptions="Start">
             <Image Source="edit_filled.png" HeightRequest="25" WidthRequest="25"/>
-            <Button Text="Edit Title" BackgroundColor="Transparent"  Padding="14,10,200,10" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding UpdateRecipeCommand}"/>
+            <Button Text="Rename" BackgroundColor="Transparent"  Padding="14,10,200,10" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding UpdateRecipeCommand}"/>
         </HorizontalStackLayout>
         
         <HorizontalStackLayout Spacing="3">

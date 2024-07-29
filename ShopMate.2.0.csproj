@@ -59,7 +59,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\Icons\add_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_filled.png" />
+	  <None Remove="Resources\AppIcon\Icons\add_photo.png" />
 	  <None Remove="Resources\AppIcon\Icons\Close_filled.png" />
+	  <None Remove="Resources\AppIcon\Icons\cookbook_animate.png" />
 	  <None Remove="Resources\AppIcon\Icons\delete.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit_filled.png" />
@@ -75,12 +77,16 @@
 	  <None Remove="Resources\AppIcon\Icons\share.png" />
 	  <None Remove="Resources\AppIcon\Icons\share_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
+	  <None Remove="Resources\Raw\Animation_cooking.json" />
+	  <None Remove="Resources\Raw\cooking_animate.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\AppIcon\Icons\add_dark.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\add_filled.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\add_photo.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\close_filled.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\cookbook_animate.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\delete.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\edit_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\menu_dark.png" />
@@ -108,6 +114,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="SkiaSharp.Extended" Version="2.0.0" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 		<PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
 		<PackageReference Include="The49.Maui.BottomSheet" Version="8.0.3" />
 		<PackageReference Include="Xamarin.Essentials" Version="1.8.1" />

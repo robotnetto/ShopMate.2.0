@@ -8,7 +8,7 @@
     xmlns:location="clr-namespace:ShopMate._2._0.Presentation.Views"
     
     Title="ShopMate._2._0"
-    BackgroundColor="#FAFAF9"
+    BackgroundColor="White"
     TitleColor="Black"
     
     Shell.TabBarTitleColor="#04c9fb" 
