@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipeDescription"
              Title="{Binding SelectedRecipe.Title}"
-           
+            Shell.TabBarIsVisible="False"
              Background="#FAFAF9"
              >
     <ContentPage.ToolbarItems>
@@ -16,22 +16,10 @@
                 Command="{Binding LoadImageCommand}" />
     </ContentPage.ToolbarItems>
 
-
-    <StackLayout Padding="3,0,3,0">
-        <!--<Frame Margin="0,0,0,10"
-       HasShadow="True"
-       CornerRadius="100"
-       HeightRequest="130"
-       WidthRequest="130"
-       IsClippedToBounds="True"
-       HorizontalOptions="Center"
-       VerticalOptions="Center">
-            <Image Source="{Binding SelectedRecipe.ImageStream}"
+    <ScrollView>
         
-         Aspect="AspectFill"
-         HeightRequest="100"
-         WidthRequest="250"/>
-        </Frame>-->
+    <StackLayout Padding="3,0,3,0">
+       
         <Border Margin="0,0,0,0
                 
                 
@@ -52,6 +40,7 @@
 
 
             <Editor Text="{Binding SelectedRecipe.Description}"
+                    x:Name="descriptionEditor"
                Placeholder="Your recipe here..." 
                AutoSize="TextChanges" 
                FontSize="15"
@@ -68,5 +57,6 @@
 
 
     </StackLayout>
+    </ScrollView>
 
 </ContentPage>

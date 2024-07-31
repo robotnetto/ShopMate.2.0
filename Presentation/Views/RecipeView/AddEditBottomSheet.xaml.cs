@@ -41,9 +41,9 @@ public partial class AddEditBottomSheet : BottomSheet
         titleEntry.ShowSoftInputAsync(CancellationToken.None);
 
     }
-    public async Task HideKeyboard()
+    public async void HideKeyboard()
     {
-        await titleEntry.HideKeyboardAsync(default);
+        await titleEntry.HideSoftInputAsync(default);
         
     }
 

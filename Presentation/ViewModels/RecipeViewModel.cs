@@ -93,7 +93,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
                 {
                     var bottomSheet = CurrentBottomSheet as AddEditBottomSheet;
-                    await bottomSheet!.HideKeyboard();
+                     bottomSheet!.HideKeyboard();
                     await bottomSheet.DismissAsync(true);
                 }
                 else if (CurrentBottomSheetMode == BottomSheetMode.Options)
@@ -178,13 +178,8 @@ namespace ShopMate._2._0.Presentation.ViewModels
         }
         private async Task OnUpdateBottomSheet()
         {
-            if (!await semaphoreSlim.WaitAsync(0))
-            {
-                return;
-            }
             await CurrentBottomSheet.DismissAsync(true);
             await ShowBottonSheet(BottomSheetMode.Edit);
-            semaphoreSlim.Release();
         }
 
         private async Task OnAddAndEditRecipe()
@@ -240,7 +235,7 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 }
                 selectedRecipe.Favorite = SelectedRecipe.Favorite;
                 selectedRecipe.ImageStream = SelectedRecipe.ImageStream;
-               
+
                 await _recipeService.UpdateRecipe(selectedRecipe);
 
                 var updatedRecipe = await _recipeService.GetRecipeId(selectedRecipe.Id);
@@ -249,14 +244,15 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 SelectedRecipe.Favorite = updatedRecipe.Favorite;
                 SelectedRecipe.Description = updatedRecipe.Description;
                 SelectedRecipe.ImageStream = updatedRecipe.ImageStream;
-                semaphoreSlim.Release();
-                await OnCloseBottomSheet();
             }
             catch (Exception e)
             {
+                semaphoreSlim.Release();
                 OnErrorOccurred(e.Message);
                 await OnCloseBottomSheet();
             }
+            finally { semaphoreSlim?.Release(); }
+            await OnCloseBottomSheet();
 
         }
 
@@ -297,6 +293,10 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
         private async Task ImageUpload()
         {
+            if (!await semaphoreSlim.WaitAsync(0))
+            {
+                return;
+            }
             var image = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "Select a photo" });
             if (image != null)
             {
@@ -317,12 +317,13 @@ namespace ShopMate._2._0.Presentation.ViewModels
 
                     SelectedRecipe.ImageStream = imagePath;
 
-                   await OnUpdateRecipe();
                 }
                 catch (Exception ex)
                 {
                     // Handle exception
                 }
+                finally { semaphoreSlim.Release(); }
+                await OnUpdateRecipe();
             }
         }
         private byte[] ResizeImage(byte[] imageData, int width, int height)
