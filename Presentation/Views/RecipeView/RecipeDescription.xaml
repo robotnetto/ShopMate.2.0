@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipeDescription"
+             xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+
              Title="{Binding SelectedRecipe.Title}"
-            Shell.TabBarIsVisible="False"
-             Background="#FAFAF9"
+             Background="White"
              >
     <ContentPage.ToolbarItems>
         <ToolbarItem 
@@ -15,48 +17,61 @@
                 
                 Command="{Binding LoadImageCommand}" />
     </ContentPage.ToolbarItems>
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NullToBoolConverter x:Key="NullToBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ScrollView>
-        
-    <StackLayout Padding="3,0,3,0">
-       
-        <Border Margin="0,0,0,0
-                
-                
-                " StrokeShape="RoundRectangle 20,20,20,20"
-               
-                HorizontalOptions="Center">
-            <Border.Shadow>
-                <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
-            </Border.Shadow>
-            <Image Source="{Binding SelectedRecipe.ImageStream}"
-        
-         Aspect="AspectFill"
-         HeightRequest="200"
-         WidthRequest="450"/>
-        </Border>
+        <StackLayout Padding="0,6,0,0">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </StackLayout.GestureRecognizers>
 
-        <Frame x:Name="titleFrame" BackgroundColor="White" CornerRadius="13" Padding="0,8,0,0" HasShadow="True">
+            <Border 
+                    StrokeShape="RoundRectangle 0,0,20,20"
+                    HorizontalOptions="Center">
+                <Border.Shadow>
+                    <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
+                </Border.Shadow>
+                <Image Source="food_pot.png"
+                       Aspect="AspectFill"
+                       HeightRequest="230"
+                       WidthRequest="440">
+                    <Image.Triggers>
+                        <DataTrigger TargetType="Image"
+                     Binding="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}" Value="True">
+                            <Setter Property="Source"  Value="{Binding SelectedRecipe.ImageStream}" />
+                            <Setter Property="Aspect" Value="AspectFill" />
+                            <Setter Property="HeightRequest" Value="230" />
+                            <Setter Property="WidthRequest" Value="440" />
+                        </DataTrigger>
 
+                   
+                    </Image.Triggers>
+                </Image>
+            </Border>
 
-            <Editor Text="{Binding SelectedRecipe.Description}"
-                    x:Name="descriptionEditor"
-               Placeholder="Your recipe here..." 
-               AutoSize="TextChanges" 
-               FontSize="15"
-               Margin="10,0,10,0"
-               Background="White"
-               BackgroundColor="Gray"
-               TextColor="Black"
-               VerticalOptions="StartAndExpand"
-               TextChanged="Editor_TextChanged"
-               MinimumHeightRequest="100" />
-            <!-- Adjust this value based on the desired number of lines -->
-        </Frame>
-
-
-
-    </StackLayout>
+            <Frame x:Name="titleFrame" 
+                   BackgroundColor="White"
+                   Margin="0,-15,0,0"
+                   CornerRadius="20" 
+                   Padding="20,20,20,0" 
+                   HasShadow="True"
+                   BorderColor="Transparent">
+                <Editor Text="{Binding SelectedRecipe.Description}"
+                        x:Name="descriptionEditor"
+                        Placeholder="Your recipe here..." 
+                        AutoSize="TextChanges" 
+                        FontSize="15"
+                        Background="White"
+                        BackgroundColor="Gray"
+                        TextColor="Black"
+                        VerticalOptions="StartAndExpand"
+                        TextChanged="Editor_TextChanged"
+                        MinimumHeightRequest="150" />
+                <!-- Adjust this value based on the desired number of lines -->
+            </Frame>
+        </StackLayout>
     </ScrollView>
-
 </ContentPage>

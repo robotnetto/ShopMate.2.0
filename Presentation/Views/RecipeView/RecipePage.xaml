@@ -8,7 +8,7 @@
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="viewmodel:RecipeViewModel"
              Title="My Recipes"
-             Background="#FAFAF9">
+             Background="White">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -25,7 +25,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Recipe">
                     <VerticalStackLayout>
-                        <Frame Margin="25,15,25,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True">
+                        <Frame Margin="15,15,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer 
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectedCommand}" 
@@ -48,7 +48,7 @@
 
                                 <Label Grid.Column="1" Padding="20,0,0,0" VerticalOptions="Center" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
 
-                                <ImageButton Grid.Column="2" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Margin="0,27,19,27" Source="options_v3.png"
+                                <ImageButton Grid.Column="2" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Margin="0,27,0,27" Source="options_v3.png"
                                              Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
                                              CommandParameter="{Binding .}" />
                             </Grid>

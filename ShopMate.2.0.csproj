@@ -62,9 +62,11 @@
 	  <None Remove="Resources\AppIcon\Icons\add_photo.png" />
 	  <None Remove="Resources\AppIcon\Icons\Close_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\cookbook_animate.png" />
+	  <None Remove="Resources\AppIcon\Icons\default_food.png" />
 	  <None Remove="Resources\AppIcon\Icons\delete.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit_filled.png" />
+	  <None Remove="Resources\AppIcon\Icons\food_pot.png" />
 	  <None Remove="Resources\AppIcon\Icons\location.png" />
 	  <None Remove="Resources\AppIcon\Icons\menu_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\options.png" />
@@ -87,8 +89,10 @@
 	  <MauiImage Include="Resources\AppIcon\Icons\add_photo.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\close_filled.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\cookbook_animate.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\default_food.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\delete.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\edit_filled.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\food_pot.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\menu_dark.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\options.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\options_v3.png" />

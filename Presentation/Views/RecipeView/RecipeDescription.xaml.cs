@@ -18,7 +18,12 @@ public partial class RecipeDescription : ContentPage
         }
         BindingContext = recipeViewModel;
         this.recipeViewModel = recipeViewModel;
-        descriptionEditor.Unfocused +=  (x, y) => OnDisappearing();
+        Shell.SetTabBarIsVisible(this, false);
+        //descriptionEditor.Focused += (x, y) => SetTabbarVisible(false);
+        //descriptionEditor.Unfocused +=  (x, y) => OnDisappearing();
+        //descriptionEditor.Focused += DescriptionEditor_Focused;
+        descriptionEditor.Unfocused += DescriptionEditor_Unfocused;
+        
     }
     private void Editor_TextChanged(object sender, TextChangedEventArgs e)
     {
@@ -27,10 +32,42 @@ public partial class RecipeDescription : ContentPage
             recipeViewModel.DebounceRecipeCommand.Execute(null);
         }
     }
-    protected override  void OnDisappearing()
+    //protected override  void OnDisappearing()
+    //{
+    //    base.OnDisappearing();
+    //    if (descriptionEditor != null && descriptionEditor.Handler != null)
+    //    {
+    //        descriptionEditor.HideSoftInputAsync(default);
+    //        descriptionEditor.Unfocus();
+    //    }
+    //}
+    private void TapGestureRecognizer_Tapped(object sender, EventArgs a)
     {
-        base.OnDisappearing();
-        descriptionEditor.HideSoftInputAsync(default);
+       SafeUnfocusEditor();
     }
+    private void SafeUnfocusEditor()
+    {
+        if (descriptionEditor != null && descriptionEditor.Handler != null)
+        {
+            descriptionEditor.Unfocus();
+        }
+    }
+    //private void SetTabbarVisible(bool visible)
+    //{
+    //    //Shell.SetTabBarIsVisible(this, visible);
+    //}
+  
+    //private void DescriptionEditor_Focused(object sender, FocusEventArgs e)
+    //{
+    //    SetTabbarVisible(false);
+    //}
 
+    private void DescriptionEditor_Unfocused(object sender, FocusEventArgs e)
+    {
+        if (descriptionEditor != null && descriptionEditor.Handler != null)
+        {
+            descriptionEditor.HideSoftInputAsync(default);
+            descriptionEditor.Unfocus();
+        }
+    }
 }

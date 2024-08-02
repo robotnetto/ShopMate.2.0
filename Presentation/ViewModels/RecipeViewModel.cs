@@ -298,6 +298,11 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 return;
             }
             var image = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "Select a photo" });
+            if (image == null)
+            {
+                semaphoreSlim.Release();
+                return;
+            }
             if (image != null)
             {
                 try
@@ -322,7 +327,6 @@ namespace ShopMate._2._0.Presentation.ViewModels
                 {
                     // Handle exception
                 }
-                finally { semaphoreSlim.Release(); }
                 await OnUpdateRecipe();
             }
         }
