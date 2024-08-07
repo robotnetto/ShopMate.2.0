@@ -34,7 +34,7 @@
                 <Border.Shadow>
                     <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
                 </Border.Shadow>
-                <Image Source="food_pot.png"
+                <Image Source="cooking_stew.png"
                        Aspect="AspectFill"
                        HeightRequest="230"
                        WidthRequest="440">
