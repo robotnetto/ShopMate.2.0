@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Core.Platform;
 using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 using ShopMate._2._0.Presentation.ViewModels;
+using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
 
 namespace ShopMate._2._0.Presentation.Views.RecipeView;
 

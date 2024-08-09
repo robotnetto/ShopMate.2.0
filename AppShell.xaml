@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:recipe="clr-namespace:ShopMate._2._0.Presentation.Views.RecipeView"
-    xmlns:cart="clr-namespace:ShopMate._2._0.Presentation.Views"
+    xmlns:cart="clr-namespace:ShopMate._2._0.Presentation.Views.CartView"
     xmlns:location="clr-namespace:ShopMate._2._0.Presentation.Views"
     
     Title="ShopMate._2._0"

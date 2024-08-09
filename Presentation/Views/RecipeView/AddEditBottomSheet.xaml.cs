@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Core.Platform;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using ShopMate._2._0.Presentation.ViewModels;
+using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
 using The49.Maui.BottomSheet;
 
 

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipePage"
              xmlns:model="clr-namespace:ShopMate._2._0.Domain.Entities"
-             xmlns:viewmodel="clr-namespace:ShopMate._2._0.Presentation.ViewModels"
+             xmlns:viewmodel="clr-namespace:ShopMate._2._0.Presentation.ViewModels.RecipeVm"
              xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:DataType="viewmodel:RecipeViewModel"

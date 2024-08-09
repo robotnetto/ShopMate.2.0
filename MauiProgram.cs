@@ -29,7 +29,7 @@ namespace ShopMate._2._0
             builder.Services.AddDbContext<LocalDbService>();
             builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
             builder.Services.AddScoped<IShopCartRepository, ShopCartRepository>();
-            builder.Services.AddScoped<ShopCartService>();
+            //builder.Services.AddScoped<ShopCartService>();
 
 
             var dbContext = new LocalDbService();

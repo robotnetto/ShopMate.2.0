@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopMate._2._0.Presentation.ViewModels
+namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 {
     public partial class RecipeDetailsViewModel : ObservableObject
     {

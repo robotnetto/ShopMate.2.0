@@ -131,7 +131,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Presentation\Views\CartPage.xaml">
+	  <MauiXaml Update="Presentation\Views\CartView\CartPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml">

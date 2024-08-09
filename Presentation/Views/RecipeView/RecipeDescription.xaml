@@ -34,7 +34,7 @@
                 <Border.Shadow>
                     <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
                 </Border.Shadow>
-                <Image Source="food_pot.png"
+                <!--<Image Source="food_pot.png"
                        Aspect="AspectFill"
                        HeightRequest="230"
                        WidthRequest="440">
@@ -49,7 +49,15 @@
 
                    
                     </Image.Triggers>
-                </Image>
+                </Image>-->
+                <skia:SKLottieView Source="animation_cooking.json" 
+                     RepeatCount="-1"
+                     RepeatMode="Restart"
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Center"
+                     HeightRequest="250"
+                     WidthRequest="250"
+                     IsVisible="{Binding SeletedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}" />
             </Border>
 
             <Frame x:Name="titleFrame" 

@@ -12,7 +12,7 @@ using System.Windows.Input;
 using The49.Maui.BottomSheet;
 
 
-namespace ShopMate._2._0.Presentation.ViewModels
+namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 {
     public partial class RecipeViewModel : ObservableObject
     {
