@@ -4,18 +4,13 @@
              x:Class="ShopMate._2._0.Presentation.Views.RecipeView.RecipeDescription"
              xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-
              Title="{Binding SelectedRecipe.Title}"
-             Background="White"
-             >
+             Background="White">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-          
-                Text="Add"
-                
-                IconImageSource="add_photo.png" 
-                
-                Command="{Binding LoadImageCommand}" />
+            Text="Add"
+            IconImageSource="add_photo.png" 
+            Command="{Binding LoadImageCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -29,35 +24,45 @@
             </StackLayout.GestureRecognizers>
 
             <Border 
-                    StrokeShape="RoundRectangle 0,0,20,20"
-                    HorizontalOptions="Center">
-                <Border.Shadow>
+                StrokeShape="RoundRectangle 0,0,0,0"
+                HorizontalOptions="Center"
+                Background="#f1f1f1">
+                <!--<Border.Shadow>
                     <Shadow Offset="1,1" Brush="Black" Opacity="0.5" />
-                </Border.Shadow>
-                <!--<Image Source="food_pot.png"
-                       Aspect="AspectFill"
-                       HeightRequest="230"
-                       WidthRequest="440">
-                    <Image.Triggers>
-                        <DataTrigger TargetType="Image"
-                     Binding="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}" Value="True">
-                            <Setter Property="Source"  Value="{Binding SelectedRecipe.ImageStream}" />
-                            <Setter Property="Aspect" Value="AspectFill" />
-                            <Setter Property="HeightRequest" Value="230" />
-                            <Setter Property="WidthRequest" Value="440" />
-                        </DataTrigger>
-
-                   
-                    </Image.Triggers>
-                </Image>-->
-                <skia:SKLottieView Source="animation_cooking.json" 
-                     RepeatCount="-1"
-                     RepeatMode="Restart"
-                     HorizontalOptions="Center" 
-                     VerticalOptions="Center"
-                     HeightRequest="250"
-                     WidthRequest="250"
-                     IsVisible="{Binding SeletedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}" />
+                </Border.Shadow>-->
+                <Grid>
+                    <Image Source="{Binding SelectedRecipe.ImageStream}" 
+                    Aspect="AspectFill"
+                    HeightRequest="230"
+                    WidthRequest="440"
+                    IsVisible="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}">
+                    </Image>
+                    <Frame BackgroundColor="Gray"
+                           CornerRadius="22"
+                           Opacity="0.6"
+                           Padding="0"
+                           BorderColor="Transparent"
+                           VerticalOptions="End"
+                          HorizontalOptions="End"
+                         Margin="0,0,10,20"
+                          IsVisible="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}">
+                        <ImageButton Source="edit_image.png" 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                       
+                                   />
+                    </Frame>
+                    <skia:SKLottieView Source="food_animation.json" 
+                                      
+                    RepeatCount="-1"
+                    RepeatMode="Restart"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    HeightRequest="230"
+                    WidthRequest="440"
+                    IsVisible="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}, ConverterParameter='!'}">
+                    </skia:SKLottieView>
+                </Grid>
             </Border>
 
             <Frame x:Name="titleFrame" 
@@ -78,7 +83,6 @@
                         VerticalOptions="StartAndExpand"
                         TextChanged="Editor_TextChanged"
                         MinimumHeightRequest="150" />
-                <!-- Adjust this value based on the desired number of lines -->
             </Frame>
         </StackLayout>
     </ScrollView>

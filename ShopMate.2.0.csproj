@@ -67,6 +67,8 @@
 	  <None Remove="Resources\AppIcon\Icons\delete.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit.png" />
 	  <None Remove="Resources\AppIcon\Icons\edit_filled.png" />
+	  <None Remove="Resources\AppIcon\Icons\edit_image.png" />
+	  <None Remove="Resources\AppIcon\Icons\edit_image_black.png" />
 	  <None Remove="Resources\AppIcon\Icons\food_pot.png" />
 	  <None Remove="Resources\AppIcon\Icons\location.png" />
 	  <None Remove="Resources\AppIcon\Icons\menu_dark.png" />
@@ -82,6 +84,7 @@
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
 	  <None Remove="Resources\Raw\Animation_cooking.json" />
 	  <None Remove="Resources\Raw\cooking_animate.json" />
+	  <None Remove="Resources\Raw\food_animation.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -94,6 +97,8 @@
 	  <MauiImage Include="Resources\AppIcon\Icons\default_food.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\delete.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\edit_filled.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\edit_image.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\edit_image_black.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\food_pot.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\menu_dark.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\options.png" />

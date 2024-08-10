@@ -6,7 +6,13 @@ namespace ShopMate._2._0.Presentation.CostumConvert
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return !string.IsNullOrEmpty(value as string);
+            bool result = !string.IsNullOrEmpty(value as string);
+            if (parameter != null && parameter.ToString() == "!")
+            {
+                result = !result;
+            }
+            System.Diagnostics.Debug.WriteLine($"Convert called with value: {value ?? "null"}, result: {result}");
+            return result;
 
         }
 
