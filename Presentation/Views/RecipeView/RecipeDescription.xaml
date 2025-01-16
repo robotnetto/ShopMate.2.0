@@ -79,10 +79,12 @@
                         FontSize="15"
                         Background="White"
                         BackgroundColor="Gray"
+                        
                         TextColor="Black"
                         VerticalOptions="StartAndExpand"
                         TextChanged="Editor_TextChanged"
-                        MinimumHeightRequest="150" />
+                        MinimumHeightRequest="150" 
+                         />
             </Frame>
         </StackLayout>
     </ScrollView>

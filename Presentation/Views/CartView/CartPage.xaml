@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:ShopMate._2._0.Domain.Entities"
              x:Class="ShopMate._2._0.Presentation.Views.CartView.CartPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:local ="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
              Title="Cart Page"
-            
               Background="White">
 
     <ContentPage.ToolbarItems>
@@ -11,11 +13,62 @@
                      IconImageSource="add_filled.png"
                      Command="{Binding AddCartCommand}" />
     </ContentPage.ToolbarItems>
-    <VerticalStackLayout>
-        <Label 
-            Text="Cart Page"
-            TextColor="White"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <local:NullToBoolConverter x:Key="NullToBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+     
+    <Grid>
+        <CollectionView ItemsSource="{Binding ShopCarts}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:ShopCart">
+                    <VerticalStackLayout>
+                        <Frame Margin="15,15,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectedCommand}" 
+                                    CommandParameter="{Binding .}" 
+                                    NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                              
+
+                                <Label Grid.Column="1" Padding="20,0,0,0" VerticalOptions="Center" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+
+                                <ImageButton Grid.Column="2" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Margin="0,27,0,27" Source="options_v3.png"
+                                             Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
+                                             CommandParameter="{Binding .}" />
+                            </Grid>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <VerticalStackLayout VerticalOptions="Center" Margin="0,0,0,200">
+            <skia:SKLottieView Source="animation_cooking.json" 
+                               RepeatCount="-1"
+                               RepeatMode="Restart"
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center"
+                               HeightRequest="250"
+                               WidthRequest="250"
+                               IsVisible="{Binding ShopCarts.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Label Text="Let create your favorite recipe." 
+                   FontSize="16"
+                   TextColor="Gray"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   IsVisible="{Binding ShopCarts.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

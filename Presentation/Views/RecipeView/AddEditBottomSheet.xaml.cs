@@ -18,7 +18,7 @@ public partial class AddEditBottomSheet : BottomSheet
         BindingContext = recipeView;
        
          titleEntry.Focused += (s, e) => titleFrame.BorderColor = Color.FromArgb("#2e80ec");
-        Dismissed += CustomBottomSheet_Dismissed;
+        Dismissed += RecipeCustomBottomSheet_Dismissed;
         this.recipeView = recipeView;
     }
 
@@ -30,9 +30,9 @@ public partial class AddEditBottomSheet : BottomSheet
     //    }
     //}
 
-    private void CustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
+    private void RecipeCustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
     {
-          HideKeyboard();
+        RecipeHideKeyboard();
     }
 
     private void KeyboardLoaded()
@@ -42,9 +42,9 @@ public partial class AddEditBottomSheet : BottomSheet
         titleEntry.ShowSoftInputAsync(CancellationToken.None);
 
     }
-    public async void HideKeyboard()
+    public async void RecipeHideKeyboard()
     {
-        await titleEntry.HideSoftInputAsync(default);
+        await titleEntry.HideKeyboardAsync(default);
         
     }
 

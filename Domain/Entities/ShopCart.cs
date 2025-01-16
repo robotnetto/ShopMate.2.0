@@ -12,6 +12,6 @@ namespace ShopMate._2._0.Domain.Entities
         [Key]
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
-        public List<Item> Items { get; set; } = new List<Item>();
+        public List<Item>? Items { get; set; } 
     }
 }
