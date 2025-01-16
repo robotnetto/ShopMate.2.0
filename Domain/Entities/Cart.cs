@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace ShopMate._2._0.Domain.Entities
 {
-    public class Item
+    public class Cart
     {
         [Key]
         public Guid Id { get; set; }
-
-        public string ItemName { get; set; } = string.Empty;
-
-        public bool Active { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public List<CartItem> Items { get; set; } = new List<CartItem>();
     }
 }

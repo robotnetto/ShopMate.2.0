@@ -6,8 +6,8 @@ namespace ShopMate._2._0.Infrastructure.Data
     public class LocalDbService : DbContext
     {
         public DbSet<Recipe> Recipes { get; set; }
-        public DbSet<ShopCart> ShopCarts { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Cart> ShopCarts { get; set; }
+        public DbSet<CartItem> Items { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
