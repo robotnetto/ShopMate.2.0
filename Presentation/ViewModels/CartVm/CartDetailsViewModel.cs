@@ -17,8 +17,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         private string title;
 
         [ObservableProperty]
-        private List<Item> items;
-        public CartDetailsViewModel(ShopCart cart)
+        private List<CartItem> items;
+        public CartDetailsViewModel(Cart cart)
         {
             Id = cart.Id;
             Title = cart.Title;

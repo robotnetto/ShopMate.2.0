@@ -5,11 +5,11 @@ namespace ShopMate._2._0.Domain.Interfaces
     public interface IShopCartRepository
     {
 
-        Task CreateAsync(ShopCart shopCart);
-        Task<IEnumerable<ShopCart>> GetAllasync();
-        Task<ShopCart> GetByIdAsync(Guid id);
-        Task UpdateAsync(ShopCart shopCart);
-        Task DeleteAsync(ShopCart shopCart);
+        Task CreateAsync(Cart shopCart);
+        Task<IEnumerable<Cart>> GetAllasync();
+        Task<Cart> GetByIdAsync(Guid id);
+        Task UpdateAsync(Cart shopCart);
+        Task DeleteAsync(Cart shopCart);
 
     }
 }
