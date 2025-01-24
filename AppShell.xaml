@@ -6,30 +6,27 @@
     xmlns:recipe="clr-namespace:ShopMate._2._0.Presentation.Views.RecipeView"
     xmlns:cart="clr-namespace:ShopMate._2._0.Presentation.Views.CartView"
     xmlns:location="clr-namespace:ShopMate._2._0.Presentation.Views"
-    
     Title="ShopMate._2._0"
     BackgroundColor="White"
     TitleColor="Black"
-    
+    Shell.NavBarHasShadow="True"
     Shell.TabBarTitleColor="#04c9fb" 
     Shell.TabBarUnselectedColor="#8a8a8a"
-   
     Shell.TabBarForegroundColor="#04c9fb"
    
     Shell.TabBarBackgroundColor="White" 
     >
- 
-    <TabBar >
-     
-        <ShellContent Title="Recipes"
-                     
-                      Icon="recipe_book.png"
-                      ContentTemplate="{DataTemplate recipe:RecipePage}" />
-        <ShellContent Title="Cart"
-                      Icon="shopping_cart.png"
-                      ContentTemplate="{DataTemplate cart:CartPage}" />
-        <ShellContent Title="Location"
-                      Icon="location.png"
-                      ContentTemplate="{DataTemplate location:LocationPage}" />
-    </TabBar>
+    
+            <TabBar>
+                <ShellContent Title="Recipes"
+                              Icon="recipe_book.png"
+                              ContentTemplate="{DataTemplate recipe:RecipePage}" />
+                <ShellContent Title="Cart"
+                              Icon="shopping_cart.png"
+                              ContentTemplate="{DataTemplate cart:CartPage}" />
+                <ShellContent Title="Location"
+                              Icon="location.png"
+                              ContentTemplate="{DataTemplate location:LocationPage}" />
+            </TabBar>
+       
 </Shell>

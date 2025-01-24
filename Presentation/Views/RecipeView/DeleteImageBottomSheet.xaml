@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.OptionsBottomSheet"
+                   x:Class="ShopMate._2._0.Presentation.Views.RecipeView.DeleteImageBottomSheet"
                    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
                    xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
                    BackgroundColor="White"
                    CornerRadius="10"
                    IsCancelable="True"
                    HasBackdrop="True"
-                   HasHandle="False">
+                   HasHandle="False" >    
 
-    
+
     <the49:BottomSheet.Resources>
         <ResourceDictionary>
             <local:NullToBoolConverter x:Key="NullToBoolConverter"/>
@@ -40,40 +40,15 @@
         </Grid>
 
         <VerticalStackLayout>
-            <HorizontalStackLayout Spacing="3" VerticalOptions="Start">
-                <Image Source="edit_filled.png" HeightRequest="25" WidthRequest="25"/>
-                <Button Text="Rename"
-                        BackgroundColor="Transparent"
-                        Padding="14,10,200,10"
-                        FontSize="14"
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        Command="{Binding UpdateRecipeCommand}"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="3">
-                <Image Source="share_filled.png" HeightRequest="25" WidthRequest="25"/>
-                <Button Text="Share" Padding="14,10,200,10" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding ShareRecipeCommand}"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="3" IsVisible="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}">
-                <Image Source="edit_image_black.png" HeightRequest="25" WidthRequest="25"/>
-                <Button Text="Change image" 
-                        Padding="14,10,200,10" 
-                        BackgroundColor="Transparent" 
-                        FontSize="14" TextColor="Black" 
-                        FontAttributes="Bold"
-                        Command="{Binding LoadImageCommand }"/>
-            </HorizontalStackLayout>
-
+           
             <HorizontalStackLayout Spacing="3">
                 <Image Source="delete.png" HeightRequest="25" WidthRequest="25" />
-                <Button Text="Delete" 
+                <Button Text="Delete Image" 
                          Padding="14,10,200,10"
                         BackgroundColor="Transparent" 
                         FontSize="14" TextColor="Red" 
                         FontAttributes="Bold"
-                        Command="{Binding RemoveRecipeCommand}" />
+                        Command="{Binding DeleteImageCommand}" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>

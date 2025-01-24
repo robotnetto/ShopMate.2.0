@@ -2,6 +2,7 @@
 using ShopMate._2._0.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         private string title;
 
         [ObservableProperty]
-        private List<CartItem> items;
+        public List<Item> items;
         public CartDetailsViewModel(Cart cart)
         {
             Id = cart.Id;

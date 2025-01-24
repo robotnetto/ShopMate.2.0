@@ -8,6 +8,7 @@ using ShopMate._2._0.Presentation.Enum;
 using ShopMate._2._0.Presentation.Views.RecipeView;
 using SkiaSharp;
 using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows.Input;
 using The49.Maui.BottomSheet;
 
@@ -33,6 +34,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
         private string _newRecipeTitle = string.Empty;
         [ObservableProperty]
         private string _newRecipeDescription = string.Empty;
+        FileResult? _imageStream;
 
         private BottomSheetMode CurrentBottomSheetMode { get; set; }
         private BottomSheet CurrentBottomSheet { get; set; }
@@ -42,25 +44,30 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
         public ICommand UpdateRecipeCommand { get; }
         public ICommand OptionsCommand { get; }
         public ICommand CloseCommand { get; }
-        public ICommand CardSelectedCommand { get; }
+        public ICommand CardSelectCommand { get; }
         public ICommand DebounceRecipeCommand { get; }
         public ICommand LoadImageCommand { get; }
-
+        public ICommand DeleteImageOptionCommand { get; }
+        public ICommand DeleteImageCommand { get; }
+        public ICommand ShareRecipeCommand { get; }
         private readonly RecipeService _recipeService;
-        public RecipeViewModel(RecipeService recipeService)
+        private RecipeViewModel(RecipeService recipeService)
         {
 
 
             _recipeService = recipeService ?? throw new ArgumentNullException(nameof(recipeService));
-            AddRecipeCommand = new AsyncRelayCommand(OnAddBottomSheet);
-            RemoveRecipeCommand = new AsyncRelayCommand(OnRemoveRecipe);
-            UpdateRecipeCommand = new AsyncRelayCommand(OnUpdateBottomSheet);
-            OptionsCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(OnOptionsBottomSheet!);
-            CloseCommand = new AsyncRelayCommand(OnCloseBottomSheet);
-            SaveRecipeCommand = new AsyncRelayCommand(OnSaveAndEditRecipe);
-            CardSelectedCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(OnNavigate!);
+            AddRecipeCommand = new AsyncRelayCommand(OnAddCommandAsync);
+            RemoveRecipeCommand = new AsyncRelayCommand(OnRemoveRecipeAsync);
+            UpdateRecipeCommand = new AsyncRelayCommand(OnUpdateCommandAsync);
+            OptionsCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(OnOptionsBottomSheetAsync!);
+            CloseCommand = new AsyncRelayCommand(OnCloseBottomSheetAsync);
+            SaveRecipeCommand = new AsyncRelayCommand(OnSaveAndEditRecipeAsync);
+            CardSelectCommand = new AsyncRelayCommand<RecipeDetailsViewModel>(OnNavigateAsync!);
             DebounceRecipeCommand = new DebounceCommand(SaveRecipeCommand, TimeSpan.FromSeconds(1));
-            LoadImageCommand = new AsyncRelayCommand(ImageUpload);
+            LoadImageCommand = new AsyncRelayCommand(ImageUploadAsync);
+            DeleteImageOptionCommand = new AsyncRelayCommand(OnDeleteImageCommandAsync);
+            DeleteImageCommand = new AsyncRelayCommand(OnDeleteImageAsync);
+            ShareRecipeCommand = new AsyncRelayCommand(OnShareRecipeAsync);
 
             _ = InitializeDataAsync();
 
@@ -81,48 +88,39 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 
         }
 
-        private async Task OnCloseBottomSheet()
+        private async Task OnCloseBottomSheetAsync()
         {
-            if (!await semaphoreSlim.WaitAsync(0))
+            if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
             {
-                return;
-            }
+                var bottomSheet = CurrentBottomSheet as AddEditBottomSheet;
 
-            try
-            {
-                if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
-                {
-                    var bottomSheet = CurrentBottomSheet as AddEditBottomSheet;
-                    bottomSheet!.RecipeHideKeyboard();
-                    await bottomSheet.DismissAsync(true);
-                }
-                else if (CurrentBottomSheetMode == BottomSheetMode.Options)
-                {
-                    var bottomSheet = CurrentBottomSheet as OptionsBottomSheet;
-                    await bottomSheet!.DismissAsync(true);
-                }
-
+                bottomSheet!.RecipeHideKeyboard();
+                await bottomSheet.DismissAsync(true);
             }
-            finally
+            else if (CurrentBottomSheetMode == BottomSheetMode.Options)
             {
-                semaphoreSlim.Release();
+                var bottomSheet = CurrentBottomSheet as OptionsBottomSheet;
+                await bottomSheet!.DismissAsync(true);
+            }
+            else if (CurrentBottomSheetMode == BottomSheetMode.DeleteImage)
+            {
+                var bottomSheet = CurrentBottomSheet as DeleteImageBottomSheet;
+                await bottomSheet!.DismissAsync(true);
             }
 
         }
 
-        private async Task OnNavigate(RecipeDetailsViewModel recipeDetailsViewModel)
+        private async Task OnNavigateAsync(RecipeDetailsViewModel recipeDetailsViewModel)
         {
             Console.WriteLine("Navigating to RecipeDescription");
 
             SelectedRecipe = recipeDetailsViewModel;
             CurrentBottomSheetMode = BottomSheetMode.EditDescription;
-            await Shell.Current.Navigation.PushAsync(new RecipeDescription(this));
-            Console.WriteLine("Navigation to RecipeDescription completed");
-
-
+            await Shell.Current.Navigation.PushAsync(new RecipeDescriptionPage(this));
+       
         }
 
-        private async Task OnOptionsBottomSheet(RecipeDetailsViewModel recipeDetailsViewModel)
+        private async Task OnOptionsBottomSheetAsync(RecipeDetailsViewModel recipeDetailsViewModel)
         {
             if (!await semaphoreSlim.WaitAsync(0))
             {
@@ -130,7 +128,6 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             }
             try
             {
-                Console.WriteLine("Showing OptionsBottomSheet");
 
                 SelectedRecipe = recipeDetailsViewModel;
                 var bottomSheet = new OptionsBottomSheet(this);
@@ -139,7 +136,6 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
                 CurrentBottomSheetMode = BottomSheetMode.Options;
                 //BottomSheetTitle = nameof(BottomSheetMode.Edit);
                 NewRecipeTitle = SelectedRecipe.Title!;
-                Console.WriteLine("OptionsBottomSheet shown");
 
 
                 //await Shell.Current.GoToAsync(nameof(bottomSheet));
@@ -154,43 +150,51 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             }
         }
 
-        public async Task ShowBottonSheet(BottomSheetMode mode)
+        public async Task ShowBottonSheetAsync(BottomSheetMode mode)
         {
 
-            if (!await semaphoreSlim.WaitAsync(0))
-            {
-                return;
-            }
             try
             {
-                NewRecipeTitle = mode == BottomSheetMode.Add ? string.Empty : SelectedRecipe?.Title ?? string.Empty;
-                CurrentBottomSheetMode = mode;
-                BottomSheetTitle = mode == BottomSheetMode.Add ? "New" : "Change name";
-                var bottomSheet = new AddEditBottomSheet(this);
-                await bottomSheet.ShowAsync();
-                CurrentBottomSheet = bottomSheet;
+                if (mode == BottomSheetMode.Add || mode == BottomSheetMode.Edit)
+                {
+                    NewRecipeTitle = mode == BottomSheetMode.Add ? string.Empty : SelectedRecipe?.Title ?? string.Empty;
+                    CurrentBottomSheetMode = mode;
+                    BottomSheetTitle = mode == BottomSheetMode.Add ? "New" : "Change name";
+                    var bottomSheet = new AddEditBottomSheet(this);
+                    await bottomSheet.ShowAsync();
+                    CurrentBottomSheet = bottomSheet;
+                }
+                else if (mode == BottomSheetMode.DeleteImage)
+                {
+                    var bottomSheet = new DeleteImageBottomSheet(this);
+                    await bottomSheet.ShowAsync();
+                    CurrentBottomSheet = bottomSheet;
+                    CurrentBottomSheetMode = BottomSheetMode.DeleteImage;
+                }
+
             }
             catch (Exception ex)
             {
                 OnErrorOccurred($"Navigation to CustomBottomSheet failed: {ex.Message}");
             }
-            finally
-            {
-                semaphoreSlim.Release();
-            }
 
         }
-        private async Task OnAddBottomSheet()
+        private async Task OnAddCommandAsync()
         {
-            await ShowBottonSheet(BottomSheetMode.Add);
+            await ShowBottonSheetAsync(BottomSheetMode.Add);
         }
-        private async Task OnUpdateBottomSheet()
+        private async Task OnUpdateCommandAsync()
         {
             await CurrentBottomSheet.DismissAsync(true);
-            await ShowBottonSheet(BottomSheetMode.Edit);
+            await ShowBottonSheetAsync(BottomSheetMode.Edit);
+        }
+        private async Task OnDeleteImageCommandAsync()
+        {
+            await ShowBottonSheetAsync(BottomSheetMode.DeleteImage);
+
         }
 
-        private async Task OnSaveAndEditRecipe()
+        private async Task OnSaveAndEditRecipeAsync()
         {
             if (!await semaphoreSlim.WaitAsync(0))
             {
@@ -200,11 +204,11 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             {
                 if (CurrentBottomSheetMode == BottomSheetMode.Add)
                 {
-                    await OnSaveNewRecipe();
+                    await OnSaveNewRecipeAsync();
                 }
                 else if (CurrentBottomSheetMode == BottomSheetMode.Edit || CurrentBottomSheetMode == BottomSheetMode.EditDescription)
                 {
-                    await OnUpdateRecipe();
+                    await OnUpdateRecipeAsync();
                 }
 
 
@@ -217,7 +221,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 
         }
 
-        private async Task OnSaveNewRecipe()
+        private async Task OnSaveNewRecipeAsync()
         {
 
             Recipe newRecipe = new() { Title = NewRecipeTitle, Favorite = false };
@@ -225,10 +229,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             var recipeVm = new RecipeDetailsViewModel(newRecipe);
             Recipes.Add(recipeVm);
             NewRecipeTitle = string.Empty;
-            await OnCloseBottomSheet();
+            await OnCloseBottomSheetAsync();
         }
 
-        private async Task OnUpdateRecipe()
+        private async Task OnUpdateRecipeAsync()
         {
             try
             {
@@ -252,17 +256,17 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
                 SelectedRecipe.Favorite = updatedRecipe.Favorite;
                 SelectedRecipe.Description = updatedRecipe.Description;
                 SelectedRecipe.ImageStream = updatedRecipe.ImageStream;
+                await OnCloseBottomSheetAsync();
             }
             catch (Exception e)
             {
                 OnErrorOccurred(e.Message);
-                await OnCloseBottomSheet();
+                await OnCloseBottomSheetAsync();
             }
-            await OnCloseBottomSheet();
 
         }
 
-        private async Task OnRemoveRecipe()
+        private async Task OnRemoveRecipeAsync()
         {
             if (!await semaphoreSlim.WaitAsync(0))
             {
@@ -296,7 +300,13 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             ErrorOccurred?.Invoke(message);
         }
 
-        private async Task ImageUpload()
+
+        private async Task OnDeleteImageAsync()
+        {
+            SelectedRecipe.ImageStream = string.Empty;
+            await OnUpdateRecipeAsync();
+        }
+        private async Task ImageUploadAsync()
         {
             if (!await semaphoreSlim.WaitAsync(0))
             {
@@ -306,10 +316,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             try
             {
                 Console.WriteLine("Starting ImageUpload");
-                
-                var image = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "Select a photo" });
-             
-                if (image == null)
+
+                _imageStream = await MediaPicker.PickPhotoAsync(new MediaPickerOptions { Title = "Select a photo" });
+
+                if (_imageStream == null)
                 {
                     Console.WriteLine("No image selected");
                     return;
@@ -317,7 +327,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 
                 Console.WriteLine("Image selected");
 
-                using (var stream = await image.OpenReadAsync())
+                using (var stream = await _imageStream.OpenReadAsync())
                 {
                     byte[] result;
                     using (var streamReader = new MemoryStream())
@@ -337,7 +347,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 
                 Console.WriteLine("Image processed and assigned");
 
-                await OnUpdateRecipe();
+                await OnUpdateRecipeAsync();
             }
             catch (Exception ex)
             {
@@ -348,6 +358,23 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
                 semaphoreSlim.Release();
                 Console.WriteLine("ImageUpload completed");
             }
+        }
+        private async Task OnShareRecipeAsync()
+        {
+
+            var shareItem = new StringBuilder();
+            shareItem.AppendLine($"{SelectedRecipe.Title}");
+            shareItem.AppendLine("Detail:");
+            shareItem.AppendLine(SelectedRecipe.Description);
+
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+
+                Text = shareItem.ToString()
+            });
+
+
         }
 
 

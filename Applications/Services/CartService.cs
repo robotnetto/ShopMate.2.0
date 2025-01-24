@@ -4,16 +4,16 @@ using ShopMate._2._0.Domain.Interfaces;
 
 namespace ShopMate._2._0.Applications.Services
 {
-    public class ShopCartService
+    public class CartService
     {
         private readonly IShopCartRepository shopCartRepository;
 
-        public ShopCartService(IShopCartRepository shopCartRepository)
+        public CartService(IShopCartRepository shopCartRepository)
         {
             this.shopCartRepository = shopCartRepository;
         }
 
-        public async Task AddNewCart(Cart shopCart)
+        public async Task AddNewCartAsync(Cart shopCart)
         {
 
             if (shopCart is null)
@@ -30,7 +30,7 @@ namespace ShopMate._2._0.Applications.Services
             await shopCartRepository.CreateAsync(shopCart);
         }
 
-        public async Task UpdateCart(Cart shopCart)
+        public async Task UpdateCartAsync(Cart shopCart)
         {
             if (string.IsNullOrWhiteSpace(shopCart.Title))
             {
@@ -41,21 +41,20 @@ namespace ShopMate._2._0.Applications.Services
 
         }
 
-        public async Task<Cart> GetCartId(Guid id)
+        public async Task<Cart> GetCartIdAsync(Guid id)
         {
             var result = await shopCartRepository.GetByIdAsync(id);
 
             return result ?? throw new NotFoundException("Cart not found!");
 
         }
-        public async Task<IEnumerable<Cart>> GetAllCarts()
+        public async Task<IEnumerable<Cart>> GetAllCartsServiceAsync()
         {
-            var result = await shopCartRepository.GetAllasync();
+            return await shopCartRepository.GetAllasync();
 
-            return result ?? Enumerable.Empty<Cart>();
         }
 
-        public async Task DeleteCart(Cart shopCart)
+        public async Task DeleteCartAsync(Cart shopCart)
         {
             await shopCartRepository.DeleteAsync(shopCart);
         }

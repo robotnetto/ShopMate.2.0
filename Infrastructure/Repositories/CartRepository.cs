@@ -10,19 +10,23 @@ using System.Threading.Tasks;
 
 namespace ShopMate._2._0.Infrastructure.Repositories
 {
-    public class ShopCartRepository : IShopCartRepository
+    public class CartRepository : IShopCartRepository
     {
 
         private readonly LocalDbService localDbService;
 
-        public ShopCartRepository(LocalDbService localDbService)
+        public CartRepository(LocalDbService localDbService)
         {
             this.localDbService = localDbService;
         }
         public async Task CreateAsync(Cart shopCart)
         {
-            await localDbService.ShopCarts.AddAsync(shopCart);
-            await localDbService.SaveChangesAsync();
+            
+                await localDbService.ShopCarts.AddAsync(shopCart);
+                await localDbService.SaveChangesAsync();
+            
+           
+            
         }
 
         public async Task DeleteAsync(Cart shopCart)
@@ -34,11 +38,13 @@ namespace ShopMate._2._0.Infrastructure.Repositories
 
         public async Task<IEnumerable<Cart>> GetAllasync()
         {
-            return await localDbService.ShopCarts.Include(i => i.Items).ToListAsync();
+            var result = await localDbService.ShopCarts.Include(i => i.Items).ToListAsync();
+            return result;
         }
         public async Task<Cart> GetByIdAsync(Guid id)
         {
-            return await localDbService.ShopCarts.Where(s => s.Id == id).Include(i => i.Items).FirstOrDefaultAsync();
+            var result = await localDbService.ShopCarts.Where(s => s.Id == id).Include(i => i.Items).FirstOrDefaultAsync();
+            return result;
         }
 
         public async Task UpdateAsync(Cart shopCart)

@@ -8,90 +8,292 @@ using ShopMate._2._0.Presentation.Views.CartView;
 using System.Windows.Input;
 using The49.Maui.BottomSheet;
 using ShopMate._2._0.Domain.Entities;
+using ShopMate._2._0.Domain.Interfaces;
+using System.Diagnostics;
+using System.Text;
+
 
 namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 {
     public partial class CartViewModel : ObservableObject
     {
-        private readonly ShopCartService shopCartService;
+        private readonly CartService shopCartService;
 
         [ObservableProperty]
-        public ObservableCollection<CartDetailsViewModel> shopCarts = new();
+        public ObservableCollection<CartDetailsViewModel> _carts = new();
+
         [ObservableProperty]
-        public string _cartNameTitle;
+        public string _cartTitle;
+
+        [ObservableProperty]
+        public string _itemName;
+
         [ObservableProperty]
         public CartDetailsViewModel _selectedCart;
+
         [ObservableProperty]
         public string _bottomSheetTitle;
+
+        public ObservableCollection<Item> SelectedCartItems;
+        //=> new ObservableCollection<Item>(_selectedCart.Items);
+
+
+
+        public event Action<string>? ErrorOccurred;
         private BottomSheetMode CurrentBottomSheetMode { get; set; }
         private BottomSheet CurrentBottomSheet { get; set; }
+        public ICommand CardSelectCommand { get; }
         public ICommand AddCartCommand { get; }
         public ICommand SaveCartCommand { get; }
         public ICommand OptionsCommand { get; }
-
-
-        public CartViewModel(ShopCartService shopCartService)
+        public ICommand DeleteCartCommand { get; }
+        public ICommand EditCartCommand { get; }
+        public ICommand ShareListCommand { get; }
+        public ICommand CloseCommand { get; }
+        public ICommand AddItemComand { get; }
+        private CartViewModel(CartService shopCartService)
         {
             this.shopCartService = shopCartService ?? throw new ArgumentNullException(nameof(shopCartService));
-            AddCartCommand = new AsyncRelayCommand(OnAddCartCommand);
-            SaveCartCommand = new AsyncRelayCommand(OnSaveRecipeAndEditCartCommand);
+            AddCartCommand = new AsyncRelayCommand(OnAddCartCommandAsync);
+            CardSelectCommand = new AsyncRelayCommand<CartDetailsViewModel>(OnNavigateAsync);
+            SaveCartCommand = new AsyncRelayCommand(OnSaveRecipeAndEditCartCommandAsync);
             OptionsCommand = new AsyncRelayCommand<CartDetailsViewModel>(OnOptionsCommand);
-           _ = InitializeDataAsync();
+            DeleteCartCommand = new AsyncRelayCommand(OnDeleteCartCommandAsync);
+            EditCartCommand = new AsyncRelayCommand(OnEditCartCommandAsync);
+            ShareListCommand = new AsyncRelayCommand(OnShareList);
+            CloseCommand = new AsyncRelayCommand(OnCloseBottomSheetAsync);
+            AddItemComand = new AsyncRelayCommand(OnAddItemCommandAsync);
+            _ = InitializeDataAsync();
         }
 
-        public CartViewModel(): this(new ShopCartService(new ShopCartRepository( new Infrastructure.Data.LocalDbService())))
+
+
+        public CartViewModel() : this(new CartService(new CartRepository(new Infrastructure.Data.LocalDbService())))
         {
+        }
+
+        private async Task InitializeDataAsync()
+        {
+            try
+            {
+                var results = await shopCartService.GetAllCartsServiceAsync();
+
+
+                foreach (var item in results)
+                {
+                    Carts.Add(new CartDetailsViewModel(item));
+
+                }
+            }
+            catch (Exception e)
+            {
+
+                OnErrorOccurred(e.Message);
+            }
+
+        }
+
+        private async Task OnLoadItemAsync()
+        {
+            var result = await shopCartService.GetCartIdAsync(SelectedCart.Id);
+            if (result != null)
+            {
+                var cart = Carts.FirstOrDefault(c => c.Id == result.Id);
+                if (cart != null)
+                {
+                    SelectedCart.Items = result.Items;
+                }
+            }
+
+        }
+        private async Task OnSaveRecipeAndEditCartCommandAsync()
+        {
+            if (CurrentBottomSheetMode == BottomSheetMode.Add)
+            {
+                await OnAddNewCartAsync();
+            }
+            else if (CurrentBottomSheetMode == BottomSheetMode.Edit)
+            {
+                await OnUpdateCartAsync();
+            }
+            else if (CurrentBottomSheetMode == BottomSheetMode.AddItem)
+            {
+                await OnAddNewItemAsync();
+            }
         }
         private async Task OnOptionsCommand(CartDetailsViewModel cartDetailsViewModel)
         {
+
             SelectedCart = cartDetailsViewModel;
             var bottomSheet = new CartOptionsBottomSheet(this);
             await bottomSheet.ShowAsync();
             CurrentBottomSheet = bottomSheet;
             CurrentBottomSheetMode = BottomSheetMode.Options;
-            CartNameTitle = SelectedCart.Title;
+            CartTitle = SelectedCart.Title;
         }
 
 
-        public async Task InitializeDataAsync()
+        private async Task OnAddNewCartAsync()
         {
-            var results = await shopCartService.GetAllCarts();
-            foreach (var item in results)
-            {
-                var cartsVm = new CartDetailsViewModel(item);
-                ShopCarts.Add(cartsVm);
-            }
-
-        }
-        private async Task OnSaveRecipeAndEditCartCommand()
-        {
-            if (CurrentBottomSheetMode == BottomSheetMode.Add)
-            {
-                await OnSaveCart();
-            }
-            throw new NotImplementedException();
-        }
-
-        private async Task OnSaveCart()
-        {
-            ShopCart cart = new() { Title = CartNameTitle, Items = new List<Item>() };
-            await shopCartService.AddNewCart(cart);
+            Cart cart = new() { Title = CartTitle, Items = new List<Item>() };
+            await shopCartService.AddNewCartAsync(cart);
             var shopCartVm = new CartDetailsViewModel(cart);
-            ShopCarts.Add(shopCartVm);
+            Carts.Add(shopCartVm);
+            CartTitle = string.Empty;
+            await OnCloseBottomSheetAsync();
         }
 
-        private async Task OnAddCartCommand()
+        private async Task OnAddNewItemAsync()
         {
-            await ShowButtomSheet(BottomSheetMode.Add);
+            var result = await shopCartService.GetCartIdAsync(SelectedCart.Id);
+            if (result != null)
+            {
+                result.Items.Add(new Item { ItemName = CartTitle, IsChecked = false});
+                
+                await shopCartService.UpdateCartAsync(result);
+                
+                var cartVm = Carts.FirstOrDefault(c => c.Id == result.Id);
+
+                if (cartVm != null)
+                {
+                    SelectedCart.Items = cartVm.Items;
+                }
+                CartTitle = string.Empty;
+                await OnCloseBottomSheetAsync();
+            }
         }
-        private async Task ShowButtomSheet(BottomSheetMode mode)
+        private async Task OnUpdateCartAsync()
         {
-            CartNameTitle = mode == BottomSheetMode.Add? string.Empty : SelectedCart.Title?? string.Empty;
-            CurrentBottomSheetMode = mode;
-            BottomSheetTitle =  mode == BottomSheetMode.Add ? "New" : "Change name";
-            var bottomSheet = new CartAddEditBottomSheet(this);
-            await bottomSheet.ShowAsync();
-            CurrentBottomSheet = bottomSheet;
+            var cart = await shopCartService.GetCartIdAsync(SelectedCart.Id);
+            if (cart != null)
+            {
+                cart.Title = CartTitle!;
+                await shopCartService.UpdateCartAsync(cart);
+                var cartVm = Carts.FirstOrDefault(c => c.Id == cart.Id);
+                if (cartVm != null)
+                {
+                    cartVm.Title = cart.Title;
+                }
+                CartTitle = string.Empty;
+                await OnCloseBottomSheetAsync();
+
+            }
+
+        }
+        private async Task OnDeleteCartCommandAsync()
+        {
+            var cart = await shopCartService.GetCartIdAsync(SelectedCart.Id);
+            if (cart is not null)
+            {
+                await shopCartService.DeleteCartAsync(cart);
+                var cartVm = Carts.FirstOrDefault(c => c.Id == cart.Id);
+                Carts.Remove(cartVm!);
+            }
+            await OnCloseBottomSheetAsync();
+        }
+        private async Task OnAddCartCommandAsync()
+        {
+            await ShowButtomSheetAsync(BottomSheetMode.Add);
+        }
+        private async Task OnEditCartCommandAsync()
+        {
+            await CurrentBottomSheet!.DismissAsync(true);
+            await ShowButtomSheetAsync(BottomSheetMode.Edit);
+        }
+        private async Task OnAddItemCommandAsync()
+        {
+            await ShowButtomSheetAsync(BottomSheetMode.AddItem);
+        }
+        private async Task ShowButtomSheetAsync(BottomSheetMode mode)
+        {
+            if (mode == BottomSheetMode.AddItem)
+            {
+                CurrentBottomSheetMode = mode;
+                BottomSheetTitle = "Add Item";
+                var bottomSheet = new CartAddEditBottomSheet(this);
+                await bottomSheet.ShowAsync();
+                CurrentBottomSheet = bottomSheet;
+
+            }
+            else
+            {
+                CartTitle = mode == BottomSheetMode.Add ? string.Empty : SelectedCart.Title ?? string.Empty;
+                CurrentBottomSheetMode = mode;
+                BottomSheetTitle = mode == BottomSheetMode.Add ? "New" : "Change name";
+                var bottomSheet = new CartAddEditBottomSheet(this);
+                await bottomSheet.ShowAsync();
+                CurrentBottomSheet = bottomSheet;
+            }
+
+        }
+        private async Task OnCloseBottomSheetAsync()
+        {
+            if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
+            {
+                var buttomSheet = CurrentBottomSheet as CartAddEditBottomSheet;
+                buttomSheet!.CartHideKeyboardAsync();
+                await buttomSheet!.DismissAsync(true);
+            }
+            else if (CurrentBottomSheetMode == BottomSheetMode.Options)
+            {
+                var buttomSheet = CurrentBottomSheet as CartOptionsBottomSheet;
+                await buttomSheet!.DismissAsync(true);
+            }
+
+        }
+        //private void OnSelectedCartChanged()
+        //{
+        //    if (_selectedCart != null)
+        //    {
+        //        // Sort the items in SelectedCart whenever an item is checked/unchecked
+        //        foreach (var item in _selectedCart.Items)
+        //        {
+        //            item.PropertyChanged += (sender, args) =>
+        //            {
+        //                if (args.PropertyName == nameof(Item.IsChecked))
+        //                {
+        //                    SortItems();
+        //                    OnPropertyChanged(nameof(SelectedCartItems)); // Trigger UI update
+        //                }
+        //            };
+        //        }
+        //    }
+        //}
+
+        //private void SortItems()
+        //{
+        //    _selectedCart.Items = new ObservableCollection<Item>(_selectedCart.Items.OrderBy(i => i.IsChecked).ThenBy(n => n.ItemName).ToList());
+        //    OnPropertyChanged(nameof(SelectedCartItems));
+        //}
+        private async Task OnShareList()
+        {
+            var itemList = new StringBuilder();
+            itemList.AppendLine($"{SelectedCart.Title}");
+            itemList.AppendLine("Items:");
+
+            foreach (var item in SelectedCart.Items)
+            {
+                itemList.AppendLine($"- {item.ItemName}");
+            }
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+
+                Text = itemList.ToString()
+            });
+
+
+        }
+        protected virtual void OnErrorOccurred(string message)
+        {
+            ErrorOccurred?.Invoke(message);
+        }
+        private async Task OnNavigateAsync(CartDetailsViewModel cartDetailsViewModel)
+        {
+            SelectedCart = cartDetailsViewModel;
+            await OnLoadItemAsync();
+            await Shell.Current.Navigation.PushAsync(new ItemPage(this));
+
         }
     }
 }

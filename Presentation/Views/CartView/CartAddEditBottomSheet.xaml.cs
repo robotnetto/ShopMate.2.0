@@ -30,7 +30,7 @@ public partial class CartAddEditBottomSheet : BottomSheet
 
     private void CartCustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
     {
-          CartHideKeyboard();
+          CartHideKeyboardAsync();
     }
 
     //private void KeyboardLoaded()
@@ -40,7 +40,7 @@ public partial class CartAddEditBottomSheet : BottomSheet
     //    titleEntry.ShowSoftInputAsync(CancellationToken.None);
 
     //}
-    public async void CartHideKeyboard()
+    public async void CartHideKeyboardAsync()
     {
         await cartTitleEntry.HideKeyboardAsync(default);
         

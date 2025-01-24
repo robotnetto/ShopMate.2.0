@@ -15,6 +15,4 @@ public partial class RecipePage : ContentPage
 		BindingContext = recipeViewModel;
     }
 
-  
-
 }

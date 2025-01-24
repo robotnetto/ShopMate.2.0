@@ -1,5 +1,6 @@
 ﻿using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
 using ShopMate._2._0.Presentation.Views.RecipeView;
+using ShopMate._2._0.Presentation.Views.SplashView;
 
 namespace ShopMate._2._0
 {
@@ -9,7 +10,7 @@ namespace ShopMate._2._0
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new SplashPage();
             //var services = new ServiceCollection();
             //services.AddSingleton<RecipeViewModel>();
             //var serviceProvider = services.BuildServiceProvider();

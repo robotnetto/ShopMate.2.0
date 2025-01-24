@@ -75,7 +75,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -114,8 +114,6 @@
 	  <None Remove="Resources\AppIcon\Icons\share.png" />
 	  <None Remove="Resources\AppIcon\Icons\share_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
-	  <None Remove="Resources\Raw\Animation_cooking.json" />
-	  <None Remove="Resources\Raw\cooking_animate.json" />
 	  <None Remove="Resources\Raw\food_animation.json" />
 	</ItemGroup>
 
@@ -173,6 +171,9 @@
 	  <Compile Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml.cs">
 	    <DependentUpon>AddEditBottomSheet.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Presentation\Views\RecipeView\RecipeDescriptionPage.xaml.cs">
+	    <DependentUpon>RecipeDescriptionPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -185,10 +186,16 @@
 	  <MauiXaml Update="Presentation\Views\CartView\CartOptionsBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Presentation\Views\CartView\ItemPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\LocationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Presentation\Views\RecipeView\DeleteImageBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\EditBottomSheet.xaml">
@@ -197,10 +204,13 @@
 	  <MauiXaml Update="Presentation\Views\RecipeView\OptionsBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\RecipeView\RecipeDescription.xaml">
+	  <MauiXaml Update="Presentation\Views\RecipeView\RecipeDescriptionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\RecipePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Presentation\Views\SplashView\SplashPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

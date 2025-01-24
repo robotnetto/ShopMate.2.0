@@ -12,6 +12,8 @@ namespace ShopMate._2._0.Presentation.Enum
         Edit,
         Options,
         EditDescription,
-        Remove
+        Remove,
+        DeleteImage,
+        AddItem
     }
 }

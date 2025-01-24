@@ -28,13 +28,21 @@ namespace ShopMate._2._0
       
             builder.Services.AddDbContext<LocalDbService>();
             builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
-            builder.Services.AddScoped<IShopCartRepository, ShopCartRepository>();
+            builder.Services.AddScoped<IShopCartRepository, CartRepository>();
             //builder.Services.AddScoped<ShopCartService>();
 
 
-            var dbContext = new LocalDbService();
-            //dbContext.Database.EnsureDeleted();
-            dbContext.Database.EnsureCreated();
+            //var dbContext = new LocalDbService();
+            ////dbContext.Database.EnsureDeleted();
+            //dbContext.Database.EnsureCreated();
+            //dbContext.Dispose();
+            using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<LocalDbService>();
+                //dbContext.Database.EnsureDeleted();
+                dbContext.Database.EnsureCreated();
+            }
+
 
 
 #if DEBUG

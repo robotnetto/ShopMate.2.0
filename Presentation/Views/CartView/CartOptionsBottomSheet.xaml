@@ -48,12 +48,12 @@
                         FontSize="14"
                         TextColor="Black"
                         FontAttributes="Bold"
-                        Command="{Binding UpdateRecipeCommand}"/>
+                        Command="{Binding EditCartCommand}"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout Spacing="3">
                 <Image Source="share_filled.png" HeightRequest="25" WidthRequest="25"/>
-                <Button Text="Share" Padding="14,10,200,10" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold"/>
+                <Button Text="Share" Padding="14,10,200,10" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding ShareListCommand}"/>
             </HorizontalStackLayout>
 
           
@@ -65,7 +65,7 @@
                         BackgroundColor="Transparent" 
                         FontSize="14" TextColor="Red" 
                         FontAttributes="Bold"
-                        Command="{Binding RemoveRecipeCommand}" />
+                        Command="{Binding DeleteCartCommand}" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>

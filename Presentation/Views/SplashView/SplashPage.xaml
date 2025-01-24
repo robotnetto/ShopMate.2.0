@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopMate._2._0.Presentation.Views.SplashView.SplashPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="SplashPage">
+  
+    <VerticalStackLayout VerticalOptions="Center" Margin="0,0,0,150">
+        <skia:SKLottieView Source="loadingcart.json" 
+                        RepeatCount="-1"
+                        RepeatMode="Restart"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                       />
+        <!--<Label Text="Let create your favorite recipe." 
+            FontSize="16"
+            TextColor="Gray"
+            FontAttributes="Bold"
+            Margin="0,-15,0,0" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"
+            />-->
+    </VerticalStackLayout>
+</ContentPage>

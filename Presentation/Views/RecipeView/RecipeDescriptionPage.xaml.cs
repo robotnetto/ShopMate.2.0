@@ -5,12 +5,13 @@ using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
 
 namespace ShopMate._2._0.Presentation.Views.RecipeView;
 
-public partial class RecipeDescription : ContentPage
+public partial class RecipeDescriptionPage : ContentPage
 {
     private readonly RecipeViewModel recipeViewModel;
 
-    public RecipeDescription(RecipeViewModel recipeViewModel)
+    public RecipeDescriptionPage(RecipeViewModel recipeViewModel)
 	{
+        this.recipeViewModel = recipeViewModel;
 		InitializeComponent();
         if (App.Current != null)
         {
@@ -18,7 +19,6 @@ public partial class RecipeDescription : ContentPage
                 .UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
         }
         BindingContext = recipeViewModel;
-        this.recipeViewModel = recipeViewModel;
         Shell.SetTabBarIsVisible(this, false);
         //descriptionEditor.Focused += (x, y) => SetTabbarVisible(false);
         //descriptionEditor.Unfocused +=  (x, y) => OnDisappearing();

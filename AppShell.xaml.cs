@@ -8,7 +8,6 @@ namespace ShopMate._2._0
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(RecipeDescription), typeof(RecipeDescription));
 
         }
 

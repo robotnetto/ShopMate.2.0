@@ -40,7 +40,7 @@
         <Frame x:Name="titleFrame"  BackgroundColor="White" CornerRadius="13" Padding="10" HasShadow="False">
             <Entry 
                 x:Name="cartTitleEntry"
-                Text="{Binding CartNameTitle}"
+                Text="{Binding CartTitle}"
                 
                 Placeholder="Title"
                 PlaceholderColor="Gray"
