@@ -8,12 +8,12 @@ namespace ShopMate._2._0.Applications.Services
     {
         private readonly IRecipeRepository recipeRepository;
 
-        public RecipeService(IRecipeRepository recipeRepository)
+        internal RecipeService(IRecipeRepository recipeRepository)
         {
             this.recipeRepository = recipeRepository;
         }
 
-        public async Task AddNewRecipe(Recipe recipe)
+        public async Task AddNewRecipeAsync(Recipe recipe)
         {
             if (recipe == null)
             {
@@ -30,7 +30,7 @@ namespace ShopMate._2._0.Applications.Services
 
         }
 
-        public async Task UpdateRecipe(Recipe recipe)
+        public async Task UpdateExistingRecipeAsync(Recipe recipe)
         {
             if (string.IsNullOrWhiteSpace(recipe.Title))
             {
@@ -39,19 +39,19 @@ namespace ShopMate._2._0.Applications.Services
             await recipeRepository.UpdateAsync(recipe);
         }
 
-        public async Task<Recipe> GetRecipeId(Guid id)
+        public async Task<Recipe> GetRecipeByIdAsync(Guid id)
         {
             var result = await recipeRepository.GetByIdAsync(id);
             return result ?? throw new NotFoundException("Recipe not found");
         }
 
-        public async Task<IEnumerable<Recipe>> GetAllRecipies()
+        public async Task<IEnumerable<Recipe>> GetAllRecipesAsync()
         {
             var result = await recipeRepository.GetAllAsync();
             return result ?? Enumerable.Empty<Recipe>();
         }
 
-        public async Task DeleteRecipe(Recipe recipe)
+        public async Task DeleteExistingRecipeAsync(Recipe recipe)
         {
             await recipeRepository.DeleteAsync(recipe);
 

@@ -1,5 +1,5 @@
-﻿using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
-using ShopMate._2._0.Presentation.Views.RecipeView;
+﻿using ShopMate._2._0.Infrastructure.Data;
+using ShopMate._2._0.Infrastructure.Repositories;
 using ShopMate._2._0.Presentation.Views.SplashView;
 
 namespace ShopMate._2._0

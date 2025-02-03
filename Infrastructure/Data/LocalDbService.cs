@@ -8,6 +8,7 @@ namespace ShopMate._2._0.Infrastructure.Data
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Cart> ShopCarts { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<FoodData> FoodItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

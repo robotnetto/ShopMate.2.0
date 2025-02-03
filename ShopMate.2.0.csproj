@@ -89,6 +89,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\LivsmedelsDB_JSON.json" />
+	</ItemGroup>
+	<ItemGroup>
 	  <None Remove="Resources\AppIcon\Icons\add_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_photo.png" />
@@ -114,7 +117,11 @@
 	  <None Remove="Resources\AppIcon\Icons\share.png" />
 	  <None Remove="Resources\AppIcon\Icons\share_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\shopping_cart.png" />
+	  <None Remove="Resources\Data\LivsmedelsDB_JSON.json" />
 	  <None Remove="Resources\Raw\food_animation.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Raw\LivsmedelsDB_JSON.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -177,6 +184,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Presentation\Views\CartView\AddNewItem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\CartView\CartAddEditBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -213,6 +223,11 @@
 	  <MauiXaml Update="Presentation\Views\SplashView\SplashPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Platforms\Android\Resources\Raw\" />
+	  <Folder Include="Resources\Data\" />
 	</ItemGroup>
 
 </Project>

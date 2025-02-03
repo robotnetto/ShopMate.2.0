@@ -23,7 +23,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         public ObservableCollection<CartDetailsViewModel> _carts = new();
 
         [ObservableProperty]
-        public string _cartTitle;
+        public string _titleName;
 
         [ObservableProperty]
         public string _itemName;
@@ -34,10 +34,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         [ObservableProperty]
         public string _bottomSheetTitle;
 
-        public ObservableCollection<Item> SelectedCartItems;
+        //public ObservableCollection<Item> SelectedCartItems;
         //=> new ObservableCollection<Item>(_selectedCart.Items);
-
-
 
         public event Action<string>? ErrorOccurred;
         private BottomSheetMode CurrentBottomSheetMode { get; set; }
@@ -101,7 +99,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
                 var cart = Carts.FirstOrDefault(c => c.Id == result.Id);
                 if (cart != null)
                 {
-                    SelectedCart.Items = result.Items;
+                    SelectedCart.Items = new ObservableCollection<Item>(result.Items!);
                 }
             }
 
@@ -129,36 +127,42 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             await bottomSheet.ShowAsync();
             CurrentBottomSheet = bottomSheet;
             CurrentBottomSheetMode = BottomSheetMode.Options;
-            CartTitle = SelectedCart.Title;
+            TitleName = SelectedCart.Title;
         }
 
 
         private async Task OnAddNewCartAsync()
         {
-            Cart cart = new() { Title = CartTitle, Items = new List<Item>() };
+            Cart cart = new() { Title = TitleName, Items = new List<Item>() };
             await shopCartService.AddNewCartAsync(cart);
             var shopCartVm = new CartDetailsViewModel(cart);
             Carts.Add(shopCartVm);
-            CartTitle = string.Empty;
+            TitleName = string.Empty;
             await OnCloseBottomSheetAsync();
         }
 
         private async Task OnAddNewItemAsync()
         {
+            if (string.IsNullOrWhiteSpace(TitleName))
+            {
+                OnErrorOccurred("Item name can't be empty or whitespace!");
+                return;
+            }
             var result = await shopCartService.GetCartIdAsync(SelectedCart.Id);
             if (result != null)
             {
-                result.Items.Add(new Item { ItemName = CartTitle, IsChecked = false});
-                
+                var newItem = new Item { ItemName = TitleName.Trim(), IsChecked = false };
+
+                result.Items!.Add(newItem);
                 await shopCartService.UpdateCartAsync(result);
-                
+
                 var cartVm = Carts.FirstOrDefault(c => c.Id == result.Id);
 
                 if (cartVm != null)
                 {
-                    SelectedCart.Items = cartVm.Items;
+                    SelectedCart.Items.Add(newItem);
                 }
-                CartTitle = string.Empty;
+                TitleName = string.Empty;
                 await OnCloseBottomSheetAsync();
             }
         }
@@ -167,14 +171,15 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             var cart = await shopCartService.GetCartIdAsync(SelectedCart.Id);
             if (cart != null)
             {
-                cart.Title = CartTitle!;
+                cart.Title = TitleName!;
                 await shopCartService.UpdateCartAsync(cart);
                 var cartVm = Carts.FirstOrDefault(c => c.Id == cart.Id);
                 if (cartVm != null)
                 {
                     cartVm.Title = cart.Title;
+
                 }
-                CartTitle = string.Empty;
+                TitleName = string.Empty;
                 await OnCloseBottomSheetAsync();
 
             }
@@ -210,14 +215,15 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             {
                 CurrentBottomSheetMode = mode;
                 BottomSheetTitle = "Add Item";
-                var bottomSheet = new CartAddEditBottomSheet(this);
+                var bottomSheet = new AddNewItem(this);
                 await bottomSheet.ShowAsync();
+               
                 CurrentBottomSheet = bottomSheet;
 
             }
             else
             {
-                CartTitle = mode == BottomSheetMode.Add ? string.Empty : SelectedCart.Title ?? string.Empty;
+                TitleName = mode == BottomSheetMode.Add ? string.Empty : SelectedCart.Title ?? string.Empty;
                 CurrentBottomSheetMode = mode;
                 BottomSheetTitle = mode == BottomSheetMode.Add ? "New" : "Change name";
                 var bottomSheet = new CartAddEditBottomSheet(this);
@@ -228,10 +234,17 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         }
         private async Task OnCloseBottomSheetAsync()
         {
-            if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
+            if (CurrentBottomSheetMode == BottomSheetMode.Add 
+                || CurrentBottomSheetMode == BottomSheetMode.Edit    )
             {
                 var buttomSheet = CurrentBottomSheet as CartAddEditBottomSheet;
                 buttomSheet!.CartHideKeyboardAsync();
+                await buttomSheet!.DismissAsync(true);
+            }
+            else if (CurrentBottomSheetMode == BottomSheetMode.AddItem)
+            {
+                var buttomSheet = CurrentBottomSheet as AddNewItem;
+                buttomSheet!.HideKeyboardOnDismissAsync();
                 await buttomSheet!.DismissAsync(true);
             }
             else if (CurrentBottomSheetMode == BottomSheetMode.Options)
@@ -260,11 +273,11 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         //    }
         //}
 
-        //private void SortItems()
-        //{
-        //    _selectedCart.Items = new ObservableCollection<Item>(_selectedCart.Items.OrderBy(i => i.IsChecked).ThenBy(n => n.ItemName).ToList());
-        //    OnPropertyChanged(nameof(SelectedCartItems));
-        //}
+        private void SortItems()
+        {
+            SelectedCart.Items = new ObservableCollection<Item>(SelectedCart.Items.OrderBy(i => i.IsChecked).ThenBy(n => n.ItemName).ToList());
+
+        }
         private async Task OnShareList()
         {
             var itemList = new StringBuilder();

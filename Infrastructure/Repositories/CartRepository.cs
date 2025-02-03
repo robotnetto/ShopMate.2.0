@@ -25,8 +25,6 @@ namespace ShopMate._2._0.Infrastructure.Repositories
                 await localDbService.ShopCarts.AddAsync(shopCart);
                 await localDbService.SaveChangesAsync();
             
-           
-            
         }
 
         public async Task DeleteAsync(Cart shopCart)

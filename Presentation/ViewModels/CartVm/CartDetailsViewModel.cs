@@ -17,13 +17,12 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         [ObservableProperty]
         private string title;
 
-        [ObservableProperty]
-        public List<Item> items;
+        public ObservableCollection<Item> Items { get; set; }
         public CartDetailsViewModel(Cart cart)
         {
             Id = cart.Id;
             Title = cart.Title;
-            Items = cart.Items;
+            Items = new ObservableCollection<Item>(cart.Items);
         }
     }
 }

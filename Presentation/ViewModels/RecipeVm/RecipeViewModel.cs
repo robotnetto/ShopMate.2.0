@@ -79,7 +79,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
 
         private async Task InitializeDataAsync()
         {
-            var allRecipes = await _recipeService.GetAllRecipies();
+            var allRecipes = await _recipeService.GetAllRecipesAsync();
             foreach (var recipe in allRecipes)
             {
                 var recipeVm = new RecipeDetailsViewModel(recipe);
@@ -225,7 +225,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
         {
 
             Recipe newRecipe = new() { Title = NewRecipeTitle, Favorite = false };
-            await _recipeService.AddNewRecipe(newRecipe);
+            await _recipeService.AddNewRecipeAsync(newRecipe);
             var recipeVm = new RecipeDetailsViewModel(newRecipe);
             Recipes.Add(recipeVm);
             NewRecipeTitle = string.Empty;
@@ -236,7 +236,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
         {
             try
             {
-                var selectedRecipe = await _recipeService.GetRecipeId(SelectedRecipe.Id);
+                var selectedRecipe = await _recipeService.GetRecipeByIdAsync(SelectedRecipe.Id);
                 if (CurrentBottomSheetMode == BottomSheetMode.Add || CurrentBottomSheetMode == BottomSheetMode.Edit)
                 {
                     selectedRecipe.Title = NewRecipeTitle;
@@ -248,9 +248,9 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
                 selectedRecipe.Favorite = SelectedRecipe.Favorite;
                 selectedRecipe.ImageStream = SelectedRecipe.ImageStream;
 
-                await _recipeService.UpdateRecipe(selectedRecipe);
+                await _recipeService.UpdateExistingRecipeAsync(selectedRecipe);
 
-                var updatedRecipe = await _recipeService.GetRecipeId(selectedRecipe.Id);
+                var updatedRecipe = await _recipeService.GetRecipeByIdAsync(selectedRecipe.Id);
 
                 SelectedRecipe.Title = updatedRecipe.Title;
                 SelectedRecipe.Favorite = updatedRecipe.Favorite;
@@ -276,8 +276,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
             {
                 await CurrentBottomSheet.DismissAsync(true);
                 CurrentBottomSheetMode = BottomSheetMode.Remove;
-                var selectedRecipe = await _recipeService.GetRecipeId(SelectedRecipe.Id);
-                await _recipeService.DeleteRecipe(selectedRecipe);
+                var selectedRecipe = await _recipeService.GetRecipeByIdAsync(SelectedRecipe.Id);
+                await _recipeService.DeleteExistingRecipeAsync(selectedRecipe);
                 var recipeVmToRemove = this.Recipes.FirstOrDefault(r => r.Id == SelectedRecipe.Id);
                 if (recipeVmToRemove != null)
                 {

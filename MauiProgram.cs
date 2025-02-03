@@ -5,6 +5,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using ShopMate._2._0.Presentation.Views.SplashView;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using The49.Maui.BottomSheet;
 
@@ -15,8 +16,7 @@ namespace ShopMate._2._0
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
+            builder.UseMauiApp<App>()
                 .UseBottomSheet()
                 .UseSkiaSharp()
                 .UseMauiCommunityToolkit()
@@ -25,11 +25,16 @@ namespace ShopMate._2._0
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-      
+            builder.Logging.AddDebug();
             builder.Services.AddDbContext<LocalDbService>();
             builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
             builder.Services.AddScoped<IShopCartRepository, CartRepository>();
-            //builder.Services.AddScoped<ShopCartService>();
+            builder.Services.AddScoped<IFoodDataRepository, FoodDataRepository>();
+            builder.Services.AddSingleton<FoodDataService>();
+            builder.Services.AddSingleton<CartService>();
+            builder.Services.AddSingleton<RecipeService>();
+           
+
 
 
             //var dbContext = new LocalDbService();
@@ -43,7 +48,7 @@ namespace ShopMate._2._0
                 dbContext.Database.EnsureCreated();
             }
 
-
+            //PreloadFoodData(builder.Services);
 
 #if DEBUG
             builder.Logging.AddDebug();
@@ -51,5 +56,18 @@ namespace ShopMate._2._0
 
             return builder.Build();
         }
+
+        //private static void PreloadFoodData(IServiceCollection services)
+        //{
+        //    using (var scope = services.BuildServiceProvider().CreateScope())
+        //    {
+        //        var foodDataService = scope.ServiceProvider.GetRequiredService<FoodDataService>();
+        //        Task.Run(async () =>
+        //        {
+        //            // Preload food data asynchronously
+        //            await foodDataService.PreloadDataAsync();
+        //        }).ConfigureAwait(false);
+        //    }
+        //}
     }
 }

@@ -1,0 +1,7600 @@
+{
+  "FoodData": [
+    {
+      "Name": "Nöt talg"
+    },
+    {
+      "Name": "Gris späck"
+    },
+    {
+      "Name": "Gris ister"
+    },
+    {
+      "Name": "Kokosfett"
+    },
+    {
+      "Name": "Matfettsblandning havssaltat fett 80% berikad typ Bregott"
+    },
+    {
+      "Name": "Matfettsblandning fett 60% berikad typ Bregott mellan"
+    },
+    {
+      "Name": "Flytande margarin fett 82% berikad typ Milda culinesse"
+    },
+    {
+      "Name": "Hushållsmargarin fett 80% berikad typ Melba"
+    },
+    {
+      "Name": "Hushållsmargarin fett 80% berikad typ Milda"
+    },
+    {
+      "Name": "Lättmargarin fett 38% berikad typ Becel"
+    },
+    {
+      "Name": "Lättmargarin fett 40% berikad typ Lätt & lagom"
+    },
+    {
+      "Name": "Majonnäs fett 90% hemlagad"
+    },
+    {
+      "Name": "Sesamsås m. grädde"
+    },
+    {
+      "Name": "Gravlaxsås hovmästarsås hemlagad"
+    },
+    {
+      "Name": "Gravlaxsås kylvara"
+    },
+    {
+      "Name": "Remouladsås"
+    },
+    {
+      "Name": "Dressing vinägrett fett 45%"
+    },
+    {
+      "Name": "Smör fett 80%"
+    },
+    {
+      "Name": "Smör extrasaltat fett 80%"
+    },
+    {
+      "Name": "Smör osaltat fett 80%"
+    },
+    {
+      "Name": "Druvkärnolja"
+    },
+    {
+      "Name": "Majsolja"
+    },
+    {
+      "Name": "Olivolja"
+    },
+    {
+      "Name": "Tistelolja"
+    },
+    {
+      "Name": "Sesamolja"
+    },
+    {
+      "Name": "Sojaolja"
+    },
+    {
+      "Name": "Solrosolja"
+    },
+    {
+      "Name": "Vetegroddsolja"
+    },
+    {
+      "Name": "Dressing konserv. fett ca 25%"
+    },
+    {
+      "Name": "Dressing till sallad m. majonnäs fett ca 25% kylvara"
+    },
+    {
+      "Name": "Dressing fett 0%"
+    },
+    {
+      "Name": "Majonnäs fett 80%"
+    },
+    {
+      "Name": "Gurkmajonnäs gurksallad gatukök"
+    },
+    {
+      "Name": "Räkmajonnäs räksallad gatukök"
+    },
+    {
+      "Name": "Majonnäs lätt fett 30%"
+    },
+    {
+      "Name": "Mimosasallad"
+    },
+    {
+      "Name": "Rödbetssallad m. gräddfil hemlagad"
+    },
+    {
+      "Name": "Sallad m. skaldjur majonnäsdressing"
+    },
+    {
+      "Name": "Bearnaisesås hemlagad"
+    },
+    {
+      "Name": "Hollandaisesås hemlagad"
+    },
+    {
+      "Name": "Rhode Islandsås hemlagad"
+    },
+    {
+      "Name": "Dressing vinägrett fett 65%"
+    },
+    {
+      "Name": "Bearnaisesås tillagad frysvara el. pulver"
+    },
+    {
+      "Name": "Hollandaisesås tillagad frysvara el. pulver"
+    },
+    {
+      "Name": "Mesost fett ca 30%"
+    },
+    {
+      "Name": "Messmör fett 5% berikad"
+    },
+    {
+      "Name": "Messmör fett 2% berikad"
+    },
+    {
+      "Name": "Färskost cottage cheese naturell fett 4%"
+    },
+    {
+      "Name": "Färskost cottage cheese m. frukt fett 3%"
+    },
+    {
+      "Name": "Färskost cottage cheese m. grönsaker fett 3,5-5%"
+    },
+    {
+      "Name": "Färskost m. filmjölk fett ca 8%"
+    },
+    {
+      "Name": "Färskost m. filmjölk gräddfil fett ca 14% hemlagad"
+    },
+    {
+      "Name": "Kvarg färskost fett 1%"
+    },
+    {
+      "Name": "Kvarg färskost fett 10%"
+    },
+    {
+      "Name": "Ost hårdost fett 10%"
+    },
+    {
+      "Name": "Ost hårdost fett 23%"
+    },
+    {
+      "Name": "Ost hårdost fett 26%"
+    },
+    {
+      "Name": "Ost hårdost fett 38%"
+    },
+    {
+      "Name": "Vitmögelost camembert fett 23%"
+    },
+    {
+      "Name": "Ädelost grönmögelost fett 30%"
+    },
+    {
+      "Name": "Mjukost smältost fett 8%"
+    },
+    {
+      "Name": "Mjukost smältost fett 10%"
+    },
+    {
+      "Name": "Mjukost smältost fett ca 20%"
+    },
+    {
+      "Name": "Mjukost smältost fett ca 16%"
+    },
+    {
+      "Name": "Mjukost smältost fett 4%"
+    },
+    {
+      "Name": "Vitmögelost brie fett 34%"
+    },
+    {
+      "Name": "Ädelost grönmögelost fett 17%"
+    },
+    {
+      "Name": "Salladsost fett 22%"
+    },
+    {
+      "Name": "Ost hårdost fett 17%"
+    },
+    {
+      "Name": "Ost hårdost fett 28%"
+    },
+    {
+      "Name": "Ost hårdost fett 31%"
+    },
+    {
+      "Name": "Vitmögelost brie fett 30%"
+    },
+    {
+      "Name": "Ost halloumi rå fett 22%"
+    },
+    {
+      "Name": "Färskost fett 33%"
+    },
+    {
+      "Name": "Ädelost grönmögelost fett 43%"
+    },
+    {
+      "Name": "Ost hårdost parmesan fett 30%"
+    },
+    {
+      "Name": "Färskost m. vitlök fett 35%"
+    },
+    {
+      "Name": "Vitmögelost camembert fett 11%"
+    },
+    {
+      "Name": "Mjukost smältost fett ca 22%"
+    },
+    {
+      "Name": "Färskost cream cheese fett 27%"
+    },
+    {
+      "Name": "Färskost cream cheese lätt fett 15%"
+    },
+    {
+      "Name": "Färskost cream cheese extra light fett 5%"
+    },
+    {
+      "Name": "Vitmögelost camembert friterad"
+    },
+    {
+      "Name": "Vitmögelost getost chèvre fett 25%"
+    },
+    {
+      "Name": "Bröstmjölk humanmjölk"
+    },
+    {
+      "Name": "Filmjölk fett 3% berikad"
+    },
+    {
+      "Name": "Kondenserad mjölk konserv. fett ca 8%"
+    },
+    {
+      "Name": "Kondenserad mjölk konserv. konc. m. socker fett ca 9%"
+    },
+    {
+      "Name": "Mjölkpulver fett 1%"
+    },
+    {
+      "Name": "Filmjölk långfil fett 3% berikad"
+    },
+    {
+      "Name": "Lättfil fett 0,5% berikad"
+    },
+    {
+      "Name": "Milkshake choklad jordgubb"
+    },
+    {
+      "Name": "Mjölk fett 3% berikad"
+    },
+    {
+      "Name": "Yoghurt naturell fett 3% berikad"
+    },
+    {
+      "Name": "Fruktyoghurt fett 2,5%"
+    },
+    {
+      "Name": "Fruktyoghurt lätt fett 0,5% berikad"
+    },
+    {
+      "Name": "Mjölk fett 4,2% typ lantmjölk"
+    },
+    {
+      "Name": "Filmjölk A-fil fett 3% berikad"
+    },
+    {
+      "Name": "Mellanfil fett 1,5% berikad"
+    },
+    {
+      "Name": "Mjölkdryck jordgubb fett 1,5% berikad"
+    },
+    {
+      "Name": "Yoghurt naturell lätt fett 0,5% berikad"
+    },
+    {
+      "Name": "Fruktyoghurt fett 2%"
+    },
+    {
+      "Name": "Fruktyoghurt delikatessyoghurt fett 7%"
+    },
+    {
+      "Name": "Fruktyoghurt lätt fett<0,05% berikad"
+    },
+    {
+      "Name": "Fruktyoghurt fett 5%"
+    },
+    {
+      "Name": "Fruktyoghurt fett 1,3% berikad"
+    },
+    {
+      "Name": "Kefir fett 3% berikad"
+    },
+    {
+      "Name": "Yoghurt mild vanilj lätt fett 0,5% berikad"
+    },
+    {
+      "Name": "Mellanmjölk fett 1,5% berikad"
+    },
+    {
+      "Name": "Lättmjölk fett 0,5% berikad"
+    },
+    {
+      "Name": "Vassle flytande"
+    },
+    {
+      "Name": "Filbunke m. grädde"
+    },
+    {
+      "Name": "Varm choklad m. mjölk fett 3%"
+    },
+    {
+      "Name": "Varm choklad m. mjölk fett 1,5%"
+    },
+    {
+      "Name": "Varm choklad m. mjölk fett 0,5%"
+    },
+    {
+      "Name": "Smoothie m. yoghurt bär banan juice"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer 15,5% typ Husman"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 18% typ Ryvita mörkt"
+    },
+    {
+      "Name": "Hårt bröd fullkorn vete m. vallmofrö fibrer 5,5%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer 14,5% typ Vika"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer 16% typ Finn crisp"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 15% typ flatbröd"
+    },
+    {
+      "Name": "Hårt bröd glutenfritt fibrer ca 7%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 13%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg kli fibrer ca 15%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 14% typ rutknäcke"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer 15,5% typ brungräddat"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 16% typ sport"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg m. sesamfrö vetekli vetegroddar fibrer 24%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer 15,5% typ delikatess"
+    },
+    {
+      "Name": "Hårt bröd fullkorn havre vete råg m. mjölk fibrer 8%"
+    },
+    {
+      "Name": "Hårt bröd vete m. vallmofrö fibrer 6% typ frukost"
+    },
+    {
+      "Name": "Hårt bröd vete m. socker kanel fibrer ca 7%"
+    },
+    {
+      "Name": "Hårt bröd glutenfritt fibrer ca 3%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn vete havre kli m. socker örtkryddor fibrer 10,5%"
+    },
+    {
+      "Name": "Bröd fullkorn korn fibrer 3%"
+    },
+    {
+      "Name": "Bröd vitt fullkorn graham typ scones"
+    },
+    {
+      "Name": "Bröd fullkorn råg fibrer ca 10% typ pumpernickel"
+    },
+    {
+      "Name": "Ströbröd malt hårt bröd fullkorn vete råg socker fibrer ca 5%"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 14% typ normalgräddat"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg vete majs m. surdeg fibrer 15% typ spisbröd"
+    },
+    {
+      "Name": "Bröd vitt vete vatten fibrer ca 3,5% typ pitabröd"
+    },
+    {
+      "Name": "Korvbröd"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 14% typ brungräddat"
+    },
+    {
+      "Name": "Bröd vitt osötat fibrer ca 2,5% typ italienskt"
+    },
+    {
+      "Name": "Bröd vitt vete fibrer ca 2,5% typ baguette"
+    },
+    {
+      "Name": "Bröd vitt fullkorn surdeg fibrer 4,4% bakad i butik typ grov baguette"
+    },
+    {
+      "Name": "Bröd vitt fibrer 3,5%"
+    },
+    {
+      "Name": "Bröd vitt mjölk fibrer ca 3% typ Hönökaka"
+    },
+    {
+      "Name": "Bröd vitt vete typ scones"
+    },
+    {
+      "Name": "Bröd vitt vete ojäst fibrer 3% typ chapati"
+    },
+    {
+      "Name": "Bröd fullkorn rågsikt fibrer ca 7% typ kavring"
+    },
+    {
+      "Name": "Bröd osötat rågsikt fibrer ca 3,5%"
+    },
+    {
+      "Name": "Bröd rågsikt fibrer ca 4%"
+    },
+    {
+      "Name": "Bröd fullkorn graham m. mjölk fibrer ca 5%"
+    },
+    {
+      "Name": "Bröd fullkorn råg typ rallarhalvor"
+    },
+    {
+      "Name": "Bröd fullkorn råg osötat fibrer ca 5%"
+    },
+    {
+      "Name": "Hårt bröd tunnbröd fullkorn vete råg korn havre"
+    },
+    {
+      "Name": "Bröd vitt mjukt m. mjölk fibrer ca 4% typ tunnbröd"
+    },
+    {
+      "Name": "Bröd fullkorn råg m. potatis fibrer ca 5% "
+    },
+    {
+      "Name": "Bröd vitt vatten fibrer ca 3% typ ostfralla"
+    },
+    {
+      "Name": "Riskaka fullkorn solrosfrön majs fett 4% "
+    },
+    {
+      "Name": "Riskaka fullkorn smaksatt fett 18% "
+    },
+    {
+      "Name": "Bröd vitt glutenfritt"
+    },
+    {
+      "Name": "Bröd mörkt glutenfritt"
+    },
+    {
+      "Name": "Bröd vitt typ croissant fransk giffel"
+    },
+    {
+      "Name": "Potatis höst rå"
+    },
+    {
+      "Name": "Potatis höst kokt m. salt"
+    },
+    {
+      "Name": "Potatis m. skal bakad u. salt"
+    },
+    {
+      "Name": "Potatis m. skal bakad u. salt i aluminiumfolie "
+    },
+    {
+      "Name": "Potatis tärnad frysvara"
+    },
+    {
+      "Name": "Färskpotatis kokt u. salt"
+    },
+    {
+      "Name": "Potatis konserv. u. lag"
+    },
+    {
+      "Name": "Klyftpotatis u. skal ugnsstekt m. rapsolja"
+    },
+    {
+      "Name": "Potatis råstekt"
+    },
+    {
+      "Name": "Potatis kokt stekt m. salt"
+    },
+    {
+      "Name": "Pommes frites friterad potatis värmd i ugn fett ca 7% frysvara"
+    },
+    {
+      "Name": "Pommes frites friterad potatis fett ca 11% frysvara"
+    },
+    {
+      "Name": "Pommes frites friterad potatis fett ca 17% tillagad på restaurang"
+    },
+    {
+      "Name": "Kroppkakor el. potatispalt m. fläsk"
+    },
+    {
+      "Name": "Sjömansbiff hemlagad"
+    },
+    {
+      "Name": "Lapskojs"
+    },
+    {
+      "Name": "Pitepalt"
+    },
+    {
+      "Name": "Bakad potatis m. kycklingcurryröra sallad"
+    },
+    {
+      "Name": "Pytt i panna tillagad frysvara"
+    },
+    {
+      "Name": "Sjömansbiff frysvara"
+    },
+    {
+      "Name": "Janssons frestelse"
+    },
+    {
+      "Name": "Laxpudding"
+    },
+    {
+      "Name": "Sillpudding"
+    },
+    {
+      "Name": "Bakad potatis m. skagenröra sallad"
+    },
+    {
+      "Name": "Potatissallad m. gräddfil majonnäs"
+    },
+    {
+      "Name": "Potatissoppa m. purjolök"
+    },
+    {
+      "Name": "Pytt i panna m. rotfrukt svamp veg."
+    },
+    {
+      "Name": "Potatissallad m. vinägrettsås"
+    },
+    {
+      "Name": "Potatispalt"
+    },
+    {
+      "Name": "Potatis råstuvad hemlagad"
+    },
+    {
+      "Name": "Potatisgratäng m. mjölk kaffegrädde ost hemlagad"
+    },
+    {
+      "Name": "Raggmunk potatisplätt potatispannkaka hemlagad"
+    },
+    {
+      "Name": "Potatis stuvad"
+    },
+    {
+      "Name": "Potatisbullar stekta"
+    },
+    {
+      "Name": "Potatismos hemlagad"
+    },
+    {
+      "Name": "Potatisgratäng m. mjölk ost hemlagad"
+    },
+    {
+      "Name": "Potatisgratäng m. vispgrädde ost"
+    },
+    {
+      "Name": "Potatismos m. lättmjölk"
+    },
+    {
+      "Name": "Potatisgratäng m. lättmjölk ost mager hemlagad"
+    },
+    {
+      "Name": "Bakad potatis m. färskoströra paprika veg."
+    },
+    {
+      "Name": "Schweizisk potatiskaka rösti värmd frysvara"
+    },
+    {
+      "Name": "Potatiskrokett värmd frysvara"
+    },
+    {
+      "Name": "Potatisgratäng m. grädde ost värmd frysvara"
+    },
+    {
+      "Name": "Grönsaksblandning m. morot palsternacka purjolök rotselleri frysvara"
+    },
+    {
+      "Name": "Jordärtskocka"
+    },
+    {
+      "Name": "Kålrot"
+    },
+    {
+      "Name": "Morot"
+    },
+    {
+      "Name": "Palsternacka"
+    },
+    {
+      "Name": "Pepparrot"
+    },
+    {
+      "Name": "Rotselleri"
+    },
+    {
+      "Name": "Rädisa"
+    },
+    {
+      "Name": "Rödbeta"
+    },
+    {
+      "Name": "Rättika"
+    },
+    {
+      "Name": "Rotpersilja"
+    },
+    {
+      "Name": "Majrova"
+    },
+    {
+      "Name": "Svartrot"
+    },
+    {
+      "Name": "Morot konserv. m. lag"
+    },
+    {
+      "Name": "Morot konserv. u. lag"
+    },
+    {
+      "Name": "Morotsjuice"
+    },
+    {
+      "Name": "Rotmos hemlagad"
+    },
+    {
+      "Name": "Jordärtskockssoppa veg. "
+    },
+    {
+      "Name": "Morot kokt m. salt"
+    },
+    {
+      "Name": "Morot stuvad"
+    },
+    {
+      "Name": "Morotssoppa veg. "
+    },
+    {
+      "Name": "Ärtsoppa m. morot veg. "
+    },
+    {
+      "Name": "Jordärtskocka kokt m. salt"
+    },
+    {
+      "Name": "Rotfrukter stekta glacerade m. honung"
+    },
+    {
+      "Name": "Grönsaksbiff rotfruktsbiff stekt veg."
+    },
+    {
+      "Name": "Rödbeta kokt u. salt"
+    },
+    {
+      "Name": "Borsjtj rödbetssoppa"
+    },
+    {
+      "Name": "Rödbeta inlagd u. lag"
+    },
+    {
+      "Name": "Avokado"
+    },
+    {
+      "Name": "Stjälkselleri"
+    },
+    {
+      "Name": "Blomkål"
+    },
+    {
+      "Name": "Blomkål frysvara"
+    },
+    {
+      "Name": "Bondbönor färska kokta u. salt"
+    },
+    {
+      "Name": "Broccoli"
+    },
+    {
+      "Name": "Broccoli frysvara"
+    },
+    {
+      "Name": "Brysselkål"
+    },
+    {
+      "Name": "Brysselkål frysvara"
+    },
+    {
+      "Name": "Mungbönsgroddar"
+    },
+    {
+      "Name": "Sojabönsgroddar"
+    },
+    {
+      "Name": "Gröna bönor"
+    },
+    {
+      "Name": "Gröna bönor frysvara"
+    },
+    {
+      "Name": "Champinjon"
+    },
+    {
+      "Name": "Friséesallat"
+    },
+    {
+      "Name": "Endivesallat"
+    },
+    {
+      "Name": "Fänkål"
+    },
+    {
+      "Name": "Grönkål"
+    },
+    {
+      "Name": "Grönkål frysvara"
+    },
+    {
+      "Name": "Gurka"
+    },
+    {
+      "Name": "Isbergssallat"
+    },
+    {
+      "Name": "Kronärtskocka"
+    },
+    {
+      "Name": "Kålrabbi"
+    },
+    {
+      "Name": "Lök gul"
+    },
+    {
+      "Name": "Majskolv"
+    },
+    {
+      "Name": "Majskolv frysvara"
+    },
+    {
+      "Name": "Majskorn frysvara"
+    },
+    {
+      "Name": "Mangold"
+    },
+    {
+      "Name": "Nässlor förvällda"
+    },
+    {
+      "Name": "Paprika grön"
+    },
+    {
+      "Name": "Paprika röd"
+    },
+    {
+      "Name": "Persilja blad"
+    },
+    {
+      "Name": "Pumpa"
+    },
+    {
+      "Name": "Purjolök"
+    },
+    {
+      "Name": "Rödkål"
+    },
+    {
+      "Name": "Savojkål"
+    },
+    {
+      "Name": "Salladskål"
+    },
+    {
+      "Name": "Sockerärtor"
+    },
+    {
+      "Name": "Spenat frysvara"
+    },
+    {
+      "Name": "Squash"
+    },
+    {
+      "Name": "Tomat"
+    },
+    {
+      "Name": "Tomat torkad m. olja"
+    },
+    {
+      "Name": "Trädgårdskrasse"
+    },
+    {
+      "Name": "Vattenkrasse"
+    },
+    {
+      "Name": "Vaxbönor"
+    },
+    {
+      "Name": "Vaxbönor frysvara"
+    },
+    {
+      "Name": "Vitkål"
+    },
+    {
+      "Name": "Vitlök"
+    },
+    {
+      "Name": "Aubergine"
+    },
+    {
+      "Name": "Gröna ärtor frysvara"
+    },
+    {
+      "Name": "Alfalfagroddar"
+    },
+    {
+      "Name": "Dill färsk"
+    },
+    {
+      "Name": "Gräslök"
+    },
+    {
+      "Name": "Basilika färsk"
+    },
+    {
+      "Name": "Chilipeppar färsk"
+    },
+    {
+      "Name": "Paprika gul"
+    },
+    {
+      "Name": "Paprika grön röd frysvara"
+    },
+    {
+      "Name": "Champinjon skivad frysvara"
+    },
+    {
+      "Name": "Linsgroddar"
+    },
+    {
+      "Name": "Lök gul frysvara"
+    },
+    {
+      "Name": "Grönsaksblandning m. ärtor bönor majs morot typ amerikansk frysvara"
+    },
+    {
+      "Name": "Grönsaksblandning m. ärtor bönor morot blomkål typ sommargrönsaker frysvara"
+    },
+    {
+      "Name": "Grönsaksblandning m. ärtor morot frysvara"
+    },
+    {
+      "Name": "Grönsaksblandning m. ärtor majs paprika frysvara"
+    },
+    {
+      "Name": "Sallad m. grönsallat gurka tomat u. dressing"
+    },
+    {
+      "Name": "Paprika grön gul röd"
+    },
+    {
+      "Name": "Bambuskott konserv. u. lag"
+    },
+    {
+      "Name": "Gröna bönor konserv. u. lag"
+    },
+    {
+      "Name": "Champinjon konserv. m. lag"
+    },
+    {
+      "Name": "Majskorn konserv. u. lag"
+    },
+    {
+      "Name": "Oliver gröna m. paprikafyllning avrunna"
+    },
+    {
+      "Name": "Oliver svarta m. olja avrunna"
+    },
+    {
+      "Name": "Grönsaksblandning el. pickels sockrad inlagd u. lag"
+    },
+    {
+      "Name": "Sparris vit konserv. u. lag"
+    },
+    {
+      "Name": "Sparrissoppa tillagad redd konserv. veg."
+    },
+    {
+      "Name": "Surkål konserv. m. lag"
+    },
+    {
+      "Name": "Tomat hel konserv. m. lag"
+    },
+    {
+      "Name": "Tomatjuice konserv. drickf."
+    },
+    {
+      "Name": "Tomatpuré konc. konserv."
+    },
+    {
+      "Name": "Vaxbönor konserv. u. lag"
+    },
+    {
+      "Name": "Gröna ärtor konserv. m. lag"
+    },
+    {
+      "Name": "Gröna ärtor konserv. u. lag"
+    },
+    {
+      "Name": "Mungbönsgroddar konserv. u. lag"
+    },
+    {
+      "Name": "Sojabönsgroddar konserv. u. lag"
+    },
+    {
+      "Name": "Paprikasallad inlagd u. lag"
+    },
+    {
+      "Name": "Ajvar relish"
+    },
+    {
+      "Name": "Svamp konserv. u. lag"
+    },
+    {
+      "Name": "Kantarell konserv. u. lag"
+    },
+    {
+      "Name": "Syltlök inlagd"
+    },
+    {
+      "Name": "Tomater gröna syltade"
+    },
+    {
+      "Name": "Tomat krossad konserv. m. lag"
+    },
+    {
+      "Name": "Fefferoni konserv. inlagd"
+    },
+    {
+      "Name": "Wokgrönsaker Asiatiska wokade m. rapsolja"
+    },
+    {
+      "Name": "Wokgrönsaker Classic wokade m. rapsolja"
+    },
+    {
+      "Name": "Grönsaksblandning ärtor morot konserv. m. lag"
+    },
+    {
+      "Name": "Grönsaksjuice konserv. el. pastöriserad drickf."
+    },
+    {
+      "Name": "Champinjon konserv. u. lag"
+    },
+    {
+      "Name": "Pumpasallad m. paprika inlagd sockrad u. lag"
+    },
+    {
+      "Name": "Grönsakssoppa klar veg. "
+    },
+    {
+      "Name": "Spenatsoppa veg. hemlagad"
+    },
+    {
+      "Name": "Vitkål stuvad hemlagad"
+    },
+    {
+      "Name": "Blomkål gratinerad"
+    },
+    {
+      "Name": "Blomkål kokt m. salt"
+    },
+    {
+      "Name": "Blomkål stuvad"
+    },
+    {
+      "Name": "Gröna bönor stuvade"
+    },
+    {
+      "Name": "Grönkålssoppa"
+    },
+    {
+      "Name": "Grönsakssoppa redd ängamat veg. "
+    },
+    {
+      "Name": "Grönsaksbiff stekt veg."
+    },
+    {
+      "Name": "Grönsallat m. vinägrettsås"
+    },
+    {
+      "Name": "Sallad m. grönsallat gurka tomat vinägrettsås"
+    },
+    {
+      "Name": "Grönsallat m. gräddfilsås"
+    },
+    {
+      "Name": "Sallad m. grönsallat gurka tomat gräddfilsås"
+    },
+    {
+      "Name": "Sallad m. grönsallat gurka tomat paprika u. dressing"
+    },
+    {
+      "Name": "Gurka inlagd m. lag hemlagad"
+    },
+    {
+      "Name": "Lök stekt m. olja el. flytande margarin salt"
+    },
+    {
+      "Name": "Löksås"
+    },
+    {
+      "Name": "Lök gul kokt m. salt"
+    },
+    {
+      "Name": "Nässelsoppa"
+    },
+    {
+      "Name": "Paprika förvälld"
+    },
+    {
+      "Name": "Purjolök kokt m. salt"
+    },
+    {
+      "Name": "Rödkål tillagad"
+    },
+    {
+      "Name": "Sparris stuvad"
+    },
+    {
+      "Name": "Spenat fräst m. olja el. flytande margarin salt"
+    },
+    {
+      "Name": "Spenat stuvad"
+    },
+    {
+      "Name": "Champinjon stekt m. salt"
+    },
+    {
+      "Name": "Champinjon stuvad"
+    },
+    {
+      "Name": "Champinjonsås hemlagad"
+    },
+    {
+      "Name": "Tomatsallad m. vinägrett"
+    },
+    {
+      "Name": "Tomatsås italiensk"
+    },
+    {
+      "Name": "Tomatsalsa kall"
+    },
+    {
+      "Name": "Vitkålssoppa tillagad veg."
+    },
+    {
+      "Name": "Vitkål kokt m. salt"
+    },
+    {
+      "Name": "Brunkål"
+    },
+    {
+      "Name": "Vitkålssallad pizzasallad"
+    },
+    {
+      "Name": "Vitkålssallad m. lingonsylt"
+    },
+    {
+      "Name": "Aubergine kokt m. salt"
+    },
+    {
+      "Name": "Aubergine stekt m. olja el. flytande margarin salt"
+    },
+    {
+      "Name": "Ärtor morot kokta m. salt"
+    },
+    {
+      "Name": "Ärtor morot stuvade"
+    },
+    {
+      "Name": "Ärtpurésoppa gröna ärtor tillagad veg. "
+    },
+    {
+      "Name": "Gryta kikärtsgryta grönsaksgryta veg. "
+    },
+    {
+      "Name": "Gratäng m. grönsaker rotfrukter veg."
+    },
+    {
+      "Name": "Grönsakssoppa m. pasta tillagad pulver"
+    },
+    {
+      "Name": "Löksoppa fransk tillagad pulver m. vatten"
+    },
+    {
+      "Name": "Grönsakssoppa tillagad klar konserv."
+    },
+    {
+      "Name": "Grönsakssoppa tillagad redd pulver m. vatten mjölk"
+    },
+    {
+      "Name": "Grönsakssoppa tillagad redd pulver"
+    },
+    {
+      "Name": "Gurka inlagd"
+    },
+    {
+      "Name": "Bostongurka"
+    },
+    {
+      "Name": "Gurka fermenterad u. lag"
+    },
+    {
+      "Name": "Saltgurka u. lag"
+    },
+    {
+      "Name": "Ättiksgurka u. lag"
+    },
+    {
+      "Name": "Kronärtskocka kokt"
+    },
+    {
+      "Name": "Champinjonsoppa tillagad pulver m. vatten mjölk"
+    },
+    {
+      "Name": "Champinjonsoppa tillagad redd m. mjölk konserv."
+    },
+    {
+      "Name": "Majskolv kokt"
+    },
+    {
+      "Name": "Blomkålssoppa tillagad pulver m. vatten mjölk"
+    },
+    {
+      "Name": "Tomatsoppa tillagad pulver m. vatten"
+    },
+    {
+      "Name": "Tomatsoppa tillagad konserv. m. vatten mjölk"
+    },
+    {
+      "Name": "Sparrissoppa tillagad pulver m. vatten mjölk veg."
+    },
+    {
+      "Name": "Rödkål konserv."
+    },
+    {
+      "Name": "Champinjonsås tillagad pulver m. mjölk smör"
+    },
+    {
+      "Name": "Grönsaker blandade fermenterade"
+    },
+    {
+      "Name": "Grönsaksjuice fermenterad"
+    },
+    {
+      "Name": "Kåldolmar råa u. sås frysvara"
+    },
+    {
+      "Name": "Vitkålssoppa m. fläskkorv hemlagad"
+    },
+    {
+      "Name": "Minestronesoppa"
+    },
+    {
+      "Name": "Vitkålssoppa m. frikadeller"
+    },
+    {
+      "Name": "Gryta får i kål"
+    },
+    {
+      "Name": "Kåldolmar stekta hemlagade"
+    },
+    {
+      "Name": "Kålpudding"
+    },
+    {
+      "Name": "Sallad Caesarsallad el. kycklingsallad m. dressing"
+    },
+    {
+      "Name": "Moussaka ugnsstekt"
+    },
+    {
+      "Name": "Wokgrönsaker m. nudlar kyckling"
+    },
+    {
+      "Name": "Kycklingsallad m. ananas paprika vitlöksdressing"
+    },
+    {
+      "Name": "Granatäpple"
+    },
+    {
+      "Name": "Grapefrukt"
+    },
+    {
+      "Name": "Guava"
+    },
+    {
+      "Name": "Hallon"
+    },
+    {
+      "Name": "Hallon m. socker frysvara"
+    },
+    {
+      "Name": "Hjortron"
+    },
+    {
+      "Name": "Jordgubbar"
+    },
+    {
+      "Name": "Jordgubbar hela m. socker frysvara"
+    },
+    {
+      "Name": "Gratäng broccoligratäng veg. "
+    },
+    {
+      "Name": "Sallad grekisk m. salladsost oliver"
+    },
+    {
+      "Name": "Grönsakssufflé"
+    },
+    {
+      "Name": "Gratäng grönsaksgratäng veg."
+    },
+    {
+      "Name": "Grekisk sallad m. fetaost"
+    },
+    {
+      "Name": "Grönsaksbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Agar torkad"
+    },
+    {
+      "Name": "Mykoprotein färs bitar filé kylvara el. frysvara"
+    },
+    {
+      "Name": "Gratäng broccoligratäng m. skinka"
+    },
+    {
+      "Name": "Wokgrönsaker m. nudlar veg."
+    },
+    {
+      "Name": "Pastej veg."
+    },
+    {
+      "Name": "Grönsaksbuljong ätf."
+    },
+    {
+      "Name": "Honungsmelon"
+    },
+    {
+      "Name": "Nätmelon"
+    },
+    {
+      "Name": "Rabarber tillagad u. socker"
+    },
+    {
+      "Name": "Vattenmelon"
+    },
+    {
+      "Name": "Ananas"
+    },
+    {
+      "Name": "Apelsin"
+    },
+    {
+      "Name": "Aprikos"
+    },
+    {
+      "Name": "Banan"
+    },
+    {
+      "Name": "Björnbär"
+    },
+    {
+      "Name": "Blåbär"
+    },
+    {
+      "Name": "Blåbär frysvara"
+    },
+    {
+      "Name": "Blåbär m. socker frysvara"
+    },
+    {
+      "Name": "Cherimoya"
+    },
+    {
+      "Name": "Citron"
+    },
+    {
+      "Name": "Småcitrus clementin mandarin tangerin satsumas"
+    },
+    {
+      "Name": "Fikon"
+    },
+    {
+      "Name": "Fläderbär"
+    },
+    {
+      "Name": "Jordgubbar skivade m. socker frysvara"
+    },
+    {
+      "Name": "Kaktusfikon"
+    },
+    {
+      "Name": "Kiwi grön"
+    },
+    {
+      "Name": "Krusbär"
+    },
+    {
+      "Name": "Physalis"
+    },
+    {
+      "Name": "Kumquat"
+    },
+    {
+      "Name": "Kvitten"
+    },
+    {
+      "Name": "Surkörsbär"
+    },
+    {
+      "Name": "Sötkörsbär"
+    },
+    {
+      "Name": "Lime"
+    },
+    {
+      "Name": "Lingon"
+    },
+    {
+      "Name": "Mango"
+    },
+    {
+      "Name": "Banan kokbanan"
+    },
+    {
+      "Name": "Nektarin"
+    },
+    {
+      "Name": "Papaya"
+    },
+    {
+      "Name": "Paradisäpple"
+    },
+    {
+      "Name": "Passionsfrukt"
+    },
+    {
+      "Name": "Persika nektarin"
+    },
+    {
+      "Name": "Sharon"
+    },
+    {
+      "Name": "Plommon"
+    },
+    {
+      "Name": "Päron"
+    },
+    {
+      "Name": "Tranbär"
+    },
+    {
+      "Name": "Vinbär röda"
+    },
+    {
+      "Name": "Vinbär svarta"
+    },
+    {
+      "Name": "Vindruvor"
+    },
+    {
+      "Name": "Äpple m. skal"
+    },
+    {
+      "Name": "Äpple u. skal "
+    },
+    {
+      "Name": "Hallon frysvara"
+    },
+    {
+      "Name": "Björnbär frysvara"
+    },
+    {
+      "Name": "Björnbär m. socker frysvara"
+    },
+    {
+      "Name": "Jordgubbar frysvara"
+    },
+    {
+      "Name": "Hallon blåbär frysvara"
+    },
+    {
+      "Name": "Apelsinskal"
+    },
+    {
+      "Name": "Aprikos torkad"
+    },
+    {
+      "Name": "Banan torkad"
+    },
+    {
+      "Name": "Blåbär torkade"
+    },
+    {
+      "Name": "Citronskal"
+    },
+    {
+      "Name": "Dadlar torkade"
+    },
+    {
+      "Name": "Fikon torkade"
+    },
+    {
+      "Name": "Katrinplommon torkade"
+    },
+    {
+      "Name": "Nypon torkat u. frön"
+    },
+    {
+      "Name": "Nyponsoppapulver berikad"
+    },
+    {
+      "Name": "Persika torkad"
+    },
+    {
+      "Name": "Päron torkade"
+    },
+    {
+      "Name": "Russin"
+    },
+    {
+      "Name": "Äpple torkat"
+    },
+    {
+      "Name": "Frukt torkad"
+    },
+    {
+      "Name": "Papaya torkad"
+    },
+    {
+      "Name": "Ananas konserv. m. juice"
+    },
+    {
+      "Name": "Ananas konserv. m. sockerlag"
+    },
+    {
+      "Name": "Aprikos konserv. m. juice"
+    },
+    {
+      "Name": "Aprikos konserv. m. sockerlag"
+    },
+    {
+      "Name": "Körsbär surkörsbär konserv. m. sockerlag"
+    },
+    {
+      "Name": "Persika konserv. m. sockerlag"
+    },
+    {
+      "Name": "Plommon konserv. m. sockerlag"
+    },
+    {
+      "Name": "Päron konserv. m. lättsockrad lag"
+    },
+    {
+      "Name": "Päron konserv. m. sockerlag"
+    },
+    {
+      "Name": "Äpple konserv."
+    },
+    {
+      "Name": "Grapefrukt konserv. m. lättsockrad lag"
+    },
+    {
+      "Name": "Fruktcocktail konserv. m. sockerlag"
+    },
+    {
+      "Name": "Mandarin konserv. m. lättsockrad lag"
+    },
+    {
+      "Name": "Mango konserv. m. sockerlag"
+    },
+    {
+      "Name": "Apelsinsallad"
+    },
+    {
+      "Name": "Frukt bär konserv. osötad el. sötningsm."
+    },
+    {
+      "Name": "Fruktsallad"
+    },
+    {
+      "Name": "Apelsinjuice färskpressad"
+    },
+    {
+      "Name": "Apelsinjuice konc. frysvara"
+    },
+    {
+      "Name": "Apelsinjuice drickf."
+    },
+    {
+      "Name": "Citronjuice färskpressad"
+    },
+    {
+      "Name": "Citronjuice konc. konserv."
+    },
+    {
+      "Name": "Småcitrusjuice färskpressad"
+    },
+    {
+      "Name": "Grapefruktjuice färskpressad"
+    },
+    {
+      "Name": "Limejuice färskpressad"
+    },
+    {
+      "Name": "Risgrynsgröt lättmjölk fett ca 1%"
+    },
+    {
+      "Name": "Risgrynsgröt"
+    },
+    {
+      "Name": "Limejuice konc. konserv."
+    },
+    {
+      "Name": "Druvjuice konserv. drickf."
+    },
+    {
+      "Name": "Äppeljuice drickf."
+    },
+    {
+      "Name": "Ananasjuice konserv. drickf."
+    },
+    {
+      "Name": "Apelsinjuice pastöriserad drickf."
+    },
+    {
+      "Name": "Juice"
+    },
+    {
+      "Name": "Aprikosnektar pastöriserad drickf."
+    },
+    {
+      "Name": "Persikonektar pastöriserad drickf."
+    },
+    {
+      "Name": "Katrinplommondryck konserv. drickf."
+    },
+    {
+      "Name": "Havredryck choklad fett 1,5%  berikad"
+    },
+    {
+      "Name": "Bovetegröt m. russin"
+    },
+    {
+      "Name": "Grahamsgröt"
+    },
+    {
+      "Name": "Havregrynsgröt fullkorn"
+    },
+    {
+      "Name": "Molinogröt grahamsmjöl m. torkad frukt linfrö"
+    },
+    {
+      "Name": "Frukostflingor ris puffat rostat osötat"
+    },
+    {
+      "Name": "Rågkross ångprep. fullkorn"
+    },
+    {
+      "Name": "Kornmjölsgröt"
+    },
+    {
+      "Name": "Mannagrynsgröt"
+    },
+    {
+      "Name": "Kruskagröt fullkorn m. havregryn vetekli russin"
+    },
+    {
+      "Name": "Rågmjölsgröt"
+    },
+    {
+      "Name": "Stuvning vit"
+    },
+    {
+      "Name": "Välling fullkorn berikad"
+    },
+    {
+      "Name": "Havrevälling hemlagad"
+    },
+    {
+      "Name": "Mannagrynsvälling hemlagad"
+    },
+    {
+      "Name": "Välling berikad"
+    },
+    {
+      "Name": "Havredryck fett 1,5% berikad"
+    },
+    {
+      "Name": "Havregryn fullkorn"
+    },
+    {
+      "Name": "Fiberhavregryn fullkorn havre m. vetekli"
+    },
+    {
+      "Name": "Havrekli"
+    },
+    {
+      "Name": "Korngryn ångprep. fullkorn"
+    },
+    {
+      "Name": "Frukostflingor majs osötad berikad typ cornflakes"
+    },
+    {
+      "Name": "Vetekross ångprep. fullkorn"
+    },
+    {
+      "Name": "Vetegroddar"
+    },
+    {
+      "Name": "Vetekli"
+    },
+    {
+      "Name": "Frukostflingor vete fullkorn typ Weetabix"
+    },
+    {
+      "Name": "Kruskakli grovt vetekli"
+    },
+    {
+      "Name": "Frukostflingor flingblandning fullkorn typ basmüsli"
+    },
+    {
+      "Name": "Frukostflingor ris puffat m. socker berikad"
+    },
+    {
+      "Name": "Frukostflingor vetekli rostat m. kornmalt"
+    },
+    {
+      "Name": "Frukostflingor ris puffat rostat m. socker kakao"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. frukt bär"
+    },
+    {
+      "Name": "Frukostflingor müsli flingblandning fullkorn m. frukt nötter socker el. honung"
+    },
+    {
+      "Name": "Frukostflingor vetekli fullkorn berikad"
+    },
+    {
+      "Name": "Frukostflingor fullkorn typ Specialflingor"
+    },
+    {
+      "Name": "Frukostflingor vete puffat m. honung berikad"
+    },
+    {
+      "Name": "Frukostflingor majs m. socker"
+    },
+    {
+      "Name": "Frukostflingor fullkorn m. socker berikad typ ringar"
+    },
+    {
+      "Name": "Fattiga riddare"
+    },
+    {
+      "Name": "Pannkaka tunn m. lättmjölk"
+    },
+    {
+      "Name": "Ugnspannkaka lättmjölk"
+    },
+    {
+      "Name": "Ugnspannkaka mellanmjölk"
+    },
+    {
+      "Name": "Våffla m. ägg"
+    },
+    {
+      "Name": "Våffla u. ägg"
+    },
+    {
+      "Name": "Fläskpannkaka"
+    },
+    {
+      "Name": "Räkcrêpe m. mellanmjölk vispgrädde fyllning 44% hemlagad"
+    },
+    {
+      "Name": "Räkcrêpe värmd fyllning 37% frysvara"
+    },
+    {
+      "Name": "Champinjoncrêpe m. mellanmjölk vispgrädde veg. hemlagad"
+    },
+    {
+      "Name": "Baguette m. salami brieost soltorkad tomat sallad"
+    },
+    {
+      "Name": "Ciabatta m. mozzarella soltorkad tomat sallad"
+    },
+    {
+      "Name": "Bagel m. rökt lax färskost sallad"
+    },
+    {
+      "Name": "Champinjoncrêpe värmd veg. frysvara"
+    },
+    {
+      "Name": "Crêpefyllning m. spenat färskost fetaost skinka"
+    },
+    {
+      "Name": "Crêpes pannkaka tunn fylld"
+    },
+    {
+      "Name": "Vårrulle värmd frysvara"
+    },
+    {
+      "Name": "Vårrulle värmd tillagad på restaurang"
+    },
+    {
+      "Name": "Deg matpaj gräddad"
+    },
+    {
+      "Name": "Pirog u. fyllning gräddad"
+    },
+    {
+      "Name": "Deg smulpaj gräddad"
+    },
+    {
+      "Name": "Paj m. köttfärs"
+    },
+    {
+      "Name": "Paj m. kyckling bacon"
+    },
+    {
+      "Name": "Pirog m. köttfärs"
+    },
+    {
+      "Name": "Pizza m. skinka champinjoner lök sardeller hemlagad"
+    },
+    {
+      "Name": "Paj m. köttfärs värmd frysvara"
+    },
+    {
+      "Name": "Pirog m. kött värmd frysvara"
+    },
+    {
+      "Name": "Pizza Capricciosa m. rökt skinka värmd kylvara el. frysvara"
+    },
+    {
+      "Name": "Pizza Capricciosa m. rökt skinka champinjon restaurang"
+    },
+    {
+      "Name": "Pizza Pepperoni m. rökt korv värmd frysvara"
+    },
+    {
+      "Name": "Pizza pan pizza m. rökt griskött värmd frysvara"
+    },
+    {
+      "Name": "Pizza pan pizza m. rökt griskött restaurang"
+    },
+    {
+      "Name": "Paj m. ost skinka värmd frysvara"
+    },
+    {
+      "Name": "Paj m. lax spenat"
+    },
+    {
+      "Name": "Pizza m. räkor musslor hemlagad"
+    },
+    {
+      "Name": "Vol-au-vent m. räkstuvning"
+    },
+    {
+      "Name": "Paj m. skaldjur värmd frysvara"
+    },
+    {
+      "Name": "Pizza Marinara m. skaldjur restaurang"
+    },
+    {
+      "Name": "Pizza veg. hemlagad"
+    },
+    {
+      "Name": "Pizza Margherita m. ost tomatsås hemlagad"
+    },
+    {
+      "Name": "Kycklingburgare m. bröd tillbehör"
+    },
+    {
+      "Name": "Fiskburgare m. bröd tillbehör"
+    },
+    {
+      "Name": "Baguette m. rostbiff potatissallad sallad"
+    },
+    {
+      "Name": "Baguette grov m. skaldjur tonfisk smögenröra sallad"
+    },
+    {
+      "Name": "Baguette grov m. ost skinka sallad lättmajonnäs"
+    },
+    {
+      "Name": "Bagel m. salami färskost sallad oliv"
+    },
+    {
+      "Name": "Sandwich m. räkor ägg sallad majonnäs"
+    },
+    {
+      "Name": "Sandwich m. rökt kalkon färskost soltorkad tomat sallad"
+    },
+    {
+      "Name": "Sandwich m. salami färskost sallad"
+    },
+    {
+      "Name": "Tunnbrödsrulle m. pastrami potatis sallad majonnäs"
+    },
+    {
+      "Name": "Wrap vetetortilla m. ris köttfärs majs ost"
+    },
+    {
+      "Name": "Wrap vetetortilla fajitas m. kyckling gräddfil sallad"
+    },
+    {
+      "Name": "Wrap vetetortilla enchilada m. köttfärs majschips ost sallad paprika tomat tomatsås"
+    },
+    {
+      "Name": "Falafel m. pitabröd sallad sesamsås pepperoni"
+    },
+    {
+      "Name": "Paj m. ost skinka mellanmjölk matlagningsgrädde hemlagad"
+    },
+    {
+      "Name": "Wrap vetetortilla m. fetaost oliver sallad vitlöksdressing"
+    },
+    {
+      "Name": "Matmuffins grov fullkorn m. getost fårost broccoli spenat soltorkade tomater"
+    },
+    {
+      "Name": "Pizzapålägg m. tomatsås skinka champinjoner hårdost"
+    },
+    {
+      "Name": "Paj m. ost skinka mellanmjölk hemlagad"
+    },
+    {
+      "Name": "Smörgåstårta el. landgång"
+    },
+    {
+      "Name": "Råris kokt m. salt"
+    },
+    {
+      "Name": "Rismjöl vitt"
+    },
+    {
+      "Name": "Risdiet flingor"
+    },
+    {
+      "Name": "Ris kinesiskt asiatiskt kokt u. salt tillagad på restaurang"
+    },
+    {
+      "Name": "Ris vildris okokt"
+    },
+    {
+      "Name": "Ris vildris kokt m. salt"
+    },
+    {
+      "Name": "Nudlar glasnudlar okokta"
+    },
+    {
+      "Name": "Vinbladsdolma m. ris konserv. veg."
+    },
+    {
+      "Name": "Bovete hela el. krossade korn"
+    },
+    {
+      "Name": "Durra el. andra sorghumarter mjöl fullkorn"
+    },
+    {
+      "Name": "Hirs hela el. krossade korn fullkorn"
+    },
+    {
+      "Name": "Mannagryn"
+    },
+    {
+      "Name": "Bulgur"
+    },
+    {
+      "Name": "Bulgur kokt"
+    },
+    {
+      "Name": "Couscous"
+    },
+    {
+      "Name": "Couscous tillagad"
+    },
+    {
+      "Name": "Korngryn ångprep. fullkorn kokt m. salt"
+    },
+    {
+      "Name": "Hirs kokt m. salt fullkorn"
+    },
+    {
+      "Name": "Majsgryn polenta kokt m. salt"
+    },
+    {
+      "Name": "Apelsinris"
+    },
+    {
+      "Name": "Ris à la Malta m. grädde fett 40%"
+    },
+    {
+      "Name": "Risgrynskaka risgrynspudding"
+    },
+    {
+      "Name": "Rismål fett 6%"
+    },
+    {
+      "Name": "Rismål lätt fett 1,5%"
+    },
+    {
+      "Name": "Paella"
+    },
+    {
+      "Name": "Nudelsoppa m. risnudlar curry sesamolja"
+    },
+    {
+      "Name": "Pasta okokt"
+    },
+    {
+      "Name": "Pasta kokt u. salt"
+    },
+    {
+      "Name": "Pasta fullkorn okokt"
+    },
+    {
+      "Name": "Pasta färsk m. ägg kokt u. salt"
+    },
+    {
+      "Name": "Stuvade makaroner"
+    },
+    {
+      "Name": "Pastagratäng makaronipudding"
+    },
+    {
+      "Name": "Spagetti m. köttfärssås"
+    },
+    {
+      "Name": "Ravioli m. sås värmd frysvara el. konserv."
+    },
+    {
+      "Name": "Tortellini m. kött kokt"
+    },
+    {
+      "Name": "Lasagne m. spenat chèvre veg. "
+    },
+    {
+      "Name": "Pastagratäng makaronipudding veg."
+    },
+    {
+      "Name": "Lasagne värmd frysvara"
+    },
+    {
+      "Name": "Nudlar äggnudlar okokta"
+    },
+    {
+      "Name": "Tortellini m. ostfyllning kokt"
+    },
+    {
+      "Name": "Nudelsoppa olika smaker kryddad"
+    },
+    {
+      "Name": "Bondbönor torkade"
+    },
+    {
+      "Name": "Bruna bönor torkade"
+    },
+    {
+      "Name": "Kidney bönor torkade"
+    },
+    {
+      "Name": "Röda bönor torkade kokta u. salt"
+    },
+    {
+      "Name": "Vita bönor torkade"
+    },
+    {
+      "Name": "Vita bönor torkade kokta u. salt"
+    },
+    {
+      "Name": "Kikärtor torkade"
+    },
+    {
+      "Name": "Mungbönor torkade kokta u. salt"
+    },
+    {
+      "Name": "Linser torkade"
+    },
+    {
+      "Name": "Mungbönor torkade"
+    },
+    {
+      "Name": "Sojabönor torkade"
+    },
+    {
+      "Name": "Sojabönor torkade kokta u. salt"
+    },
+    {
+      "Name": "Vignabönor svartögda bönor torkade"
+    },
+    {
+      "Name": "Vignabönor svartögda bönor torkade kokta u. salt"
+    },
+    {
+      "Name": "Gröna el. gula ärtor torkade"
+    },
+    {
+      "Name": "Ärtsoppa m. fläsk hemlagad"
+    },
+    {
+      "Name": "Gryta chili con carne"
+    },
+    {
+      "Name": "Ärtsoppa fläsk tillagad konserv. m. vatten"
+    },
+    {
+      "Name": "Vita bönor m. tomatsås konserv."
+    },
+    {
+      "Name": "Bönsoppa vita bönor m. tomat veg. "
+    },
+    {
+      "Name": "Linssoppa veg. "
+    },
+    {
+      "Name": "Ärtsoppa veg."
+    },
+    {
+      "Name": "Tofu fast"
+    },
+    {
+      "Name": "Sojamjöl fett ca 20%"
+    },
+    {
+      "Name": "Sojadryck"
+    },
+    {
+      "Name": "Miso sojabönspasta fermenterad"
+    },
+    {
+      "Name": "Sojasås"
+    },
+    {
+      "Name": "Sojasås söt"
+    },
+    {
+      "Name": "Korv veg. sojakorv konserv. fett 15%"
+    },
+    {
+      "Name": "Glass sojaglass mjölkfri fett 11%"
+    },
+    {
+      "Name": "Sojabönsbiff stekt"
+    },
+    {
+      "Name": "Korv veg. soja- och veteprotein tillagad typ grillkorv"
+    },
+    {
+      "Name": "Falafel kikärtsbiff friterad hemlagad"
+    },
+    {
+      "Name": "Lamm bog rå"
+    },
+    {
+      "Name": "Lamm kotlett rå"
+    },
+    {
+      "Name": "Lamm lägg rå"
+    },
+    {
+      "Name": "Lamm rygg el. hals rå"
+    },
+    {
+      "Name": "Lamm stek rå"
+    },
+    {
+      "Name": "Lamm färs rå fett 20%"
+    },
+    {
+      "Name": "Lamm tunnbringa rå"
+    },
+    {
+      "Name": "Lamm kotlett rå fett bortskuret"
+    },
+    {
+      "Name": "Hare kött rå"
+    },
+    {
+      "Name": "Hjort dovhjort bog rå"
+    },
+    {
+      "Name": "Hjort dovhjort stek rå"
+    },
+    {
+      "Name": "Hjort ryggbiff rå"
+    },
+    {
+      "Name": "Häst kött rå"
+    },
+    {
+      "Name": "Kalv bog rå"
+    },
+    {
+      "Name": "Kalv bringa rå"
+    },
+    {
+      "Name": "Kalv filé rå"
+    },
+    {
+      "Name": "Kalv fransyska rå"
+    },
+    {
+      "Name": "Kalv innanlår rå"
+    },
+    {
+      "Name": "Kalv kotlett rå"
+    },
+    {
+      "Name": "Kalv lägg rå"
+    },
+    {
+      "Name": "Kalv ytterlår rå"
+    },
+    {
+      "Name": "Kalv tunnbringa rå"
+    },
+    {
+      "Name": "Kalv högrev rå"
+    },
+    {
+      "Name": "Kanin kött rå"
+    },
+    {
+      "Name": "Nöt clubstek biff rå m. ben"
+    },
+    {
+      "Name": "Nöt ryggbiff rå"
+    },
+    {
+      "Name": "Nöt oxbringa rå"
+    },
+    {
+      "Name": "Nöt oxbringa rimmad rå"
+    },
+    {
+      "Name": "Nöt oxfilé rå"
+    },
+    {
+      "Name": "Nöt fransyska rå"
+    },
+    {
+      "Name": "Nöt färs rå fett 10%"
+    },
+    {
+      "Name": "Nöt högrev rå fett bortskuret"
+    },
+    {
+      "Name": "Nöt innanlår rå"
+    },
+    {
+      "Name": "Nöt lägg rå"
+    },
+    {
+      "Name": "Nöt bog el. märgpipa rå"
+    },
+    {
+      "Name": "Nöt rostbiff rå"
+    },
+    {
+      "Name": "Nöt rulle rimmad rå"
+    },
+    {
+      "Name": "Nöt ytterlår rå"
+    },
+    {
+      "Name": "Nöt entrecôte rå"
+    },
+    {
+      "Name": "Nöt grytbitar rå"
+    },
+    {
+      "Name": "Nöt kött hackebiff rå frysvara"
+    },
+    {
+      "Name": "Nöt färs rå fett 15%"
+    },
+    {
+      "Name": "Ren stek rå"
+    },
+    {
+      "Name": "Ren bog rå"
+    },
+    {
+      "Name": "Ren skav rå frysvara"
+    },
+    {
+      "Name": "Rådjur kött rå"
+    },
+    {
+      "Name": "Gris bog rå"
+    },
+    {
+      "Name": "Gris fläskfilé rå"
+    },
+    {
+      "Name": "Gris fläskkotlett rå fettkant 5 mm"
+    },
+    {
+      "Name": "Gris revbensspjäll rå"
+    },
+    {
+      "Name": "Gris fötter rå"
+    },
+    {
+      "Name": "Gris skinka julskinka rimmad rå fett ca 3%"
+    },
+    {
+      "Name": "Gris fläskben rå"
+    },
+    {
+      "Name": "Gris picnicbog rå"
+    },
+    {
+      "Name": "Gris grytbitar rå"
+    },
+    {
+      "Name": "Gris fläskkarré rå"
+    },
+    {
+      "Name": "Gris färs rå fett 20%"
+    },
+    {
+      "Name": "Gris bogbladsstek rå"
+    },
+    {
+      "Name": "Gris fläskkotlett rå fett bortskuret"
+    },
+    {
+      "Name": "Gris fläskkotlett rå fettkant 2 mm"
+    },
+    {
+      "Name": "Gris lägg putsad rå u. svål"
+    },
+    {
+      "Name": "Gris sidfläsk bit rå m. svål"
+    },
+    {
+      "Name": "Gris stekfläsk sida skiva rå m. svål"
+    },
+    {
+      "Name": "Gris flintastek rå m. svål"
+    },
+    {
+      "Name": "Gris skinka innanlår rå"
+    },
+    {
+      "Name": "Gris skinka fransyska rå"
+    },
+    {
+      "Name": "Gris skinka ytterlår rå"
+    },
+    {
+      "Name": "Gris sidfläsk el. stekfläsk skivor rimmat rå"
+    },
+    {
+      "Name": "Gris färs rå fett 8%"
+    },
+    {
+      "Name": "Älg skav rå frysvara"
+    },
+    {
+      "Name": "Nöt oxsvans rå fett bortskuret"
+    },
+    {
+      "Name": "Gris svål rå"
+    },
+    {
+      "Name": "Häst hamburgerkött rökt"
+    },
+    {
+      "Name": "Nöt saltkött rimmat kokt"
+    },
+    {
+      "Name": "Nöt kött rökt"
+    },
+    {
+      "Name": "Ren stek varmrökt"
+    },
+    {
+      "Name": "Ren kött torkat"
+    },
+    {
+      "Name": "Gris bacon rå"
+    },
+    {
+      "Name": "Gris bacon stekt"
+    },
+    {
+      "Name": "Gris bog konserv. gelé 6-8%"
+    },
+    {
+      "Name": "Gris kassler kotlettrad rökt"
+    },
+    {
+      "Name": "Gris skinka konserv. gelé 8-11%"
+    },
+    {
+      "Name": "Gris skinka lufttorkad italiensk"
+    },
+    {
+      "Name": "Gris skinka rökt fett 6%"
+    },
+    {
+      "Name": "Gris skinka skivad rökt fett 1-3%"
+    },
+    {
+      "Name": "Gris sidfläsk rökt"
+    },
+    {
+      "Name": "Nöt kött konserv."
+    },
+    {
+      "Name": "Nöt flankstek rå"
+    },
+    {
+      "Name": "Nöt ryggbiff stekt"
+    },
+    {
+      "Name": "Nöt entrecôte stekt"
+    },
+    {
+      "Name": "Gris bog stekt"
+    },
+    {
+      "Name": "Gris kött kokt m. salt"
+    },
+    {
+      "Name": "Gris fläskben kokt m. salt"
+    },
+    {
+      "Name": "Gris fläskfilé skiva stekt"
+    },
+    {
+      "Name": "Gris fläskkarré skiva stekt"
+    },
+    {
+      "Name": "Gris fläskkotlett stekt"
+    },
+    {
+      "Name": "Gris lägg kokt m. salt u. svål"
+    },
+    {
+      "Name": "Gris kött grillat"
+    },
+    {
+      "Name": "Rullsylta"
+    },
+    {
+      "Name": "Gris fötter kokta m. salt"
+    },
+    {
+      "Name": "Hare stek stekt"
+    },
+    {
+      "Name": "Kalv filé stekt"
+    },
+    {
+      "Name": "Kalv kotlett stekt"
+    },
+    {
+      "Name": "Kalv kött kokt m. salt"
+    },
+    {
+      "Name": "Kalv stek stekt"
+    },
+    {
+      "Name": "Lamm kotlett stekt"
+    },
+    {
+      "Name": "Lamm stek stekt"
+    },
+    {
+      "Name": "Nöt högrev kokt m. salt"
+    },
+    {
+      "Name": "Nöt stek el. grytstek kokt m. salt"
+    },
+    {
+      "Name": "Nöt oxbringa rimmad kokt u. salt"
+    },
+    {
+      "Name": "Oxrullad nöt stekt"
+    },
+    {
+      "Name": "Nöt rostbiff ugnsstekt"
+    },
+    {
+      "Name": "Gris revbensspjäll ugnsstekt grillat"
+    },
+    {
+      "Name": "Rådjur kött ugnsstekt"
+    },
+    {
+      "Name": "Ren kött kokt m. salt"
+    },
+    {
+      "Name": "Ren kött ugnsstekt"
+    },
+    {
+      "Name": "Älg stek ugnsstekt el. grillad"
+    },
+    {
+      "Name": "Gris fläskkarré tillagad u. sky"
+    },
+    {
+      "Name": "Gris skinkstek stekt u. sky frysvara"
+    },
+    {
+      "Name": "Nöt stek stekt u. sky frysvara"
+    },
+    {
+      "Name": "Nöt rostbiff tillagad ugnsrostad u. salt"
+    },
+    {
+      "Name": "Gris revbensspjäll tillagad u. sky"
+    },
+    {
+      "Name": "Gryta dillkött nöt m. sås"
+    },
+    {
+      "Name": "Biff stroganoff nöt"
+    },
+    {
+      "Name": "Rimmat sidfläsk el. stekfläsk stekt m. löksås"
+    },
+    {
+      "Name": "Rimmat sidfläsk panerat stekt"
+    },
+    {
+      "Name": "Fläskkotlett panerad stekt"
+    },
+    {
+      "Name": "Schnitzel gris stekt"
+    },
+    {
+      "Name": "Gryta gulasch nöt"
+    },
+    {
+      "Name": "Gryta osso buco kalvläggsgryta "
+    },
+    {
+      "Name": "Köttsoppa nöt"
+    },
+    {
+      "Name": "Gryta lamm m. lök tomat"
+    },
+    {
+      "Name": "Pepparrotskött nöt m. lök morot sås"
+    },
+    {
+      "Name": "Renskav brynt m. matfett salt"
+    },
+    {
+      "Name": "Gryta renskavsgryta"
+    },
+    {
+      "Name": "Skinksås"
+    },
+    {
+      "Name": "Gryta kalops nöt hemlagad"
+    },
+    {
+      "Name": "Biff stroganoff nöt frysvara"
+    },
+    {
+      "Name": "Gryta dillkött nöt m. sås frysvara"
+    },
+    {
+      "Name": "Kinesisk rätt gris friterat m. grönsaker"
+    },
+    {
+      "Name": "Gryta chop suey fläskfilé tillagad på restaurang"
+    },
+    {
+      "Name": "Nasi Goreng gris tillagad på restaurang"
+    },
+    {
+      "Name": "Frikassé kalv frysvara"
+    },
+    {
+      "Name": "Gryta kalops nöt frysvara"
+    },
+    {
+      "Name": "Köttsoppa nöt tillagad konserv. m. vatten"
+    },
+    {
+      "Name": "Kycklingburgare rå fett ca 7% frysvara"
+    },
+    {
+      "Name": "Köttbullar kyckling stekta fett 12% frysvara"
+    },
+    {
+      "Name": "Hamburgare nöt rå frysvara"
+    },
+    {
+      "Name": "Köttbullar frysvara"
+    },
+    {
+      "Name": "Pannbiff rå frysvara"
+    },
+    {
+      "Name": "Burgare veg. soja- och veteprotein tillagad"
+    },
+    {
+      "Name": "Biff à la Lindström stekt hemlagad"
+    },
+    {
+      "Name": "Köttbullar blandfärs stekta hemlagade"
+    },
+    {
+      "Name": "Köttfärslimpa ugnsstekt hemlagad"
+    },
+    {
+      "Name": "Köttfärssås i gjutjärn hemlagad"
+    },
+    {
+      "Name": "Pannbiff gris stekt"
+    },
+    {
+      "Name": "Hamburgare nöt stekt fett 10%"
+    },
+    {
+      "Name": "Hamburgare nöt stekt fett 15%"
+    },
+    {
+      "Name": "Järpar blandfärs stekta"
+    },
+    {
+      "Name": "Frikadeller kalv"
+    },
+    {
+      "Name": "Wallenbergare kalv stekt"
+    },
+    {
+      "Name": "Köttfärssås nöt"
+    },
+    {
+      "Name": "Köttfärssoppa"
+    },
+    {
+      "Name": "Köttbullar nöt stekta"
+    },
+    {
+      "Name": "Köttbullar gris stekta"
+    },
+    {
+      "Name": "Köttfärssås gris"
+    },
+    {
+      "Name": "Nöt färs stekt tacokryddad hemlagad kryddning"
+    },
+    {
+      "Name": "Pannbiff lamm stekt"
+    },
+    {
+      "Name": "Köttfärslimpa gris ugnsstekt hemlagad"
+    },
+    {
+      "Name": "Köttfärslimpa blandfärs ugnsstekt hemlagad"
+    },
+    {
+      "Name": "Pannbiff nöt stekt"
+    },
+    {
+      "Name": "Pannbiff blandfärs stekt"
+    },
+    {
+      "Name": "Parisersmörgås"
+    },
+    {
+      "Name": "Pannbiff älg stekt"
+    },
+    {
+      "Name": "Köttfärssås älg"
+    },
+    {
+      "Name": "Taco tacoskal m. köttfärs grönsaker ost"
+    },
+    {
+      "Name": "Biff à la Lindström stekt frysvara"
+    },
+    {
+      "Name": "Gryta biff m. bambuskott tillagad på restaurang"
+    },
+    {
+      "Name": "Hamburgare nöt stekt frysvara"
+    },
+    {
+      "Name": "Kålpudding m. vitkål köttfärs"
+    },
+    {
+      "Name": "Köttfärssås frysvara el. konserv."
+    },
+    {
+      "Name": "Kåldolmar stekta u. sås frysvara"
+    },
+    {
+      "Name": "Kåldolmar stekta värmda m. sås frysvara"
+    },
+    {
+      "Name": "Köttbullar stekta m. sås frysvara"
+    },
+    {
+      "Name": "Pannbiff stekt frysvara"
+    },
+    {
+      "Name": "Anka bröst rå"
+    },
+    {
+      "Name": "Anka rå m. skinn"
+    },
+    {
+      "Name": "Duva rå"
+    },
+    {
+      "Name": "Duva rå m. skinn"
+    },
+    {
+      "Name": "Fasan rå"
+    },
+    {
+      "Name": "Fasan rå m. skinn"
+    },
+    {
+      "Name": "Gås rå"
+    },
+    {
+      "Name": "Gås rå m. skinn"
+    },
+    {
+      "Name": "Höna rå"
+    },
+    {
+      "Name": "Höna rå m. skinn"
+    },
+    {
+      "Name": "Kalkon filé rå"
+    },
+    {
+      "Name": "Kalkon rå m. skinn"
+    },
+    {
+      "Name": "Kyckling kött rå u. skinn"
+    },
+    {
+      "Name": "Kyckling kött rå m. skinn"
+    },
+    {
+      "Name": "Kyckling bröstfilé rå m. skinn"
+    },
+    {
+      "Name": "Kyckling lår rå m. skinn"
+    },
+    {
+      "Name": "Kyckling vinge rå m. skinn"
+    },
+    {
+      "Name": "Ripa rå"
+    },
+    {
+      "Name": "Kyckling bröstfilé färsk stekt u. skinn"
+    },
+    {
+      "Name": "Kyckling ben rå m. skinn"
+    },
+    {
+      "Name": "Kyckling bröstfilé strimlad wokad u. skinn m. rapsolja"
+    },
+    {
+      "Name": "Kyckling bröstfilé rå u. skinn"
+    },
+    {
+      "Name": "Kyckling lår rå u. skinn"
+    },
+    {
+      "Name": "Kyckling delar marinerade m. skinn"
+    },
+    {
+      "Name": "Struts filé rå"
+    },
+    {
+      "Name": "Struts filé stekt"
+    },
+    {
+      "Name": "Kalkon kokt"
+    },
+    {
+      "Name": "Duva m. skinn stekt m. salt"
+    },
+    {
+      "Name": "Kyckling kokt m. salt"
+    },
+    {
+      "Name": "Kyckling grillad m. skinn"
+    },
+    {
+      "Name": "Fasan stekt m. skinn"
+    },
+    {
+      "Name": "Gås stekt m. skinn"
+    },
+    {
+      "Name": "Höna kokt m. salt"
+    },
+    {
+      "Name": "Kalkon stekt m. skinn"
+    },
+    {
+      "Name": "Kyckling bröstfilé m. skinn stekt m. salt"
+    },
+    {
+      "Name": "Ripa stekt"
+    },
+    {
+      "Name": "Kyckling kött kokt stekt grillat"
+    },
+    {
+      "Name": "Kalkon rökt"
+    },
+    {
+      "Name": "Kyckling marinerad grillad m. skinn"
+    },
+    {
+      "Name": "Kyckling friterad m. frityrsmet"
+    },
+    {
+      "Name": "Ostsufflé"
+    },
+    {
+      "Name": "Bondomelett"
+    },
+    {
+      "Name": "Braxen rå"
+    },
+    {
+      "Name": "Regnbågslax rå"
+    },
+    {
+      "Name": "Sej rå"
+    },
+    {
+      "Name": "Hälleflundra vild rå"
+    },
+    {
+      "Name": "Kycklingsoppa thailändsk"
+    },
+    {
+      "Name": "Kyckling nugget friterad tillagad på restaurang"
+    },
+    {
+      "Name": "Kycklingsoppa tillagad redd pulver m. vatten mjölk"
+    },
+    {
+      "Name": "Kycklingsoppa tillagad redd pulver m. vatten"
+    },
+    {
+      "Name": "Kalvbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Kalvbuljong pasta el. pulver lågsalt storhushåll"
+    },
+    {
+      "Name": "Köttbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Köttbuljong pasta el. pulver lågsalt storhushåll"
+    },
+    {
+      "Name": "Skinkbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Hönsbuljong pasta el. pulver lågsalt storhushåll"
+    },
+    {
+      "Name": "Hönsbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Köttbuljong pulver tärning"
+    },
+    {
+      "Name": "Köttbuljong konserv. ätf."
+    },
+    {
+      "Name": "Gelatinblad el. gelatinpulver"
+    },
+    {
+      "Name": "Köttbuljong tärning ätf."
+    },
+    {
+      "Name": "Köttbuljong ätf."
+    },
+    {
+      "Name": "Hönsbuljong ätf."
+    },
+    {
+      "Name": "Ägg rått"
+    },
+    {
+      "Name": "Äggula rå"
+    },
+    {
+      "Name": "Äggvita rå"
+    },
+    {
+      "Name": "Fransk omelett m. grädde"
+    },
+    {
+      "Name": "Fransk omelett m. vatten"
+    },
+    {
+      "Name": "Sufflé gräddad u. fyllning veg."
+    },
+    {
+      "Name": "Äggakaka"
+    },
+    {
+      "Name": "Ägg stekt"
+    },
+    {
+      "Name": "Skinklåda m. mjölk ost"
+    },
+    {
+      "Name": "Torsksufflé"
+    },
+    {
+      "Name": "Kolja rå"
+    },
+    {
+      "Name": "Kummel rå"
+    },
+    {
+      "Name": "Siklöja rå"
+    },
+    {
+      "Name": "Sill rå"
+    },
+    {
+      "Name": "Flundra rå"
+    },
+    {
+      "Name": "Strömming rå"
+    },
+    {
+      "Name": "Röding rå"
+    },
+    {
+      "Name": "Torsk rå"
+    },
+    {
+      "Name": "Vitling rå"
+    },
+    {
+      "Name": "Ål rå"
+    },
+    {
+      "Name": "Öring odlad rå"
+    },
+    {
+      "Name": "Pinklax rå"
+    },
+    {
+      "Name": "Piggvar rå"
+    },
+    {
+      "Name": "Sik urtagen varmrökt"
+    },
+    {
+      "Name": "Abborre rå"
+    },
+    {
+      "Name": "Lax odlad Norge fjordlax rå"
+    },
+    {
+      "Name": "Öring Sverige rå"
+    },
+    {
+      "Name": "Lake rå"
+    },
+    {
+      "Name": "Rödspätta rå"
+    },
+    {
+      "Name": "Sik rå"
+    },
+    {
+      "Name": "Makrill rå"
+    },
+    {
+      "Name": "Regnbågslax odlad rå"
+    },
+    {
+      "Name": "Gädda rå"
+    },
+    {
+      "Name": "Gös rå"
+    },
+    {
+      "Name": "Ansjovis skarpsill konserv. "
+    },
+    {
+      "Name": "Böckling varmrökt"
+    },
+    {
+      "Name": "Fisk torkad"
+    },
+    {
+      "Name": "Lax kallrökt"
+    },
+    {
+      "Name": "Sardeller konserv."
+    },
+    {
+      "Name": "Sardiner i olja konserv."
+    },
+    {
+      "Name": "Sardiner i tomatsås konserv."
+    },
+    {
+      "Name": "Saltsill rå"
+    },
+    {
+      "Name": "Saltströmming rå"
+    },
+    {
+      "Name": "Tonfisk i olja konserv. avrunnen"
+    },
+    {
+      "Name": "Ål varmrökt rundrökt"
+    },
+    {
+      "Name": "Tonfisk i vatten konserv. avrunnen"
+    },
+    {
+      "Name": "Makrill urtagen varmrökt"
+    },
+    {
+      "Name": "Lutfisk rå frysvara"
+    },
+    {
+      "Name": "Sill matjessill konserv."
+    },
+    {
+      "Name": "Marulk rå"
+    },
+    {
+      "Name": "Makrill filé i olja konserv."
+    },
+    {
+      "Name": "Saltsill urvattnad konserv."
+    },
+    {
+      "Name": "Lax gravad"
+    },
+    {
+      "Name": "Lax rimmad"
+    },
+    {
+      "Name": "Böckling dubbelfilé varmrökt"
+    },
+    {
+      "Name": "Lax varmrökt urtagen"
+    },
+    {
+      "Name": "Makrill filé varmrökt"
+    },
+    {
+      "Name": "Regnbågslax kallrökt"
+    },
+    {
+      "Name": "Regnbågslax urtagen varmrökt"
+    },
+    {
+      "Name": "Röding urtagen varmrökt"
+    },
+    {
+      "Name": "Ål varmrökt flatrökt"
+    },
+    {
+      "Name": "Fiskpinnar stekta"
+    },
+    {
+      "Name": "Makrill filé i tomatsås konserv."
+    },
+    {
+      "Name": "Surströmming"
+    },
+    {
+      "Name": "Lutfisk kokt"
+    },
+    {
+      "Name": "Saltsill panerad stekt hemlagad"
+    },
+    {
+      "Name": "Strömmingsflundra panerad stekt hemlagad"
+    },
+    {
+      "Name": "Torsk filé panerad stekt hemlagad"
+    },
+    {
+      "Name": "Ål inkokt hemlagad"
+    },
+    {
+      "Name": "Ål ugnsstekt hemlagad"
+    },
+    {
+      "Name": "Abborre kokt m. salt"
+    },
+    {
+      "Name": "Abborre filé panerad stekt"
+    },
+    {
+      "Name": "Fisk friterad"
+    },
+    {
+      "Name": "Regnbågslax inkokt m. salt"
+    },
+    {
+      "Name": "Regnbågslax panerad stekt"
+    },
+    {
+      "Name": "Gädda kokt m. salt"
+    },
+    {
+      "Name": "Gädda panerad stekt"
+    },
+    {
+      "Name": "Hälleflundra kokt m. salt"
+    },
+    {
+      "Name": "Hälleflundra panerad stekt"
+    },
+    {
+      "Name": "Kolja kokt m. salt"
+    },
+    {
+      "Name": "Kolja panerad stekt m. salt"
+    },
+    {
+      "Name": "Lax stekt m. salt"
+    },
+    {
+      "Name": "Lax kokt m. salt"
+    },
+    {
+      "Name": "Makrill kokt m. salt"
+    },
+    {
+      "Name": "Makrill panerad stekt"
+    },
+    {
+      "Name": "Makrill stekt m. salt"
+    },
+    {
+      "Name": "Piggvar kokt m. salt"
+    },
+    {
+      "Name": "Rödspätta filé kokt m. salt"
+    },
+    {
+      "Name": "Rödspätta filé panerad stekt m. salt"
+    },
+    {
+      "Name": "Rödspätta filé stekt m. salt"
+    },
+    {
+      "Name": "Sik kokt m. salt"
+    },
+    {
+      "Name": "Sik panerad stekt"
+    },
+    {
+      "Name": "Saltsill kokt"
+    },
+    {
+      "Name": "Sill panerad stekt m. salt"
+    },
+    {
+      "Name": "Strömming kokt m. salt"
+    },
+    {
+      "Name": "Ättikströmming"
+    },
+    {
+      "Name": "Kräftströmming"
+    },
+    {
+      "Name": "Strömming filé stekt m. salt"
+    },
+    {
+      "Name": "Tonfisk stekt m. salt"
+    },
+    {
+      "Name": "Torsk filé kokt m. salt"
+    },
+    {
+      "Name": "Torsk panerad stekt"
+    },
+    {
+      "Name": "Torsk stekt"
+    },
+    {
+      "Name": "Vitling kokt m. salt"
+    },
+    {
+      "Name": "Vitling filé panerad stekt"
+    },
+    {
+      "Name": "Fisk varmrökt"
+    },
+    {
+      "Name": "Fiskbullar konserv. u. buljong"
+    },
+    {
+      "Name": "Fiskbullar m. hummersås konserv. tillagad"
+    },
+    {
+      "Name": "Laxpastej lättrökt"
+    },
+    {
+      "Name": "Böcklingpastej"
+    },
+    {
+      "Name": "Fiskpudding m. ris hemlagad"
+    },
+    {
+      "Name": "Fiskgratäng u. potatismos hemlagad"
+    },
+    {
+      "Name": "Böcklinglåda m. äggstanning"
+    },
+    {
+      "Name": "Fiskbullar panerade stekta"
+    },
+    {
+      "Name": "Fisksoppa bouillabaisse"
+    },
+    {
+      "Name": "Fiskpaté m. räkor"
+    },
+    {
+      "Name": "Fiskfärs kokt"
+    },
+    {
+      "Name": "Fiskgratäng m. dillsås"
+    },
+    {
+      "Name": "Fiskgratäng m. räkor u. potatismos"
+    },
+    {
+      "Name": "Laxmousse"
+    },
+    {
+      "Name": "Sillbullar"
+    },
+    {
+      "Name": "Sillsallad"
+    },
+    {
+      "Name": "Sushi nigiri m. lax"
+    },
+    {
+      "Name": "Sushi nigiri m. hälleflundra"
+    },
+    {
+      "Name": "Sushi nigiri m. tonfisk"
+    },
+    {
+      "Name": "Sushi rulle m. crabfish gurka"
+    },
+    {
+      "Name": "Sallad m. tonfisk potatis bönor tomat sallad u. dressing"
+    },
+    {
+      "Name": "Fisk m. mandel ströbröd frysvara"
+    },
+    {
+      "Name": "Fiskgratäng m. potatismos dillsås tillagad frysvara"
+    },
+    {
+      "Name": "Laxpaté"
+    },
+    {
+      "Name": "Fiskgratäng m. potatismos räksås tillagad frysvara"
+    },
+    {
+      "Name": "Sushi olika sorter 7 bitar"
+    },
+    {
+      "Name": "Fiskrom torsk sill rå"
+    },
+    {
+      "Name": "Påläggskaviar orökt"
+    },
+    {
+      "Name": "Påläggskaviar original"
+    },
+    {
+      "Name": "Påläggskaviar lätt"
+    },
+    {
+      "Name": "Stenbitsrom"
+    },
+    {
+      "Name": "Löjrom saltad"
+    },
+    {
+      "Name": "Bläckfisk rå"
+    },
+    {
+      "Name": "Blåmussla kokt m. vin avrunnen"
+    },
+    {
+      "Name": "Ostron"
+    },
+    {
+      "Name": "Snigel vinbergssnäcka"
+    },
+    {
+      "Name": "Groda lår rått frysvara"
+    },
+    {
+      "Name": "Mussla konserv. m. lag"
+    },
+    {
+      "Name": "Mussla konserv. u. lag"
+    },
+    {
+      "Name": "Ostron konserv. m. lag"
+    },
+    {
+      "Name": "Krabba Blå krabba kokt"
+    },
+    {
+      "Name": "Hummer kokt"
+    },
+    {
+      "Name": "Kräfta kokt"
+    },
+    {
+      "Name": "Räka kokt"
+    },
+    {
+      "Name": "Hummer kokt el. konserv."
+    },
+    {
+      "Name": "Krabba kokt"
+    },
+    {
+      "Name": "Krabba konserv."
+    },
+    {
+      "Name": "Räka konserv. m. lag"
+    },
+    {
+      "Name": "Räka konserv. u. lag"
+    },
+    {
+      "Name": "Havskräfta kokt"
+    },
+    {
+      "Name": "Räka friterad"
+    },
+    {
+      "Name": "Räka friterad tillagad på restaurang"
+    },
+    {
+      "Name": "Bläckfisk friterad panerad"
+    },
+    {
+      "Name": "Bläckfisk friterad panerad tillagad på restaurang"
+    },
+    {
+      "Name": "Sallad m. räkor sparris tomat champinjoner ägg"
+    },
+    {
+      "Name": "Räka stuvad"
+    },
+    {
+      "Name": "Räksoppa ätf."
+    },
+    {
+      "Name": "Västkustsallad m. musslor räkor champinjon dressing hemlagad"
+    },
+    {
+      "Name": "Västkustsallad m. musslor räkor champinjon hemlagad"
+    },
+    {
+      "Name": "Medelhavssallad m. tonfisk skaldjur majonnäsdressing sallad tomat"
+    },
+    {
+      "Name": "Skaldjurspaté"
+    },
+    {
+      "Name": "Räksoppa tillagad pulver m. vatten mjölk"
+    },
+    {
+      "Name": "Fiskbuljong pasta el. pulver storhushåll"
+    },
+    {
+      "Name": "Fiskbuljong pasta el. pulver lågsalt storhushåll"
+    },
+    {
+      "Name": "Fisk och skaldjurssås tillagad pulver m. mjölk vatten smör typ Smögen"
+    },
+    {
+      "Name": "Fiskbuljong ätf."
+    },
+    {
+      "Name": "Gris blod rått"
+    },
+    {
+      "Name": "Nöt blod rått"
+    },
+    {
+      "Name": "Hårt bröd blodbröd fullkorn"
+    },
+    {
+      "Name": "Blodpudding blodkorv fett 19%"
+    },
+    {
+      "Name": "Blodpalt"
+    },
+    {
+      "Name": "Blodpudding blodkorv fett 14%"
+    },
+    {
+      "Name": "Blodbröd paltbröd frysvara"
+    },
+    {
+      "Name": "Blodpudding blodkorv fett 10%"
+    },
+    {
+      "Name": "Blodpudding blodkorv stekt fett 13%"
+    },
+    {
+      "Name": "Blodpudding blodkorv stekt fett 8%"
+    },
+    {
+      "Name": "Blodbröd paltbröd kokt m. salt"
+    },
+    {
+      "Name": "Lamm bräss rå"
+    },
+    {
+      "Name": "Lamm hjärta rå"
+    },
+    {
+      "Name": "Lamm lever rå"
+    },
+    {
+      "Name": "Lamm njure rå"
+    },
+    {
+      "Name": "Lamm tunga rå"
+    },
+    {
+      "Name": "Kalv bräss rå"
+    },
+    {
+      "Name": "Kalv lever rå"
+    },
+    {
+      "Name": "Kalv njure rå"
+    },
+    {
+      "Name": "Kalv tunga rå"
+    },
+    {
+      "Name": "Nöt kalv hjärta"
+    },
+    {
+      "Name": "Nöt lever rå"
+    },
+    {
+      "Name": "Nöt njure rå"
+    },
+    {
+      "Name": "Nöt oxtunga rå"
+    },
+    {
+      "Name": "Gris hjärta rå"
+    },
+    {
+      "Name": "Gris lever rå"
+    },
+    {
+      "Name": "Gris njure rå"
+    },
+    {
+      "Name": "Gris tunga rå"
+    },
+    {
+      "Name": "Kyckling hjärta rå"
+    },
+    {
+      "Name": "Kyckling lever rå"
+    },
+    {
+      "Name": "Kyckling mage rå"
+    },
+    {
+      "Name": "Ren lever rå"
+    },
+    {
+      "Name": "Nöt oxtunga rimmad rå"
+    },
+    {
+      "Name": "Kyckling lever stekt"
+    },
+    {
+      "Name": "Nöt lever panerad stekt"
+    },
+    {
+      "Name": "Nöt lever stekt m. salt"
+    },
+    {
+      "Name": "Nöt oxtunga rimmad kokt"
+    },
+    {
+      "Name": "Lever stuvad hemlagad"
+    },
+    {
+      "Name": "Gryta m. kalvhjärta grönsaker"
+    },
+    {
+      "Name": "Korvkaka"
+    },
+    {
+      "Name": "Leversauté kyckling"
+    },
+    {
+      "Name": "Gryta levergryta nöt"
+    },
+    {
+      "Name": "Njursauté"
+    },
+    {
+      "Name": "Leverbiff mald lever stekt frysvara"
+    },
+    {
+      "Name": "Gryta levergryta m. grönsaker frysvara"
+    },
+    {
+      "Name": "Gåsleverpastej konserv. rökt"
+    },
+    {
+      "Name": "Leverpalt"
+    },
+    {
+      "Name": "Njurpalt"
+    },
+    {
+      "Name": "Leverbiff mald lever rå frysvara"
+    },
+    {
+      "Name": "Leverpastej bredbar fett ca 24%"
+    },
+    {
+      "Name": "Leverpastej skivbar fett ca 22% "
+    },
+    {
+      "Name": "Leverpastej skivbar fett 14%"
+    },
+    {
+      "Name": "Leverpastej bredbar fett ca 10%"
+    },
+    {
+      "Name": "Leverpastej bredbar fett 3-3,5%"
+    },
+    {
+      "Name": "Leverbiff mald lever stekt hemlagad"
+    },
+    {
+      "Name": "Paté älgfärs kycklinglever"
+    },
+    {
+      "Name": "Lantpaté"
+    },
+    {
+      "Name": "Grönpepparpaté"
+    },
+    {
+      "Name": "Korv kycklingkorv mager"
+    },
+    {
+      "Name": "Korv kycklingkorv halal"
+    },
+    {
+      "Name": "Korv falukorv fett 19% kött 58%"
+    },
+    {
+      "Name": "Korv falukorv kött 58%"
+    },
+    {
+      "Name": "Korv fläskkorv kokt kött 48%"
+    },
+    {
+      "Name": "Korv frukostkorv fett 23% kött 52%"
+    },
+    {
+      "Name": "Påläggskorv medvurst fett 23%"
+    },
+    {
+      "Name": "Påläggskorv medvurst rökt fett 35%"
+    },
+    {
+      "Name": "Påläggskorv salami rökt"
+    },
+    {
+      "Name": "Korv varmkorv kött 51-54%"
+    },
+    {
+      "Name": "Korv varmkorv kokt kött ca 53%"
+    },
+    {
+      "Name": "Korv wienerkorv kött 73%"
+    },
+    {
+      "Name": "Korv grillkorv kött 32-35%"
+    },
+    {
+      "Name": "Korv isterband fermenterad kött 59%"
+    },
+    {
+      "Name": "Korv middagskorv fett ca 15%  kött 52%"
+    },
+    {
+      "Name": "Korv wienerkorv mager kött 73%"
+    },
+    {
+      "Name": "Korv chorizo stekt kött 73%"
+    },
+    {
+      "Name": "Korv kabanoss stekt kött 80%"
+    },
+    {
+      "Name": "Korv prinskorv kött 61%"
+    },
+    {
+      "Name": "Korv salsiccia rå kött 73%"
+    },
+    {
+      "Name": "Korv salsiccia stekt u. fett kött 73%"
+    },
+    {
+      "Name": "Korv värmlandskorv rå kött 45%"
+    },
+    {
+      "Name": "Korv värmlandskorv kokt kött 45%"
+    },
+    {
+      "Name": "Gris bacon stekt mager"
+    },
+    {
+      "Name": "Gris bacon rå mager"
+    },
+    {
+      "Name": "Korv frukostkorv kokt fett 23% kött 52%"
+    },
+    {
+      "Name": "Korv falukorv stekt fett 19% kött 58%"
+    },
+    {
+      "Name": "Korv falukorv skivad kokt"
+    },
+    {
+      "Name": "Korv frukostkorv stekt"
+    },
+    {
+      "Name": "Korv isterband fermenterad stekt kött 59%"
+    },
+    {
+      "Name": "Korv varmkorv kokt"
+    },
+    {
+      "Name": "Korv varmkorv stekt"
+    },
+    {
+      "Name": "Korv wienerkorv stekt"
+    },
+    {
+      "Name": "Korv falukorv ugnsstekt"
+    },
+    {
+      "Name": "Korv wienerkorv kokt"
+    },
+    {
+      "Name": "Pölsa stekt värmd"
+    },
+    {
+      "Name": "Pölsa"
+    },
+    {
+      "Name": "Korv stroganoff hemlagad i gjutjärnsstekpanna"
+    },
+    {
+      "Name": "Gryta korvgryta m. chorizo rotfrukter"
+    },
+    {
+      "Name": "Tunnbrödrulle m. korv potatismos räk- gurksallad"
+    },
+    {
+      "Name": "Kalvsylta"
+    },
+    {
+      "Name": "Pressylta"
+    },
+    {
+      "Name": "Hushållssylta"
+    },
+    {
+      "Name": "Cashewnötter rostade u. salt"
+    },
+    {
+      "Name": "Hasselnötter"
+    },
+    {
+      "Name": "Jordnötssmör"
+    },
+    {
+      "Name": "Jordnötter torkade"
+    },
+    {
+      "Name": "Jordnötter rostade"
+    },
+    {
+      "Name": "Jordnötter rostade saltade"
+    },
+    {
+      "Name": "Kastanjer"
+    },
+    {
+      "Name": "Kokosflingor"
+    },
+    {
+      "Name": "Kokosnöt"
+    },
+    {
+      "Name": "Kokosmjölk fett ca 6%"
+    },
+    {
+      "Name": "Linfrö hela"
+    },
+    {
+      "Name": "Paranötter"
+    },
+    {
+      "Name": "Pekannötter"
+    },
+    {
+      "Name": "Pistaschnötter u. salt"
+    },
+    {
+      "Name": "Pumpafrö"
+    },
+    {
+      "Name": "Sesamfrö m. skal"
+    },
+    {
+      "Name": "Sesamfrö u. skal"
+    },
+    {
+      "Name": "Solrosfrö"
+    },
+    {
+      "Name": "Sötmandel"
+    },
+    {
+      "Name": "Valnötter"
+    },
+    {
+      "Name": "Kastanjer rostade"
+    },
+    {
+      "Name": "Kikärtor snacks torkade m. salt"
+    },
+    {
+      "Name": "Jordnötsbågar jordnötsringar"
+    },
+    {
+      "Name": "Chips majs tortilla "
+    },
+    {
+      "Name": "Ostbågar"
+    },
+    {
+      "Name": "Chips potatis m. havssalt"
+    },
+    {
+      "Name": "Salta pinnar"
+    },
+    {
+      "Name": "Popcorn mikropopcorn poppade fett ca 22%"
+    },
+    {
+      "Name": "Chips potatis smaksatta fett ca 33%"
+    },
+    {
+      "Name": "Chips potatis light fett 25%"
+    },
+    {
+      "Name": "Japanmix blandade snacks m. inbakade nötter riscracker"
+    },
+    {
+      "Name": "Kokosmjölk fett ca 24%"
+    },
+    {
+      "Name": "Vatten kokosvatten"
+    },
+    {
+      "Name": "Sesamdryck vattenextrakt av frön m. skal"
+    },
+    {
+      "Name": "Sesamdryck vattenextrakt av frön u. skal"
+    },
+    {
+      "Name": "Sött vetebröd kanelbulle hembakad"
+    },
+    {
+      "Name": "Skorpor råg"
+    },
+    {
+      "Name": "Skorpor vete osötade"
+    },
+    {
+      "Name": "Sött vetebröd"
+    },
+    {
+      "Name": "Sött vetebröd slätt"
+    },
+    {
+      "Name": "Sött vetebröd sötat m. fruktsocker"
+    },
+    {
+      "Name": "Vetebröd osötat"
+    },
+    {
+      "Name": "Sött vetebröd m. fyllning bulle längd"
+    },
+    {
+      "Name": "Skorpor vete"
+    },
+    {
+      "Name": "Skorpor fullkorn osötade"
+    },
+    {
+      "Name": "Mandelkubb"
+    },
+    {
+      "Name": "Munk u. fyllning"
+    },
+    {
+      "Name": "Munk fylld m. äppelmos vaniljkräm"
+    },
+    {
+      "Name": "Wienerbröd m. vaniljkräm sylt florsocker"
+    },
+    {
+      "Name": "Sött vetebröd bakpulver"
+    },
+    {
+      "Name": "Sött vetebröd saffransbröd hembakad"
+    },
+    {
+      "Name": "Kex cream crackers"
+    },
+    {
+      "Name": "Kex rån m. cremefyllning smaksatt"
+    },
+    {
+      "Name": "Kex havrekex fullkorn"
+    },
+    {
+      "Name": "Kex Mariekex"
+    },
+    {
+      "Name": "Kex mördegskex"
+    },
+    {
+      "Name": "Kex m. syltfyllning"
+    },
+    {
+      "Name": "Kex m. nougatfyllning"
+    },
+    {
+      "Name": "Maräng m. choklad"
+    },
+    {
+      "Name": "Småkakor olika sorter"
+    },
+    {
+      "Name": "Jitterbugg m. mördeg maräng"
+    },
+    {
+      "Name": "Cookie amerikansk m. choklad"
+    },
+    {
+      "Name": "Kex smörgåskex"
+    },
+    {
+      "Name": "Pepparkaka"
+    },
+    {
+      "Name": "Spettekaka"
+    },
+    {
+      "Name": "Maräng"
+    },
+    {
+      "Name": "Kex m. fyllning"
+    },
+    {
+      "Name": "Kex ostkex"
+    },
+    {
+      "Name": "Kex salta"
+    },
+    {
+      "Name": "Kex salta m. mjölk"
+    },
+    {
+      "Name": "Kex u. socker"
+    },
+    {
+      "Name": "Pepparkaka u. socker"
+    },
+    {
+      "Name": "Kex smörgåsrån"
+    },
+    {
+      "Name": "Glasstrut våffla ofylld"
+    },
+    {
+      "Name": "Småkakor u. socker"
+    },
+    {
+      "Name": "Mandelbiskvi"
+    },
+    {
+      "Name": "Deg mördeg gräddad"
+    },
+    {
+      "Name": "Deg smördeg gräddad"
+    },
+    {
+      "Name": "Deg smördeg frysvara"
+    },
+    {
+      "Name": "Deg filodeg kylvara el. frysvara"
+    },
+    {
+      "Name": "Gräddtårta"
+    },
+    {
+      "Name": "Toscabit m. mazarinmassa mandel choklad"
+    },
+    {
+      "Name": "Bärtårta m. grädde vaniljkräm sylt gele"
+    },
+    {
+      "Name": "Prinsesstårta m. grädde vaniljkräm hallonsylt marsipan"
+    },
+    {
+      "Name": "Chokladtårta Sachertårta"
+    },
+    {
+      "Name": "Napoleonbakelse m. grädde vaniljkräm hallonsylt glasyr"
+    },
+    {
+      "Name": "Frukttårta m. hallonsylt vaniljkräm mandelmassa frukt gele"
+    },
+    {
+      "Name": "Chokladbiskvi m. mandelbotten smörkräm choklad"
+    },
+    {
+      "Name": "Mazariner m. mördegsbotten mazarinfyllning glasyr"
+    },
+    {
+      "Name": "Mjuk kaka drömtårta chokladrulltårta"
+    },
+    {
+      "Name": "Mjuk kaka rulltårta m. sylt"
+    },
+    {
+      "Name": "Punschrulle"
+    },
+    {
+      "Name": "Chokladboll"
+    },
+    {
+      "Name": "Gräddtårta m. jordgubb banan hemlagad"
+    },
+    {
+      "Name": "Potatisbakelse m. vaniljkräm smörkräm marsipan"
+    },
+    {
+      "Name": "Äppelkaka m. ströbröd"
+    },
+    {
+      "Name": "Mjuk kaka drömtårta chokladrulltårta hemlagad"
+    },
+    {
+      "Name": "Semla vetebulle fylld m. mandelmassa vispad grädde"
+    },
+    {
+      "Name": "Mjuk kaka chokladruta m. chokladglasyr riven kokos"
+    },
+    {
+      "Name": "Mjuk kaka ambrosiakaka sockerkaka m. glasyr"
+    },
+    {
+      "Name": "Arraksboll"
+    },
+    {
+      "Name": "Petit-choux u. fyllning"
+    },
+    {
+      "Name": "Semla vetebulle fylld m. mandelmassa vispad grädde hemlagad"
+    },
+    {
+      "Name": "Mjuk kaka fransk äppelkaka"
+    },
+    {
+      "Name": "Mjuk kaka toscakaka"
+    },
+    {
+      "Name": "Mjuk kaka chokladkaka"
+    },
+    {
+      "Name": "Muffins amerikansk"
+    },
+    {
+      "Name": "Mjuk kaka sockerkaka pepparkaka"
+    },
+    {
+      "Name": "Mjuk kaka tårtbotten"
+    },
+    {
+      "Name": "Mjuk kaka sockerkaka fin"
+    },
+    {
+      "Name": "Mjuk kaka pepparkaka"
+    },
+    {
+      "Name": "Mjuk kaka nötkaka"
+    },
+    {
+      "Name": "Mjuk kaka sockerkaka fin mager"
+    },
+    {
+      "Name": "Mjuk kaka sockerkaka saftig"
+    },
+    {
+      "Name": "Kex digestive fullkorn 23%"
+    },
+    {
+      "Name": "Mjuk kaka fruktkaka"
+    },
+    {
+      "Name": "Glass gräddglass fett 12%"
+    },
+    {
+      "Name": "Glass vaniljsmak fett ca 8%"
+    },
+    {
+      "Name": "Glass fett ca 10%"
+    },
+    {
+      "Name": "Glass glasstrut fett ca 15%"
+    },
+    {
+      "Name": "Glass lättglass m. sötningsm. fett ca 6%"
+    },
+    {
+      "Name": "Glass glasstrut våffla m. vaniljglass daimbitar chokladöverdrag"
+    },
+    {
+      "Name": "Glass vaniljglass m. chokladkex"
+    },
+    {
+      "Name": "Glass gräddglass fett 15%"
+    },
+    {
+      "Name": "Glass fett 12%"
+    },
+    {
+      "Name": "Glass lättglass fett ca 5%"
+    },
+    {
+      "Name": "Glass glasspinne fett ca 25%"
+    },
+    {
+      "Name": "Glass glasspinne m. kakaoöverdrag fett 20%"
+    },
+    {
+      "Name": "Glass glasspinne el. split m. isöverdrag fett ca 6%"
+    },
+    {
+      "Name": "Glass glasstrut fett ca 10%"
+    },
+    {
+      "Name": "Glass mjukglass bägare"
+    },
+    {
+      "Name": "Glass glasstårta fett 17%"
+    },
+    {
+      "Name": "Glass m. maräng fett 10%"
+    },
+    {
+      "Name": "Glass havreglass m. vanilji fett 13%"
+    },
+    {
+      "Name": "Glass parfait m. bär"
+    },
+    {
+      "Name": "Matlagningsbas m. havre fett 13%"
+    },
+    {
+      "Name": "Gräddfil fett 12%"
+    },
+    {
+      "Name": "Kaffegrädde fett 12%"
+    },
+    {
+      "Name": "Vispgrädde fett 40%"
+    },
+    {
+      "Name": "Mellangrädde fett 27%"
+    },
+    {
+      "Name": "Matlagningsgrädde fett 15%"
+    },
+    {
+      "Name": "Crème fraiche fett 34%"
+    },
+    {
+      "Name": "Crème fraiche lätt fett 15%"
+    },
+    {
+      "Name": "Gräddersättning pulver fett 35%"
+    },
+    {
+      "Name": "Gräddfilssås m. kryddgrönt"
+    },
+    {
+      "Name": "Gräddfilssås fett 9%"
+    },
+    {
+      "Name": "Gräddfilssås m. crème fraiche"
+    },
+    {
+      "Name": "Rabarberkräm"
+    },
+    {
+      "Name": "Rabarbersoppa"
+    },
+    {
+      "Name": "Apelsinsoppa"
+    },
+    {
+      "Name": "Blåbärssoppa hemlagad"
+    },
+    {
+      "Name": "Svartvinbärskräm"
+    },
+    {
+      "Name": "Äppelkompott"
+    },
+    {
+      "Name": "Äppelkräm"
+    },
+    {
+      "Name": "Äppelsoppa"
+    },
+    {
+      "Name": "Kräm m. bär el. frukt"
+    },
+    {
+      "Name": "Pajfyllning bär m. socker"
+    },
+    {
+      "Name": "Saftkräm"
+    },
+    {
+      "Name": "Saftsoppa"
+    },
+    {
+      "Name": "Saftsås"
+    },
+    {
+      "Name": "Fruktdryck blåbär berikad"
+    },
+    {
+      "Name": "Fruktsoppa pastöriserad ätf. blandad torkad frukt berikad"
+    },
+    {
+      "Name": "Nyponsoppa ätf. pastöriserad el. pulver berikad "
+    },
+    {
+      "Name": "Nyponsoppa ätf. pulver osötad berikad"
+    },
+    {
+      "Name": "Mjuk kaka m. katrinplommon"
+    },
+    {
+      "Name": "Kalvdans m. mjölkpulver ägg"
+    },
+    {
+      "Name": "Ostkaka m. cottage cheese"
+    },
+    {
+      "Name": "Marängsviss hovdessert"
+    },
+    {
+      "Name": "Brylépudding"
+    },
+    {
+      "Name": "Vaniljsås m. mellanmjölk matlagningsgrädde vispgrädde hemlagad"
+    },
+    {
+      "Name": "Chokladpudding"
+    },
+    {
+      "Name": "Chokladpudding m. vispad grädde fett 40%"
+    },
+    {
+      "Name": "Chokladmousse"
+    },
+    {
+      "Name": "Fromage apelsin el. citron hemlagad"
+    },
+    {
+      "Name": "Glassås choklad hemlagad"
+    },
+    {
+      "Name": "Glassås kolasås"
+    },
+    {
+      "Name": "Vaniljpudding"
+    },
+    {
+      "Name": "Vaniljsås m. grädde mjölk"
+    },
+    {
+      "Name": "Ostkaka lätt osötad fett 3%"
+    },
+    {
+      "Name": "Fromage citron"
+    },
+    {
+      "Name": "Vaniljsås m. havre fett 11%"
+    },
+    {
+      "Name": "Vaniljsås tillagad pulver m. mjölk"
+    },
+    {
+      "Name": "Glassås choklad"
+    },
+    {
+      "Name": "Glassås frukt"
+    },
+    {
+      "Name": "Rabarberpaj"
+    },
+    {
+      "Name": "Äppelpaj m. lock"
+    },
+    {
+      "Name": "Cheesecake m. digestivebotten bär fryst"
+    },
+    {
+      "Name": "Cheesecake m. digestivebotten"
+    },
+    {
+      "Name": "Mannagrynskaka mannagrynspudding"
+    },
+    {
+      "Name": "Äppelsmulpaj"
+    },
+    {
+      "Name": "Katrinplommonsufflé"
+    },
+    {
+      "Name": "Äppelpaj friterad"
+    },
+    {
+      "Name": "Banan friterad"
+    },
+    {
+      "Name": "Äpple ugnsstekt m. olja el. flytande margarin socker mandelmassa valnötter"
+    },
+    {
+      "Name": "Banan friterad m. glass tillagad på restaurang"
+    },
+    {
+      "Name": "Apelsinmarmelad"
+    },
+    {
+      "Name": "Gelé röda vinbär"
+    },
+    {
+      "Name": "Gelé svarta vinbär"
+    },
+    {
+      "Name": "Apelsinmarmelad lättsockrad lag"
+    },
+    {
+      "Name": "Marmelad olika smaker"
+    },
+    {
+      "Name": "Lingonsylt"
+    },
+    {
+      "Name": "Lingonsylt sötningsm."
+    },
+    {
+      "Name": "Jordgubbssylt"
+    },
+    {
+      "Name": "Björnbärssylt"
+    },
+    {
+      "Name": "Blåbärssylt"
+    },
+    {
+      "Name": "Hallonsylt"
+    },
+    {
+      "Name": "Hjortronsylt"
+    },
+    {
+      "Name": "Krusbärssylt"
+    },
+    {
+      "Name": "Körsbärssylt"
+    },
+    {
+      "Name": "Äppelmos"
+    },
+    {
+      "Name": "Äppelmos lättsockrad"
+    },
+    {
+      "Name": "Äppelmos osötad el. sötningsm."
+    },
+    {
+      "Name": "Cumberlandsås"
+    },
+    {
+      "Name": "Apelsinsaft konc. berikad"
+    },
+    {
+      "Name": "Apelsinsaft drickf. berikad"
+    },
+    {
+      "Name": "Saft lättsockrad konc."
+    },
+    {
+      "Name": "Måltidsdryck drickf."
+    },
+    {
+      "Name": "Saft konc."
+    },
+    {
+      "Name": "Saft drickf."
+    },
+    {
+      "Name": "Svartvinbärssaft konc. berikad"
+    },
+    {
+      "Name": "Saft sötningsm. konc."
+    },
+    {
+      "Name": "Fruktdryck u. kolsyra"
+    },
+    {
+      "Name": "Läsk"
+    },
+    {
+      "Name": "Läsk cola"
+    },
+    {
+      "Name": "Läsk light"
+    },
+    {
+      "Name": "Läsk cola light"
+    },
+    {
+      "Name": "Sportdryck drickf."
+    },
+    {
+      "Name": "Saft sötningsm. drickf."
+    },
+    {
+      "Name": "Hallonsaft drickf."
+    },
+    {
+      "Name": "Svartvinbärssaft drickf. berikad"
+    },
+    {
+      "Name": "Lingondricka drickf. berikad"
+    },
+    {
+      "Name": "Äppeldricka drickf. berikad"
+    },
+    {
+      "Name": "Saft sötningsm. drickf. berikad"
+    },
+    {
+      "Name": "Glass isglass"
+    },
+    {
+      "Name": "Glass sorbet"
+    },
+    {
+      "Name": "Glass isglass saftis"
+    },
+    {
+      "Name": "Chokladdryck m. vatten"
+    },
+    {
+      "Name": "Chokladdryck drickf."
+    },
+    {
+      "Name": "Mjölkchoklad m. hackade hasselnötter"
+    },
+    {
+      "Name": "Mjölkchoklad fylld m. mandelkrokant"
+    },
+    {
+      "Name": "Mjölkchoklad m. mjuk kolafyllning"
+    },
+    {
+      "Name": "Kex m. mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Kex m. kola mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Mjuk nougat m. kolasås jordnötter mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Mjuk chokladmaräng m. kola mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Choklad chokladpraliner"
+    },
+    {
+      "Name": "Chokladpralin"
+    },
+    {
+      "Name": "Mjuk kokos m. mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Nötkräm chokladkräm"
+    },
+    {
+      "Name": "Mjölkchoklad m. sötningsm."
+    },
+    {
+      "Name": "Gelékgodis"
+    },
+    {
+      "Name": "Karameller"
+    },
+    {
+      "Name": "Kola"
+    },
+    {
+      "Name": "Marmeladkonfekt"
+    },
+    {
+      "Name": "Skumgodis"
+    },
+    {
+      "Name": "Polkagris"
+    },
+    {
+      "Name": "Tuggummi"
+    },
+    {
+      "Name": "Klubba chokladkola karamell"
+    },
+    {
+      "Name": "Chokladkola mörk m. chokladöverdrag"
+    },
+    {
+      "Name": "Kex rån m. chokladfyllning"
+    },
+    {
+      "Name": "Fruktkola"
+    },
+    {
+      "Name": "Skumboll m. chokladöverdrag kokos"
+    },
+    {
+      "Name": "Skumboll m. chokladöverdrag"
+    },
+    {
+      "Name": "Bar energibar m. choklad nötter"
+    },
+    {
+      "Name": "Karameller sockerfria"
+    },
+    {
+      "Name": "Tuggummi sockerfritt"
+    },
+    {
+      "Name": "Kakaopulver fett 20-22%"
+    },
+    {
+      "Name": "Chokladdryckspulver m. socker fett 2,5%"
+    },
+    {
+      "Name": "Chokladboll hemlagad"
+    },
+    {
+      "Name": "Måltidsersättning pulver chokladsmak berikad"
+    },
+    {
+      "Name": "Socker"
+    },
+    {
+      "Name": "Brun farin"
+    },
+    {
+      "Name": "Ljus sirap"
+    },
+    {
+      "Name": "Honung"
+    },
+    {
+      "Name": "Druvsocker"
+    },
+    {
+      "Name": "Fruktsocker"
+    },
+    {
+      "Name": "Sorbitol m. sackarin"
+    },
+    {
+      "Name": "Svagdricka vol. % 2,3"
+    },
+    {
+      "Name": "Öl lättöl vol. % 2,3"
+    },
+    {
+      "Name": "Öl pilsner folköl vol. % 3,5"
+    },
+    {
+      "Name": "Cider vol. % 1"
+    },
+    {
+      "Name": "Vin vitt vol. % 1"
+    },
+    {
+      "Name": "Vin rött el. rosé vol. % 1"
+    },
+    {
+      "Name": "Öl starköl el. exportöl vol. % 5,4"
+    },
+    {
+      "Name": "Vin rött vol. % 14"
+    },
+    {
+      "Name": "Vin vitt vol. % 12"
+    },
+    {
+      "Name": "Vin vitt el. rhenvin vol. % 10"
+    },
+    {
+      "Name": "Glögg vin vol. % 10"
+    },
+    {
+      "Name": "Starkvin vol. % 18 typ Madeira"
+    },
+    {
+      "Name": "Starkvin vitt rött vol. % 20 typ Portvin"
+    },
+    {
+      "Name": "Starkvin halvtorr vol. % 17 typ Sherry"
+    },
+    {
+      "Name": "Glögg starkvin vol. % 16"
+    },
+    {
+      "Name": "Brännvin renat el. vodka vol. % 40"
+    },
+    {
+      "Name": "Likör söt vol. % 24"
+    },
+    {
+      "Name": "Likör Kaptenlöjtnant vol. % 38"
+    },
+    {
+      "Name": "Konjak el. brandy vol. % 40"
+    },
+    {
+      "Name": "Punsch vol. % 26"
+    },
+    {
+      "Name": "Rom vol. % 40"
+    },
+    {
+      "Name": "Brännvin kryddat vol. % 40 "
+    },
+    {
+      "Name": "Gin vol. % 40"
+    },
+    {
+      "Name": "Whisky vol. % 40"
+    },
+    {
+      "Name": "Likör mindre söt vol. % 24"
+    },
+    {
+      "Name": "Kaffedrink Irish coffee m.whiskey vispad grädde"
+    },
+    {
+      "Name": "Bovetemjöl"
+    },
+    {
+      "Name": "Havremust pulver"
+    },
+    {
+      "Name": "Kornmjöl fullkorn"
+    },
+    {
+      "Name": "Majsmjöl gult u. groddar"
+    },
+    {
+      "Name": "Rågmjöl fullkorn"
+    },
+    {
+      "Name": "Vetemjöl fullkorn grahamsmjöl"
+    },
+    {
+      "Name": "Vetediet berikad"
+    },
+    {
+      "Name": "Vetemjöl bagerivetemjöl"
+    },
+    {
+      "Name": "Vetemjöl"
+    },
+    {
+      "Name": "Majsstärkelse"
+    },
+    {
+      "Name": "Potatismjöl"
+    },
+    {
+      "Name": "Samarinpulver"
+    },
+    {
+      "Name": "Samarin drickf."
+    },
+    {
+      "Name": "Vatten sodavatten"
+    },
+    {
+      "Name": "Vatten vichyvatten"
+    },
+    {
+      "Name": "Vatten mineralvatten"
+    },
+    {
+      "Name": "Vatten kranvatten"
+    },
+    {
+      "Name": "Snabbkaffe pulver"
+    },
+    {
+      "Name": "Snabbkaffe drickf."
+    },
+    {
+      "Name": "Kaffe bryggt"
+    },
+    {
+      "Name": "Kaffe espresso bryggt drickf."
+    },
+    {
+      "Name": "Snabbkaffe koffeinfritt drickf."
+    },
+    {
+      "Name": "Tepulver"
+    },
+    {
+      "Name": "Te bryggt"
+    },
+    {
+      "Name": "Örtte drickf."
+    },
+    {
+      "Name": "Nyponte drickf. m. svarta vinbär"
+    },
+    {
+      "Name": "Ättiksprit ättiksyra 12%"
+    },
+    {
+      "Name": "Vinäger ättiksyra 7%"
+    },
+    {
+      "Name": "Äppelcidervinäger ättiksyra 7%"
+    },
+    {
+      "Name": "Chilisås tomat"
+    },
+    {
+      "Name": "Ketchup"
+    },
+    {
+      "Name": "Engelsk brown sauce HP-sås"
+    },
+    {
+      "Name": "Grillsås"
+    },
+    {
+      "Name": "Senap svensk"
+    },
+    {
+      "Name": "Senap fransk"
+    },
+    {
+      "Name": "Sötsur sås"
+    },
+    {
+      "Name": "Salt m. jod"
+    },
+    {
+      "Name": "Salt mineralsalt"
+    },
+    {
+      "Name": "Salt havssalt u. jod"
+    },
+    {
+      "Name": "Salt örtsalt"
+    },
+    {
+      "Name": "Jäst färsk"
+    },
+    {
+      "Name": "Jäst torkad"
+    },
+    {
+      "Name": "Bakpulver"
+    },
+    {
+      "Name": "Béchamelsås m. lättmjölk grädde"
+    },
+    {
+      "Name": "Ljus sås m. mjölk"
+    },
+    {
+      "Name": "Ljus sås m. buljong grädde"
+    },
+    {
+      "Name": "Béchamelsås"
+    },
+    {
+      "Name": "Gratängsås u. ost hemlagad"
+    },
+    {
+      "Name": "Ljus sås m. grädde"
+    },
+    {
+      "Name": "Ostsås"
+    },
+    {
+      "Name": "Ostsås m. ädelost"
+    },
+    {
+      "Name": "Ostsås till moussaka"
+    },
+    {
+      "Name": "Brunsås m. mjölk"
+    },
+    {
+      "Name": "Sky"
+    },
+    {
+      "Name": "Brunsås m. buljong grädde"
+    },
+    {
+      "Name": "Brunsås m. buljong"
+    },
+    {
+      "Name": "Currysås hemlagad"
+    },
+    {
+      "Name": "Brunsås m. kaffegrädde"
+    },
+    {
+      "Name": "Korintsås"
+    },
+    {
+      "Name": "Brunsås tillagad pulver m. mjölk vatten"
+    },
+    {
+      "Name": "Gräddsås tillagad pulver m. mjölk vatten smör"
+    },
+    {
+      "Name": "Tomatsås kryddstark"
+    },
+    {
+      "Name": "Dillsås"
+    },
+    {
+      "Name": "Äggsås m. persilja"
+    },
+    {
+      "Name": "Pesto hemlagad"
+    },
+    {
+      "Name": "Pesto m. basilika pinjenötter cashewnötter"
+    },
+    {
+      "Name": "Dippmix pulver olika smaker"
+    },
+    {
+      "Name": "Sweet chilisås"
+    },
+    {
+      "Name": "Pastasås m. tomat örtkryddor"
+    },
+    {
+      "Name": "Pastasås olika märken"
+    },
+    {
+      "Name": "Sötsur sås m. grönsaker konserv."
+    },
+    {
+      "Name": "Orientalisk sås m. grönsaker konserv."
+    },
+    {
+      "Name": "Teriyakisås"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. frukt"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. bär"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. socker frukt nötter"
+    },
+    {
+      "Name": "Frukostflingor crunchy fullkorn m. socker russin kokos"
+    },
+    {
+      "Name": "Frukostflingor crunchy naturell m. socker kokos"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. socker frukt kokos"
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. socker frukt bär"
+    },
+    {
+      "Name": "Frukostflingor müsli flingblandning fullkorn m. frukt nötter  "
+    },
+    {
+      "Name": "Frukostflingor müsli fullkorn m. frukt banan"
+    },
+    {
+      "Name": "Surimi fisk"
+    },
+    {
+      "Name": "Matlagningsbas fett 15%"
+    },
+    {
+      "Name": "Matlagningsbas fett 7%"
+    },
+    {
+      "Name": "Vispgrädde ersättningsprod. mjölk olja fett 20%"
+    },
+    {
+      "Name": "Kaffegrädde ersättningsprod. mjölk olja fett 10%"
+    },
+    {
+      "Name": "Vaniljvisp fett 12%"
+    },
+    {
+      "Name": "Crème fraiche smaksatt fett 13%"
+    },
+    {
+      "Name": "Crème fraiche smaksatt fett 28%"
+    },
+    {
+      "Name": "Mini fraiche fett 5%"
+    },
+    {
+      "Name": "Mjukost smältost fett 13% typ grevé"
+    },
+    {
+      "Name": "Filmjölk naturell fett 4,2%"
+    },
+    {
+      "Name": "Fruktyoghurt olika smaker fett 3,6%"
+    },
+    {
+      "Name": "Vit choklad"
+    },
+    {
+      "Name": "Mörk choklad kakao ≥ 70%"
+    },
+    {
+      "Name": "Mörk choklad kakao < 70%"
+    },
+    {
+      "Name": "Bakchoklad mörk"
+    },
+    {
+      "Name": "Mjölkchoklad"
+    },
+    {
+      "Name": "Kebabkött frysvara"
+    },
+    {
+      "Name": "Ris avorio okokt"
+    },
+    {
+      "Name": "Lök rostad "
+    },
+    {
+      "Name": "Glass glasspinne m. frukt  mjölk fett 5,5%"
+    },
+    {
+      "Name": "Glass glasspinne fett 10%"
+    },
+    {
+      "Name": "Bar m. fiber havre vete naturell"
+    },
+    {
+      "Name": "Knäckemacka vete olika fyllningar"
+    },
+    {
+      "Name": "Knäckemacka fullkorn råg olika fyllningar"
+    },
+    {
+      "Name": "Falafel kikärtskroketter frysvara"
+    },
+    {
+      "Name": "Pytt i panna m. sojaprotein veg."
+    },
+    {
+      "Name": "Korv veg. soja- och veteprotein kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Soja- och veteprotein bullar kylvara el. frysvara"
+    },
+    {
+      "Name": "Sojaprotein färs kylvara el. frysvara"
+    },
+    {
+      "Name": "Veteprotein grytbitar"
+    },
+    {
+      "Name": "Matlagningsbas m. soja fett 17%"
+    },
+    {
+      "Name": "Bar müslibar fullkorn m. röd frukt berikad"
+    },
+    {
+      "Name": "Bar müslibar m. choklad berikad"
+    },
+    {
+      "Name": "Jordnötssås"
+    },
+    {
+      "Name": "Coleslaw hemlagad"
+    },
+    {
+      "Name": "Löksås m. grädde"
+    },
+    {
+      "Name": "Nudlar äggnudlar kokta m. salt"
+    },
+    {
+      "Name": "Nässlor stuvade"
+    },
+    {
+      "Name": "Kantarell stuvad"
+    },
+    {
+      "Name": "Gryta ratatouille veg."
+    },
+    {
+      "Name": "Potatisgratäng m. matlagningsgrädde ost hemlagad"
+    },
+    {
+      "Name": "Sjömansbiff"
+    },
+    {
+      "Name": "Gryta kreolsk gryta"
+    },
+    {
+      "Name": "Flygande Jakob kyckling m. bacon jordnötter banan"
+    },
+    {
+      "Name": "Korv prinskorv stekt kött 61%"
+    },
+    {
+      "Name": "Skinkröra kall"
+    },
+    {
+      "Name": "Hamburgare blandfärs stekt"
+    },
+    {
+      "Name": "Köttfärssås blandfärs"
+    },
+    {
+      "Name": "Nöt färs stekt m. salt fett 10%"
+    },
+    {
+      "Name": "Nöt el. gris kött stekt"
+    },
+    {
+      "Name": "Carbonara pastasås"
+    },
+    {
+      "Name": "Skagenröra hemlagad"
+    },
+    {
+      "Name": "Fisksoppa m. rotfrukter"
+    },
+    {
+      "Name": "Tonfiskröra hemlagad"
+    },
+    {
+      "Name": "Havregrynsgröt fullkorn fiberhavregryn"
+    },
+    {
+      "Name": "Havregrynsgröt kokt m. mjölk"
+    },
+    {
+      "Name": "Nudlar glasnudlar kokta m. salt"
+    },
+    {
+      "Name": "Gröt"
+    },
+    {
+      "Name": "Morotskaka"
+    },
+    {
+      "Name": "Pannkaka tunn m. sojadryck havredryck"
+    },
+    {
+      "Name": "Paj m. broccoli skinka"
+    },
+    {
+      "Name": "Pizza m. kebabkött hemlagad"
+    },
+    {
+      "Name": "Pizza Hawaii m. skinka ananas restaurang"
+    },
+    {
+      "Name": "Ostsås m. skinka hemlagad"
+    },
+    {
+      "Name": "Tzatziki"
+    },
+    {
+      "Name": "Ris à la malta m. lättmjölk mellangrädde fett 27%"
+    },
+    {
+      "Name": "Rödkålssallad m. äpple"
+    },
+    {
+      "Name": "Champinjon stekt u. fett"
+    },
+    {
+      "Name": "Palsternacka kokt m. salt"
+    },
+    {
+      "Name": "Gratängsås m. ost hemlagad"
+    },
+    {
+      "Name": "Fänkål kokt m. salt"
+    },
+    {
+      "Name": "Kroppkakor el. potatispalt m. fläsk hemlagad"
+    },
+    {
+      "Name": "Currysås m. lätt crème fraiche hemlagad"
+    },
+    {
+      "Name": "Korv stroganoff mager korv fett 15% grädde fett 15%"
+    },
+    {
+      "Name": "Ostkaka fett 7%"
+    },
+    {
+      "Name": "Rapsolja"
+    },
+    {
+      "Name": "Matfettsblandning fett 75% berikad typ Bregott"
+    },
+    {
+      "Name": "Lättmargarin fett 40% berikad typ Lätta"
+    },
+    {
+      "Name": "Äggröra"
+    },
+    {
+      "Name": "Ägg kokt"
+    },
+    {
+      "Name": "Aloe vera juice naturell"
+    },
+    {
+      "Name": "Aloe vera juice m. grönt te"
+    },
+    {
+      "Name": "Aloe vera-dryck m. tranbär äpple"
+    },
+    {
+      "Name": "Aloe vera-dryck naturell"
+    },
+    {
+      "Name": "Toscaglasyr"
+    },
+    {
+      "Name": "Pasta makaroner spagetti okokt glutenfri"
+    },
+    {
+      "Name": "Pasta fusilli lasagneplattor okokt glutenfri"
+    },
+    {
+      "Name": "Pepparkaka glutenfri"
+    },
+    {
+      "Name": "Kex digestive fullkorn glutenfri"
+    },
+    {
+      "Name": "Hårt bröd glutenfritt fibrer ca 7,5% berikad typ grovknäcke"
+    },
+    {
+      "Name": "Pasta tagliatelle m. ägg okokt glutenfri"
+    },
+    {
+      "Name": "Pasta okokt majs 100% glutenfri"
+    },
+    {
+      "Name": "Bearnaisesås fett 8%"
+    },
+    {
+      "Name": "Klassisk gräddsås fett 6%"
+    },
+    {
+      "Name": "Ostsås fett 8%"
+    },
+    {
+      "Name": "Bearnaisesås fett ca 40%"
+    },
+    {
+      "Name": "Rödvinssås fett 1,5%"
+    },
+    {
+      "Name": "Kebabsås vit fett 30%"
+    },
+    {
+      "Name": "Svampsås fett 8,5%"
+    },
+    {
+      "Name": "Korv varmkorv mager fett 7%"
+    },
+    {
+      "Name": "Korv chorizo mager fett 9%"
+    },
+    {
+      "Name": "Korv middagskorv fett ca 9% kött ca 55 %"
+    },
+    {
+      "Name": "Påläggskorv salami mager"
+    },
+    {
+      "Name": "Fruktyoghurt lättsockrad fett 0,2% berikad"
+    },
+    {
+      "Name": "Fruktyoghurt lättsockrad laktosreducerad fett 0,1% berikad"
+    },
+    {
+      "Name": "Mintplattor m. mörkchokladöverdrag"
+    },
+    {
+      "Name": "Ost mozzarella fett 18%"
+    },
+    {
+      "Name": "Ingefära färsk"
+    },
+    {
+      "Name": "Kebabkött restaurang"
+    },
+    {
+      "Name": "Fruktdryck nypon blåbär berikad"
+    },
+    {
+      "Name": "Energidryck berikad"
+    },
+    {
+      "Name": "Öl alkoholfri"
+    },
+    {
+      "Name": "Flytande margarin mjölkfri fett 80% berikad typ Carlshamn"
+    },
+    {
+      "Name": "Bordsmargarin mjölkfri fett 70% berikad typ Carlshamn"
+    },
+    {
+      "Name": "Hushållsmargarin mjölkfri fett 80% berikad typ Carlshamn"
+    },
+    {
+      "Name": "Småkaka mördeg typ somalisk icun"
+    },
+    {
+      "Name": "Lamm rygg el. hals kokt m. salt"
+    },
+    {
+      "Name": "Tilapia rå"
+    },
+    {
+      "Name": "Lättmargarin fett 28% berikad typ Mini Lätta"
+    },
+    {
+      "Name": "Flytande margarin fett 79% berikad typ Becel"
+    },
+    {
+      "Name": "Ris basmati okokt"
+    },
+    {
+      "Name": "Ris jasmin okokt"
+    },
+    {
+      "Name": "Ris råris långkornigt okokt fullkorn"
+    },
+    {
+      "Name": "Ris grötris snabb okokt"
+    },
+    {
+      "Name": "Ris långkornigt okokt"
+    },
+    {
+      "Name": "Ris långkornigt parboiled okokt"
+    },
+    {
+      "Name": "Ris snabbris okokt salt 1%"
+    },
+    {
+      "Name": "Ris snabbris okokt"
+    },
+    {
+      "Name": "Ris grötris rundkornigt okokt"
+    },
+    {
+      "Name": "Bordsmargarin fett 70% berikad typ Becel Gold"
+    },
+    {
+      "Name": "Blandfärs rå nöt 70% gris 30%"
+    },
+    {
+      "Name": "Blandfärs rå nöt 50% gris 50% "
+    },
+    {
+      "Name": "Kebab m. bröd sallad sås"
+    },
+    {
+      "Name": "Kebabtallrik m. pommes frites"
+    },
+    {
+      "Name": "Korv m. mos ketchup senap bostongurka"
+    },
+    {
+      "Name": "Korv m. bröd ketchup senap"
+    },
+    {
+      "Name": "Hamburgare dubbel m. bröd ost inlagd gurka tillagad på restaurang"
+    },
+    {
+      "Name": "Hamburgare 90 g m. bröd tillbehör tillagad på restaurang"
+    },
+    {
+      "Name": "Hamburgare m. bröd ost tillagad på restaurang"
+    },
+    {
+      "Name": "Ris basmati kokt m. salt"
+    },
+    {
+      "Name": "Ris jasmin kokt m. salt"
+    },
+    {
+      "Name": "Ris långkornigt kokt m. salt"
+    },
+    {
+      "Name": "Ris långkornigt parboiled kokt m. salt"
+    },
+    {
+      "Name": "Ris råris långkornigt kokt m. salt fullkorn"
+    },
+    {
+      "Name": "Ris snabbris kokt salt 1%"
+    },
+    {
+      "Name": "Ris snabbris kokt m. salt"
+    },
+    {
+      "Name": "Pasta tagliatelle m. ägg kokt m. salt glutenfri"
+    },
+    {
+      "Name": "Pasta makaroner spagetti kokt m. salt glutenfri"
+    },
+    {
+      "Name": "Pasta kokt m. salt majs 100% glutenfri"
+    },
+    {
+      "Name": "Lasagne blandfärs"
+    },
+    {
+      "Name": "Gröna ärtor kokta m. salt frysvara"
+    },
+    {
+      "Name": "Gryta kalops älg"
+    },
+    {
+      "Name": "Älg högrev rå"
+    },
+    {
+      "Name": "Älg ryggbiff rå"
+    },
+    {
+      "Name": "Tacoskal"
+    },
+    {
+      "Name": "Romansallat"
+    },
+    {
+      "Name": "Ruccolasallat"
+    },
+    {
+      "Name": "Okra kokt u. salt"
+    },
+    {
+      "Name": "Litchi"
+    },
+    {
+      "Name": "Carambole stjärnfrukt"
+    },
+    {
+      "Name": "Blomkål stekt el. wokad"
+    },
+    {
+      "Name": "Broccoli stekt el. wokad"
+    },
+    {
+      "Name": "Morot stekt el. wokad"
+    },
+    {
+      "Name": "Palsternacka stekt el. wokad "
+    },
+    {
+      "Name": "Paprika stekt el. wokad "
+    },
+    {
+      "Name": "Purjolök stekt el. wokad"
+    },
+    {
+      "Name": "Rotselleri stekt el. wokad"
+    },
+    {
+      "Name": "Rödbeta stekt el. wokad "
+    },
+    {
+      "Name": "Kål stekt el. wokad"
+    },
+    {
+      "Name": "Blandfärs stekt tacokryddad"
+    },
+    {
+      "Name": "Sojaprotein färs stekt tacokryddad"
+    },
+    {
+      "Name": "Potatisgratäng kylvara"
+    },
+    {
+      "Name": "Ugnsrostade grönsaker rotfrukter"
+    },
+    {
+      "Name": "Lasagne m. mykoprotein"
+    },
+    {
+      "Name": "Kyckling färs stekt tacokryddad"
+    },
+    {
+      "Name": "Pannkaka tunn hemlagad"
+    },
+    {
+      "Name": "Grönsaksblandning m. ärtor bönor morot blomkål typ sommargrönsaker frysvara kokt m. salt"
+    },
+    {
+      "Name": "Grönsaksblandning ärter morot frysvara kokt m. salt"
+    },
+    {
+      "Name": "Rismål m. sylt"
+    },
+    {
+      "Name": "Rismål m. sylt u. socker m. sötningsm."
+    },
+    {
+      "Name": "Nöt innanlår stekt"
+    },
+    {
+      "Name": "Älgbiff stekt"
+    },
+    {
+      "Name": "Kycklinggryta m. grädde\/crème fraiche"
+    },
+    {
+      "Name": "Salt u. jod"
+    },
+    {
+      "Name": "Tiramisu"
+    },
+    {
+      "Name": "Blåbärspaj"
+    },
+    {
+      "Name": "Ost halloumi stekt eller grillad"
+    },
+    {
+      "Name": "Köttgryta m. grädde\/crème fraiche"
+    },
+    {
+      "Name": "Vilt färs stekt tacokryddad"
+    },
+    {
+      "Name": "Lamm färs stekt tacokryddad"
+    },
+    {
+      "Name": "Köttfärs stekt tacokryddad"
+    },
+    {
+      "Name": "Vit fisk panerad och stekt"
+    },
+    {
+      "Name": "Gryta fisk skaldjur m. grädde\/crème fraiche"
+    },
+    {
+      "Name": "Fiskgratäng m. grönsaker"
+    },
+    {
+      "Name": "Godisklubba "
+    },
+    {
+      "Name": "Gräddsås"
+    },
+    {
+      "Name": "Skaldjurssås"
+    },
+    {
+      "Name": "Dressing hamburgerdressing"
+    },
+    {
+      "Name": "Gulaschsoppa"
+    },
+    {
+      "Name": "Fisksoppa skaldjurssoppa u. vin"
+    },
+    {
+      "Name": "Pannacotta"
+    },
+    {
+      "Name": "Paj m. ost"
+    },
+    {
+      "Name": "Paj m. grönsaker"
+    },
+    {
+      "Name": "Sill inlagd m. gräddfilssås"
+    },
+    {
+      "Name": "Sill inlagd m. senapssås"
+    },
+    {
+      "Name": "Hummus kikärtsröra"
+    },
+    {
+      "Name": "Muffins hembakad"
+    },
+    {
+      "Name": "Chokladmuffins hembakad"
+    },
+    {
+      "Name": "Sesamkakor sesamkex"
+    },
+    {
+      "Name": "Brända mandlar"
+    },
+    {
+      "Name": "Chilinötter"
+    },
+    {
+      "Name": "Pinjefrö"
+    },
+    {
+      "Name": "Bulgur kokt m. salt"
+    },
+    {
+      "Name": "Nötter rostade saltade"
+    },
+    {
+      "Name": "Korv ren rå"
+    },
+    {
+      "Name": "Korv lamm rå"
+    },
+    {
+      "Name": "Kvarg naturell fett 0,2%"
+    },
+    {
+      "Name": "Brödkrutonger "
+    },
+    {
+      "Name": "Nötter kanderade"
+    },
+    {
+      "Name": "Baklava "
+    },
+    {
+      "Name": "Nöt oxfilé stekt"
+    },
+    {
+      "Name": "Älg färs rå"
+    },
+    {
+      "Name": "Älg ytterlår"
+    },
+    {
+      "Name": "Chips potatis naturell"
+    },
+    {
+      "Name": "Linfröolja"
+    },
+    {
+      "Name": "Frukostflingor havre fullkorn typ Havrefras"
+    },
+    {
+      "Name": "Barnmat klämmis m. yoghurt banan jordgubb konserv."
+    },
+    {
+      "Name": "Sill inlagd olika smaker"
+    },
+    {
+      "Name": "Quinoa röd kokt m. salt"
+    },
+    {
+      "Name": "Bananchips "
+    },
+    {
+      "Name": "Bulgur kokt u. salt fullkorn"
+    },
+    {
+      "Name": "Äppelkaka hembakad typ Fyriskaka"
+    },
+    {
+      "Name": "Kladdkaka"
+    },
+    {
+      "Name": "Kyckling bröstfilé kokt u. skinn"
+    },
+    {
+      "Name": "Tahini"
+    },
+    {
+      "Name": "Järpar fläskfärs stekta"
+    },
+    {
+      "Name": "Gris färs stekt tacokryddad"
+    },
+    {
+      "Name": "Nöt färs stekt tacokryddad"
+    },
+    {
+      "Name": "Blandfärs stekt m. salt"
+    },
+    {
+      "Name": "Gris färs stekt m. salt fett 15%"
+    },
+    {
+      "Name": "Lamm färs stekt m. salt"
+    },
+    {
+      "Name": "Älg färs stekt m. salt"
+    },
+    {
+      "Name": "Gris hamburgare färsspett hemlagad"
+    },
+    {
+      "Name": "Mykoprotein färs stekt tacokryddad"
+    },
+    {
+      "Name": "Sojadryck berikad"
+    },
+    {
+      "Name": "Lasagne m. sojafärs"
+    },
+    {
+      "Name": "Saftglögg"
+    },
+    {
+      "Name": "Couscous kokt m. salt fullkorn"
+    },
+    {
+      "Name": "Pasta kokt m. salt"
+    },
+    {
+      "Name": "Vita bönor torkade kokta m. salt"
+    },
+    {
+      "Name": "Stora vita bönor konserv. u. lag"
+    },
+    {
+      "Name": "Kikärtor torkade kokta m. salt"
+    },
+    {
+      "Name": "Sötpotatis rå"
+    },
+    {
+      "Name": "Sötpotatis ugnsstekt m. olja salt"
+    },
+    {
+      "Name": "Sötpotatis kokt m. salt"
+    },
+    {
+      "Name": "Dinkelmjöl fullkorn"
+    },
+    {
+      "Name": "Bröd rågsikt fibrer ca 7%"
+    },
+    {
+      "Name": "Bröd vitt fibrer ca 5% typ formfranska"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fibrer ca 19% typ Rågi"
+    },
+    {
+      "Name": "Bröd fullkorn vete råg fibrer ca 6%"
+    },
+    {
+      "Name": "Bröd vitt fibrer ca 5% typ limpa"
+    },
+    {
+      "Name": "Bröd fullkorn råg fibrer ca 7%"
+    },
+    {
+      "Name": "Korvbröd grovt"
+    },
+    {
+      "Name": "Lax odlad Norge fjordlax rå över disk"
+    },
+    {
+      "Name": "Kikärtor konserv. u. lag"
+    },
+    {
+      "Name": "Kidneybönor röda bönor konserv. u. lag"
+    },
+    {
+      "Name": "Svarta bönor konserv. u. lag"
+    },
+    {
+      "Name": "Hamburgerbröd"
+    },
+    {
+      "Name": "Bröd vitt mjölk fibrer ca 4% typ tekaka"
+    },
+    {
+      "Name": "Bruna bönor rullpack kylvara"
+    },
+    {
+      "Name": "Gröna linser torkade kokta m. salt"
+    },
+    {
+      "Name": "Röda linser torkade kokta m. salt"
+    },
+    {
+      "Name": "Röda linser konserv. u. lag"
+    },
+    {
+      "Name": "Gröna linser konserv. u. lag"
+    },
+    {
+      "Name": "Hamburgerbröd grovt"
+    },
+    {
+      "Name": "Pasta kokt m. salt fullkorn>50%"
+    },
+    {
+      "Name": "Ägg rått eko."
+    },
+    {
+      "Name": "Äggula rå eko."
+    },
+    {
+      "Name": "Dinkel speltvete kokt m. salt"
+    },
+    {
+      "Name": "Muffins m. frukt bär"
+    },
+    {
+      "Name": "Kycklingröra hemlagad"
+    },
+    {
+      "Name": "Smoothie m. frukt bär u. mjölk"
+    },
+    {
+      "Name": "Råkostsallad m. morot äpple paprika purjolök"
+    },
+    {
+      "Name": "Grönsaker rotfrukter stekta wokade"
+    },
+    {
+      "Name": "Rödbetssallad kylvara"
+    },
+    {
+      "Name": "Potatissallad kylvara"
+    },
+    {
+      "Name": "Skagenröra m. majonnäs kylvara"
+    },
+    {
+      "Name": "Kålrot stekt el. wokad"
+    },
+    {
+      "Name": "Mördegskaka"
+    },
+    {
+      "Name": "Huvudsallat"
+    },
+    {
+      "Name": "Majskrokar"
+    },
+    {
+      "Name": "Wasabi pasta"
+    },
+    {
+      "Name": "Frukt torkad m. socker"
+    },
+    {
+      "Name": "Korvgryta m. grönsaker"
+    },
+    {
+      "Name": "Vattenkastanj rå"
+    },
+    {
+      "Name": "Tranbär torkade"
+    },
+    {
+      "Name": "Mâchesallat"
+    },
+    {
+      "Name": "Hampafröolja"
+    },
+    {
+      "Name": "Hushållsmargarin mjölkfri fett 80% berikad typ Milda"
+    },
+    {
+      "Name": "Lättmargarin fett 40% berikad typ Coop"
+    },
+    {
+      "Name": "Bordsmargarin fett 60% berikad typ Ica Basic"
+    },
+    {
+      "Name": "Hushållsmargarin fett 80% berikad typ ICA"
+    },
+    {
+      "Name": "Nudlar kokta m. kryddor"
+    },
+    {
+      "Name": "Grislever stekt m. salt"
+    },
+    {
+      "Name": "Lammlever stekt m. salt"
+    },
+    {
+      "Name": "Renlever stekt m. salt"
+    },
+    {
+      "Name": "Potatis Hasselbackspotatis bakad"
+    },
+    {
+      "Name": "Palmolja"
+    },
+    {
+      "Name": "Ägg stekt eko."
+    },
+    {
+      "Name": "Ägg kokt eko."
+    },
+    {
+      "Name": "Crème fraichesås m. örtkryddor"
+    },
+    {
+      "Name": "Majskolv stekt grillad"
+    },
+    {
+      "Name": "Nudelwok m. kött grönsaker"
+    },
+    {
+      "Name": "Färs stekt m. salt"
+    },
+    {
+      "Name": "Lax panerad stekt m. salt"
+    },
+    {
+      "Name": "Pangasiusmal rå"
+    },
+    {
+      "Name": "Kokosbaserad bit berikad som alternativ till ost"
+    },
+    {
+      "Name": "Potatis Solist rå"
+    },
+    {
+      "Name": "Potatis Swift rå"
+    },
+    {
+      "Name": "Potatis Solist kokt m. salt"
+    },
+    {
+      "Name": "Potatis Swift kokt m. salt"
+    },
+    {
+      "Name": "Potatis Asterix rå"
+    },
+    {
+      "Name": "Nudlar risnudlar okokta"
+    },
+    {
+      "Name": "Nudlar risnudlar kokta"
+    },
+    {
+      "Name": "Havtorn"
+    },
+    {
+      "Name": "Potatis rå"
+    },
+    {
+      "Name": "Potatis kokt m. salt"
+    },
+    {
+      "Name": "Grönkålssallad"
+    },
+    {
+      "Name": "Kålrotslåda"
+    },
+    {
+      "Name": "Potatis färsk kokt m. salt"
+    },
+    {
+      "Name": "Potatis färsk rå"
+    },
+    {
+      "Name": "Potatis Inova rå"
+    },
+    {
+      "Name": "Potatis King Edward rå"
+    },
+    {
+      "Name": "Potatis mandelpotatis rå"
+    },
+    {
+      "Name": "Potatis kokt m. salt tillagad i storhushåll"
+    },
+    {
+      "Name": "Potatis Asterix kokt m. salt"
+    },
+    {
+      "Name": "Potatis Inova kokt m. salt"
+    },
+    {
+      "Name": "Potatis King Edward kokt m. salt"
+    },
+    {
+      "Name": "Potatis mandelpotatis kokt m. salt"
+    },
+    {
+      "Name": "Gratäng broccoligratäng m. cottage cheese tomat veg."
+    },
+    {
+      "Name": "Gris färs rå fett 15%"
+    },
+    {
+      "Name": "Hoki rå"
+    },
+    {
+      "Name": "Aronia slånaronia"
+    },
+    {
+      "Name": "Vinbär vita"
+    },
+    {
+      "Name": "Ris rundkornigt kokt m. salt"
+    },
+    {
+      "Name": "Pilgrimsmussla"
+    },
+    {
+      "Name": "Laxbullar tillagade m. sås"
+    },
+    {
+      "Name": "Fiskpinnar ugnsstekta"
+    },
+    {
+      "Name": "Skarpsill"
+    },
+    {
+      "Name": "Sill inlagd u. lag"
+    },
+    {
+      "Name": "Sill höstsill inlagd u. lag"
+    },
+    {
+      "Name": "Sill inlagd senapssill u. sås"
+    },
+    {
+      "Name": "Kapkummel rå"
+    },
+    {
+      "Name": "Guldsparid rå"
+    },
+    {
+      "Name": "Havsabborre rå"
+    },
+    {
+      "Name": "Alaska pollock rå"
+    },
+    {
+      "Name": "Guldsparid grillad m. salt"
+    },
+    {
+      "Name": "Havsabborre grillad m. salt"
+    },
+    {
+      "Name": "Olivolja extra jungfruolja"
+    },
+    {
+      "Name": "Rapsolja kallpressad"
+    },
+    {
+      "Name": "Flytande matfettsblandning fett 80% berikad typ Arla smör- och rapsolja"
+    },
+    {
+      "Name": "Matfettsblandning fett 43% berikad typ Bregott mindre"
+    },
+    {
+      "Name": "Pastasås m. tonfisk curry"
+    },
+    {
+      "Name": "Tomat körsbärstomat röd"
+    },
+    {
+      "Name": "Tomat torkad m. olja avrunnen"
+    },
+    {
+      "Name": "Broccoli kokt u. salt frysvara"
+    },
+    {
+      "Name": "Spenat färsk"
+    },
+    {
+      "Name": "Mangold röd småbladig färsk"
+    },
+    {
+      "Name": "Kruksallat"
+    },
+    {
+      "Name": "Lök röd"
+    },
+    {
+      "Name": "Kantarell gul rå"
+    },
+    {
+      "Name": "Hjort kronhjort kött rå"
+    },
+    {
+      "Name": "Hjort dovhjort färs rå"
+    },
+    {
+      "Name": "Ren kött kallrökt rå"
+    },
+    {
+      "Name": "Hjort skav rå"
+    },
+    {
+      "Name": "Korv hjort rå"
+    },
+    {
+      "Name": "Vildsvin bog rå"
+    },
+    {
+      "Name": "Vildsvin filé rå"
+    },
+    {
+      "Name": "Rådjur stek rå"
+    },
+    {
+      "Name": "Vildsvin stek rå"
+    },
+    {
+      "Name": "Korv kycklingkorv"
+    },
+    {
+      "Name": "Vildsvin kött rå"
+    },
+    {
+      "Name": "Rådjur bog rå"
+    },
+    {
+      "Name": "Ren kött rå"
+    },
+    {
+      "Name": "Nöt kött rå"
+    },
+    {
+      "Name": "Lamm kött rå"
+    },
+    {
+      "Name": "Lamm grytbitar rå"
+    },
+    {
+      "Name": "Bordsmargarin fett 80% berikad typ Flora original"
+    },
+    {
+      "Name": "Flytande matfettsblandning fett 80% berikad typ Ica raps- och smörolja"
+    },
+    {
+      "Name": "Potatis höst kokt u. salt"
+    },
+    {
+      "Name": "Julmust påskmust"
+    },
+    {
+      "Name": "Slush drickf."
+    },
+    {
+      "Name": "Mandeldryck berikad"
+    },
+    {
+      "Name": "Alkoläsk kolsyrad dryck vol. % 4-5"
+    },
+    {
+      "Name": "Potatis kokt u. salt"
+    },
+    {
+      "Name": "Lasagne m. svarta bönor veg. "
+    },
+    {
+      "Name": "Tranbärsdryck drickf. berikad"
+    },
+    {
+      "Name": "Barngröt ätf. flerkorn m. frukt berikad"
+    },
+    {
+      "Name": "Barngröt ätf. m. fullkorn frukt bär berikad"
+    },
+    {
+      "Name": "Barngröt ätf. m. frukt berikad"
+    },
+    {
+      "Name": "Barngröt ätf. ris mjölkfri berikad"
+    },
+    {
+      "Name": "Barngröt ätf. m. fullkorn frukt müsli berikad"
+    },
+    {
+      "Name": "Barngröt ätf. m. yoghurt frukt berikad"
+    },
+    {
+      "Name": "Barngröt ätf. havre m. frukt berikad"
+    },
+    {
+      "Name": "Barngröt ätf. havre naturell berikad"
+    },
+    {
+      "Name": "Barngröt ätf. havre m. frukt bär berikad"
+    },
+    {
+      "Name": "Pepparsås"
+    },
+    {
+      "Name": "Saffransris"
+    },
+    {
+      "Name": "Ljus sås till fiskgratäng"
+    },
+    {
+      "Name": "Gris kött rå"
+    },
+    {
+      "Name": "Gratäng zucchinigratäng m. kalvfärs"
+    },
+    {
+      "Name": "Toast m. ost skinka"
+    },
+    {
+      "Name": "Pastagratäng m. kyckling"
+    },
+    {
+      "Name": "Tomatsås till pizza"
+    },
+    {
+      "Name": "Minimjölk fett < 0,1% berikad"
+    },
+    {
+      "Name": "Örtagårdssås m. gräddfil"
+    },
+    {
+      "Name": "Köttfärssås Bolognese m. nötfärs bacon"
+    },
+    {
+      "Name": "Aioli"
+    },
+    {
+      "Name": "Guacamole"
+    },
+    {
+      "Name": "Pasta carbonara m. pasta fläsk grädde"
+    },
+    {
+      "Name": "Brownie"
+    },
+    {
+      "Name": "Fisk m. apelsin chili ugnsstekt"
+    },
+    {
+      "Name": "Pulled pork gris m. marinad tillagad"
+    },
+    {
+      "Name": "Tropisk juice drickf."
+    },
+    {
+      "Name": "Sojabönor färska förvällda u. skal"
+    },
+    {
+      "Name": "Sparris grön kokt m. salt"
+    },
+    {
+      "Name": "Kålrot kokt"
+    },
+    {
+      "Name": "Brysselkål kokt"
+    },
+    {
+      "Name": "Rotselleri kokt"
+    },
+    {
+      "Name": "Gula ärtor kokta m. salt"
+    },
+    {
+      "Name": "Bruna bönor torkade kokta m. salt"
+    },
+    {
+      "Name": "Gråärtor kokta m. salt"
+    },
+    {
+      "Name": "Åkerbönor torkade kokta m. salt"
+    },
+    {
+      "Name": "Äpple Aroma rött"
+    },
+    {
+      "Name": "Äpple Ingrid Marie rött"
+    },
+    {
+      "Name": "Äpple Frida"
+    },
+    {
+      "Name": "Äpple Golden delicious Granny Smith grönt"
+    },
+    {
+      "Name": "Kyckling pulled chicken tillagad m. marinad"
+    },
+    {
+      "Name": "Tacosås"
+    },
+    {
+      "Name": "Hälleflundra odlad Atlanten rå"
+    },
+    {
+      "Name": "Korngryn kokt u. salt"
+    },
+    {
+      "Name": "Julmust light"
+    },
+    {
+      "Name": "Havregurt naturell fett 2,2% berikad"
+    },
+    {
+      "Name": "Fraiche m. havre veg. fett 15% berikad"
+    },
+    {
+      "Name": "Havrebaserat bredbart pålägg naturell"
+    },
+    {
+      "Name": "Havredryck m. apelsin mango"
+    },
+    {
+      "Name": "Korv grillkorv grillad kött 32-35%"
+    },
+    {
+      "Name": "Korv falukorv tillagad kött 58%"
+    },
+    {
+      "Name": "Korv bratwurst tillagad kryddig kött 73-75%"
+    },
+    {
+      "Name": "Blodpudding blodkorv tillagad"
+    },
+    {
+      "Name": "Gris sidfläsk el. stekfläsk rimmat stekt"
+    },
+    {
+      "Name": "Korv kabanoss tillagad kryddig kött 90%"
+    },
+    {
+      "Name": "Kryddblandning taco"
+    },
+    {
+      "Name": "Bröd vitt vetetortilla"
+    },
+    {
+      "Name": "Gris färs tillagad u. salt"
+    },
+    {
+      "Name": "Te fermenterat m. socker"
+    },
+    {
+      "Name": "Gris skinka innanlår tillagad"
+    },
+    {
+      "Name": "Gris skinkstek tillagad u. salt"
+    },
+    {
+      "Name": "Gris ytterfilé tillagad"
+    },
+    {
+      "Name": "Gris fläskkotlett tillagad"
+    },
+    {
+      "Name": "Gris fläskfilé tillagad"
+    },
+    {
+      "Name": "Nöt kalv lever tillagad"
+    },
+    {
+      "Name": "Kyckling lever ugnsstekt"
+    },
+    {
+      "Name": "Gris lever tillagad"
+    },
+    {
+      "Name": "Kalkon rökt tunna skivor"
+    },
+    {
+      "Name": "Korv veg. soja- och veteprotein tillagad typ middagskorv"
+    },
+    {
+      "Name": "Gratäng m. korv rotfrukt"
+    },
+    {
+      "Name": "Pastasås m. lax crème fraiche grädde dill"
+    },
+    {
+      "Name": "Cashewnötter rostade m. salt"
+    },
+    {
+      "Name": "Gris kassler tillagad"
+    },
+    {
+      "Name": "Kyckling bröstfilé tillagad u. skinn frysvara"
+    },
+    {
+      "Name": "Drickyoghurt smaksatt fett ca 1%"
+    },
+    {
+      "Name": "Ost hårdost eko. fett 28%"
+    },
+    {
+      "Name": "Vaniljsås ätf."
+    },
+    {
+      "Name": "Yoghurt naturell eko. fett 3% berikad"
+    },
+    {
+      "Name": "Pannkaka tunn helfabrikat"
+    },
+    {
+      "Name": "Hårt bröd fullkorn råg fiber ca 20% typ sport "
+    },
+    {
+      "Name": "Bröd vitt grovt m. nyckelhål typ formfranska"
+    },
+    {
+      "Name": "Bröd vitt typ levain"
+    },
+    {
+      "Name": "Frukostflingor müsli vete havre råg korn fullkorn m. frukt nötter fröer"
+    },
+    {
+      "Name": "Mandelmjöl"
+    },
+    {
+      "Name": "Filmjölk eko. fett 3% berikad"
+    },
+    {
+      "Name": "Kvarg drickf. olika smaker"
+    },
+    {
+      "Name": "Kvarg smaksatt sötningsm."
+    },
+    {
+      "Name": "Kvarg smaksatt m. socker"
+    },
+    {
+      "Name": "Drickyoghurt smaksatt fett ca 1% socker ca 8%"
+    },
+    {
+      "Name": "Drickyoghurt smaksatt fett ca 1% socker ca 11%"
+    },
+    {
+      "Name": "Frukostflingor fullkorn berikad typ Specialflingor"
+    },
+    {
+      "Name": "Yoghurt naturell fett 10%"
+    },
+    {
+      "Name": "Pizza m. köttfärs frysvara"
+    },
+    {
+      "Name": "Pizza m. köttstek frysvara"
+    },
+    {
+      "Name": "Pizza m. tomat mozzarella veg. frysvara"
+    },
+    {
+      "Name": "Noni fruktpuré"
+    },
+    {
+      "Name": "Fisk Bordelaise"
+    },
+    {
+      "Name": "Ostkräm"
+    },
+    {
+      "Name": "Äppeljuice konc."
+    },
+    {
+      "Name": "Matvete kokt m. salt"
+    },
+    {
+      "Name": "Mathavre kokt m. salt"
+    },
+    {
+      "Name": "Psylliumfröskal"
+    },
+    {
+      "Name": "Chiafrö"
+    },
+    {
+      "Name": "Hampafrö m. skal"
+    },
+    {
+      "Name": "Hampafrö u. skal"
+    },
+    {
+      "Name": "Vallmofrö"
+    },
+    {
+      "Name": "Senap sötstark"
+    },
+    {
+      "Name": "Kokosolja"
+    },
+    {
+      "Name": "Majonnäs m. sojabönolja fett 80%"
+    },
+    {
+      "Name": "Majonnäs m. solrosolja fett 80%"
+    },
+    {
+      "Name": "Kräfta kräftstjärtar konserv. u. lag"
+    },
+    {
+      "Name": "Sikrom Nordamerikansk"
+    },
+    {
+      "Name": "Påläggskaviar m. färskost"
+    },
+    {
+      "Name": "Tångkaviar röd"
+    },
+    {
+      "Name": "Tångkaviar påläggskaviar"
+    },
+    {
+      "Name": "Lax vildfångad Sverige rå"
+    },
+    {
+      "Name": "Lax odlad Norge fjordlax rå frysvara"
+    },
+    {
+      "Name": "Lax odlad Norge fjordlax rå förpackad"
+    },
+    {
+      "Name": "Välling för barn pulver fullkorn osötad berikad"
+    },
+    {
+      "Name": "Välling för barn pulver havre osötad berikad"
+    },
+    {
+      "Name": "Välling för barn pulver majs osötad berikad"
+    },
+    {
+      "Name": "Välling för barn pulver havre mjölkfri osötad berikad"
+    },
+    {
+      "Name": "Barngröt pulver havre m. banan äpple mjölkfri osötad berikad"
+    },
+    {
+      "Name": "Barngröt pulver naturell fullkorn osötad berikad"
+    },
+    {
+      "Name": "Barnmat pasta couscous m. kyckling konserv."
+    },
+    {
+      "Name": "Barnmat spagetti m. köttfärssås konserv."
+    },
+    {
+      "Name": "Barnmat potatis m. nötköttsgryta konserv."
+    },
+    {
+      "Name": "Barnmat pastagratäng m. fläskkött konserv."
+    },
+    {
+      "Name": "Barnmat fiskgryta konserv."
+    },
+    {
+      "Name": "Barnmat lasagne pastagratäng veg. m. grönsaker konserv."
+    },
+    {
+      "Name": "Barnmat frukt bär m. yoghurt konserv."
+    },
+    {
+      "Name": "Barnmat frukt bär m. yoghurt konserv. berikad"
+    },
+    {
+      "Name": "Fruktstång fruktgodis"
+    },
+    {
+      "Name": "Fruktstång fruktgodis berikad"
+    },
+    {
+      "Name": "Barnmat klämmis m. gröt päron mango havre hirs konserv."
+    },
+    {
+      "Name": "Välling för barn drickf. fullkorn osötad berikad"
+    },
+    {
+      "Name": "Välling för barn drickf. mild havre osötad berikad"
+    },
+    {
+      "Name": "Välling för barn drickf. majs osötad berikad"
+    },
+    {
+      "Name": "Välling för barn drickf. havre mjölkfri osötad berikad"
+    },
+    {
+      "Name": "Barngröt ätf. havre m. banan äpple mjölkfri osötad berikad"
+    },
+    {
+      "Name": "Barngröt ätf. naturell fullkorn osötad berikad"
+    },
+    {
+      "Name": "Sojaprotein bitar kylvara el. frysvara typ Tzay®"
+    },
+    {
+      "Name": "Sojaprotein bitar frysvara typ Oumph®"
+    },
+    {
+      "Name": "Havreprotein pulled havre strimlor kylvara el. frysvara"
+    },
+    {
+      "Name": "Sojaprotein färs kylvara el. frysvara berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein färs frysvara"
+    },
+    {
+      "Name": "Sojaprotein bullar kylvara el. frysvara"
+    },
+    {
+      "Name": "Mykoprotein bullar frysvara"
+    },
+    {
+      "Name": "Mykoprotein nugget kylvara el. frysvara"
+    },
+    {
+      "Name": "Sojaprotein nugget kylvara el. frysvara"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget kylvara el. frysvara"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget kylvara el. frysvara berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein bitar som alternativ till bacon kylvara el. frysvara"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel kylvara el. frysvara"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel kylvara el. frysvara berikad"
+    },
+    {
+      "Name": "Mykoprotein schnitzel kylvara el. frysvara"
+    },
+    {
+      "Name": "Mykoprotein färs bitar filé stekt"
+    },
+    {
+      "Name": "Falafel kikärtskroketter stekta"
+    },
+    {
+      "Name": "Falafel kikärtskroketter ugnsstekta"
+    },
+    {
+      "Name": "Soja- och veteprotein bullar stekta"
+    },
+    {
+      "Name": "Soja- och veteprotein bullar ugnsstekta"
+    },
+    {
+      "Name": "Sojaprotein färs stekt"
+    },
+    {
+      "Name": "Sojaprotein bitar stekta typ Tzay®"
+    },
+    {
+      "Name": "Sojaprotein bitar stekta typ Oumph®"
+    },
+    {
+      "Name": "Havreprotein pulled havre strimlor stekt"
+    },
+    {
+      "Name": "Sojaprotein färs stekt berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein färs stekt"
+    },
+    {
+      "Name": "Ärtprotein färs stekt"
+    },
+    {
+      "Name": "Sojaprotein bullar stekta"
+    },
+    {
+      "Name": "Sojaprotein bullar ugnsstekta"
+    },
+    {
+      "Name": "Mykoprotein bullar stekta"
+    },
+    {
+      "Name": "Mykoprotein nugget stekt"
+    },
+    {
+      "Name": "Mykoprotein nugget ugnsstekt"
+    },
+    {
+      "Name": "Sojaprotein nugget stekt"
+    },
+    {
+      "Name": "Sojaprotein nugget ugnsstekt"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget stekt"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget ugnsstekt"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget stekt berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein nugget ugnsstekt berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein baconimitation stekt"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel stekt"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel ugnsstekt"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel stekt berikad"
+    },
+    {
+      "Name": "Soja- och veteprotein schnitzel ugnsstekt berikad"
+    },
+    {
+      "Name": "Mykoprotein schnitzel ugnsstekt"
+    },
+    {
+      "Name": "Äggstanning"
+    },
+    {
+      "Name": "Jams kokt u. salt"
+    },
+    {
+      "Name": "Vindruvor gröna"
+    },
+    {
+      "Name": "Vindruvor röda"
+    },
+    {
+      "Name": "Dressing hamburgerdressing lätt fett 28 %"
+    },
+    {
+      "Name": "Majonnäs äggfri"
+    },
+    {
+      "Name": "Sås mango curry m. majonnäs kylvara"
+    },
+    {
+      "Name": "Ostsås m. kalkon"
+    },
+    {
+      "Name": "Lasagne m. zucchini aubergine nötfärs"
+    },
+    {
+      "Name": "Karlssons frestelse m. nötfärs"
+    },
+    {
+      "Name": "Lasagne nötfärs"
+    },
+    {
+      "Name": "Skinkfrestelse m. grädde"
+    },
+    {
+      "Name": "Lök stekt m. flytande matfett"
+    },
+    {
+      "Name": "Tzatziki m. morot"
+    },
+    {
+      "Name": "Mango currysås hemlagad"
+    },
+    {
+      "Name": "Kycklingpanna m. citron örter crème fraiche"
+    },
+    {
+      "Name": "Cowboysoppa m. potatis köttfärs"
+    },
+    {
+      "Name": "Fransk bondsoppa m. fläsk rotfrukter"
+    },
+    {
+      "Name": "Kycklingpanna m. lime honung crème fraiche"
+    },
+    {
+      "Name": "Hedvigsoppa m. vitkål nötfärs morot"
+    },
+    {
+      "Name": "Nikkaluoktasoppa m. vitkål nötfärs"
+    },
+    {
+      "Name": "Mexicanasoppa m. kyckling majs"
+    },
+    {
+      "Name": "Kycklingpanna m. oliv basilika citron grädde"
+    },
+    {
+      "Name": "Färsruta m. fetaost ugnsstekt"
+    },
+    {
+      "Name": "Fisk cornflakesfisk panerad ugnsstekt"
+    },
+    {
+      "Name": "Gryta fiskgryta m. torsk kokosmjölk curry"
+    },
+    {
+      "Name": "Rödbetshummus"
+    },
+    {
+      "Name": "Ajvaryoghurt"
+    },
+    {
+      "Name": "Karl-Alfredsås m. yoghurt spenat"
+    },
+    {
+      "Name": "Chili- och mangosås"
+    },
+    {
+      "Name": "Fisk mager m. fänkål tomat crème fraiche ångkokt"
+    },
+    {
+      "Name": "Bondomelett m. bönor"
+    },
+    {
+      "Name": "Grönsaksbiff Caribbean stekt"
+    },
+    {
+      "Name": "Gräddsås m. persilja"
+    },
+    {
+      "Name": "Köttfärs- och grönsaksbiff stekt"
+    },
+    {
+      "Name": "Grönsaksbiff broccolibiff stekt veg."
+    },
+    {
+      "Name": "Gryta kycklinggryta m. bönor kakao "
+    },
+    {
+      "Name": "Fisk Björkeby m. ströbröd smör persilja ugnsstekt"
+    },
+    {
+      "Name": "Fisk m. soltorkad tomat persilja vitlök"
+    },
+    {
+      "Name": "Gratäng djungelgratäng m. kyckling banan mango chutney crème fraiche"
+    },
+    {
+      "Name": "Mango chutney"
+    },
+    {
+      "Name": "Gratäng m. kassler ananas ost"
+    },
+    {
+      "Name": "Gryta fiskgryta brasiliansk fiskgryta m. kokosmjölk krossad tomat paprika"
+    },
+    {
+      "Name": "Gryta mormors kycklinggryta m. svamp"
+    },
+    {
+      "Name": "Gryta köttgryta m. fransk senap pepparrot gräddfil"
+    },
+    {
+      "Name": "Gryta fisk m. crème fraiche curry apelsin"
+    },
+    {
+      "Name": "Korv falukorv ugnsstekt m. ajvar"
+    },
+    {
+      "Name": "Gryta kyckling tikka masala"
+    },
+    {
+      "Name": "Senapskräm"
+    },
+    {
+      "Name": "Köttfärslåda"
+    },
+    {
+      "Name": "Gryta mykoprotein m. lätt crème fraiche bambuskott haricot verts paprika veg."
+    },
+    {
+      "Name": "Gryta mykoprotein tikka masala veg."
+    },
+    {
+      "Name": "Gryta mykoprotein m. fransk senap pepparrot gräddfil veg."
+    },
+    {
+      "Name": "Grönsaksburgare stekt veg."
+    },
+    {
+      "Name": "Grönsaksbiff rödbetsbiff stekt veg."
+    },
+    {
+      "Name": "Grönsaksbiff morotsbiff stekt veg."
+    },
+    {
+      "Name": "Grönsaksbiff zucchinibiff m. ost stekt veg."
+    },
+    {
+      "Name": "Grönsaksbiff ärt- och kålrotsbiff stekt veg. kylvara"
+    },
+    {
+      "Name": "Grönsaksbiff kikärtsbiff stekt veg. hemlagad"
+    },
+    {
+      "Name": "Gryta chili sin carne m. zucchini paprika veg."
+    },
+    {
+      "Name": "Gryta chili sin carne m. mykoprotein veg."
+    },
+    {
+      "Name": "Gryta chili con soja veg."
+    },
+    {
+      "Name": "Mykoproteinfärssås veg. "
+    },
+    {
+      "Name": "Gryta böngryta provencale m. potatis rotselleri vitt vin crème fraiche veg."
+    },
+    {
+      "Name": "Gryta halloumigryta m. linser veg."
+    },
+    {
+      "Name": "Halloumi stroganoff veg."
+    },
+    {
+      "Name": "Gryta halloumigryta m. aubergine veg."
+    },
+    {
+      "Name": "Gryta mykoprotein m. grönsaker veg."
+    },
+    {
+      "Name": "Gryta kalops m. mykoprotein veg."
+    },
+    {
+      "Name": "Gryta indonesisk kycklinggryta m. mango chutney"
+    },
+    {
+      "Name": "Gryta mykoprotein indonesisk gryta m. mango chutney veg."
+    },
+    {
+      "Name": "Gryta mykoprotein m. persika veg."
+    },
+    {
+      "Name": "Bön stroganoff veg."
+    },
+    {
+      "Name": "Gryta m. gröna linser rotfrukter kokosmjölk veg."
+    },
+    {
+      "Name": "Gryta gulasch m. bönor veg."
+    },
+    {
+      "Name": "Grönsaker ugnsstekta"
+    },
+    {
+      "Name": "Majssås"
+    },
+    {
+      "Name": "Gryta kikärtsgryta m. aprikos blandade grönsaker veg."
+    },
+    {
+      "Name": "Svamp stroganoff veg."
+    },
+    {
+      "Name": "Broccolisås"
+    },
+    {
+      "Name": "Gryta indisk lammgryta"
+    },
+    {
+      "Name": "Sojafärssås veg."
+    },
+    {
+      "Name": "Sojafärssås m. linser veg."
+    },
+    {
+      "Name": "Tikka masala m. potatis grönsaker veg."
+    },
+    {
+      "Name": "Medelhavssås m. grädde soltorkad tomat"
+    },
+    {
+      "Name": "Sås m. grädde soltorkad tomat basilika vitlök"
+    },
+    {
+      "Name": "Gryta currygryta m. grönsaker veg."
+    },
+    {
+      "Name": "Pasta carbonara m. pasta sojabönor veg."
+    },
+    {
+      "Name": "Lasagne m. linser veg."
+    },
+    {
+      "Name": "Lasagne m. grönsaker veg. "
+    },
+    {
+      "Name": "Grönsaksbas grönsakspasta"
+    },
+    {
+      "Name": "Tomatsås m. grädde"
+    },
+    {
+      "Name": "Morotssås"
+    },
+    {
+      "Name": "Ajvar- och spenatsås"
+    },
+    {
+      "Name": "Paprika grillad"
+    },
+    {
+      "Name": "Lasagne m. cottage cheese veg. "
+    },
+    {
+      "Name": "Paj m. fetaost sötpotatis veg."
+    },
+    {
+      "Name": "Grynblandning havre råg vete korn kokt m. salt"
+    },
+    {
+      "Name": "Soppa m. kokosmjölk blomkål potatis spenat veg."
+    },
+    {
+      "Name": "Sötpotatissoppa m. linser chili kokosmjölk veg."
+    },
+    {
+      "Name": "Rysk kålsoppa veg."
+    },
+    {
+      "Name": "Vegestronesoppa veg."
+    },
+    {
+      "Name": "Gratäng m. mykoprotein ananas veg. "
+    },
+    {
+      "Name": "Pumpasoppa veg."
+    },
+    {
+      "Name": "Gryta chiligryta m. bönor linser sojakorv veg."
+    },
+    {
+      "Name": "Lasagne m. skinka"
+    },
+    {
+      "Name": "Pastasås m. kyckling paprika"
+    },
+    {
+      "Name": "Pastagratäng Rossini m. kycklingfärs ananas paprika squash tomat purjolök"
+    },
+    {
+      "Name": "Köttfärssås Vivaldi nöt m. squash majs paprika rödlök ost"
+    },
+    {
+      "Name": "Chiapudding"
+    },
+    {
+      "Name": "Korv stroganoff hemlagad"
+    },
+    {
+      "Name": "Lasagne hemlagad"
+    },
+    {
+      "Name": "Pizza Funghi m. champinjoner restaurang"
+    },
+    {
+      "Name": "Havremjöl fullkorn"
+    },
+    {
+      "Name": "Vitlökssås m. örter hemlagad"
+    },
+    {
+      "Name": "Öring Sverige höst rå "
+    },
+    {
+      "Name": "Taco tortilla m. köttfärs grönsaker ost"
+    },
+    {
+      "Name": "Kornflingor ångprep. fullkorn"
+    },
+    {
+      "Name": "Rågflingor ångprep. fullkorn"
+    },
+    {
+      "Name": "Veteflingor ångprep. fullkorn"
+    },
+    {
+      "Name": "Dinkelmjöl"
+    },
+    {
+      "Name": "Grönsaksbiff jordnötsbiff tillagad veg."
+    },
+    {
+      "Name": "Vitlökssås fetthalt ca 10%"
+    },
+    {
+      "Name": "Vetemjöl durum"
+    },
+    {
+      "Name": "Mjölblandning vete korn råg havre"
+    },
+    {
+      "Name": "Mjölblandning rågsikt"
+    },
+    {
+      "Name": "Varm choklad m. veg. dryck fett ca 1,5%"
+    },
+    {
+      "Name": "Pizza Vesuvio m. skinka restaurang"
+    },
+    {
+      "Name": "Pizza Capricciosa m. skinka champinjoner restaurang"
+    },
+    {
+      "Name": "Pizza m. kött restaurang"
+    },
+    {
+      "Name": "Pizza Bussola m. skinka räkor restaurang"
+    },
+    {
+      "Name": "Pizza m. köttfärs restaurang"
+    },
+    {
+      "Name": "Pizza m. ost restaurang"
+    },
+    {
+      "Name": "Rapsolja berikad"
+    },
+    {
+      "Name": "Muskotnöt malen"
+    },
+    {
+      "Name": "Durra el. andra sorghumarter mjöl"
+    },
+    {
+      "Name": "Amarant mjöl"
+    },
+    {
+      "Name": "Kiwi gul"
+    },
+    {
+      "Name": "Sojasås shoyu"
+    },
+    {
+      "Name": "Pizzadeg tillagad hemlagad"
+    },
+    {
+      "Name": "Insalata Caprese"
+    },
+    {
+      "Name": "Waldorfsallad"
+    },
+    {
+      "Name": "Jordnötter m. chokladöverdrag"
+    },
+    {
+      "Name": "Chokladkex m. vaniljfyllning"
+    },
+    {
+      "Name": "Risotto m. kyckling spenat"
+    },
+    {
+      "Name": "Pannkaka tunn u. mjölk ägg"
+    },
+    {
+      "Name": "Bröd rågsikt fibrer ca 4% typ rågkaka"
+    },
+    {
+      "Name": "Sött vetebröd kanelbulle gräddad kylvara frysvara el. butiksbakad"
+    },
+    {
+      "Name": "Bröd fröbröd fullkorn vete råg"
+    },
+    {
+      "Name": "Pizza m. tomatsås ost restaurang"
+    },
+    {
+      "Name": "Pizzadeg tillagad kylvara"
+    },
+    {
+      "Name": "Pommes frites smaksatta tillagad frysvara"
+    },
+    {
+      "Name": "Frukostflingor vete puffat m. choklad"
+    },
+    {
+      "Name": "Frukostflingor granola m. frukt nötter"
+    },
+    {
+      "Name": "Frukostflingor granola m. kakao hallon"
+    },
+    {
+      "Name": "Majskaka smaksatt ost"
+    },
+    {
+      "Name": "Linskaka smaksatt"
+    },
+    {
+      "Name": "Kex bokstavskex fullkorn"
+    },
+    {
+      "Name": "Pepparkaksdeg kylvara"
+    },
+    {
+      "Name": "Bröd vitt croissant gräddad kylvara frysvara el. butiksbakad"
+    },
+    {
+      "Name": "Pommes frites smaksatta frysvara"
+    },
+    {
+      "Name": "Frukostflingor majs typ cornflakes"
+    },
+    {
+      "Name": "Ris sushiris kokt"
+    },
+    {
+      "Name": "Nudlar äggnudlar kokta u. salt"
+    },
+    {
+      "Name": "Havregurt hallon berikad"
+    },
+    {
+      "Name": "Havregurt blåbär hallon berikad"
+    },
+    {
+      "Name": "Havregurt jordgubb berikad"
+    },
+    {
+      "Name": "Havregurt vanilj berikad"
+    },
+    {
+      "Name": "Havredryck fett 1,5% eko. berikad"
+    },
+    {
+      "Name": "Havredryck fett 0,5 % eko. berikad"
+    },
+    {
+      "Name": "Havregurt naturell fett 11 % berikad"
+    },
+    {
+      "Name": "Glass havreglass chokladfudge"
+    },
+    {
+      "Name": "Glass havreglass karamell hasselnöt"
+    },
+    {
+      "Name": "Glass havreglass karamell vanilj"
+    },
+    {
+      "Name": "Havrebaserat bredbart pålägg tomat basilika"
+    },
+    {
+      "Name": "Havrebaserat bredbart pålägg vitlök gurka"
+    },
+    {
+      "Name": "Havredryck choklad fett 2,5 % berikad"
+    },
+    {
+      "Name": "Havregurt smaksatt berikad"
+    },
+    {
+      "Name": "Havredryck fett 3,0% berikad"
+    },
+    {
+      "Name": "Glass havreglass smaksatt"
+    },
+    {
+      "Name": "Havrebaserat bredbart pålägg smaksatt"
+    },
+    {
+      "Name": "Kex bokstavskex fullkorn berikad"
+    },
+    {
+      "Name": "Vitlökssås fetthalt ≥ 40%"
+    },
+    {
+      "Name": "Sött vetebröd saffransbröd"
+    },
+    {
+      "Name": "Pommes frites klyftpotatis frysvara"
+    },
+    {
+      "Name": "Sojaprotein kebab frysvara typ Oumph®"
+    },
+    {
+      "Name": "Sojaprotein pulled sojaprotein frysvara typ Oumph®"
+    },
+    {
+      "Name": "Sojaprotein bitar m. timjan vitlök frysvara typ Oumph®"
+    },
+    {
+      "Name": "Rismål u. sylt"
+    },
+    {
+      "Name": "Rismål u. sylt u. socker m. sötningsm."
+    },
+    {
+      "Name": "Chips linser smaksatta fett 17%"
+    },
+    {
+      "Name": "Linsbågar fett 28%"
+    },
+    {
+      "Name": "Frukostflingor ris glutenfri berikad typ Specialflingor"
+    },
+    {
+      "Name": "Frukostflingor granola glutenfri"
+    },
+    {
+      "Name": "Frukostflingor majs glutenfri berikad"
+    },
+    {
+      "Name": "Mjölblandning ljus glutenfri"
+    },
+    {
+      "Name": "Bovetemjöl grovt"
+    },
+    {
+      "Name": "Teffmjöl"
+    },
+    {
+      "Name": "Våffelmix glutenfri"
+    },
+    {
+      "Name": "Våffla glutenfri"
+    },
+    {
+      "Name": "Majsgryn polenta"
+    },
+    {
+      "Name": "Bröd surdegsbröd glutenfritt"
+    },
+    {
+      "Name": "Bröd vitt tortilla glutenfritt"
+    },
+    {
+      "Name": "Hårt bröd m. chiafrö glutenfritt fibrer ca 10%"
+    },
+    {
+      "Name": "Hårt bröd m. sesamfrö glutenfritt fibrer ca 9%"
+    },
+    {
+      "Name": "Bröd vitt osötat glutenfritt fibrer ca 7% typ ciabatta"
+    },
+    {
+      "Name": "Sockerbetsfiber"
+    },
+    {
+      "Name": "Kex salta glutenfritt"
+    },
+    {
+      "Name": "Chokladkaka chocolate chip cookie glutenfri"
+    },
+    {
+      "Name": "Korv veg. sojaprotein kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. solrosprotein kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. solros- och ärtprotein kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. grönsaker kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. sojaprotein tillagad kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. solrosprotein tillagad kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. solros- och ärtprotein tillagad kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. tillagad kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Korv veg. grönsaker tillagad kylvara el. frysvara typ grillkorv"
+    },
+    {
+      "Name": "Burgare veg. potatis linser bönor majs kylvara el. frysvara"
+    },
+    {
+      "Name": "Burgare veg. potatis linser bönor majs stekt kylvara el. frysvara"
+    },
+    {
+      "Name": "Ärtprotein färs kylvara el. frysvara"
+    },
+    {
+      "Name": "Sojadryck osötad berikad"
+    },
+    {
+      "Name": "Mandeldryck osötad berikad"
+    },
+    {
+      "Name": "Kokosnötdryck "
+    },
+    {
+      "Name": "Mörk choklad kakao 70%"
+    },
+    {
+      "Name": "Mörk choklad kakao 85%"
+    },
+    {
+      "Name": "Pommes frites klyftpotatis tillagad frysvara"
+    },
+    {
+      "Name": "Sojaprotein kebab stekt frysvara typ Oumph®"
+    },
+    {
+      "Name": "Sojaprotein pulled sojaprotein stekt frysvara typ Oumph®"
+    },
+    {
+      "Name": "Sojaprotein bitar m. timjan vitlök stekta frysvara typ Oumph®"
+    },
+    {
+      "Name": "Pommes frites klyftpotatis friterad frysvara"
+    },
+    {
+      "Name": "Bulgur kokt m. tomat buljong olja"
+    },
+    {
+      "Name": "Munk friterad m. socker typ somalisk bur saliid"
+    },
+    {
+      "Name": "Majsdessert m. socker typ somalisk xalwo"
+    },
+    {
+      "Name": "Sött vetebröd dadelkrans m. fyllning"
+    },
+    {
+      "Name": "Mannagrynspudding m. socker typ syrisk mamonia"
+    },
+    {
+      "Name": "Gryta auberginegryta veg. typ tapsi"
+    },
+    {
+      "Name": "Mannagrynskaka fylld m. dadlar nötter typ mamoul"
+    },
+    {
+      "Name": "Sesamkaka m. socker olja typ somalisk sisin "
+    },
+    {
+      "Name": "Gryta m. kött kyckling typ tapsi"
+    },
+    {
+      "Name": "Fatteh veg."
+    },
+    {
+      "Name": "Fatteh m. kyckling"
+    },
+    {
+      "Name": "Börek m. spenat fetaost veg."
+    },
+    {
+      "Name": "Börek m. köttfärs"
+    },
+    {
+      "Name": "Pizza orientalisk"
+    },
+    {
+      "Name": "Pirog m. kött ugnsstekt typ sambusa"
+    },
+    {
+      "Name": "Pirog m. spenat ugnsstekt veg. typ sambusa"
+    },
+    {
+      "Name": "Pirog m. ost ugnsstekt typ sambusa"
+    },
+    {
+      "Name": "Pirog m. grönsaker friterad veg. typ sambusa"
+    },
+    {
+      "Name": "Dolma veg."
+    },
+    {
+      "Name": "Grön chilisås typ basbaas cagaar"
+    },
+    {
+      "Name": "Yoghurtdryck typ ayran"
+    },
+    {
+      "Name": "Bröd vitt mjukt typ chapati"
+    },
+    {
+      "Name": "Gryta köttgryta typ suqaar"
+    },
+    {
+      "Name": "Kebab m. lamm hemlagad"
+    },
+    {
+      "Name": "Mannagrynskaka m. sirap yoghurt typ basbousa"
+    },
+    {
+      "Name": "Biryani ris m. kyckling lammkött grönsaker"
+    },
+    {
+      "Name": "Yoghurtsås m. tahini citron"
+    },
+    {
+      "Name": "Potatisgratäng kylvara tillagad"
+    },
+    {
+      "Name": "Kakaobönor"
+    },
+    {
+      "Name": "Choklad ljus vegansk"
+    },
+    {
+      "Name": "Gelégodis u. gelatin"
+    },
+    {
+      "Name": "Mango torkad"
+    },
+    {
+      "Name": "Gojibär torkade"
+    },
+    {
+      "Name": "Glykossirap"
+    },
+    {
+      "Name": "Näringsjäst"
+    },
+    {
+      "Name": "Havreris kokt m. salt"
+    },
+    {
+      "Name": "Lakritsgodis"
+    },
+    {
+      "Name": "Hirs kokt m. salt"
+    },
+    {
+      "Name": "Kokosbaserad bit riven fett ca 20% som alternativ till ost"
+    },
+    {
+      "Name": "Kokosbaserad bit fett ca 20% som alternativ till ost"
+    },
+    {
+      "Name": "Korv kryddkorv kött ca 75%"
+    },
+    {
+      "Name": "Dippsås m. gräddfil dippmix"
+    },
+    {
+      "Name": "Snabbkaffe koffeinfritt pulver"
+    },
+    {
+      "Name": "Mullbär"
+    },
+    {
+      "Name": "Te fermenterat m. fruktjuice"
+    },
+    {
+      "Name": "Te fermenterat m. sötningsm."
+    },
+    {
+      "Name": "Färskost ricotta fett ca 10%"
+    },
+    {
+      "Name": "Wasabirot"
+    },
+    {
+      "Name": "Macadamianötter"
+    },
+    {
+      "Name": "Quinoa okokt"
+    },
+    {
+      "Name": "Quinoamjöl"
+    },
+    {
+      "Name": "Tempeh"
+    },
+    {
+      "Name": "Arrowrotmjöl"
+    },
+    {
+      "Name": "Vinblad konserv."
+    },
+    {
+      "Name": "Hampamjöl avfettat"
+    },
+    {
+      "Name": "Kakaosmör"
+    },
+    {
+      "Name": "Röd pepparsås"
+    },
+    {
+      "Name": "Shiitakesvamp"
+    },
+    {
+      "Name": "Ostronskivling"
+    },
+    {
+      "Name": "Blåbär amerikanska"
+    },
+    {
+      "Name": "Odon"
+    },
+    {
+      "Name": "Rönnbär"
+    },
+    {
+      "Name": "Aronia svart"
+    },
+    {
+      "Name": "Aronia torkad pulver"
+    },
+    {
+      "Name": "Rågkli"
+    },
+    {
+      "Name": "Ärtskott"
+    },
+    {
+      "Name": "Kakaopulver fett 10-15%"
+    },
+    {
+      "Name": "Korv kryddkorv kött ca 75% stekt"
+    },
+    {
+      "Name": "Köttbullar stekta frysvara"
+    },
+    {
+      "Name": "Korv falukorv stekt fett ca 22 % kött 58% "
+    },
+    {
+      "Name": "Frityrolja"
+    },
+    {
+      "Name": "Mjuk kaka tårtbotten glutenfri"
+    },
+    {
+      "Name": "Crème fraiche fett 32%"
+    },
+    {
+      "Name": "Nöt färs m. morot blomkål rå"
+    },
+    {
+      "Name": "Rödbetssallad m. creme fraiche kylvara"
+    },
+    {
+      "Name": "Rödbetssallad u. ägg kylvara"
+    },
+    {
+      "Name": "Schnitzel kalv stekt"
+    },
+    {
+      "Name": "Kanelbulle glutenfri"
+    },
+    {
+      "Name": "Muffins glutenfri"
+    },
+    {
+      "Name": "Kladdkaka glutenfri"
+    },
+    {
+      "Name": "Småkakor glutenfria hembakade"
+    },
+    {
+      "Name": "Krabba vitt kött kokt"
+    },
+    {
+      "Name": "Krabba brunt kött kokt"
+    },
+    {
+      "Name": "Kex m. kola rispuffar mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Maltkulor m. mjölkchokladöverdrag"
+    },
+    {
+      "Name": "Nöt färs m. ärtprotein"
+    },
+    {
+      "Name": "Savoiardikex"
+    },
+    {
+      "Name": "Fruktdryck m. kolsyra"
+    },
+    {
+      "Name": "Mandelmassa"
+    },
+    {
+      "Name": "Broccoli kokt m. salt frysvara"
+    },
+    {
+      "Name": "Pyttipanna hemlagad"
+    },
+    {
+      "Name": "Räkchips friterade"
+    },
+    {
+      "Name": "Potatissallad u. ägg kylvara"
+    },
+    {
+      "Name": "Sellerikål pak choi"
+    },
+    {
+      "Name": "Koriander blad"
+    },
+    {
+      "Name": "Grönmynta blad"
+    },
+    {
+      "Name": "Kardemumma torkad"
+    },
+    {
+      "Name": "Kryddnejlika torkad malen"
+    },
+    {
+      "Name": "Koriander frö torkad"
+    },
+    {
+      "Name": "Gurkmeja torkad"
+    },
+    {
+      "Name": "Spiskummin frö torkad"
+    },
+    {
+      "Name": "Paneer"
+    },
+    {
+      "Name": "Linssoppa m. coucous veg."
+    },
+    {
+      "Name": "Pannkaka tunn m. vatten"
+    },
+    {
+      "Name": "Knäck"
+    },
+    {
+      "Name": "Potatismos pulver"
+    },
+    {
+      "Name": "Potatismos pulver tillagat"
+    },
+    {
+      "Name": "Mörk choklad m. sötningsm."
+    }
+  ]
+}
