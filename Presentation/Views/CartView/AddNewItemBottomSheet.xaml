@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="ShopMate._2._0.Presentation.Views.CartView.AddNewItemBottomSheet"
+                   xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   xmlns:local="clr-namespace:ShopMate._2._0.Presentation.CostumConvert"
+                   xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+                   BackgroundColor="White"
+                   CornerRadius="10"
+                   IsCancelable="True"
+                   HasBackdrop="True"
+                   HasHandle="False">
+
+    <!--<the49:BottomSheet.Detents>
+        <the49:HeightDetent Height="500"/>
+    </the49:BottomSheet.Detents>-->
+
+    <!--<the49:BottomSheet.Resources>
+        <ResourceDictionary>
+            <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </ResourceDictionary>
+    </the49:BottomSheet.Resources>-->
+    <Grid Margin="10">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+        </Grid.GestureRecognizers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- For Search and Button -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <!-- For the List -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="5,10,5,10">
+
+            <Label 
+               Text="New Items"
+              FontSize="20"
+               FontAttributes="Bold"
+              TextColor="Black"
+              VerticalOptions="Center"
+              Grid.Column="0"
+               Grid.Row="0"/>
+            <ImageButton 
+                 Source="close_filled.png"
+                  BackgroundColor="Transparent"
+                 WidthRequest="30"
+                 HeightRequest="30"
+                Command="{Binding CloseCommand}"
+                HorizontalOptions="End"
+                Grid.Column="1"
+              Grid.Row="0"/>
+        </Grid>
+
+        <Frame x:Name="searchFrame"  BackgroundColor="#f4fff7" CornerRadius="13" Padding="10" HasShadow="True" Grid.Row="1">
+            <Frame.Shadow>
+                <Shadow Brush="Black" Opacity="0.1" Offset="8,8" Radius="10" />
+            </Frame.Shadow>
+            <Entry 
+               x:Name="searchItemEntry"
+                TextChanged="Search_TextChanged"
+               Text="{Binding SearchText}"
+               Placeholder="Search items"
+                PlaceholderColor="Gray"
+                TextColor="Black"
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand"
+                FontSize="16"
+                Margin="0"
+                HeightRequest="40"
+              
+                />
+        </Frame>
+
+
+
+        <CollectionView x:Name="ItemsCollectionView"
+                        Grid.Row="2"
+                ItemsSource="{Binding FoodDataItems}"
+                RemainingItemsThreshold="5"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMoreItemsCommand}"
+                        Scrolled="ItemsCollectionView_Scrolled"
+                Grid.ColumnSpan="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="5">
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
+                                                  Command="{Binding Source={RelativeSource AncestorType={x:Type the49:BottomSheet}}, Path=BindingContext.ItemSelectedCommand}"
+                                                  CommandParameter="{Binding .}"
+                                                  NumberOfTapsRequired="1"/>
+                        </VerticalStackLayout.GestureRecognizers>
+
+
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Start" LineBreakMode="WordWrap" MaxLines="2" WidthRequest="300"/>
+                        </StackLayout>
+
+                        <BoxView HeightRequest="1" Color="Gray" Margin="10,0" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</the49:BottomSheet>

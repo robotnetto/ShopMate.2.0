@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.SplashView.SplashPage"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-             Title="SplashPage">
+             Title="SplashPage"
+             BackgroundColor="White">
   
     <VerticalStackLayout VerticalOptions="Center" Margin="0,0,0,150">
         <skia:SKLottieView Source="loadingcart.json" 

@@ -6,9 +6,9 @@ namespace ShopMate._2._0.Applications.Services
 {
     public class CartService
     {
-        private readonly IShopCartRepository shopCartRepository;
+        private readonly ICartRepository shopCartRepository;
 
-        public CartService(IShopCartRepository shopCartRepository)
+        public CartService(ICartRepository shopCartRepository)
         {
             this.shopCartRepository = shopCartRepository;
         }

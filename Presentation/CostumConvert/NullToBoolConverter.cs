@@ -11,7 +11,7 @@ namespace ShopMate._2._0.Presentation.CostumConvert
             {
                 result = !result;
             }
-            System.Diagnostics.Debug.WriteLine($"Convert called with value: {value ?? "null"}, result: {result}");
+            //System.Diagnostics.Debug.WriteLine($"Convert called with value: {value ?? "null"}, result: {result}");
             return result;
 
         }

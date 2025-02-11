@@ -8,7 +8,7 @@
              Title="My List"
               Background="#f5f5f5">
 
-    <ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems >
         <ToolbarItem Text="Add"
                      IconImageSource="add_filled.png"
                      Command="{Binding AddCartCommand}" />

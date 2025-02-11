@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShopMate._2._0.Infrastructure.Repositories
 {
-    public class CartRepository : IShopCartRepository
+    public class CartRepository : ICartRepository
     {
 
         private readonly LocalDbService localDbService;

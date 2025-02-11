@@ -4,6 +4,7 @@ using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace ShopMate._2._0.Infrastructure.Repositories
 
         public async Task<IEnumerable<FoodData>> GetAllasync()
         {
-            var result = await localDbService.FoodItems.ToListAsync();
+            var result = await localDbService.FoodItems.OrderBy( f => f.Name).ToListAsync();
             return result;
         }
 

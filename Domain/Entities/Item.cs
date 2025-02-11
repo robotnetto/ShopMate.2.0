@@ -17,8 +17,19 @@ namespace ShopMate._2._0.Domain.Entities
 
         public string ItemName { get; set; } = string.Empty;
 
-        public bool IsChecked;
-      
+        public bool _isChecked;
+        public bool IsChecked
+        {
+            get => _isChecked;
+            set
+            {
+                if (_isChecked != value)
+                {
+                    _isChecked = value;
+                    OnPropertyChanged(nameof(IsChecked));
+                }
+            }
+        }
 
 
         [ForeignKey("CartId")]

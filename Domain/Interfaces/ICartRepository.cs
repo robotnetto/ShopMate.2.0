@@ -2,7 +2,7 @@
 
 namespace ShopMate._2._0.Domain.Interfaces
 {
-    public interface IShopCartRepository
+    public interface ICartRepository
     {
 
         Task CreateAsync(Cart shopCart);

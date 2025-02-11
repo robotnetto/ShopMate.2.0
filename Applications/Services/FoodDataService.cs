@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using ShopMate._2._0.Domain.Entities;
+using ShopMate._2._0.Domain.Exceptions;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Repositories;
 using System;
@@ -68,6 +69,16 @@ namespace ShopMate._2._0.Applications.Services
                 }
             }
          
+        }
+
+        public async Task<IEnumerable<FoodData>> GetAllAsync()
+        {
+            var result = await foodDataRepository.GetAllasync();
+            if (result == null)
+            {
+                throw new NotFoundException("No food data found!");
+            }
+            return result;
         }
 
     }

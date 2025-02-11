@@ -28,7 +28,7 @@ namespace ShopMate._2._0
             builder.Logging.AddDebug();
             builder.Services.AddDbContext<LocalDbService>();
             builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
-            builder.Services.AddScoped<IShopCartRepository, CartRepository>();
+            builder.Services.AddScoped<ICartRepository, CartRepository>();
             builder.Services.AddScoped<IFoodDataRepository, FoodDataRepository>();
             builder.Services.AddSingleton<FoodDataService>();
             builder.Services.AddSingleton<CartService>();
