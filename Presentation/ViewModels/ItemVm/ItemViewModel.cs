@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Core.Extensions;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -8,6 +9,7 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Presentation.ViewModels.CartVm;
 using ShopMate._2._0.Presentation.Views.CartView;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using The49.Maui.BottomSheet;
 
@@ -16,10 +18,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
     public partial class ItemViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
     {
         private readonly FoodDataService foodDataService;
-
         public readonly CartViewModel cartViewModel;
         [ObservableProperty]
         public ObservableRangeCollection<FoodData> _foodDataItems = new ObservableRangeCollection<FoodData>();
+
         [ObservableProperty]
         public ObservableRangeCollection<Item> _items = new ObservableRangeCollection<Item>();
         private const int pageSize = 20;
@@ -31,15 +33,18 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         private BottomSheet currentBottomSheet;
         [ObservableProperty]
         public string _searchText;
-
+        [ObservableProperty]
+        public double _progressBar;
         public ICommand ItemSelectedCommand { get; }
         public ICommand AddAndSearchCommand { get; }
+
+
         public ICommand LoadMoreItemsCommand { get; set; }
         public ICommand CloseCommand { get; }
         public ICommand DebounceSearchItemsCommand { get; }
         public ICommand SearchItemsCommand { get; }
         public ICommand SelectedItemCommand { get; }
-
+        public ICommand DeleteItemCommand { get; }
         public CartService CartService { get; }
 
 
@@ -55,10 +60,12 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             SearchItemsCommand = new AsyncRelayCommand(OnSearchItemsCommand);
             ItemSelectedCommand = new AsyncRelayCommand<FoodData>(OnSelectedItemCommand);
             DebounceSearchItemsCommand = new DebounceCommand(SearchItemsCommand, TimeSpan.FromMilliseconds(200));
+            DeleteItemCommand = new AsyncRelayCommand<Item>(OnDeleteItemCommand);
             SelectedItemCommand = new AsyncRelayCommand<Item>(OnCheckItemCommand);
 
         }
 
+      
         //public ItemViewModel() : this(new FoodDataService(new FoodDataRepository(new LocalDbService())))
         //{
         //}
@@ -67,8 +74,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         {
             var result = await CartService.GetCartIdAsync(SelectedCart.Id);
             if (result != null)
-            {
-                Items.AddRange(result.Items!);
+            {   
+                var sortedItems = result.Items!.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+                Items.AddRange(sortedItems);
+                UpdateProgress();
             }
         }
         private async Task OnSeachCommandAsync()
@@ -106,7 +115,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
                 }
             }
             var itemsToLoad = cachedFoodData.Skip(FoodDataItems.Count()).Take(pageSize);
-            FoodDataItems.AddRange(itemsToLoad);
+            await Task.Run(() => FoodDataItems.AddRange(itemsToLoad));
+            //FoodDataItems.AddRange(itemsToLoad);
 
             currentPage++;
 
@@ -118,10 +128,26 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             {
 
                 await cartViewModel.OnAddNewItemAsync(foodData);
-                await Toast.Make("Item added to cart", ToastDuration.Short).Show();
+                var item = FoodDataItems.FirstOrDefault(i => i.Id == foodData.Id);
+                if (item != null)
+                {
+                    item.IsSelected = true;
+
+                }
+                Items.Add(new Item {ItemName = foodData.Name, IsChecked = false});
+                var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+                Items.Clear();
+                await Task.Run(() => Items.AddRange(sortedItems));
+                   UpdateProgress();
+                //Items.AddRange(sortedItems);
+
             }
-            Items.Clear();
-            await OnInitializeDataAsync();
+        }
+        private void UpdateProgress()
+        {
+            ProgressBar = (double)Items.Count(i => i.IsChecked) / Items.Count;
+           
+            OnPropertyChanged(nameof(ProgressBar));
         }
         private async Task OnSearchItemsCommand()
         {
@@ -156,15 +182,30 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
                     await CartService.UpdateCartAsync(cartFromDb);
                 }
 
-
-                var checkedItems = Items.FirstOrDefault(i => i.Id == item.Id);
-                if (checkedItems != null)
-                {
-                    checkedItems.IsChecked = item.IsChecked;
-                }
+                var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+                Items.Clear();
+                Items.AddRange(sortedItems);
+                UpdateProgress();
             }
 
         }
+        private async Task OnDeleteItemCommand(Item? item)
+        {
+            var itemToDelete = Items.FirstOrDefault(i => i.Id == item?.Id);
+            if (itemToDelete != null)
+            {
+                Items.Remove(itemToDelete);
+                var cartFromDb = await CartService.GetCartIdAsync(SelectedCart.Id);
+                var dbItem = cartFromDb.Items!.FirstOrDefault(i => i.Id == itemToDelete.Id);
+                if (dbItem != null)
+                {
+                    cartFromDb.Items!.Remove(dbItem);
+                    await CartService.UpdateCartAsync(cartFromDb);
+                }
+            }
+            UpdateProgress();
+        }
+
         private async Task OnCloseCommandAsync()
         {
             if (currentBottomSheet != null)

@@ -10,9 +10,9 @@
     BackgroundColor="White"
     TitleColor="Black"
     Shell.NavBarHasShadow="True"
-    Shell.TabBarTitleColor="#04c9fb" 
+    Shell.TabBarTitleColor="#26e01f" 
     Shell.TabBarUnselectedColor="#8a8a8a"
-    Shell.TabBarForegroundColor="#04c9fb"
+    Shell.TabBarForegroundColor="#26e01f"
    
     Shell.TabBarBackgroundColor="White" 
     >

@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Alerts;
 using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Infrastructure.Data;
@@ -10,7 +11,6 @@ namespace ShopMate._2._0.Presentation.Views.CartView;
 public partial class ItemPage : ContentPage
 {
     //private readonly ItemViewModel itemViewModel;
-  
     public ItemPage(CartViewModel cartViewModel, ItemViewModel itemViewModel )
     {
         InitializeComponent();
@@ -18,7 +18,9 @@ public partial class ItemPage : ContentPage
         //this.itemViewModel = itemViewModel;
         BindingContext = itemViewModel;
 
+       
     }
+  
 
     //private async void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
     //{

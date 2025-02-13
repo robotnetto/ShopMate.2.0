@@ -5,7 +5,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
 
              Title="{Binding SelectedCart.Title}"
-             Background="#f5f5f5">
+             Background="#f5f5f5"  >
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"
@@ -13,33 +13,73 @@
                      Command="{Binding AddAndSearchCommand}" />
     </ContentPage.ToolbarItems>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+           
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ProgressBar Grid.Row="0" Progress="{Binding ProgressBar}"
+             ProgressColor="#26e01f" HeightRequest="15" Background="White"/>
 
         <CollectionView x:Name="ItemsCollectionView"
                         ItemsSource="{Binding Items}"
                         RemainingItemsThreshold="5"
                         RemainingItemsThresholdReachedCommand="{Binding }"
-                       >
+                        Grid.Row="1"    >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <VerticalStackLayout>
-                        <VerticalStackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.SelectedItemCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
-                        </VerticalStackLayout.GestureRecognizers>
-                        <!-- Item Layout -->
-                        <StackLayout Orientation="Horizontal" Padding="10" >
-                            <CheckBox IsChecked="{Binding IsChecked , Mode=TwoWay}" Color="#7ae884">
-                                <CheckBox.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.SelectedItemCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
-                                </CheckBox.GestureRecognizers>
-                            </CheckBox>
-                            
-                            
-                            <Label Text="{Binding ItemName}" VerticalOptions="Center" HorizontalOptions="Start" />
-                        </StackLayout>
+                    <SwipeView x:Name="ItemSwipeView" >
+                        <SwipeView.RightItems>
+                            <SwipeItemView>
+                                <Border StrokeThickness="0"
+                                        BackgroundColor="Red"
+                                        Padding="10"
+                                        StrokeShape="RoundRectangle 0, 5, 0, 5"
+                                        >
+                                    <HorizontalStackLayout>
+                                        <Image Source="delete.png" WidthRequest="20" HeightRequest="20" />
+                                        <Label Text="Delete" TextColor="White" VerticalOptions="Center" />
+                                    </HorizontalStackLayout>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteItemCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
+                                    </Border.GestureRecognizers>
+                                </Border>
+                            </SwipeItemView>
+                            <!--<SwipeItems>
 
-                        <!-- Divider -->
-                        <BoxView HeightRequest="1" Color="Gray" Margin="10,0" />
-                    </VerticalStackLayout>
+                                <SwipeItem Text="Delete" IconImageSource="delete.png" BackgroundColor="Red" Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteItemCommand}" CommandParameter="{Binding .}" />
+                            </SwipeItems>-->
+                        </SwipeView.RightItems>
+
+
+                        <VerticalStackLayout>
+
+                            <VerticalStackLayout.Triggers>
+                                <DataTrigger TargetType="VerticalStackLayout" Binding="{Binding IsChecked}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#d2d2d1" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="VerticalStackLayout" Binding="{Binding IsChecked}" Value="False">
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </DataTrigger>
+                            </VerticalStackLayout.Triggers>
+                            <VerticalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.SelectedItemCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
+                            </VerticalStackLayout.GestureRecognizers>
+                            <!-- Item Layout -->
+                            <StackLayout Orientation="Horizontal" Padding="10" >
+                                <CheckBox IsChecked="{Binding IsChecked , Mode=TwoWay}" Color="#7ae884">
+                                    <CheckBox.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.SelectedItemCommand}" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
+                                    </CheckBox.GestureRecognizers>
+                                </CheckBox>
+
+                                <Label Text="{Binding ItemName}" VerticalOptions="Center" HorizontalOptions="Start" />
+                            </StackLayout>
+
+                            <!-- Divider -->
+                            <BoxView HeightRequest="1" Color="Gray" Margin="10,0" />
+                        </VerticalStackLayout>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -1,4 +1,6 @@
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core.Platform;
+using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Presentation.ViewModels.CartVm;
 using ShopMate._2._0.Presentation.ViewModels.ItemVm;
 using The49.Maui.BottomSheet;
@@ -8,7 +10,6 @@ namespace ShopMate._2._0.Presentation.Views.CartView;
 public partial class AddNewItemBottomSheet : BottomSheet
 {
     private readonly ItemViewModel itemViewModel;
-
     public AddNewItemBottomSheet(ItemViewModel itemViewModel)
 	{
 		InitializeComponent();
@@ -17,8 +18,9 @@ public partial class AddNewItemBottomSheet : BottomSheet
         Dismissed += CustomBottomSheet_Dismissed;
         CalculateHeight();
         this.itemViewModel = itemViewModel;
-       
+        
     }
+   
     private void CustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
     {
         HideKeyboardOnDismissAsync();
@@ -66,4 +68,5 @@ public partial class AddNewItemBottomSheet : BottomSheet
         }
 
     }
+
 }

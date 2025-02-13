@@ -72,7 +72,6 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#FFFFFF" BaseSize="128,128" />
@@ -92,6 +91,7 @@
 	  <MauiAsset Remove="Resources\Raw\LivsmedelsDB_JSON.json" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="Resources\AppIcon\appicon.svg" />
 	  <None Remove="Resources\AppIcon\Icons\add_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_filled.png" />
 	  <None Remove="Resources\AppIcon\Icons\add_photo.png" />
@@ -232,6 +232,10 @@
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\Resources\Raw\" />
 	  <Folder Include="Resources\Data\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 	</ItemGroup>
 
 </Project>
