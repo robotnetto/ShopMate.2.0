@@ -9,7 +9,8 @@
                    CornerRadius="10"
                    IsCancelable="True"
                    HasBackdrop="True"
-                   HasHandle="False">
+                   HasHandle="False"
+                    >
 
     <!--<the49:BottomSheet.Detents>
         <the49:HeightDetent Height="500"/>
@@ -26,10 +27,9 @@
         </Grid.GestureRecognizers>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <!-- For Search and Button -->
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <!-- For the List -->
+           
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />

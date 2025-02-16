@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.CartView.ItemPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-
+             Shell.TabBarIsVisible="False"
              Title="{Binding SelectedCart.Title}"
              Background="#f5f5f5"  >
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"
                      IconImageSource="add_filled.png"
-                     Command="{Binding AddAndSearchCommand}" />
+                     Command="{Binding AddAndFindItemCommand}" />
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
@@ -56,7 +56,7 @@
 
                             <VerticalStackLayout.Triggers>
                                 <DataTrigger TargetType="VerticalStackLayout" Binding="{Binding IsChecked}" Value="True">
-                                    <Setter Property="BackgroundColor" Value="#d2d2d1" />
+                                    <Setter Property="BackgroundColor" Value="#c7c7c7" />
                                 </DataTrigger>
                                 <DataTrigger TargetType="VerticalStackLayout" Binding="{Binding IsChecked}" Value="False">
                                     <Setter Property="BackgroundColor" Value="White" />

@@ -37,6 +37,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         [ObservableProperty]
         public string _bottomSheetTitle;
 
+
+
         //public ObservableCollection<Item> SelectedCartItems;
         //=> new ObservableCollection<Item>(_selectedCart.Items);
 
@@ -64,7 +66,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             ShareListCommand = new AsyncRelayCommand(OnShareList);
             CloseCommand = new AsyncRelayCommand(OnCloseBottomSheetAsync);
             //AddItemComand = new AsyncRelayCommand(OnAddItemCommandAsync);
-            _ = InitializeDataAsync();
+            _ = OnInitializeDataAsync();
         }
 
 
@@ -73,16 +75,23 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         {
         }
 
-        private async Task InitializeDataAsync()
+        public async Task OnInitializeDataAsync()
         {
             try
             {
-                var results = await cartService.GetAllCartsServiceAsync();
+                var cartsFromDb = await cartService.GetAllCartsServiceAsync();
 
 
-                foreach (var item in results)
+                foreach (var cart in cartsFromDb)
                 {
-                    Carts.Add(new CartDetailsViewModel(item));
+                    if (cart.Items!.Any())
+                    {
+                        var progress = await CalculateProgress(cart.Items!.Count(i => i.IsChecked), cart.Items!.Count());
+                        cart.Progressing = progress;
+
+
+                    }
+                    Carts.Add(new CartDetailsViewModel(cart));
 
                 }
             }
@@ -94,7 +103,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
         }
 
-       
+
         private async Task OnSaveRecipeAndEditCartCommandAsync()
         {
             if (CurrentBottomSheetMode == BottomSheetMode.Add)
@@ -107,6 +116,23 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             }
 
         }
+
+        //private async Task OnProgressCommand()
+        //{
+        //    var allCarts = await cartService.GetAllCartsServiceAsync();
+        //    foreach (var cart in allCarts)
+        //    {
+        //        var progressValue = await OnProgress(cart.Items!.Count(i => i.IsChecked), allCarts.Count());
+        //        cart.Progressing = progressValue;
+        //    }
+        //}
+
+        public async Task<Double> CalculateProgress(int checkedCart, int totalCart)
+        {
+            return (double)checkedCart / totalCart;
+
+        }
+
         private async Task OnOptionsCommand(CartDetailsViewModel cartDetailsViewModel)
         {
 
@@ -133,23 +159,38 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         {
             try
             {
-                var result = await cartService.GetCartIdAsync(SelectedCart.Id);
-                if (result != null)
+
+                var selectedCartUI = Carts.FirstOrDefault(c => c.Id == SelectedCart.Id);
+                if (selectedCartUI == null)
                 {
-                    var newItem = new Item { ItemName = foodData.Name, IsChecked = false };
-
-                    result.Items!.Add(newItem);
-                    await cartService.UpdateCartAsync(result);
-
-                    //var cartVm = Carts.FirstOrDefault(c => c.Id == result.Id);
-                    //===>>>>>>>>>>>>>
-                    //if (cartVm != null)
-                    //{
-                    //    SelectedCart = cartVm;
-                    //    SelectedCart.Items.Add(newItem);
-                    //}
-
+                    return;
                 }
+
+                var newItem = new Item { ItemName = foodData.Name, IsChecked = false };
+
+                selectedCartUI.Items!.Add(newItem);
+
+                selectedCartUI.Progressing = await CalculateProgress(selectedCartUI.Items!.Count(i => i.IsChecked), selectedCartUI.Items!.Count());
+
+
+                await Task.Run(async () =>
+                 {
+                     var cart = await cartService.GetCartIdAsync(selectedCartUI.Id);
+                      cart.Items!.Add(newItem);
+                        await cartService.UpdateCartAsync(cart);
+                     
+                 });
+
+              
+                //var cartVm = Carts.FirstOrDefault(c => c.Id == result.Id);
+                //===>>>>>>>>>>>>>
+                //if (cartVm != null)
+                //{
+                //    SelectedCart = cartVm;
+                //    SelectedCart.Items.Add(newItem);
+                //}
+
+
             }
             catch (Exception e)
             {
@@ -248,11 +289,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         //    }
         //}
 
-        private void SortItems()
-        {
-            SelectedCart.Items = new ObservableCollection<Item>(SelectedCart.Items.OrderBy(i => i.IsChecked).ThenBy(n => n.ItemName).ToList());
 
-        }
         private async Task OnShareList()
         {
             var itemList = new StringBuilder();
@@ -283,8 +320,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             //await Shell.Current.GoToAsync(nameof(ItemPage), true);
             var itemViewModel = new ItemViewModel(new FoodDataService(new FoodDataRepository(new LocalDbService())), this,
                 new CartService(new CartRepository(new LocalDbService())));
-            await Shell.Current.Navigation.PushAsync(new ItemPage(this, itemViewModel));
-            await Task.Run( async () => await itemViewModel.OnInitializeDataAsync());
+            await Shell.Current.Navigation.PushAsync(new ItemPage(itemViewModel));
+            await Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
 
         }
     }

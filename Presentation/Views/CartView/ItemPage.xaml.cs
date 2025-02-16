@@ -10,8 +10,8 @@ namespace ShopMate._2._0.Presentation.Views.CartView;
 
 public partial class ItemPage : ContentPage
 {
-    //private readonly ItemViewModel itemViewModel;
-    public ItemPage(CartViewModel cartViewModel, ItemViewModel itemViewModel )
+    private readonly ItemViewModel itemViewModel;
+    public ItemPage(ItemViewModel itemViewModel )
     {
         InitializeComponent();
         
@@ -20,8 +20,14 @@ public partial class ItemPage : ContentPage
 
        
     }
-  
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Reload data when the page appears again
+        Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
+    }
     //private async void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
     //{
     //    if (isInitializing)

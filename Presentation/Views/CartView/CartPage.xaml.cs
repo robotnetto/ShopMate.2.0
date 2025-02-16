@@ -9,13 +9,15 @@ namespace ShopMate._2._0.Presentation.Views.CartView;
 
 public partial class CartPage : ContentPage
 {
+    private readonly CartViewModel _cartViewModel;
     public CartPage()
     {
         InitializeComponent();
       
         App.Current.On<Microsoft.Maui.Controls.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
-        var cartViewModel = new CartViewModel();
-        BindingContext = cartViewModel;
-        cartViewModel.ErrorOccurred += async (message) => await DisplayAlert("Error", message, "OK");
+        _cartViewModel = new CartViewModel();
+        BindingContext = _cartViewModel;
+        _cartViewModel.ErrorOccurred += async (message) => await DisplayAlert("Error", message, "OK");
     }
+   
 }

@@ -24,7 +24,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
 
         [ObservableProperty]
         public ObservableRangeCollection<Item> _items = new ObservableRangeCollection<Item>();
-        private const int pageSize = 20;
+        private const int pageSize = 30;
         private int currentPage = 0;
         private List<FoodData> cachedFoodData = new();
         [ObservableProperty]
@@ -36,7 +36,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         [ObservableProperty]
         public double _progressBar;
         public ICommand ItemSelectedCommand { get; }
-        public ICommand AddAndSearchCommand { get; }
+        public ICommand AddAndFindItemCommand { get; }
 
 
         public ICommand LoadMoreItemsCommand { get; set; }
@@ -54,7 +54,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             cartViewModel = cartVM;
             SelectedCart = cartVM.SelectedCart;
             this.CartService = cartService;
-            AddAndSearchCommand = new AsyncRelayCommand(OnSeachCommandAsync);
+            AddAndFindItemCommand = new AsyncRelayCommand(OnSeachCommandAsync);
             LoadMoreItemsCommand = new AsyncRelayCommand(OnLoadMoreFoodDataAsync);
             CloseCommand = new AsyncRelayCommand(OnCloseCommandAsync);
             SearchItemsCommand = new AsyncRelayCommand(OnSearchItemsCommand);
@@ -65,7 +65,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
 
         }
 
-      
+
         //public ItemViewModel() : this(new FoodDataService(new FoodDataRepository(new LocalDbService())))
         //{
         //}
@@ -74,7 +74,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         {
             var result = await CartService.GetCartIdAsync(SelectedCart.Id);
             if (result != null)
-            {   
+            {
                 var sortedItems = result.Items!.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
                 Items.AddRange(sortedItems);
                 UpdateProgress();
@@ -82,11 +82,15 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         }
         private async Task OnSeachCommandAsync()
         {
-            //await Shell.Current.Navigation.PushAsync(new SearchItemPage(this));
-            var addNewItemBS = new AddNewItemBottomSheet(this);
-            await addNewItemBS.ShowAsync();
-            currentBottomSheet = addNewItemBS;
             await OnLoadFoodDataAsync();
+            await Task.Delay(1000);
+            await Shell.Current.Navigation.PushAsync(new FoodDataItemsPage(this));
+            //await Shell.Current.Navigation.PushModalAsync(new FoodDataItemsPage(this));
+
+            //var addNewItemBS = new AddNewItemBottomSheet(this);
+            //await addNewItemBS.ShowAsync();
+            //currentBottomSheet = addNewItemBS;
+
         }
 
 
@@ -95,33 +99,57 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         {
             currentPage = 0;
             FoodDataItems.Clear();
-            cachedFoodData.Clear();
+            SearchText = string.Empty;
             await OnLoadMoreFoodDataAsync();
 
         }
+        //private async Task OnLoadMoreFoodDataAsync()
+        //{
+        //    if (!string.IsNullOrWhiteSpace(SearchText))
+        //    {
+        //        return;
+        //    }
+        //    if (!cachedFoodData.Any())
+        //    {
+        //        await Task.Run(async () =>
+        //        {
+        //            var result = await foodDataService.GetAllAsync();
+        //            if (result != null)
+        //            {
+        //                cachedFoodData = result.ToList();
+        //            }
+        //        });
+
+        //    }
+        //    await Task.Run(async () => FoodDataItems.AddRange(cachedFoodData.Skip(FoodDataItems.Count()).Take(pageSize)));
+        //    //var itemsToLoad = cachedFoodData.Skip(FoodDataItems.Count()).Take(pageSize);
+        //    //FoodDataItems.AddRange(itemsToLoad);
+
+        //    currentPage++;
+
+        //}
         private async Task OnLoadMoreFoodDataAsync()
         {
             if (!string.IsNullOrWhiteSpace(SearchText))
             {
                 return;
             }
+
             if (!cachedFoodData.Any())
             {
-                var result = await foodDataService.GetAllAsync();
+                var result = await Task.Run(async () => await foodDataService.GetAllAsync());
                 if (result != null)
                 {
                     cachedFoodData = result.ToList();
-
                 }
             }
-            var itemsToLoad = cachedFoodData.Skip(FoodDataItems.Count()).Take(pageSize);
-            await Task.Run(() => FoodDataItems.AddRange(itemsToLoad));
-            //FoodDataItems.AddRange(itemsToLoad);
+
+            var itemsToLoad = cachedFoodData.Skip(FoodDataItems.Count()).Take(pageSize).ToList();
+
+            FoodDataItems.AddRange(itemsToLoad);
 
             currentPage++;
-
         }
-
         private async Task OnSelectedItemCommand(FoodData foodData)
         {
             if (foodData != null)
@@ -134,11 +162,19 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
                     item.IsSelected = true;
 
                 }
-                Items.Add(new Item {ItemName = foodData.Name, IsChecked = false});
-                var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+                Items.Add(new Item { ItemName = foodData.Name, IsChecked = false });
+                var sortedItems = await Task.Run(() => Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList());
                 Items.Clear();
-                await Task.Run(() => Items.AddRange(sortedItems));
-                   UpdateProgress();
+                Items.AddRange(sortedItems);
+                UpdateProgress();
+                var snackbarOptions = new SnackbarOptions
+                {
+                    BackgroundColor = Color.FromArgb("#39de57"),
+                    TextColor = Color.FromArgb("#FFFFFF"),
+                    CornerRadius = 10,
+
+                };
+                await Snackbar.Make($"{foodData.Name} added to cart", () => { }, string.Empty, TimeSpan.FromSeconds(2), snackbarOptions).Show();
                 //Items.AddRange(sortedItems);
 
             }
@@ -146,7 +182,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         private void UpdateProgress()
         {
             ProgressBar = (double)Items.Count(i => i.IsChecked) / Items.Count;
-           
+
             OnPropertyChanged(nameof(ProgressBar));
         }
         private async Task OnSearchItemsCommand()
@@ -171,24 +207,33 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         }
         public async Task OnCheckItemCommand(Item item)
         {
-            if (item != null)
+            if (item == null)
             {
-                item.IsChecked = !item.IsChecked;
-                var cartFromDb = await CartService.GetCartIdAsync(SelectedCart.Id);
-                var dbItem = cartFromDb.Items!.FirstOrDefault(i => i.Id == item.Id);
+                return;
+            }
+            item.IsChecked = !item.IsChecked;
+            var selectedCartUI = cartViewModel.Carts.FirstOrDefault(i => i.Id == SelectedCart.Id);
+            if(selectedCartUI == null) return;
+
+            selectedCartUI.Progressing = await cartViewModel.CalculateProgress(Items.Count(i => i.IsChecked), Items.Count);
+
+            await Task.Run(async () =>
+            {
+                var dbCart = await CartService.GetCartIdAsync(SelectedCart.Id);
+              var dbItem = dbCart.Items!.FirstOrDefault(i => i.Id == item.Id);
                 if (dbItem != null)
                 {
                     dbItem.IsChecked = item.IsChecked;
-                    await CartService.UpdateCartAsync(cartFromDb);
+                    await CartService.UpdateCartAsync(dbCart);
                 }
-
-                var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
-                Items.Clear();
-                Items.AddRange(sortedItems);
-                UpdateProgress();
-            }
-
+            });
+            
+            var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+            Items.Clear();
+            Items.AddRange(sortedItems);
+            UpdateProgress();
         }
+
         private async Task OnDeleteItemCommand(Item? item)
         {
             var itemToDelete = Items.FirstOrDefault(i => i.Id == item?.Id);
@@ -205,7 +250,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             }
             UpdateProgress();
         }
-
+        //====Remove this method to reminder
         private async Task OnCloseCommandAsync()
         {
             if (currentBottomSheet != null)

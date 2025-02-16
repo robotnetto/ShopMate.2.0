@@ -19,7 +19,7 @@
             <local:NullToBoolConverter x:Key="NullToBoolConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-     
+
     <Grid>
         <CollectionView ItemsSource="{Binding Carts}">
             <CollectionView.ItemTemplate>
@@ -29,27 +29,34 @@
                             <Frame.Shadow>
                                 <Shadow Brush="Black" Opacity="0.1" Offset="8,8" Radius="10" />
                             </Frame.Shadow>
-                            
-                            <Grid>
+
+                            <Grid Padding="40,0,0,0">
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer 
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectCommand}" 
                                         CommandParameter="{Binding .}" 
                                         NumberOfTapsRequired="1" />
                                 </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
+
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
-                              
 
-                                <Label Grid.Column="1" Padding="20,0,0,0" VerticalOptions="Center" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
+
+                                <Label Grid.Column="0" Grid.Row="0" VerticalOptions="Center" TextColor="Black" Text="{Binding Title}" FontAttributes="Bold" FontSize="Medium"/>
 
                                 <ImageButton Grid.Column="2" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" Margin="0,27,0,27" Source="options_v3.png"
                                              Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
                                              CommandParameter="{Binding .}" />
+                                <ProgressBar Grid.Row="1" Progress="{Binding Progressing}" 
+                                 ProgressColor="#26e01f" HeightRequest="15" Background="White" Margin="0,-15,0,0"/>
+
                             </Grid>
                         </Frame>
                     </VerticalStackLayout>

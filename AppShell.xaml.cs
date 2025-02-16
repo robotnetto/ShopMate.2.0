@@ -12,9 +12,11 @@ namespace ShopMate._2._0
         public AppShell()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(ItemPage), typeof(ItemPage));
+            Routing.RegisterRoute(nameof(ItemPage), typeof(ItemPage));
+            Routing.RegisterRoute(nameof(FoodDataItemsPage), typeof(FoodDataItemsPage));
         }
-
+       
+        
 
     }
 
