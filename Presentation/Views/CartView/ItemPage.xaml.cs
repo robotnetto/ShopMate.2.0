@@ -1,4 +1,5 @@
 using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Infrastructure.Data;
@@ -14,20 +15,19 @@ public partial class ItemPage : ContentPage
     public ItemPage(ItemViewModel itemViewModel )
     {
         InitializeComponent();
-        
-        //this.itemViewModel = itemViewModel;
+
+        this.itemViewModel = itemViewModel;
         BindingContext = itemViewModel;
 
-       
     }
+    
+    //protected override void OnAppearing()
+    //{
+    //    base.OnAppearing();
 
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-
-        // Reload data when the page appears again
-        Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
-    }
+    //    // Reload data when the page appears again
+    //    Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
+    //}
     //private async void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
     //{
     //    if (isInitializing)
@@ -54,4 +54,5 @@ public partial class ItemPage : ContentPage
     //    OnPropertyChanged(nameof(cartViewModel));
 
     //}
+
 }

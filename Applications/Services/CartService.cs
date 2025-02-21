@@ -18,7 +18,7 @@ namespace ShopMate._2._0.Applications.Services
 
             if (shopCart is null)
             {
-                throw new ArgumentNullException(nameof(shopCart), "The shopCart parameter cannot be null!");
+                throw new ArgumentNullException(nameof(shopCart), "The shopcart parameter cannot be null!");
             }
 
             if (string.IsNullOrWhiteSpace(shopCart.Title))

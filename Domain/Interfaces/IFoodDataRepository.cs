@@ -14,5 +14,6 @@ namespace ShopMate._2._0.Domain.Interfaces
         Task<FoodData> GetByIdAsync(int id);
         Task UpdateAsync(FoodData foodData);
         Task DeleteAsync(FoodData foodData);
+        Task<List<FoodData>> GetPageDataAsync(int currentPage, int pageSize);
     }
 }

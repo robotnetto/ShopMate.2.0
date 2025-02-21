@@ -72,7 +72,7 @@
                                HeightRequest="250"
                                WidthRequest="250"
                                IsVisible="{Binding Carts.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            <Label Text="Let's create your shoppoing " 
+            <Label Text="Let's create your shopping list " 
                    FontSize="16"
                    TextColor="Gray"
                    FontAttributes="Bold"

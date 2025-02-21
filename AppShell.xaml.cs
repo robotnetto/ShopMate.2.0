@@ -1,4 +1,6 @@
-﻿using ShopMate._2._0.Presentation.ViewModels.CartVm;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using ShopMate._2._0.Presentation.ViewModels.CartVm;
 using ShopMate._2._0.Presentation.Views;
 using ShopMate._2._0.Presentation.Views.CartView;
 using ShopMate._2._0.Presentation.Views.RecipeView;
@@ -13,10 +15,8 @@ namespace ShopMate._2._0
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemPage), typeof(ItemPage));
-            Routing.RegisterRoute(nameof(FoodDataItemsPage), typeof(FoodDataItemsPage));
+            Routing.RegisterRoute(nameof(FoodDataPage), typeof(FoodDataPage));
         }
-       
-        
 
     }
 

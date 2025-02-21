@@ -3,11 +3,11 @@ using ShopMate._2._0.Presentation.ViewModels.ItemVm;
 
 namespace ShopMate._2._0.Presentation.Views.CartView;
 
-public partial class FoodDataItemsPage : ContentPage
+public partial class FoodDataPage : ContentPage
 {
     private readonly ItemViewModel itemViewModel;
 
-    public FoodDataItemsPage(ItemViewModel itemViewModel)
+    public FoodDataPage(ItemViewModel itemViewModel)
     {
         InitializeComponent();
         this.itemViewModel = itemViewModel;
@@ -39,9 +39,19 @@ public partial class FoodDataItemsPage : ContentPage
         }
 
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
+        itemViewModel.currentPage = 0;
+    }
     internal async void HideKeyboardOnDismissAsync()
     {
         await searchItemEntry.HideKeyboardAsync(default);
     }
+    //protected override async void OnDisappearing()
+    //{
+    //    base.OnDisappearing();
+    //    await Shell.Current.Navigation.PopAsync();
+    //}
 }

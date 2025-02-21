@@ -9,6 +9,7 @@ namespace ShopMate._2._0.Infrastructure.Data
         public DbSet<Cart> ShopCarts { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<FoodData> FoodItems { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,6 +24,12 @@ namespace ShopMate._2._0.Infrastructure.Data
              .HasMany(c => c.Items)
              .WithOne()
              .HasForeignKey(i => i.CartId);
+
+            modelBuilder.Entity<Profile>()
+                .HasMany(c => c.Carts)
+                .WithOne(p => p.Profile)
+                .HasForeignKey(c => c.ProfileId);
+
         }
 
     }

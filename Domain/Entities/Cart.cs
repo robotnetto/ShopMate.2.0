@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -15,6 +16,10 @@ namespace ShopMate._2._0.Domain.Entities
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
         private double _progressing;
+
+        [ForeignKey("ProfileId")]
+        public Guid ProfileId { get; set; }
+        public Profile Profile { get; set; }
         public double Progressing
         {
             get => _progressing;

@@ -40,6 +40,11 @@ namespace ShopMate._2._0.Infrastructure.Repositories
             var result = await localDbService.FoodItems.OrderBy( f => f.Name).ToListAsync();
             return result;
         }
+        public async Task<List<FoodData>> GetPageDataAsync(int currentPage, int pageSize)
+        {
+            var result = await localDbService.FoodItems.OrderBy(n => n.Name).Skip(currentPage * pageSize).Take(pageSize).AsNoTracking().ToListAsync();
+            return result;
+        }
 
         public Task<FoodData> GetByIdAsync(int id)
         {

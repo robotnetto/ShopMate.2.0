@@ -23,19 +23,19 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         private readonly CartService cartService;
 
         [ObservableProperty]
-        public ObservableCollection<CartDetailsViewModel> _carts = new();
+        public ObservableCollection<CartDetailsViewModel> carts = new();
 
         [ObservableProperty]
-        public string _titleName;
+        public string titleName;
 
         [ObservableProperty]
-        public string _itemName;
+        public string itemName;
 
         [ObservableProperty]
-        public CartDetailsViewModel _selectedCart;
+        public CartDetailsViewModel selectedCart;
 
         [ObservableProperty]
-        public string _bottomSheetTitle;
+        public string bottomSheetTitle;
 
 
 
@@ -86,7 +86,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
                 {
                     if (cart.Items!.Any())
                     {
-                        var progress = await CalculateProgress(cart.Items!.Count(i => i.IsChecked), cart.Items!.Count());
+                        var progress = await CalculateProgress((double)cart.Items!.Count(i => i.IsChecked), cart.Items!.Count());
                         cart.Progressing = progress;
 
 
@@ -117,19 +117,11 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
         }
 
-        //private async Task OnProgressCommand()
-        //{
-        //    var allCarts = await cartService.GetAllCartsServiceAsync();
-        //    foreach (var cart in allCarts)
-        //    {
-        //        var progressValue = await OnProgress(cart.Items!.Count(i => i.IsChecked), allCarts.Count());
-        //        cart.Progressing = progressValue;
-        //    }
-        //}
 
-        public async Task<Double> CalculateProgress(int checkedCart, int totalCart)
+
+        public async Task<Double> CalculateProgress(double checkedCart, int totalCart)
         {
-            return (double)checkedCart / totalCart;
+            return checkedCart / totalCart;
 
         }
 
@@ -147,19 +139,25 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
         private async Task OnAddNewCartAsync()
         {
-            Cart cart = new() { Title = TitleName, Items = new List<Item>() };
-            await cartService.AddNewCartAsync(cart);
-            var shopCartVm = new CartDetailsViewModel(cart);
-            Carts.Add(shopCartVm);
-            TitleName = string.Empty;
-            await OnCloseBottomSheetAsync();
+            try
+            {
+                Cart cart = new() { Title = TitleName, Items = new List<Item>() };
+                await cartService.AddNewCartAsync(cart);
+                var shopCartVm = new CartDetailsViewModel(cart);
+                Carts.Add(shopCartVm);
+                TitleName = string.Empty;
+                await OnCloseBottomSheetAsync();
+            }
+            catch (Exception e)
+            {
+                OnErrorOccurred(e.Message);
+            }
+          
         }
 
         public async Task OnAddNewItemAsync(FoodData foodData)
         {
-            try
-            {
-
+          
                 var selectedCartUI = Carts.FirstOrDefault(c => c.Id == SelectedCart.Id);
                 if (selectedCartUI == null)
                 {
@@ -170,52 +168,38 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
                 selectedCartUI.Items!.Add(newItem);
 
-                selectedCartUI.Progressing = await CalculateProgress(selectedCartUI.Items!.Count(i => i.IsChecked), selectedCartUI.Items!.Count());
 
-
-                await Task.Run(async () =>
-                 {
-                     var cart = await cartService.GetCartIdAsync(selectedCartUI.Id);
-                      cart.Items!.Add(newItem);
-                        await cartService.UpdateCartAsync(cart);
-                     
-                 });
-
-              
-                //var cartVm = Carts.FirstOrDefault(c => c.Id == result.Id);
-                //===>>>>>>>>>>>>>
-                //if (cartVm != null)
-                //{
-                //    SelectedCart = cartVm;
-                //    SelectedCart.Items.Add(newItem);
-                //}
-
-
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
+                var cart = await cartService.GetCartIdAsync(selectedCartUI.Id);
+                cart.Items!.Add(newItem);
+                await cartService.UpdateCartAsync(cart);
 
         }
         private async Task OnUpdateCartAsync()
         {
-            var cart = await cartService.GetCartIdAsync(SelectedCart.Id);
-            if (cart != null)
+            try
             {
-                cart.Title = TitleName!;
-                await cartService.UpdateCartAsync(cart);
-                var cartVm = Carts.FirstOrDefault(c => c.Id == cart.Id);
-                if (cartVm != null)
+                var cart = await cartService.GetCartIdAsync(SelectedCart.Id);
+                if (cart != null)
                 {
-                    cartVm.Title = cart.Title;
+                    cart.Title = TitleName!;
+                    await cartService.UpdateCartAsync(cart);
+                    var cartVm = Carts.FirstOrDefault(c => c.Id == cart.Id);
+                    if (cartVm != null)
+                    {
+                        cartVm.Title = cart.Title;
+
+                    }
+                    TitleName = string.Empty;
+                    await OnCloseBottomSheetAsync();
 
                 }
-                TitleName = string.Empty;
-                await OnCloseBottomSheetAsync();
+            }
+            catch (Exception e)
+            {
+                OnErrorOccurred(e.Message);
 
             }
+           
 
         }
         private async Task OnDeleteCartCommandAsync()
@@ -320,7 +304,9 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             //await Shell.Current.GoToAsync(nameof(ItemPage), true);
             var itemViewModel = new ItemViewModel(new FoodDataService(new FoodDataRepository(new LocalDbService())), this,
                 new CartService(new CartRepository(new LocalDbService())));
-            await Shell.Current.Navigation.PushAsync(new ItemPage(itemViewModel));
+            await Shell.Current.Navigation.PushAsync(new ItemPage(itemViewModel), true);
+
+
             await Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
 
         }

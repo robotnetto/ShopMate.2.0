@@ -75,7 +75,7 @@
                                HeightRequest="200"
                                WidthRequest="170"
                                IsVisible="{Binding Recipes.Count, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            <Label Text="Let create your favorite recipe." 
+            <Label Text="Let's create your favorite recipe" 
                    FontSize="16"
                    TextColor="Gray"
                    FontAttributes="Bold"

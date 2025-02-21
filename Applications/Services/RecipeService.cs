@@ -22,7 +22,7 @@ namespace ShopMate._2._0.Applications.Services
 
             if (string.IsNullOrWhiteSpace(recipe.Title))
             {
-                throw new ArgumentException("Title canot empty or whitespace!", nameof(recipe.Title));
+                throw new ArgumentException("Title cannot be empty or whitespace!", nameof(recipe.Title));
             }
 
             recipe.Id = Guid.NewGuid();
@@ -34,7 +34,7 @@ namespace ShopMate._2._0.Applications.Services
         {
             if (string.IsNullOrWhiteSpace(recipe.Title))
             {
-                throw new ArgumentException("Title canot empty or whitespace!", nameof(recipe.Title));
+                throw new ArgumentException("Title cannot be empty or whitespace!", nameof(recipe.Title));
             }
             await recipeRepository.UpdateAsync(recipe);
         }

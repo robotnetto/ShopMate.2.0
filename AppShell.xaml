@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:recipe="clr-namespace:ShopMate._2._0.Presentation.Views.RecipeView"
     xmlns:cart="clr-namespace:ShopMate._2._0.Presentation.Views.CartView"
-    xmlns:location="clr-namespace:ShopMate._2._0.Presentation.Views"
+    xmlns:profile="clr-namespace:ShopMate._2._0.Presentation.Views.ProfileView"
     Title="ShopMate._2._0"
     BackgroundColor="White"
     TitleColor="Black"
@@ -13,20 +13,21 @@
     Shell.TabBarTitleColor="#26e01f" 
     Shell.TabBarUnselectedColor="#8a8a8a"
     Shell.TabBarForegroundColor="#26e01f"
-   
+ 
     Shell.TabBarBackgroundColor="White" 
     >
-    
-            <TabBar>
-                <ShellContent Title="Recipes"
+
+    <TabBar >
+            <ShellContent Title="Recipes"
                               Icon="recipe_book.png"
                               ContentTemplate="{DataTemplate recipe:RecipePage}" />
-                <ShellContent Title="Cart"
+            <ShellContent Title="Cart"
                               Icon="shopping_cart.png"
                               ContentTemplate="{DataTemplate cart:CartPage}" />
-                <ShellContent Title="Location"
-                              Icon="location.png"
-                              ContentTemplate="{DataTemplate location:LocationPage}" />
-            </TabBar>
-       
+        <ShellContent Title="Profile"
+                              Icon="profile.png"
+                              ContentTemplate="{DataTemplate profile:ProfilePage}"/>
+        
+    </TabBar>
+
 </Shell>

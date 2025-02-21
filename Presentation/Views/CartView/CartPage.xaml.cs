@@ -19,5 +19,5 @@ public partial class CartPage : ContentPage
         BindingContext = _cartViewModel;
         _cartViewModel.ErrorOccurred += async (message) => await DisplayAlert("Error", message, "OK");
     }
-   
+    
 }

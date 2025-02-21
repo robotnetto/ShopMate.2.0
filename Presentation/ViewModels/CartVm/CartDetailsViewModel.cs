@@ -15,13 +15,13 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         private readonly Cart _cart;
 
         [ObservableProperty]
-        private Guid id;
+        private Guid _id;
 
         [ObservableProperty]
-        private string title;
+        private string _title;
 
         [ObservableProperty]
-        public double progressing;
+        public double _progressing;
         public ObservableCollection<Item> Items { get; set; }
         public CartDetailsViewModel(Cart cart)
         {
@@ -40,7 +40,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         {
             if (e.PropertyName == nameof(Cart.Progressing))
             {
-                Progressing = _cart.Progressing; // Update UI
+                Progressing = _cart.Progressing; 
             }
         }
     } 

@@ -109,6 +109,9 @@
 	  <None Remove="Resources\AppIcon\Icons\menu_dark.png" />
 	  <None Remove="Resources\AppIcon\Icons\options.png" />
 	  <None Remove="Resources\AppIcon\Icons\options_v3.png" />
+	  <None Remove="Resources\AppIcon\Icons\profile.png" />
+	  <None Remove="Resources\AppIcon\Icons\profile_filled.png" />
+	  <None Remove="Resources\AppIcon\Icons\profile_plus.png" />
 	  <None Remove="Resources\AppIcon\Icons\recipe_book.png" />
 	  <None Remove="Resources\AppIcon\Icons\recipe_book_color.png" />
 	  <None Remove="Resources\AppIcon\Icons\robotai.png" />
@@ -144,6 +147,9 @@
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\AppIcon\Icons\location.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\profile.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\profile_filled.png" />
+	  <MauiImage Include="Resources\AppIcon\Icons\profile_plus.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\recipe_book.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\recipe_book_color.png" />
 	  <MauiImage Include="Resources\AppIcon\Icons\robotai.png" />
@@ -179,6 +185,12 @@
 	  <Compile Update="Presentation\Views\CartView\CartOptionsBottomSheet.xaml.cs">
 	    <DependentUpon>CartOptionsBottomSheet.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Presentation\Views\CartView\FoodDataPage.xaml.cs">
+	    <DependentUpon>FoodDataPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Presentation\Views\ProfileView\ProfilePage.xaml.cs">
+	    <DependentUpon>ProfilePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml.cs">
 	    <DependentUpon>AddEditBottomSheet.xaml</DependentUpon>
 	  </Compile>
@@ -200,16 +212,16 @@
 	  <MauiXaml Update="Presentation\Views\CartView\CartOptionsBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\CartView\FoodDataItemsPage.xaml">
+	  <MauiXaml Update="Presentation\Views\CartView\FoodDataPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\CartView\ItemPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml">
+	  <MauiXaml Update="Presentation\Views\ProfileView\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Presentation\Views\LocationPage.xaml">
+	  <MauiXaml Update="Presentation\Views\RecipeView\AddEditBottomSheet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Presentation\Views\RecipeView\DeleteImageBottomSheet.xaml">

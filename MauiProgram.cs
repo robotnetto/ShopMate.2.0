@@ -5,6 +5,8 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using ShopMate._2._0.Presentation.ViewModels.ProfileViewModel;
+using ShopMate._2._0.Presentation.Views.ProfileView;
 using ShopMate._2._0.Presentation.Views.SplashView;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using The49.Maui.BottomSheet;
@@ -27,13 +29,17 @@ namespace ShopMate._2._0
                 });
             builder.Logging.AddDebug();
             builder.Services.AddDbContext<LocalDbService>();
-            builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
-            builder.Services.AddScoped<ICartRepository, CartRepository>();
-            builder.Services.AddScoped<IFoodDataRepository, FoodDataRepository>();
-            builder.Services.AddSingleton<FoodDataService>();
-            builder.Services.AddSingleton<CartService>();
-            builder.Services.AddSingleton<RecipeService>();
-           
+            builder.Services.AddSingleton<IRecipeRepository, RecipeRepository>();
+            builder.Services.AddSingleton<ICartRepository, CartRepository>();
+            builder.Services.AddSingleton<IProfileRepository, ProfileRepository>();
+            builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
+            builder.Services.AddSingleton<ProfileService>();
+
+            // Testing using DI for ProfileViewModel
+            builder.Services.AddTransient<ProfileViewModel>();
+
+            builder.Services.AddTransient<ProfilePage>();
+
 
 
 

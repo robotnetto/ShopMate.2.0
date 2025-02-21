@@ -70,6 +70,15 @@ namespace ShopMate._2._0.Applications.Services
             }
          
         }
+        public async Task<List<FoodData>> GetPageDataAsync(int currentPage, int pageSize)
+        {
+            var result = await foodDataRepository.GetPageDataAsync(currentPage, pageSize);
+            if (result == null)
+            {
+                throw new NotFoundException("No food data found!");
+            }
+            return result;
+        }
 
         public async Task<IEnumerable<FoodData>> GetAllAsync()
         {

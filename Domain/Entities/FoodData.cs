@@ -13,6 +13,7 @@ namespace ShopMate._2._0.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         private bool _isSelected { get; set; }
+
         public bool IsSelected
         {
             get => _isSelected;
