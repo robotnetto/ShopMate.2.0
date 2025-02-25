@@ -67,7 +67,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             DebounceSearchItemsCommand = new DebounceCommand(SearchItemsCommand, TimeSpan.FromMilliseconds(200));
             DeleteItemCommand = new AsyncRelayCommand<Item>(OnDeleteItemCommand);
             SelectedItemCommand = new AsyncRelayCommand<Item>(OnCheckItemCommand);
-
+           
         }
 
 
@@ -91,19 +91,18 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
 
         private async Task OnFoodDataPageCommandAsync()
         {
+            await OnLoadFoodDataAsync();
             //await Shell.Current.Navigation.PushAsync(new FoodDataPage(this), true);
-
+            //await Shell.Current.GoToAsync(nameof(FoodDataPage), true);
             var bottomSheet = new AddNewItemBottomSheet(this);
             CurrentBottomSheet = bottomSheet;
 
             await bottomSheet.ShowAsync();
 
-            await Task.Run(async () => await OnLoadFoodDataAsync());
-
 
         }
 
-     
+
         public async Task OnLoadFoodDataAsync()
         {
             if (!await semaphoreSlim.WaitAsync(0))
@@ -117,7 +116,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
                 FoodDataItems.Clear();
                 SearchText = string.Empty;
 
-                
+
                 await OnLoadMoreFoodDataAsync();
             }
             catch (Exception e)
@@ -139,7 +138,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             {
                 return;
             }
-         
+
             var itemsToLoad = await foodDataService.GetPageDataAsync(currentPage, pageSize);
             if (itemsToLoad.Any())
             {
@@ -147,7 +146,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
                 currentPage++;
             }
 
-          
+
 
         }
         private async Task LoadCacheData()
@@ -166,35 +165,34 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
         }
         private async Task OnAddNewItemCommand(FoodData foodData)
         {
-            if (foodData != null)
+            if (foodData == null)
             {
-
-                //var item = FoodDataItems.FirstOrDefault(i => i.Id == foodData.Id);
-                //if (item != null)
-                //{
-                //    item.IsSelected = true;
-
-                //}
-                Items.Add(new Item { ItemName = foodData.Name, IsChecked = false });
-                var sortedItems = Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
-                Items.Clear();
-                Items.AddRange(sortedItems);
-                UpdateProgress();
-                await cartViewModel.OnAddNewItemAsync(foodData);
-                //var snackbarOptions = new SnackbarOptions
-                //{
-                //    BackgroundColor = Color.FromArgb("#39de57"),
-                //    TextColor = Color.FromArgb("#FFFFFF"),
-                //    CornerRadius = 10,
-
-                //};
-                //await Snackbar.Make($"{foodData.Name} added to cart", () => { }, string.Empty, TimeSpan.FromSeconds(2), snackbarOptions).Show();
-
-                var toast = Toast.Make($"{foodData.Name} added to your cart", ToastDuration.Short, 14);
-                await toast.Show();
-
-
+                return;
             }
+
+            var newItem = new Item { ItemName = foodData.Name, IsChecked = false , CartId = selectedCart.Id};
+            Items.Add(newItem);
+            SortItems();
+            var dbCart = await CartService.GetCartIdAsync(SelectedCart.Id);
+            if (dbCart != null)
+            {
+                dbCart.Items!.Add(newItem);
+                await CartService.UpdateCartAsync(dbCart);
+            }
+            //var snackbarOptions = new SnackbarOptions
+            //{
+            //    BackgroundColor = Color.FromArgb("#39de57"),
+            //    TextColor = Color.FromArgb("#FFFFFF"),
+            //    CornerRadius = 10,
+
+            //};
+            //await Snackbar.Make($"{foodData.Name} added to cart", () => { }, string.Empty, TimeSpan.FromSeconds(2), snackbarOptions).Show();
+
+            var toast = Toast.Make($"{foodData.Name} added to your cart", ToastDuration.Short, 14);
+            await toast.Show();
+
+
+
         }
         private void UpdateProgress()
         {
@@ -232,24 +230,34 @@ namespace ShopMate._2._0.Presentation.ViewModels.ItemVm
             {
                 return;
             }
-            item.IsChecked = !item.IsChecked;
-
-            var dbCart = await CartService.GetCartIdAsync(SelectedCart.Id);
-            var dbItem = dbCart.Items!.FirstOrDefault(i => i.Id == item.Id);
-            if (dbItem != null)
+            try
             {
-                dbItem.IsChecked = item.IsChecked;
-                await CartService.UpdateCartAsync(dbCart);
+                item.IsChecked = !item.IsChecked;
+
+                SortItems();
+                var dbCart = await CartService.GetCartIdAsync(SelectedCart.Id);
+
+                var dbItem = dbCart.Items!.FirstOrDefault(i => i.Id == item.Id);
+                if (dbItem != null)
+                {
+
+                    dbItem.IsChecked = item.IsChecked;
+                    await CartService.UpdateCartAsync(dbCart);
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                throw;
             }
 
-             SortItems();
         }
 
         private void SortItems()
         {
-            var sortedItems =  Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
-            Items.Clear();
-            Items.AddRange(sortedItems);
+            var sortedItem =  Items.OrderBy(i => i.IsChecked).ThenBy(i => i.ItemName).ToList();
+            Items.ReplaceRange(sortedItem);
             UpdateProgress();
         }
         private async Task OnDeleteItemCommand(Item? item)

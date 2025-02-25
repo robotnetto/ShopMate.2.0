@@ -10,6 +10,7 @@ namespace ShopMate._2._0.Domain.Interfaces
         Task<Cart> GetByIdAsync(Guid id);
         Task UpdateAsync(Cart shopCart);
         Task DeleteAsync(Cart shopCart);
+        Task AddNewItem(Item item);
 
     }
 }

@@ -53,6 +53,14 @@ namespace ShopMate._2._0.Applications.Services
             return await shopCartRepository.GetAllasync();
 
         }
+        public async Task AddNewItem(Item item)
+        {
+            if (item is null)
+            {
+                throw new ArgumentNullException(nameof(item), "The item parameter cannot be null!");
+            }
+            await shopCartRepository.AddNewItem(item);
+        }
 
         public async Task DeleteCartAsync(Cart shopCart)
         {

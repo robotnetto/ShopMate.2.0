@@ -20,12 +20,12 @@ public partial class ItemPage : ContentPage
         BindingContext = itemViewModel;
 
     }
-    
+
     //protected override void OnAppearing()
     //{
     //    base.OnAppearing();
 
-    //    // Reload data when the page appears again
+    //     Reload data when the page appears again
     //    Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
     //}
     //private async void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)

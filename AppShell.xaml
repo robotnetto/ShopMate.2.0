@@ -18,16 +18,17 @@
     >
 
     <TabBar >
-            <ShellContent Title="Recipes"
+        <ShellContent Title="Recipes"
                               Icon="recipe_book.png"
                               ContentTemplate="{DataTemplate recipe:RecipePage}" />
-            <ShellContent Title="Cart"
+        <ShellContent Title="Cart"
                               Icon="shopping_cart.png"
                               ContentTemplate="{DataTemplate cart:CartPage}" />
         <ShellContent Title="Profile"
                               Icon="profile.png"
-                              ContentTemplate="{DataTemplate profile:ProfilePage}"/>
-        
+                              ContentTemplate="{DataTemplate profile:ProfilePage}"
+                      Route="profile"/>
+
     </TabBar>
 
 </Shell>

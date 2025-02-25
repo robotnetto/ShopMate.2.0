@@ -14,6 +14,8 @@ using System.Text;
 using ShopMate._2._0.Presentation.ViewModels.ItemVm;
 using Microsoft.Extensions.Logging.Abstractions;
 using ShopMate._2._0.Infrastructure.Data;
+using ShopMate._2._0.Presentation.ViewModels.ProfileViewModel;
+using ShopMate._2._0.Presentation.Views.ProfileView;
 
 
 namespace ShopMate._2._0.Presentation.ViewModels.CartVm
@@ -36,13 +38,14 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
         [ObservableProperty]
         public string bottomSheetTitle;
-
-
-
+        public Func<string,Task<bool>> DisplayAlert { get; set; }
+        private readonly ProfileService profileService;
+        private ProfileDetailsViewModel profileViewModel;
         //public ObservableCollection<Item> SelectedCartItems;
         //=> new ObservableCollection<Item>(_selectedCart.Items);
 
         public event Action<string>? ErrorOccurred;
+        public Action NavigateTo { get; set; }
         private BottomSheetMode CurrentBottomSheetMode { get; set; }
         private BottomSheet CurrentBottomSheet { get; set; }
         public ICommand CardSelectCommand { get; }
@@ -54,8 +57,9 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         public ICommand ShareListCommand { get; }
         public ICommand CloseCommand { get; }
         //public ICommand AddItemComand { get; }
-        private CartViewModel(CartService cartService)
+        public CartViewModel(CartService cartService, ProfileService profileService)
         {
+            this.profileService = profileService;
             this.cartService = cartService ?? throw new ArgumentNullException(nameof(cartService));
             AddCartCommand = new AsyncRelayCommand(OnAddCartCommandAsync);
             CardSelectCommand = new AsyncRelayCommand<CartDetailsViewModel>(OnNavigateAsync);
@@ -69,11 +73,6 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             _ = OnInitializeDataAsync();
         }
 
-
-
-        public CartViewModel() : this(new CartService(new CartRepository(new Infrastructure.Data.LocalDbService())))
-        {
-        }
 
         public async Task OnInitializeDataAsync()
         {
@@ -108,6 +107,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         {
             if (CurrentBottomSheetMode == BottomSheetMode.Add)
             {
+                if (profileViewModel == null)
+                {
+                    return;
+                }
                 await OnAddNewCartAsync();
             }
             else if (CurrentBottomSheetMode == BottomSheetMode.Edit)
@@ -141,7 +144,8 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         {
             try
             {
-                Cart cart = new() { Title = TitleName, Items = new List<Item>() };
+
+                Cart cart = new() { Title = TitleName, Items = new List<Item>(), ProfileId = profileViewModel.Id };
                 await cartService.AddNewCartAsync(cart);
                 var shopCartVm = new CartDetailsViewModel(cart);
                 Carts.Add(shopCartVm);
@@ -152,28 +156,28 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             {
                 OnErrorOccurred(e.Message);
             }
-          
-        }
-
-        public async Task OnAddNewItemAsync(FoodData foodData)
-        {
-          
-                var selectedCartUI = Carts.FirstOrDefault(c => c.Id == SelectedCart.Id);
-                if (selectedCartUI == null)
-                {
-                    return;
-                }
-
-                var newItem = new Item { ItemName = foodData.Name, IsChecked = false };
-
-                selectedCartUI.Items!.Add(newItem);
-
-
-                var cart = await cartService.GetCartIdAsync(selectedCartUI.Id);
-                cart.Items!.Add(newItem);
-                await cartService.UpdateCartAsync(cart);
 
         }
+
+        //public async Task OnAddNewItemAsync(FoodData foodData)
+        //{
+
+        //    var selectedCartUI = Carts.FirstOrDefault(c => c.Id == SelectedCart.Id);
+        //    if (selectedCartUI == null)
+        //    {
+        //        return;
+        //    }
+
+        //    var newItem = new Item { ItemName = foodData.Name, IsChecked = false };
+
+        //    selectedCartUI.Items!.Add(newItem);
+
+
+        //    var cart = await cartService.GetCartIdAsync(SelectedCart.Id);
+        //    cart.Items!.Add(newItem);
+        //    await cartService.UpdateCartAsync(cart);
+
+        //}
         private async Task OnUpdateCartAsync()
         {
             try
@@ -199,7 +203,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
                 OnErrorOccurred(e.Message);
 
             }
-           
+
 
         }
         private async Task OnDeleteCartCommandAsync()
@@ -222,13 +226,34 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
             await CurrentBottomSheet!.DismissAsync(true);
             await ShowButtomSheetAsync(BottomSheetMode.Edit);
         }
-        private async Task OnAddItemCommandAsync()
-        {
-            await ShowButtomSheetAsync(BottomSheetMode.AddItem);
-        }
+        //private async Task OnAddItemCommandAsync()
+        //{
+        //    await ShowButtomSheetAsync(BottomSheetMode.AddItem);
+        //}
         private async Task ShowButtomSheetAsync(BottomSheetMode mode)
         {
+            try
+            {
+                var profile = await profileService.GetProfileAsync();
+                if (profile == null)
+                {
+                    var result = await DisplayAlert.Invoke("You need to create a profile name before you can create a new cart.");
+                    if (result)
+                    {
+                        NavigateTo.Invoke();
+                    }
 
+                    return;
+                }
+                profileViewModel = new ProfileDetailsViewModel(profile);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+           
+            
             TitleName = mode == BottomSheetMode.Add ? string.Empty : SelectedCart.Title ?? string.Empty;
             CurrentBottomSheetMode = mode;
             BottomSheetTitle = mode == BottomSheetMode.Add ? "New" : "Change name";
@@ -300,12 +325,10 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
         private async Task OnNavigateAsync(CartDetailsViewModel cartDetailsViewModel)
         {
             SelectedCart = cartDetailsViewModel;
-            //AppShell.GlobalCartViewModel = this;
-            //await Shell.Current.GoToAsync(nameof(ItemPage), true);
             var itemViewModel = new ItemViewModel(new FoodDataService(new FoodDataRepository(new LocalDbService())), this,
-                new CartService(new CartRepository(new LocalDbService())));
-            await Shell.Current.Navigation.PushAsync(new ItemPage(itemViewModel), true);
-
+                                new CartService(new CartRepository(new LocalDbService())));
+            //await Shell.Current.GoToAsync(nameof (ItemPage), true);
+            await Shell.Current.Navigation.PushAsync(new ItemPage(itemViewModel));
 
             await Task.Run(async () => await itemViewModel.OnInitializeDataAsync());
 

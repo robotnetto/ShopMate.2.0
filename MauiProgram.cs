@@ -5,7 +5,10 @@ using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
+using ShopMate._2._0.Presentation.ViewModels.CartVm;
+using ShopMate._2._0.Presentation.ViewModels.ItemVm;
 using ShopMate._2._0.Presentation.ViewModels.ProfileViewModel;
+using ShopMate._2._0.Presentation.Views.CartView;
 using ShopMate._2._0.Presentation.Views.ProfileView;
 using ShopMate._2._0.Presentation.Views.SplashView;
 using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -33,20 +36,23 @@ namespace ShopMate._2._0
             builder.Services.AddSingleton<ICartRepository, CartRepository>();
             builder.Services.AddSingleton<IProfileRepository, ProfileRepository>();
             builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
+
+            // Register services
+            builder.Services.AddSingleton<CartService>();
             builder.Services.AddSingleton<ProfileService>();
+            builder.Services.AddSingleton<FoodDataService>();
 
-            // Testing using DI for ProfileViewModel
-            builder.Services.AddTransient<ProfileViewModel>();
+            // Register ViewModels
+            builder.Services.AddSingleton<CartViewModel>();
+            builder.Services.AddSingleton<ProfileViewModel>();
+            builder.Services.AddSingleton<ItemViewModel>();
 
+
+            // Register Pages
             builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<CartPage>();
+            builder.Services.AddTransient<ItemPage>();
 
-
-
-
-            //var dbContext = new LocalDbService();
-            ////dbContext.Database.EnsureDeleted();
-            //dbContext.Database.EnsureCreated();
-            //dbContext.Dispose();
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<LocalDbService>();
@@ -54,7 +60,7 @@ namespace ShopMate._2._0
                 dbContext.Database.EnsureCreated();
             }
 
-            //PreloadFoodData(builder.Services);
+          
 
 #if DEBUG
             builder.Logging.AddDebug();
@@ -63,17 +69,6 @@ namespace ShopMate._2._0
             return builder.Build();
         }
 
-        //private static void PreloadFoodData(IServiceCollection services)
-        //{
-        //    using (var scope = services.BuildServiceProvider().CreateScope())
-        //    {
-        //        var foodDataService = scope.ServiceProvider.GetRequiredService<FoodDataService>();
-        //        Task.Run(async () =>
-        //        {
-        //            // Preload food data asynchronously
-        //            await foodDataService.PreloadDataAsync();
-        //        }).ConfigureAwait(false);
-        //    }
-        //}
+     
     }
 }

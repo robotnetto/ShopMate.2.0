@@ -16,6 +16,10 @@ public partial class ProfilePage : ContentPage
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
+		if (profileViewModel.Profile != null)
+		{
+			return;
+		}
 		var profileName = await DisplayPromptAsync("Profile Name", "Enter your profile name", "Save", "Cancel", string.Empty , 16, Keyboard.Default, string.Empty);
         if (!string.IsNullOrWhiteSpace(profileName))
 		{

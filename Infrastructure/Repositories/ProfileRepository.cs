@@ -40,7 +40,10 @@ namespace ShopMate._2._0.Infrastructure.Repositories
             return await localDbService.Profiles.FindAsync(id);
 
         }
-
+        public async Task<Profile> GetProfileAsync()
+        {
+            return await localDbService.Profiles.FirstOrDefaultAsync();
+        }
         public async Task UpdateAsync(Profile profile)
         {
             localDbService.Profiles.Update(profile);

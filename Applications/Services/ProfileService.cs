@@ -38,7 +38,12 @@ namespace ShopMate._2._0.Applications.Services
 
         internal async Task<IEnumerable<Profile>> GetAllAsync()
         {
-            return await profileRepository.GetAllasync();
+           return await profileRepository.GetAllasync();
+        }
+
+        public async Task<Profile> GetProfileAsync()
+        {
+            return await profileRepository.GetProfileAsync();
         }
     }
 }

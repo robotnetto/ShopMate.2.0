@@ -5,6 +5,7 @@ using ShopMate._2._0.Domain.Interfaces;
 using ShopMate._2._0.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -13,10 +14,10 @@ using System.Threading.Tasks;
 
 namespace ShopMate._2._0.Applications.Services
 {
-    public class FoodDataService
+    public class FoodDataService 
     {
         private readonly IFoodDataRepository foodDataRepository;
-
+      
         private List<FoodData> foodDataList;
         public FoodDataService(IFoodDataRepository foodDataRepository)
         {
@@ -26,10 +27,7 @@ namespace ShopMate._2._0.Applications.Services
 
         public async Task PreloadDataAsync()
         {
-            var result = await foodDataRepository.GetAllasync();
-
-            if (!result.Any())
-            {
+          
                 var jsonPath = Path.Combine(FileSystem.AppDataDirectory, "LivsmedelsDB_JSON.json");
                 if (!File.Exists(jsonPath))
                 {
@@ -67,7 +65,7 @@ namespace ShopMate._2._0.Applications.Services
                         await foodDataRepository.CreateAsync(foodData);
                     }
                 }
-            }
+            
          
         }
         public async Task<List<FoodData>> GetPageDataAsync(int currentPage, int pageSize)
@@ -89,7 +87,7 @@ namespace ShopMate._2._0.Applications.Services
             }
             return result;
         }
-
+       
     }
 }
 

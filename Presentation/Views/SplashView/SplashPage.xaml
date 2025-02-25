@@ -5,7 +5,7 @@
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Title="SplashPage"
              BackgroundColor="White">
-  
+
     <VerticalStackLayout VerticalOptions="Center" Margin="0,0,0,150">
         <skia:SKLottieView Source="loadingcart.json" 
                         RepeatCount="-1"
@@ -15,13 +15,18 @@
                         HeightRequest="200"
                         WidthRequest="200"
                        />
-        <!--<Label Text="Let create your favorite recipe." 
-            FontSize="16"
-            TextColor="Gray"
-            FontAttributes="Bold"
-            Margin="0,-15,0,0" 
-            HorizontalOptions="Center" 
-            VerticalOptions="Center"
-            />-->
+        <Label HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               IsVisible="{Binding IsLoading}"
+               Margin="0,10,0,0" >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="First-time setup may take longer to laod" />
+                    <Span Text="&#10;" />
+                    <Span Text="Hang tight!" FontAttributes="Bold" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
     </VerticalStackLayout>
 </ContentPage>

@@ -19,12 +19,13 @@ namespace ShopMate._2._0.Infrastructure.Repositories
         {
             this.localDbService = localDbService;
         }
+
         public async Task CreateAsync(Cart shopCart)
         {
-            
-                await localDbService.ShopCarts.AddAsync(shopCart);
-                await localDbService.SaveChangesAsync();
-            
+
+            await localDbService.ShopCarts.AddAsync(shopCart);
+            await localDbService.SaveChangesAsync();
+
         }
 
         public async Task DeleteAsync(Cart shopCart)
@@ -41,13 +42,18 @@ namespace ShopMate._2._0.Infrastructure.Repositories
         }
         public async Task<Cart> GetByIdAsync(Guid id)
         {
-            var result = await localDbService.ShopCarts.Where(s => s.Id == id).Include(i => i.Items).FirstOrDefaultAsync();
+            var result = await localDbService.ShopCarts.Where(s => s.Id == id).Include(i => i.Items).Include(p => p.Profile).FirstOrDefaultAsync();
             return result;
         }
 
         public async Task UpdateAsync(Cart shopCart)
         {
             localDbService.ShopCarts.Update(shopCart);
+            await localDbService.SaveChangesAsync();
+        }
+        public async Task AddNewItem(Item item)
+        {
+            await localDbService.Items.AddAsync(item);
             await localDbService.SaveChangesAsync();
         }
     }

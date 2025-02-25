@@ -14,6 +14,7 @@ namespace ShopMate._2._0.Domain.Interfaces
         Task<Profile> GetByIdAsync(int id);
         Task UpdateAsync(Profile profile);
         Task DeleteAsync(Profile profile);
-      
+        Task<Profile> GetProfileAsync();
+
     }
 }

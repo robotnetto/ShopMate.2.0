@@ -10,6 +10,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ProfileViewModel
 {
     public partial class ProfileDetailsViewModel : ObservableObject
     {
+        private readonly Profile _profile;
         [ObservableProperty]
         private Guid _id;
         [ObservableProperty]
@@ -18,6 +19,11 @@ namespace ShopMate._2._0.Presentation.ViewModels.ProfileViewModel
         {
             Id = profile.Id;
             Name = profile.Name;
+        }
+        public Profile ToProfile()
+        {
+            _profile.Name = Name;
+            return _profile;
         }
     }
 }

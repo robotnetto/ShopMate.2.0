@@ -10,8 +10,7 @@ namespace ShopMate._2._0.Presentation.ViewModels.ProfileViewModel
     {
         private readonly ProfileService profileService;
         [ObservableProperty]
-        public ObservableCollection<ProfileDetailsViewModel> profiles = new();
-
+        public ProfileDetailsViewModel _profile;
         //[ObservableProperty]
         //public string profileName;
         //public ICommand AddProfileCommand { get; }
@@ -26,16 +25,24 @@ namespace ShopMate._2._0.Presentation.ViewModels.ProfileViewModel
         private async Task InitializeDataAsync()
         {
             var profiles = await profileService.GetAllAsync();
-            foreach (var profile in profiles)
+
+            if (profiles.Any())
             {
-                Profiles.Add(new ProfileDetailsViewModel(profile));
+                Profile = new ProfileDetailsViewModel(profiles.First());
             }
+
         }
         public async Task AddProfileAsync(string profilename)
         {
             var newProfile = new Profile { Name = profilename, Carts = new List<Cart>()};
-            Profiles.Add(new ProfileDetailsViewModel(newProfile));
+            Profile = new ProfileDetailsViewModel(newProfile);
             await profileService.CreateAsync(newProfile);
+        }
+
+        public async Task UpdateProfileAsync(string profileName)
+        {
+            Profile.Name = profileName;   
+            await profileService.UpdateProfileAsync(Profile.ToProfile());
         }
     }
 }
