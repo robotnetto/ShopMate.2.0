@@ -20,9 +20,7 @@ public partial class RecipeDescriptionPage : ContentPage
         }
         BindingContext = recipeViewModel;
         Shell.SetTabBarIsVisible(this, false);
-        //descriptionEditor.Focused += (x, y) => SetTabbarVisible(false);
-        //descriptionEditor.Unfocused +=  (x, y) => OnDisappearing();
-        //descriptionEditor.Focused += DescriptionEditor_Focused;
+        
         descriptionEditor.Unfocused += DescriptionEditor_Unfocused;
         
     }

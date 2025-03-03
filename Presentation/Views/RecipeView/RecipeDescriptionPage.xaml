@@ -35,8 +35,6 @@
                     Aspect="AspectFill"
                     HeightRequest="230"
                     WidthRequest="440"
-                           
-                           
                     IsVisible="{Binding SelectedRecipe.ImageStream, Converter={StaticResource NullToBoolConverter}}">
                     </Image>
                     <Frame BackgroundColor="Gray"

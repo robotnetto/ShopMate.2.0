@@ -25,6 +25,9 @@ namespace ShopMate._2._0.Presentation.ViewModels.RecipeVm
         [ObservableProperty]
         private string? imageStream;
 
+        
+     
+
         public RecipeDetailsViewModel(Recipe recipe)
         {
             Id = recipe.Id;

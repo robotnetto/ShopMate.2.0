@@ -23,12 +23,14 @@ namespace ShopMate._2._0.Infrastructure.Data
             modelBuilder.Entity<Cart>()
              .HasMany(c => c.Items)
              .WithOne()
-             .HasForeignKey(i => i.CartId);
+             .HasForeignKey(i => i.CartId).
+             OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Profile>()
                 .HasMany(c => c.Carts)
                 .WithOne(p => p.Profile)
-                .HasForeignKey(c => c.ProfileId);
+                .HasForeignKey(c => c.ProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
 

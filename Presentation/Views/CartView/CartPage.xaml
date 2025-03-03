@@ -25,7 +25,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Cart">
                     <VerticalStackLayout>
-                        <Frame Margin="15,10,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True">
+                        <Frame Margin="15,10,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="False">
                             <Frame.Shadow>
                                 <Shadow Brush="Black" Opacity="0.1" Offset="8,8" Radius="10" />
                             </Frame.Shadow>
@@ -33,7 +33,7 @@
                             <Grid Padding="40,0,0,0">
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer 
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectCommand}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CartSelectCommand}" 
                                         CommandParameter="{Binding .}" 
                                         NumberOfTapsRequired="1" />
                                 </Grid.GestureRecognizers>
@@ -55,7 +55,7 @@
                                              Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OptionsCommand}" 
                                              CommandParameter="{Binding .}" />
                                 <ProgressBar Grid.Row="1" Progress="{Binding Progressing}" 
-                                 ProgressColor="#26e01f" HeightRequest="15" Background="White" Margin="0,-15,0,0"/>
+                                 ProgressColor="#26e01f" HeightRequest="15" Background="White" Margin="0,-15,0,0" Scale="1.1"/>
 
                             </Grid>
                         </Frame>

@@ -11,6 +11,7 @@ namespace ShopMate._2._0.Domain.Entities
         public Guid Id { get; set; }
         public string? Name { get; set; }
         
+        public string? UniqueCode { get; set; }
         public List<Cart>? Carts { get; set; }
         
     }

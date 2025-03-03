@@ -26,8 +26,10 @@ namespace ShopMate._2._0.Infrastructure.Repositories
 
         public async Task DeleteAsync(Profile profile)
         {
-             localDbService.Profiles.Remove(profile);
-            await localDbService.SaveChangesAsync();
+           
+                localDbService.Profiles.Remove(profile);
+                await localDbService.SaveChangesAsync();
+            
         }
 
         public async Task<IEnumerable<Profile>> GetAllasync()

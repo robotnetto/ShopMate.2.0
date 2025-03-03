@@ -35,7 +35,6 @@ namespace ShopMate._2._0.Presentation.ViewModels.CartVm
 
         }
     
-    
         private void Cart_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(Cart.Progressing))

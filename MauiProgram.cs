@@ -3,13 +3,16 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using ShopMate._2._0.Applications.Services;
 using ShopMate._2._0.Domain.Interfaces;
+using ShopMate._2._0.Domain.Services;
 using ShopMate._2._0.Infrastructure.Data;
 using ShopMate._2._0.Infrastructure.Repositories;
 using ShopMate._2._0.Presentation.ViewModels.CartVm;
 using ShopMate._2._0.Presentation.ViewModels.ItemVm;
 using ShopMate._2._0.Presentation.ViewModels.ProfileViewModel;
+using ShopMate._2._0.Presentation.ViewModels.RecipeVm;
 using ShopMate._2._0.Presentation.Views.CartView;
 using ShopMate._2._0.Presentation.Views.ProfileView;
+using ShopMate._2._0.Presentation.Views.RecipeView;
 using ShopMate._2._0.Presentation.Views.SplashView;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using The49.Maui.BottomSheet;
@@ -36,22 +39,26 @@ namespace ShopMate._2._0
             builder.Services.AddSingleton<ICartRepository, CartRepository>();
             builder.Services.AddSingleton<IProfileRepository, ProfileRepository>();
             builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
+            builder.Services.AddSingleton<ImagePickerService>();
 
             // Register services
             builder.Services.AddSingleton<CartService>();
             builder.Services.AddSingleton<ProfileService>();
             builder.Services.AddSingleton<FoodDataService>();
+            builder.Services.AddSingleton<RecipeService>();
 
             // Register ViewModels
             builder.Services.AddSingleton<CartViewModel>();
             builder.Services.AddSingleton<ProfileViewModel>();
             builder.Services.AddSingleton<ItemViewModel>();
+            builder.Services.AddSingleton<RecipeViewModel>();
 
 
             // Register Pages
-            builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddSingleton<ProfilePage>();
             builder.Services.AddTransient<CartPage>();
             builder.Services.AddTransient<ItemPage>();
+            builder.Services.AddTransient<RecipePage>();
 
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {

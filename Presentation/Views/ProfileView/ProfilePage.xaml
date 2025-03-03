@@ -2,19 +2,105 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopMate._2._0.Presentation.Views.ProfileView.ProfilePage"
-             Title="Profile"
-             
-             Background="#f5f5f5">
-    <ContentPage.ToolbarItems >
+           Title=""
+             BackgroundColor="White"
+             Shell.NavBarHasShadow="False"
+             Shell.NavBarIsVisible="False">
 
-        <ToolbarItem  
-            Clicked="ToolbarItem_Clicked"
-                     IconImageSource="profile_plus.png" 
-            />
-    </ContentPage.ToolbarItems>
     <VerticalStackLayout>
-        <Grid BackgroundColor="White" Padding="10" >
-            <Label Text="{Binding Profile.Name}" FontSize="30" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Grid BackgroundColor="White" Padding="0,10,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="1" WidthRequest="100" >
+
+                <Border StrokeShape="Ellipse"
+                    StrokeThickness="2" Padding="2"
+                    BackgroundColor="#f5f5f5"
+                    HeightRequest="130"
+                    WidthRequest="130"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="profile.jpg"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       Aspect="AspectFill"/>
+                </Border>
+
+                <Frame BackgroundColor="Gray"  
+                       CornerRadius="22"
+                       Opacity="0.6"
+                       Padding="0"
+                       BorderColor="Transparent"
+                       VerticalOptions="End"
+                       HorizontalOptions="End"
+                        HeightRequest="30"  
+                       WidthRequest="30"
+                        >
+                    <ImageButton Source="edit_image.png"
+                                 HeightRequest="30"  
+                                 WidthRequest="30"/>
+                </Frame>
+
+            </Grid>
+
+            <ImageButton Grid.Row="0" 
+                         Source="profile_plus.png" 
+                         HeightRequest="25"
+                         WidthRequest="25"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start"
+                         Margin="20,0"
+                         
+                         Command="{Binding AddProfileCommand}"/>
+
+            <Label  Text="{Binding Profile.Name}" 
+                    Grid.Row="2"
+                    FontSize="15" 
+                    Padding="7"
+                    FontAttributes="Bold" 
+                    TextColor="Black"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Center"
+            />
+            <BoxView Grid.Row="3" HeightRequest="1" Color="Gray" Margin="30,5" />
+
+
         </Grid>
+        <VerticalStackLayout Margin="30,5,0,0" >
+
+            <HorizontalStackLayout Spacing="3" VerticalOptions="Start" Margin="0,0,0,10" >
+                <Label Text="Unique code: "
+                       FontSize="15"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Profile.UniqueCode}" VerticalOptions="End"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="3" VerticalOptions="Start" >
+                <Image Source="edit_filled.png" HeightRequest="21" WidthRequest="21" />
+                <Button Text="Change profile"
+          BackgroundColor="Transparent"
+          Padding="10,10,200,10"
+          FontSize="14"
+          TextColor="Black"
+          FontAttributes="Bold"
+          Command="{Binding EditProfiletCommand}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="3">
+                <Image Source="delete.png" HeightRequest="21" WidthRequest="21" />
+                <Button Text="Delete profile" 
+           Padding="10,10,200,10"
+          BackgroundColor="Transparent" 
+          FontSize="14" TextColor="Red" 
+          FontAttributes="Bold"
+          Command="{Binding DeleteProfileCommand}" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

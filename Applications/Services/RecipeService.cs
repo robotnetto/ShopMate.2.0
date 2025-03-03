@@ -8,26 +8,24 @@ namespace ShopMate._2._0.Applications.Services
     {
         private readonly IRecipeRepository recipeRepository;
 
-        internal RecipeService(IRecipeRepository recipeRepository)
+        public RecipeService(IRecipeRepository recipeRepository)
         {
             this.recipeRepository = recipeRepository;
         }
 
-        public async Task AddNewRecipeAsync(Recipe recipe)
+        public async Task<Recipe> AddNewRecipeAsync(string recipeName)
         {
-            if (recipe == null)
+           
+            if (string.IsNullOrWhiteSpace(recipeName))
             {
-                throw new ArgumentNullException(nameof(recipe), "Recipe parameter cannot be null!");
+                throw new ArgumentException("Title cannot be empty or whitespace!");
             }
+            var newRecipe = new Recipe { Title = recipeName, Favorite = false };
 
-            if (string.IsNullOrWhiteSpace(recipe.Title))
-            {
-                throw new ArgumentException("Title cannot be empty or whitespace!", nameof(recipe.Title));
-            }
+            newRecipe.Id = Guid.NewGuid();
+            await recipeRepository.CreateAsync(newRecipe);
 
-            recipe.Id = Guid.NewGuid();
-            await recipeRepository.CreateAsync(recipe);
-
+            return newRecipe;
         }
 
         public async Task UpdateExistingRecipeAsync(Recipe recipe)

@@ -27,17 +27,17 @@
     <Grid>
         <CollectionView ItemsSource="{Binding Recipes}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Recipe">
+                <DataTemplate x:DataType="viewmodel:RecipeDetailsViewModel">
                     <VerticalStackLayout>
-                        <Frame Margin="15,10,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="True" InputTransparent="False" >
+                        <Frame Margin="15,10,15,7" Padding="0,0,15,0" Background="White" BorderColor="White" HasShadow="False" InputTransparent="False" >
                             <Frame.Shadow>
-                                <Shadow Brush="Black" Opacity="0.1" Offset="8,8" Radius="10" />
+                                <Shadow Brush="Black" Opacity="0.1" Offset="2,2" Radius="2" />
                             </Frame.Shadow>
 
                             <Grid>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer 
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CardSelectCommand}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RecipeSelectCommand}" 
                                         CommandParameter="{Binding .}" 
                                         NumberOfTapsRequired="1" />
                                 </Grid.GestureRecognizers>

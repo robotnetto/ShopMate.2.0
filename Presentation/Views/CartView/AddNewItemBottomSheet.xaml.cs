@@ -72,18 +72,6 @@ public partial class AddNewItemBottomSheet : BottomSheet
         }
 
     }
-    //public async Task ShowSnackbarAsync()
-    //{
-    //    var snackbarOptions = new SnackbarOptions
-    //    {
-    //        BackgroundColor = Color.FromArgb("#39de57"),
-    //        TextColor = Color.FromArgb("#FFFFFF"),
-    //        CornerRadius = 10,
-
-    //    };
-       
-    //    var snackbar = Snackbar.Make($"BottomSheet", () => { }, string.Empty, TimeSpan.FromSeconds(2), snackbarOptions);
-    //    await this.Dispatcher.DispatchAsync(async () => await snackbar.Show());
-    //}
+    
 
 }

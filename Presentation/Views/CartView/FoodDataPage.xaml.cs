@@ -13,8 +13,8 @@ public partial class FoodDataPage : ContentPage
         this.itemViewModel = itemViewModel;
         BindingContext = itemViewModel;
         searchItemEntry.Focused += (s, e) => searchFrame.BorderColor = Color.FromArgb("#2e80ec");
-
     }
+
     private async void TapGestureRecognizer_Tapped(object sender, EventArgs args)
     {
         if (searchItemEntry != null && searchItemEntry.IsFocused)
@@ -39,19 +39,10 @@ public partial class FoodDataPage : ContentPage
         }
 
     }
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
-
-        itemViewModel.currentPage = 0;
-    }
+   
     internal async void HideKeyboardOnDismissAsync()
     {
         await searchItemEntry.HideKeyboardAsync(default);
     }
-    //protected override async void OnDisappearing()
-    //{
-    //    base.OnDisappearing();
-    //    await Shell.Current.Navigation.PopAsync();
-    //}
+   
 }

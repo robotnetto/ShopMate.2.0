@@ -20,24 +20,18 @@ namespace ShopMate._2._0.Domain.Entities
         public bool _isChecked;
         public bool IsChecked
         {
-           
+
             get => _isChecked;
             set
             {
-                try
-                {
-                    if (_isChecked != value)
-                    {
-                        _isChecked = value;
-                        OnPropertyChanged(nameof(IsChecked));
-                    }
-                }
-                catch (Exception e)
-                {
 
-                    throw;
+                if (_isChecked != value)
+                {
+                    _isChecked = value;
+                    OnPropertyChanged(nameof(IsChecked));
                 }
-               
+
+
             }
         }
 

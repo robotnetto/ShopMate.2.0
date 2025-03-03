@@ -40,7 +40,16 @@
         </Grid>
 
         <VerticalStackLayout>
-           
+            <HorizontalStackLayout Spacing="3" >
+                <Image Source="edit_image_black.png" HeightRequest="25" WidthRequest="25"/>
+                <Button Text="Change image" 
+             Padding="14,10,200,10" 
+             BackgroundColor="Transparent" 
+             FontSize="14" TextColor="Black" 
+             FontAttributes="Bold"
+             Command="{Binding LoadImageCommand }"/>
+            </HorizontalStackLayout>
+            
             <HorizontalStackLayout Spacing="3">
                 <Image Source="delete.png" HeightRequest="25" WidthRequest="25" />
                 <Button Text="Delete Image" 

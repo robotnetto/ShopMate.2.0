@@ -37,7 +37,7 @@ namespace ShopMate._2._0.Infrastructure.Repositories
 
         public async Task<IEnumerable<Cart>> GetAllasync()
         {
-            var result = await localDbService.ShopCarts.Include(i => i.Items).ToListAsync();
+            var result = await localDbService.ShopCarts.OrderBy( i => i.Title).Include(i => i.Items).ToListAsync();
             return result;
         }
         public async Task<Cart> GetByIdAsync(Guid id)

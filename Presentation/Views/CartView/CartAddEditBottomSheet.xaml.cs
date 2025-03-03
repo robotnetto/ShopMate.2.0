@@ -20,26 +20,13 @@ public partial class CartAddEditBottomSheet : BottomSheet
         this.cartViewModel = cartViewModel;
     }
 
-    //private void CustomBottomSheet_Showing(object? sender, EventArgs e)
-    //{
-    //    if (titleEntry.Focus())
-    //    {
-    //        titleFrame.BorderColor = Color.FromArgb("#2e80ec");
-    //    }
-    //}
+
 
     private void CartCustomBottomSheet_Dismissed(object? sender, DismissOrigin e)
     {
           CartHideKeyboardAsync();
     }
 
-    //private void KeyboardLoaded()
-    //{
-    //    titleEntry.Focus();
-       
-    //    titleEntry.ShowSoftInputAsync(CancellationToken.None);
-
-    //}
     public async void CartHideKeyboardAsync()
     {
         await cartTitleEntry.HideKeyboardAsync(default);

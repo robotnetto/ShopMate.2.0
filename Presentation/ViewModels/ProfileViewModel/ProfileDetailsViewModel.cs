@@ -10,20 +10,26 @@ namespace ShopMate._2._0.Presentation.ViewModels.ProfileViewModel
 {
     public partial class ProfileDetailsViewModel : ObservableObject
     {
-        private readonly Profile _profile;
         [ObservableProperty]
         private Guid _id;
         [ObservableProperty]
         private string _name;
+        [ObservableProperty]
+        private string _uniqueCode;
         public ProfileDetailsViewModel(Profile profile)
         {
             Id = profile.Id;
-            Name = profile.Name;
+            Name = profile.Name!;
+            UniqueCode = profile.UniqueCode!;
         }
         public Profile ToProfile()
         {
-            _profile.Name = Name;
-            return _profile;
+            return new Profile
+            {
+                Id = Id,
+                Name = Name,
+                UniqueCode = UniqueCode
+            };  
         }
     }
 }

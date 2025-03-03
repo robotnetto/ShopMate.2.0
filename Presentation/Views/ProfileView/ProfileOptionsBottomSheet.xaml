@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   x:Class="ShopMate._2._0.Presentation.Views.CartView.CartOptionsBottomSheet"
                    xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
-                  
+                   x:Class="ShopMate._2._0.Presentation.Views.ProfileView.ProfileOptionsBottomSheet"
                    BackgroundColor="White"
                    CornerRadius="10"
                    IsCancelable="True"
                    HasBackdrop="True"
                    HasHandle="False">
-
+    
     <VerticalStackLayout Padding="20,20,20,10">
         <Grid Margin="0,0,5,10">
             <Grid.ColumnDefinitions>
@@ -17,48 +16,46 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label 
-              Text="Manage Item"
-              FontSize="20"
-              FontAttributes="Bold"
-              TextColor="Black"
-              VerticalOptions="Center"
-              Grid.Column="0" />
+           Text="Manage Profile"
+           FontSize="20"
+           FontAttributes="Bold"
+           TextColor="Black"
+           VerticalOptions="Center"
+           Grid.Column="0" />
             <ImageButton 
-              Source="close_filled.png"
-              BackgroundColor="Transparent"
-              WidthRequest="24"
-              HeightRequest="24"
-              Command="{Binding CloseCommand}"
-              Grid.Column="1" />
+           Source="close_filled.png"
+           BackgroundColor="Transparent"
+           WidthRequest="24"
+           HeightRequest="24"
+           Command="{Binding CloseCommand}"
+           Grid.Column="1" />
         </Grid>
 
         <VerticalStackLayout>
             <HorizontalStackLayout Spacing="3" VerticalOptions="Start">
                 <Image Source="edit_filled.png" HeightRequest="25" WidthRequest="25"/>
                 <Button Text="Rename"
-                        BackgroundColor="Transparent"
-                        Padding="14,10,200,10"
-                        FontSize="14"
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        Command="{Binding EditCartCommand}"/>
+                     BackgroundColor="Transparent"
+                     Padding="14,10,200,10"
+                     FontSize="14"
+                     TextColor="Black"
+                     FontAttributes="Bold"
+                     Command="{Binding EditProfiletCommand}"/>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout Spacing="3">
+            <!--<HorizontalStackLayout Spacing="3">
                 <Image Source="share_filled.png" HeightRequest="25" WidthRequest="25"/>
                 <Button Text="Share" Padding="14,10,200,10" BackgroundColor="Transparent" FontSize="14" TextColor="Black" FontAttributes="Bold" Command="{Binding ShareListCommand}"/>
-            </HorizontalStackLayout>
-
-          
+            </HorizontalStackLayout>-->
 
             <HorizontalStackLayout Spacing="3">
                 <Image Source="delete.png" HeightRequest="25" WidthRequest="25" />
                 <Button Text="Delete" 
-                         Padding="14,10,200,10"
-                        BackgroundColor="Transparent" 
-                        FontSize="14" TextColor="Red" 
-                        FontAttributes="Bold"
-                        Command="{Binding DeleteCartCommand}" />
+                      Padding="14,10,200,10"
+                     BackgroundColor="Transparent" 
+                     FontSize="14" TextColor="Red" 
+                     FontAttributes="Bold"
+                     Command="{Binding DeleteProfileCommand}" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </VerticalStackLayout>

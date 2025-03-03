@@ -1,16 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using ShopMate._2._0.Domain.Entities;
+﻿using ShopMate._2._0.Domain.Entities;
 using ShopMate._2._0.Domain.Exceptions;
 using ShopMate._2._0.Domain.Interfaces;
-using ShopMate._2._0.Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ShopMate._2._0.Applications.Services
 {
@@ -42,13 +34,10 @@ namespace ShopMate._2._0.Applications.Services
 
                         using (var reader = new StreamReader(stream))
                         {
-                            //logger.LogInformation(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Reading JSON content from embedded resource.");
                             var content = reader.ReadToEnd();
-                            //logger.LogInformation(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> JSON content read successfully.");
 
                             // Save the content to the app's local storage
                             File.WriteAllText(jsonPath, content);
-                            //logger.LogInformation($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> JSON content saved to {jsonPath}.");
                         }
                     }
                 }
